@@ -1,46 +1,218 @@
-/* 彰濱秀傳癌症中心個管師指導書 - 自訂樣式 */
+/* ============================================================
+   彰濱秀傳癌症中心 — 個管師教育訓練指導書
+   自訂樣式 | Mobile-first
+   ============================================================ */
 
-/* 中文字距與行距優化 */
+/* ── 字體與行距 ── */
 .md-typeset {
-  line-height: 1.85;
-  letter-spacing: 0.01em;
+  line-height: 1.9;
+  letter-spacing: 0.015em;
+  font-size: 0.95rem;
 }
 
-/* 表格樣式優化 */
+/* ── 標題層級視覺強化 ── */
+.md-typeset h1 {
+  font-weight: 700;
+  border-bottom: 3px solid var(--md-primary-fg-color);
+  padding-bottom: 0.4em;
+  margin-bottom: 1em;
+}
+
+.md-typeset h2 {
+  font-weight: 600;
+  border-left: 4px solid var(--md-primary-fg-color);
+  padding-left: 0.6em;
+  margin-top: 1.8em;
+}
+
+.md-typeset h3 {
+  font-weight: 600;
+  color: var(--md-primary-fg-color);
+}
+
+/* ── 表格：手機橫向捲動 ── */
+.md-typeset .md-typeset__table,
+.md-typeset > table,
 .md-typeset table:not([class]) {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
   font-size: 0.85rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
 }
 
 .md-typeset table:not([class]) th {
   background-color: var(--md-primary-fg-color);
   color: var(--md-primary-bg-color);
   font-weight: 600;
+  white-space: nowrap;
+  padding: 0.7em 1em;
 }
 
-/* 提示框中文標題 */
-.md-typeset .admonition.note > .admonition-title::before,
-.md-typeset details.note > summary::before {
-  content: "📌";
+.md-typeset table:not([class]) td {
+  padding: 0.6em 1em;
+  vertical-align: top;
 }
+
+.md-typeset table:not([class]) tr:nth-child(even) {
+  background-color: var(--md-default-bg-color--lightest, rgba(0,0,0,0.02));
+}
+
+/* ── 提示框 ── */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.md-typeset .admonition.note > .admonition-title::before,
+.md-typeset details.note > summary::before { content: "📌 "; }
 
 .md-typeset .admonition.tip > .admonition-title::before,
-.md-typeset details.tip > summary::before {
-  content: "💡";
-}
+.md-typeset details.tip > summary::before  { content: "💡 "; }
 
 .md-typeset .admonition.warning > .admonition-title::before,
-.md-typeset details.warning > summary::before {
-  content: "⚠️";
+.md-typeset details.warning > summary::before { content: "⚠️ "; }
+
+.md-typeset .admonition.info > .admonition-title::before,
+.md-typeset details.info > summary::before { content: "ℹ️ "; }
+
+/* ── 程式碼區塊 ── */
+.md-typeset code {
+  font-size: 0.85em;
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
 }
 
-/* 搜尋框提示文字 */
+.md-typeset pre > code {
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+/* ── 搜尋框 ── */
 .md-search__input::placeholder {
   color: var(--md-default-fg-color--light);
 }
 
-/* 手機版字體調整 */
+/* ── 手機專屬優化 ── */
 @media screen and (max-width: 76.1875em) {
+
+  /* 字體稍微放大，適合手機閱讀 */
   .md-typeset {
-    font-size: 0.9rem;
+    font-size: 1rem;
+    line-height: 1.95;
   }
+
+  /* 標題在手機上稍微縮小 */
+  .md-typeset h1 { font-size: 1.5rem; }
+  .md-typeset h2 { font-size: 1.2rem; }
+  .md-typeset h3 { font-size: 1.05rem; }
+
+  /* 表格字體在手機上保持可讀 */
+  .md-typeset table:not([class]) {
+    font-size: 0.82rem;
+  }
+
+  .md-typeset table:not([class]) th,
+  .md-typeset table:not([class]) td {
+    padding: 0.5em 0.7em;
+  }
+
+  /* 加大點擊區域 */
+  .md-nav__link {
+    padding: 0.5em 0.6em;
+  }
+
+  /* 提示框在手機上 padding 調整 */
+  .md-typeset .admonition {
+    padding: 0.8em 1em;
+  }
+
+  /* 內容區左右邊距 */
+  .md-content__inner {
+    padding: 0 0.8rem 1.2rem;
+  }
+}
+
+/* ── 超小螢幕（320px） ── */
+@media screen and (max-width: 480px) {
+  .md-typeset {
+    font-size: 0.95rem;
+  }
+
+  .md-typeset h1 { font-size: 1.3rem; }
+  .md-typeset h2 { font-size: 1.1rem; }
+
+  /* 程式碼區塊橫向捲動 */
+  .md-typeset pre {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* ── 首頁快速導覽卡片（index.md 專用） ── */
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.home-card {
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 8px;
+  padding: 1.2rem;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.home-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-color: var(--md-primary-fg-color);
+}
+
+.home-card a {
+  font-weight: 600;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.3em;
+}
+
+.home-card p {
+  font-size: 0.85rem;
+  color: var(--md-default-fg-color--light);
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 480px) {
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── 版本標籤 ── */
+.version-badge {
+  display: inline-block;
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.1em 0.5em;
+  border-radius: 3px;
+  vertical-align: middle;
+  margin-left: 0.4em;
+}
+
+/* ── 返回頂部按鈕放大（手機好點） ── */
+.md-top {
+  padding: 0.5em 0.8em;
+  border-radius: 20px;
+}
+
+/* ── 頁尾 ── */
+.md-footer-meta {
+  font-size: 0.78rem;
 }
