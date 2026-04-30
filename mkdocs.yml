@@ -7,8 +7,6 @@ site_dir: site
 theme:
   name: material
   language: zh-TW
-  logo: assets/logo.svg
-  favicon: assets/logo.svg
   palette:
     - scheme: default
       primary: teal
@@ -26,24 +24,21 @@ theme:
     text: Noto Sans TC
     code: Roboto Mono
   features:
-    # 導覽
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
     - navigation.expand
     - navigation.top
     - navigation.indexes
-    - navigation.instant          # 即時導覽（更快）
-    - navigation.instant.progress # 頁面載入進度條
-    # 搜尋
+    - navigation.instant
+    - navigation.instant.progress
     - search.suggest
     - search.highlight
     - search.share
-    # 內容
     - content.code.copy
     - content.tooltips
     - toc.follow
-    - toc.integrate               # 手機版：目錄整合進左側
+    - toc.integrate
 
 plugins:
   - search:
@@ -113,3 +108,6 @@ extra:
 
 extra_css:
   - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/mobile-nav.js

@@ -1,7 +1,11 @@
 /* ============================================================
    彰濱秀傳癌症中心 — 個管師教育訓練指導書
-   自訂樣式 | Mobile-first
+   自訂樣式 V1.2.0
    ============================================================ */
+
+:root {
+  --ccm-bottom-nav-h: 64px;
+}
 
 /* ── 字體與行距 ── */
 .md-typeset {
@@ -10,7 +14,6 @@
   font-size: 0.95rem;
 }
 
-/* ── 標題層級視覺強化 ── */
 .md-typeset h1 {
   font-weight: 700;
   border-bottom: 3px solid var(--md-primary-fg-color);
@@ -30,16 +33,15 @@
   color: var(--md-primary-fg-color);
 }
 
-/* ── 表格：手機橫向捲動 ── */
-.md-typeset .md-typeset__table,
-.md-typeset > table,
+/* ════════ 表格 — 桌機欄寬一致 ════════ */
+
 .md-typeset table:not([class]) {
-  display: block;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  max-width: 100%;
+  width: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
   font-size: 0.85rem;
   border-radius: 6px;
+  overflow: hidden;
   box-shadow: 0 1px 4px rgba(0,0,0,0.08);
 }
 
@@ -47,20 +49,65 @@
   background-color: var(--md-primary-fg-color);
   color: var(--md-primary-bg-color);
   font-weight: 600;
+  padding: 0.65em 1em;
   white-space: nowrap;
-  padding: 0.7em 1em;
+  text-align: left;
 }
 
 .md-typeset table:not([class]) td {
   padding: 0.6em 1em;
   vertical-align: top;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
 }
 
-.md-typeset table:not([class]) tr:nth-child(even) {
-  background-color: var(--md-default-bg-color--lightest, rgba(0,0,0,0.02));
+.md-typeset table:not([class]) tr:last-child td {
+  border-bottom: none;
 }
 
-/* ── 提示框 ── */
+.md-typeset table:not([class]) tbody tr:nth-child(even) td {
+  background-color: rgba(0, 150, 136, 0.04);
+}
+
+/* 桌機：第一欄統一寬度 */
+@media screen and (min-width: 76.25em) {
+  .md-typeset table:not([class]) th:first-child,
+  .md-typeset table:not([class]) td:first-child {
+    min-width: 110px;
+    max-width: 210px;
+    width: 26%;
+  }
+
+  .md-typeset table:not([class]) th:nth-child(3),
+  .md-typeset table:not([class]) td:nth-child(3) {
+    min-width: 90px;
+    width: 20%;
+  }
+
+  .md-typeset table:not([class]) th:nth-child(4),
+  .md-typeset table:not([class]) td:nth-child(4) {
+    min-width: 80px;
+    width: 18%;
+  }
+}
+
+/* 手機：表格橫向捲動 */
+@media screen and (max-width: 76.1875em) {
+  .md-typeset table:not([class]) {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    font-size: 0.82rem;
+  }
+
+  .md-typeset table:not([class]) th,
+  .md-typeset table:not([class]) td {
+    padding: 0.5em 0.7em;
+    white-space: nowrap;
+  }
+}
+
+/* ════════ 提示框 ════════ */
+
 .md-typeset .admonition,
 .md-typeset details {
   border-radius: 6px;
@@ -68,18 +115,16 @@
 }
 
 .md-typeset .admonition.note > .admonition-title::before,
-.md-typeset details.note > summary::before { content: "📌 "; }
-
+.md-typeset details.note > summary::before    { content: "📌 "; }
 .md-typeset .admonition.tip > .admonition-title::before,
-.md-typeset details.tip > summary::before  { content: "💡 "; }
-
+.md-typeset details.tip > summary::before     { content: "💡 "; }
 .md-typeset .admonition.warning > .admonition-title::before,
 .md-typeset details.warning > summary::before { content: "⚠️ "; }
-
 .md-typeset .admonition.info > .admonition-title::before,
-.md-typeset details.info > summary::before { content: "ℹ️ "; }
+.md-typeset details.info > summary::before    { content: "ℹ️ "; }
 
-/* ── 程式碼區塊 ── */
+/* ════════ 程式碼 ════════ */
+
 .md-typeset code {
   font-size: 0.85em;
   padding: 0.1em 0.35em;
@@ -91,71 +136,92 @@
   line-height: 1.6;
 }
 
-/* ── 搜尋框 ── */
-.md-search__input::placeholder {
-  color: var(--md-default-fg-color--light);
-}
+/* ════════ 手機整體 ════════ */
 
-/* ── 手機專屬優化 ── */
 @media screen and (max-width: 76.1875em) {
-
-  /* 字體稍微放大，適合手機閱讀 */
   .md-typeset {
     font-size: 1rem;
     line-height: 1.95;
   }
 
-  /* 標題在手機上稍微縮小 */
-  .md-typeset h1 { font-size: 1.5rem; }
-  .md-typeset h2 { font-size: 1.2rem; }
-  .md-typeset h3 { font-size: 1.05rem; }
+  .md-typeset h1 { font-size: 1.45rem; }
+  .md-typeset h2 { font-size: 1.18rem; }
+  .md-typeset h3 { font-size: 1.03rem; }
 
-  /* 表格字體在手機上保持可讀 */
-  .md-typeset table:not([class]) {
-    font-size: 0.82rem;
-  }
+  .md-content__inner { padding: 0 0.8rem 1.2rem; }
+  .md-nav__link { padding: 0.5em 0.6em; }
 
-  .md-typeset table:not([class]) th,
-  .md-typeset table:not([class]) td {
-    padding: 0.5em 0.7em;
-  }
-
-  /* 加大點擊區域 */
-  .md-nav__link {
-    padding: 0.5em 0.6em;
-  }
-
-  /* 提示框在手機上 padding 調整 */
-  .md-typeset .admonition {
-    padding: 0.8em 1em;
-  }
-
-  /* 內容區左右邊距 */
-  .md-content__inner {
-    padding: 0 0.8rem 1.2rem;
-  }
+  /* 為底部導覽列留空間 */
+  .md-content  { padding-bottom: calc(var(--ccm-bottom-nav-h) + 1rem); }
+  .md-footer   { margin-bottom: var(--ccm-bottom-nav-h); }
 }
 
-/* ── 超小螢幕（320px） ── */
 @media screen and (max-width: 480px) {
-  .md-typeset {
-    font-size: 0.95rem;
-  }
-
+  .md-typeset   { font-size: 0.95rem; }
   .md-typeset h1 { font-size: 1.3rem; }
   .md-typeset h2 { font-size: 1.1rem; }
-
-  /* 程式碼區塊橫向捲動 */
-  .md-typeset pre {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
+  .md-typeset pre { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 }
 
-/* ── 首頁快速導覽卡片（index.md 專用） ── */
+/* ════════ 手機底部導覽列 ════════ */
+
+#ccm-bottom-nav {
+  display: none;
+}
+
+@media screen and (max-width: 960px) {
+  #ccm-bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: var(--ccm-bottom-nav-h);
+    background: var(--md-default-bg-color);
+    border-top: 1px solid var(--md-default-fg-color--lightest);
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.12);
+    z-index: 999;
+    justify-content: space-around;
+    align-items: stretch;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .ccm-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    text-decoration: none;
+    color: var(--md-default-fg-color--light);
+    gap: 2px;
+    padding: 0.3em 0.2em;
+    transition: color 0.15s, background 0.15s;
+    border-top: 2px solid transparent;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .ccm-nav-item:hover,
+  .ccm-nav-item:active {
+    color: var(--md-primary-fg-color);
+    background: rgba(0,150,136,0.06);
+  }
+
+  .ccm-nav-active {
+    color: var(--md-primary-fg-color) !important;
+    border-top-color: var(--md-primary-fg-color);
+    font-weight: 600;
+  }
+
+  .ccm-nav-icon  { font-size: 1.3rem; line-height: 1; }
+  .ccm-nav-label { font-size: 0.6rem; letter-spacing: 0.01em; text-align: center; }
+}
+
+/* ════════ 首頁卡片 ════════ */
+
 .home-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 1rem;
   margin: 1.5rem 0;
 }
@@ -164,7 +230,7 @@
   background: var(--md-default-bg-color);
   border: 1px solid var(--md-default-fg-color--lightest);
   border-radius: 8px;
-  padding: 1.2rem;
+  padding: 1.1rem 1.2rem;
   transition: box-shadow 0.2s, border-color 0.2s;
 }
 
@@ -181,38 +247,18 @@
 }
 
 .home-card p {
-  font-size: 0.85rem;
+  font-size: 0.83rem;
   color: var(--md-default-fg-color--light);
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 @media screen and (max-width: 480px) {
-  .home-grid {
-    grid-template-columns: 1fr;
-  }
+  .home-grid { grid-template-columns: 1fr; }
 }
 
-/* ── 版本標籤 ── */
-.version-badge {
-  display: inline-block;
-  background: var(--md-primary-fg-color);
-  color: var(--md-primary-bg-color);
-  font-size: 0.72rem;
-  font-weight: 600;
-  padding: 0.1em 0.5em;
-  border-radius: 3px;
-  vertical-align: middle;
-  margin-left: 0.4em;
-}
+/* ════════ 雜項 ════════ */
 
-/* ── 返回頂部按鈕放大（手機好點） ── */
-.md-top {
-  padding: 0.5em 0.8em;
-  border-radius: 20px;
-}
-
-/* ── 頁尾 ── */
-.md-footer-meta {
-  font-size: 0.78rem;
-}
+.md-search__input::placeholder { color: var(--md-default-fg-color--light); }
+.md-top { padding: 0.5em 0.8em; border-radius: 20px; }
+.md-footer-meta { font-size: 0.78rem; }
