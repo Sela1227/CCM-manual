@@ -1,0 +1,99 @@
+site_name: 彰濱秀傳｜癌症個管師指導書
+site_description: 彰濱秀傳癌症中心個案管理師工作手冊與培訓資源
+site_author: 彰濱秀傳癌症中心
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  language: zh-TW
+  palette:
+    - scheme: default
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: 切換深色模式
+    - scheme: slate
+      primary: teal
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: 切換淺色模式
+  font:
+    text: Noto Sans TC
+    code: Roboto Mono
+  features:
+    - navigation.tabs          # 頂部分頁導覽
+    - navigation.tabs.sticky   # 捲動時保持頂部標籤
+    - navigation.sections      # 左側分組標題
+    - navigation.expand        # 預設展開左側目錄
+    - navigation.top           # 回到頂部按鈕
+    - navigation.indexes       # 章節首頁
+    - search.suggest           # 搜尋建議
+    - search.highlight         # 搜尋結果高亮
+    - search.share             # 搜尋結果分享
+    - content.code.copy        # 程式碼複製按鈕
+    - toc.follow               # 右側大綱跟隨捲動
+
+plugins:
+  - search:
+      lang:
+        - zh
+        - en
+      separator: '[\s\u200b\-]'
+
+markdown_extensions:
+  - admonition              # 提示框（💡 note、warning 等）
+  - tables                  # 表格
+  - toc:
+      permalink: true       # 標題錨點連結
+      title: 本頁目錄
+  - pymdownx.details        # 可折疊區塊
+  - pymdownx.superfences    # 巢狀程式碼區塊
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - md_in_html
+
+nav:
+  - 首頁: index.md
+
+  - A｜新人通則:
+    - 工作指導手冊: A_工作指導手冊.md
+    - 培訓計畫書: A_培訓計畫書.md
+
+  - B｜軟體操作:
+    - B1. HIS 系統操作手冊: B1_HIS系統操作手冊.md
+    - B2. 其他工具使用說明: B2_其他工具使用說明.md
+
+  - C｜各癌別照護指引:
+    - C1. 肺癌照護指引: C1_肺癌照護指引.md
+    - C2. 乳癌照護指引: C2_乳癌照護指引.md
+    - C3–C6. 其他癌別照護指引: C3-C6_其他癌別照護指引.md
+
+  - D｜表單與範本:
+    - 表單與範本: D_表單與範本.md
+
+  - E｜專題與進階:
+    - 專題與進階: E_專題與進階.md
+
+  - F｜臨床知識庫:
+    - 臨床知識庫: F_臨床知識庫.md
+
+  - G｜品質指標:
+    - 品質指標速查: G_品質指標速查.md
+
+extra:
+  social:
+    - icon: fontawesome/solid/hospital
+      link: https://www.chshowchwan.com.tw
+      name: 彰濱秀傳紀念醫院
+
+extra_css:
+  - stylesheets/extra.css
