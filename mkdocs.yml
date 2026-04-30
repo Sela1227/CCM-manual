@@ -26,19 +26,19 @@ theme:
   features:
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.sections
-    - navigation.expand
+    - navigation.sections        # 有分組標題
+    # navigation.expand 刻意拿掉 → 側欄預設收合，可手動展開
     - navigation.top
     - navigation.indexes
     - navigation.instant
     - navigation.instant.progress
+    - navigation.prune           # 只渲染可見的導覽節點，效能更好
     - search.suggest
     - search.highlight
     - search.share
     - content.code.copy
     - content.tooltips
     - toc.follow
-    - toc.integrate
 
 plugins:
   - search:

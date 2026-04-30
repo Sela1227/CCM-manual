@@ -1,8 +1,9 @@
 /* ============================================================
-   手機底部導覽列 — 動態偵測 base URL
+   手機底部導覽列 V1.4.0
+   修正：用 <base> tag 取得網站根目錄，避免子頁路徑疊加
    ============================================================ */
 (function () {
-  var NAV_ITEMS = [
+  var NAV = [
     { icon: "🏠", label: "首頁",    path: "" },
     { icon: "📋", label: "新人通則", path: "A_work-guide/" },
     { icon: "🏥", label: "癌別指引", path: "C1_lung-cancer/" },
@@ -10,65 +11,61 @@
     { icon: "📊", label: "品質指標", path: "G_quality-index/" },
   ];
 
-  function getBase() {
-    /* MkDocs Material 會在 <head> 產生 <base href="...">
-       baseURI 就是這個值，例如 https://sela1227.github.io/CCM-manual/ */
-    return document.baseURI.replace(/[^/]*$/, "");
+  /* MkDocs Material 在每頁 <head> 注入 <base href="../../"> 之類的相對路徑
+     瀏覽器解析後 .href 就是網站根目錄的絕對 URL
+     例：https://sela1227.github.io/CCM-manual/                         */
+  function getSiteRoot() {
+    var el = document.querySelector("base[href]");
+    if (el) return el.href;                       // 正確：網站根目錄
+    return window.location.origin + "/";          // fallback
   }
 
-  function buildNav() {
-    var old = document.getElementById("ccm-bottom-nav");
+  function curPath() { return window.location.pathname; }
+
+  function isActive(siteRoot, path) {
+    var target = new URL(siteRoot + path).pathname;
+    var cur    = curPath();
+    if (path === "") {
+      return cur === target || cur === target + "index.html";
+    }
+    return cur.indexOf(path.replace(/\/$/, "")) !== -1;
+  }
+
+  function build() {
+    var old = document.getElementById("ccm-bnav");
     if (old) old.remove();
 
-    var nav = document.createElement("nav");
-    nav.id = "ccm-bottom-nav";
-    nav.setAttribute("aria-label", "底部快速導覽");
+    var nav  = document.createElement("nav");
+    nav.id   = "ccm-bnav";
+    nav.setAttribute("aria-label", "快速導覽");
 
-    var base = getBase();
-    var cur  = window.location.pathname;
+    var root = getSiteRoot();
 
-    NAV_ITEMS.forEach(function (item) {
-      var href = base + item.path;
-      var targetPath = new URL(href, window.location.origin).pathname;
-
-      var active = item.path === ""
-        ? (cur === targetPath || cur === targetPath + "index.html")
-        : cur.indexOf(item.path.replace(/\/$/, "")) !== -1;
-
-      var a = document.createElement("a");
-      a.href = href;
-      a.className = "ccm-nav-item" + (active ? " ccm-nav-active" : "");
+    NAV.forEach(function (item) {
+      var a       = document.createElement("a");
+      a.href      = root + item.path;
+      a.className = "ccm-ni" + (isActive(root, item.path) ? " ccm-na" : "");
       a.innerHTML =
-        '<span class="ccm-nav-icon">' + item.icon + "</span>" +
-        '<span class="ccm-nav-label">' + item.label + "</span>";
+        '<span class="ccm-ii">' + item.icon + "</span>" +
+        '<span class="ccm-il">' + item.label + "</span>";
       nav.appendChild(a);
     });
 
     document.body.appendChild(nav);
   }
 
-  /* 策略 1：DOM 準備好就執行 */
+  /* 四重初始化保險 */
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", buildNav);
+    document.addEventListener("DOMContentLoaded", build);
   } else {
-    buildNav();
+    build();
   }
+  if (typeof document$ !== "undefined") { document$.subscribe(build); }
+  window.addEventListener("load", build);
+  document.addEventListener("DOMContentSwitch", build);
 
-  /* 策略 2：MkDocs Material instant navigation observable */
-  if (typeof document$ !== "undefined") {
-    document$.subscribe(buildNav);
-  }
-
-  /* 策略 3：保險用 — 頁面完全載入後再執行一次 */
-  window.addEventListener("load", buildNav);
-
-  /* 策略 4：MkDocs 自訂事件（部分版本） */
-  document.addEventListener("DOMContentSwitch", buildNav);
-
-  /* resize */
-  var resizeTimer;
+  var t;
   window.addEventListener("resize", function () {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(buildNav, 150);
+    clearTimeout(t); t = setTimeout(build, 150);
   });
 })();
