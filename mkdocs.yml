@@ -24,17 +24,17 @@ theme:
     text: Noto Sans TC
     code: Roboto Mono
   features:
-    - navigation.tabs          # 頂部分頁導覽
-    - navigation.tabs.sticky   # 捲動時保持頂部標籤
-    - navigation.sections      # 左側分組標題
-    - navigation.expand        # 預設展開左側目錄
-    - navigation.top           # 回到頂部按鈕
-    - navigation.indexes       # 章節首頁
-    - search.suggest           # 搜尋建議
-    - search.highlight         # 搜尋結果高亮
-    - search.share             # 搜尋結果分享
-    - content.code.copy        # 程式碼複製按鈕
-    - toc.follow               # 右側大綱跟隨捲動
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - toc.follow
 
 plugins:
   - search:
@@ -44,13 +44,13 @@ plugins:
       separator: '[\s\u200b\-]'
 
 markdown_extensions:
-  - admonition              # 提示框（💡 note、warning 等）
-  - tables                  # 表格
+  - admonition
+  - tables
   - toc:
-      permalink: true       # 標題錨點連結
+      permalink: true
       title: 本頁目錄
-  - pymdownx.details        # 可折疊區塊
-  - pymdownx.superfences    # 巢狀程式碼區塊
+  - pymdownx.details
+  - pymdownx.superfences
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.tabbed:
@@ -65,29 +65,29 @@ nav:
   - 首頁: index.md
 
   - A｜新人通則:
-    - 工作指導手冊: A_工作指導手冊.md
-    - 培訓計畫書: A_培訓計畫書.md
+    - 工作指導手冊: A_work-guide.md
+    - 培訓計畫書: A_training-plan.md
 
   - B｜軟體操作:
-    - B1. HIS 系統操作手冊: B1_HIS系統操作手冊.md
-    - B2. 其他工具使用說明: B2_其他工具使用說明.md
+    - B1. HIS 系統操作手冊: B1_HIS-manual.md
+    - B2. 其他工具使用說明: B2_other-tools.md
 
   - C｜各癌別照護指引:
-    - C1. 肺癌照護指引: C1_肺癌照護指引.md
-    - C2. 乳癌照護指引: C2_乳癌照護指引.md
-    - C3–C6. 其他癌別照護指引: C3-C6_其他癌別照護指引.md
+    - C1. 肺癌照護指引: C1_lung-cancer.md
+    - C2. 乳癌照護指引: C2_breast-cancer.md
+    - C3–C6. 其他癌別照護指引: C3-C6_other-cancers.md
 
   - D｜表單與範本:
-    - 表單與範本: D_表單與範本.md
+    - 表單與範本: D_forms.md
 
   - E｜專題與進階:
-    - 專題與進階: E_專題與進階.md
+    - 專題與進階: E_advanced.md
 
   - F｜臨床知識庫:
-    - 臨床知識庫: F_臨床知識庫.md
+    - 臨床知識庫: F_clinical-kb.md
 
   - G｜品質指標:
-    - 品質指標速查: G_品質指標速查.md
+    - 品質指標速查: G_quality-index.md
 
 extra:
   social:
