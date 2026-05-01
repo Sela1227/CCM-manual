@@ -1,7 +1,7 @@
 # CLAUDE.md｜彰濱秀傳癌症個管師手冊網站
 
 **專案**：MkDocs + Material Theme 部署在 GitHub Pages（私有 Repo + GitHub Pro）
-**當前版本**：V1.9.5
+**當前版本**：V1.9.4
 **網站用途**：彰濱秀傳癌症中心個管師工作手冊，供新進個管師隨時查詢，含即時搜尋功能
 
 ---
