@@ -1,136 +1,170 @@
 # CLAUDE.md｜彰濱秀傳癌症個管師手冊網站
 
 **專案**：MkDocs + Material Theme 部署在 GitHub Pages（私有 Repo + GitHub Pro）
-**當前版本**：V1.0.0
+**當前版本**：V1.7.0
 **網站用途**：彰濱秀傳癌症中心個管師工作手冊，供新進個管師隨時查詢，含即時搜尋功能
 
 ---
 
-## 一、專案狀態
+## ⚠️ 永久規則（每版必遵守）
 
-| 項目 | 狀態 |
-|------|------|
-| MkDocs 設定 | ✅ 完成（mkdocs.yml） |
-| GitHub Actions 自動部署 | ✅ 完成（.github/workflows/deploy.yml） |
-| 首頁 index.md | ✅ 完成（含快速導覽表） |
-| 自訂樣式 extra.css | ✅ 完成（中文排版最佳化） |
-| 內容 MD 檔 | ⚠️ 部分待補（見下方「待補清單」） |
-| 癌症中心專屬系統（5個）操作截圖 | ❌ 尚未補充 |
+### 規則 1：版本號四處必須同步
+
+每次升版，下列四個地方**全部同步更新**，缺一不可：
+
+| 位置 | 改什麼 |
+|------|--------|
+| `docs/javascripts/mobile-nav.js` | `var CCM_VERSION = "V?.?.?"` |
+| `docs/stylesheets/extra.css` | 頂部版本說明 comment |
+| `README.md` | 頂部「當前版本：V?.?.?」 |
+| ZIP 打包名稱 | `CCM Manual V?.?.?.zip` |
+
+版本不一致會讓 header 顯示舊版號，使用者無法確認自己看的是哪版。
+
+### 規則 2：軟體說明 MD 絕對不能明文寫帳號密碼
+
+任何軟體說明文件（H1、H2、H3... 未來任何 H 章節），一律不得出現：
+- 具體帳號代碼（員工編號、系統代碼）
+- 具體密碼
+- 帳號密碼對照表
+
+**正確寫法**：「使用你自己的帳號和密碼登入。如忘記帳號密碼，請洽系統管理員。」
+
+原因：這份手冊部署在公開 URL，任何人都能看到。
 
 ---
 
-## 二、Repo 結構對映
-
-> 改什麼功能、動哪些檔案
+## 一、Repo 結構對映
 
 | 我要改的事 | 動這些檔案 |
 |-----------|-----------|
-| 導覽結構（新增/移動章節） | `mkdocs.yml` 的 `nav:` 區段 |
+| 導覽結構 | `mkdocs.yml` 的 `nav:` 區段 |
 | 自動部署設定 | `.github/workflows/deploy.yml` |
-| 網站外觀、字型、顏色 | `mkdocs.yml` 的 `theme:` + `docs/stylesheets/extra.css` |
-| 首頁快速導覽 | `docs/index.md` |
-| 品質指標內容 | `docs/G_品質指標速查.md` |
-| 培訓計畫書 | `docs/A_培訓計畫書.md` |
-| HIS 系統 + 癌症中心五大系統 | `docs/B1_HIS系統操作手冊.md` |
-| 各癌別照護指引 | `docs/C1_肺癌照護指引.md`、`docs/C2_乳癌照護指引.md`、`docs/C3-C6_其他癌別照護指引.md` |
+| 網站外觀、字型、顏色 | `mkdocs.yml` + `docs/stylesheets/extra.css` |
+| 手機底部導覽列、版本徽章 | `docs/javascripts/mobile-nav.js` |
+| 首頁卡片 | `docs/index.md` |
+| 品質指標 | `docs/G_quality-index.md` |
+| 培訓計畫書 | `docs/A_training-plan.md` |
+| HIS + 五大系統說明 | `docs/B1_HIS-manual.md` |
+| 各癌別照護指引 | `docs/C1_lung-cancer.md`、`docs/C2_breast-cancer.md`、`docs/C3-C6_other-cancers.md` |
+| 個管追蹤系統說明 | `docs/H1_ccm-tracker-guide.md` |
+| MDT 會議系統說明 | `docs/H2_mdt-guide.md` |
+| 抗癌藥物速查說明 | `docs/H3_cancer-drugs.md` |
+| 抗癌藥物速查系統本體 | `docs/drug-lookup/index.html` |
 
 ---
 
-## 三、Nav 結構對映表
+## 二、Nav 結構對映表
 
-> mkdocs.yml 裡的 nav 條目 ↔ docs/ 裡的 MD 檔
+| 頂部 Tab | 左側項目 | MD 檔 |
+|---------|---------|-------|
+| A｜新人通則 | 工作指導手冊 | `A_work-guide.md` |
+| A｜新人通則 | 培訓計畫書 | `A_training-plan.md` |
+| B｜軟體操作 | B1. HIS 系統操作手冊 | `B1_HIS-manual.md` |
+| B｜軟體操作 | B2. 其他工具使用說明 | `B2_other-tools.md` |
+| C｜各癌別照護指引 | C1. 肺癌 | `C1_lung-cancer.md` |
+| C｜各癌別照護指引 | C2. 乳癌 | `C2_breast-cancer.md` |
+| C｜各癌別照護指引 | C3–C6. 其他癌別 | `C3-C6_other-cancers.md` |
+| D｜表單與範本 | 表單與範本 | `D_forms.md` |
+| E｜專題與進階 | 專題與進階 | `E_advanced.md` |
+| F｜臨床知識庫 | 臨床知識庫 | `F_clinical-kb.md` |
+| G｜品質指標 | 品質指標速查 | `G_quality-index.md` |
+| H｜專用軟體 | 個管追蹤系統 | `H1_ccm-tracker-guide.md` |
+| H｜專用軟體 | MDT 會議管理系統 | `H2_mdt-guide.md` |
+| H｜專用軟體 | 抗癌藥物速查系統 | `H3_cancer-drugs.md` |
 
-| 頂部 Tab | 左側項目 | MD 檔（在 docs/ 下） |
-|---------|---------|---------------------|
-| A｜新人通則 | 工作指導手冊 | `A_工作指導手冊.md` |
-| A｜新人通則 | 培訓計畫書 | `A_培訓計畫書.md` |
-| B｜軟體操作 | B1. HIS 系統操作手冊 | `B1_HIS系統操作手冊.md` |
-| B｜軟體操作 | B2. 其他工具使用說明 | `B2_其他工具使用說明.md` |
-| C｜各癌別照護指引 | C1. 肺癌 | `C1_肺癌照護指引.md` |
-| C｜各癌別照護指引 | C2. 乳癌 | `C2_乳癌照護指引.md` |
-| C｜各癌別照護指引 | C3–C6. 其他癌別 | `C3-C6_其他癌別照護指引.md` |
-| D｜表單與範本 | 表單與範本 | `D_表單與範本.md` |
-| E｜專題與進階 | 專題與進階 | `E_專題與進階.md` |
-| F｜臨床知識庫 | 臨床知識庫 | `F_臨床知識庫.md` |
-| G｜品質指標 | 品質指標速查 | `G_品質指標速查.md` |
-
-> ⚠️ `A_工作指導手冊.md` 和 `A_培訓計畫書.md` 是從原始 MD 改名後放入 docs/。
-> 原始檔名：`癌症個管師工作指導手冊.md` → `A_工作指導手冊.md`
-> 原始檔名：`癌症個管師培訓計畫書.md` → `A_培訓計畫書.md`
+新增軟體說明時命名規則：`H4_`、`H5_` 依序遞增，全英文小寫加連字號。
 
 ---
 
-## 四、踩過的坑
+## 三、踩過的坑
 
 **#1（V1.0.0）私有 Repo + GitHub Pages 需要 GitHub Pro**
 - 症狀：Settings → Pages 找不到 GitHub Actions 選項
 - 原因：私有 Repo 的 GitHub Pages 功能需要付費方案
-- 做法：升級 GitHub Pro（$4/月），或改用公開 Repo
+- 做法：升級 GitHub Pro（$4/月）
 
-**#2（V1.0.0）MD 檔名含中文不能直接當 nav 路徑**
-- 症狀：mkdocs.yml nav 裡直接寫中文檔名，build 時找不到檔案
-- 原因：MkDocs nav 路徑大小寫敏感，中文檔名在不同 OS 行為不一致
-- 做法：所有放入 docs/ 的 MD 檔一律改成英文或拼音開頭（A_、B1_、C1_ 等），nav 裡對應英文路徑
+**#2（V1.0.0）MD 檔名含中文在 Linux 伺服器編碼壞掉**
+- 症狀：build 時 nav 找不到中文檔名的 MD 檔，顯示亂碼路徑
+- 做法：所有 docs/ 下的 MD 檔一律英文檔名（A_、B1_、C1_ 等）
 
-**#3（V1.0.0）中文搜尋需要額外設定 separator**
-- 症狀：搜尋中文關鍵字找不到結果
-- 原因：MkDocs search plugin 預設斷詞不支援中文
-- 做法：在 mkdocs.yml 的 search plugin 加 `separator: '[\s\u200b\-]'`，lang 加 `zh`
+**#3（V1.0.0）中文搜尋 separator 設定錯誤導致索引完全壞掉**
+- 症狀：搜尋任何中文關鍵字都找不到結果
+- 原因：`[\u3000-\u9FFF]` 把所有中文字都當分隔符
+- 做法：separator 只切標點符號，加 jieba 套件做中文斷詞
 
----
+**#4（V1.3.0）手機底部導覽列點了路徑疊加跳錯頁**
+- 原因：`document.baseURI` 在子頁面返回子頁路徑，不是網站根目錄
+- 做法：改用 `document.querySelector('base').href` 取得 MkDocs 注入的 base tag
 
-## 五、主要內容的修訂歷程（本版）
+**#5（V1.4.0）CSS content 變數版本徽章跨頁不穩定**
+- 原因：CSS pseudo-element `content: var()` 跨頁行為不一致
+- 做法：改用 JS 直接 `createElement('span')` 注入 header
 
-| 文件 | 本版做了什麼 |
-|------|------------|
-| `G_品質指標速查.md` | 補入院內個案管理三大指標（失聯率、留治率、完治率）；無明確定義的子宮頸癌等三個完治率條目暫不列入 |
-| `A_培訓計畫書.md` | 依新人同仁反饋全面改版（V2.0.0）：加入「給帶人者的話」章節、學習順序改為系統性四階段、系統學習延後至有脈絡時才教 |
-| `B1_HIS系統操作手冊.md` | 新增「癌症中心專屬系統」章節，記錄五個自建系統（個管病患追蹤、癌症資源中心、肺癌臨床路徑、個管多專科會議、病歷互審） |
+**#6（V1.4.0）navigation.expand 強制展開所有側欄**
+- 做法：移除 `navigation.expand`，改加 `navigation.prune`
 
----
+**#7（V1.7.0）軟體說明 MD 出現明文帳號密碼**
+- 症狀：H1 登入章節含帳號代碼和密碼
+- 做法：永久規則 2（見頂部）— 任何軟體說明 MD 一律只寫「使用自己帳密，忘記請洽管理員」
 
-## 六、待補清單（內容層面）
-
-| 優先 | 項目 | 負責方向 |
-|------|------|---------|
-| 🔴 高 | B1 五大癌症中心系統的操作截圖與步驟 | 系統上線後補充 |
-| 🟡 中 | C3–C6 其他癌別照護指引細化（目前合併為一檔） | 視個管師需求決定是否拆檔 |
-| 🟡 中 | 子宮頸癌、子宮體癌、卵巢癌的完治率定義 | 待各團隊討論後補入 G_ |
-| 🟢 低 | D 表單與範本的實際表單內容 | 陸續補充 |
-| 🟢 低 | F 臨床知識庫補充各癌別常用知識 | 陸續補充 |
+**#8（V1.7.0）版本號分散在多個檔案沒有同步**
+- 症狀：JS 顯示舊版號，ZIP 是新版號
+- 做法：永久規則 1（見頂部）— 升版時四個地方必須同步
 
 ---
 
-## 七、部署快速指令
+## 四、版本歷程
+
+| 版本 | 主要異動 |
+|------|---------|
+| V1.0.0 | MkDocs 骨架，GitHub Actions 部署，MD 改英文檔名 |
+| V1.1.0 | 程式名稱定案，H｜專用軟體章節（H1、H2），手機底部導覽列 |
+| V1.2.0 | 手機表格換行，桌機表格欄寬，底部導覽列樣式 |
+| V1.3.0 | 底部導覽列路徑修正（坑#4），版本徽章改 JS（坑#5），側欄改可收合（坑#6） |
+| V1.4.0 | 表格欄寬改 auto，toc.integrate 消除右側欄 |
+| V1.5.0 | 中文搜尋根本修正（坑#3），所有錨點連結驗證通過 |
+| V1.6.0 | G_quality-index 依 115 年版更新至 60 項指標 |
+| V1.7.0 | H3 抗癌藥物速查（drug-lookup/index.html，145 種），刪明文帳密（坑#7），版本號同步規則（坑#8），README.md |
+
+---
+
+## 五、關鍵路徑
+
+```
+docs/drug-lookup/index.html    # 抗癌藥物速查本體，MkDocs 原封不動複製
+                               # 網址：/CCM-manual/drug-lookup/
+                               # 更新：直接替換此檔 + 改 H3_cancer-drugs.md 版本說明
+
+docs/javascripts/mobile-nav.js # CCM_VERSION 在此改（規則 1）
+docs/stylesheets/extra.css     # 版本說明 comment 在此改（規則 1）
+README.md                      # 當前版本在此改（規則 1）
+```
+
+---
+
+## 六、部署
 
 ```bash
-# 本地預覽（需先安裝 pip install -r requirements.txt）
-mkdocs serve
-
-# 手動 build
-mkdocs build --strict
-
-# 一般更新流程：改 MD 檔後
 git add .
-git commit -m "更新內容：xxx"
+git commit -m "V1.X.0：xxx"
 git push origin main
 # → GitHub Actions 自動 build + deploy，約 1–2 分鐘後上線
 ```
 
 ---
 
-## 八、下版候選工作
+## 七、下版候選工作
 
 按優先序：
 
-1. **把所有 MD 內容檔放入 docs/ 並改名** — 這是網站能正常跑起來的前提，其他都是之後的事
-2. 到 GitHub Settings → Pages → Source 改成 GitHub Actions（首次部署必做）
-3. 補 B1 五大癌症中心系統的截圖與步驟說明（系統上線後）
-4. 評估 C3–C6 是否需要拆成獨立 MD 檔（內容量變多後再決定）
-5. 補入三個癌別的完治率定義（待團隊討論）
+1. **補 B1 五大系統操作截圖** — 系統陸續上線後補入，新人最需要
+2. 抗癌藥物速查有新版時替換 `docs/drug-lookup/index.html`
+3. 子宮頸癌、子宮體癌、卵巢癌完治率定義補入 G_（待各團隊討論）
+4. 評估 C3–C6 是否需要拆成獨立 MD 檔
 
 ---
 
-## 九、一句話總結
+## 八、一句話總結
 
-V1.0.0 是部署骨架版：MkDocs 設定、GitHub Actions workflow、首頁、樣式全部就位，內容 MD 檔的改名和放入 docs/ 是下一步第一件事，做完就能推上去跑。
+V1.7.0 完成抗癌藥物速查整合（145 種藥物），建立版本號同步與帳密安全兩條永久規則，補 README。下版重點是補系統截圖。
