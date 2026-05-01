@@ -2,20 +2,17 @@
    彰濱秀傳癌症中心 — 個管師教育訓練指導書  V1.4.0
    ============================================================ */
 
-:root {
-  --ccm-bnav-h: 62px;
-  --ccm-ver: "V1.4.0";
-}
+:root { --ccm-bnav-h: 62px; }
 
-/* ════════════════════════════════
-   字體、行距、標題
-   ════════════════════════════════ */
+/* ════════ 字體、行距、標題 ════════ */
 
 .md-typeset {
   line-height: 1.88;
   letter-spacing: 0.015em;
   font-size: 0.94rem;
 }
+
+.md-typeset p { margin: 0.6em 0; }
 
 .md-typeset h1 {
   font-weight: 700;
@@ -36,42 +33,32 @@
   color: var(--md-primary-fg-color);
 }
 
-/* 段落間距 */
-.md-typeset p { margin: 0.6em 0; }
+/* ════════ 版本徽章（JS 注入的 span） ════════ */
 
-/* ════════════════════════════════
-   版本號：header 右側固定
-   ════════════════════════════════ */
-
-.md-header__inner::after {
-  content: var(--ccm-ver);
+#ccm-ver {
   font-size: 0.66rem;
   font-weight: 700;
   letter-spacing: 0.05em;
-  color: rgba(255,255,255,0.9);
+  color: rgba(255,255,255,0.92);
   background: rgba(255,255,255,0.18);
-  padding: 0.18em 0.6em;
+  padding: 0.18em 0.65em;
   border-radius: 10px;
   margin-left: auto;
-  margin-right: 0.4rem;
-  align-self: center;
+  margin-right: 0.5rem;
   white-space: nowrap;
-  pointer-events: none;
   flex-shrink: 0;
+  align-self: center;
+  pointer-events: none;
 }
 
-/* ════════════════════════════════
-   表格 — 全面修正
-   ════════════════════════════════ */
+/* ════════ 表格 ════════ */
 
-/* 外層捲動包裝（MkDocs 自動加的） */
-.md-typeset__scrollwrap { overflow-x: auto; }
+.md-typeset__scrollwrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 
 .md-typeset table:not([class]) {
-  /* 完全靠內容決定欄寬，不強制固定比例 */
   table-layout: auto;
-  width: max-content;          /* 讓表格按內容撐開，由外層捲動 */
-  min-width: 100%;             /* 但至少填滿容器 */
+  width: max-content;
+  min-width: 100%;
   border-collapse: collapse;
   font-size: 0.84rem;
   border-radius: 6px;
@@ -84,59 +71,44 @@
   color: var(--md-primary-bg-color);
   font-weight: 600;
   padding: 0.6em 1em;
-  white-space: nowrap;
   text-align: left;
   vertical-align: middle;
+  white-space: nowrap;
 }
 
 .md-typeset table:not([class]) td {
   padding: 0.55em 1em;
   vertical-align: top;
   border-bottom: 1px solid var(--md-default-fg-color--lightest);
-  /* 讓長字串換行，不撐爆欄寬 */
   word-break: break-word;
   overflow-wrap: anywhere;
 }
 
-.md-typeset table:not([class]) tr:last-child td {
-  border-bottom: none;
-}
+.md-typeset table:not([class]) tr:last-child td { border-bottom: none; }
 
 .md-typeset table:not([class]) tbody tr:nth-child(even) td {
   background-color: rgba(0,150,136,0.035);
 }
 
-/* 桌機：每個 td 限制最大寬度，避免單欄佔滿全行 */
 @media screen and (min-width: 76.25em) {
-  .md-typeset table:not([class]) td {
-    max-width: 320px;
-  }
-  .md-typeset table:not([class]) td:first-child {
-    min-width: 80px;
-  }
+  .md-typeset table:not([class]) td { max-width: 320px; }
+  .md-typeset table:not([class]) td:first-child { min-width: 80px; }
 }
 
-/* 手機：表格橫向捲動，文字正常換行 */
 @media screen and (max-width: 76.1875em) {
   .md-typeset table:not([class]) {
     font-size: 0.8rem;
     width: max-content;
     min-width: 100%;
   }
-
-  .md-typeset table:not([class]) th,
-  .md-typeset table:not([class]) td {
-    padding: 0.45em 0.65em;
-  }
-
   .md-typeset table:not([class]) th {
+    padding: 0.45em 0.65em;
     font-size: 0.78rem;
-    /* 手機上 th 也允許換行，避免過寬 */
     white-space: normal;
     min-width: 60px;
   }
-
   .md-typeset table:not([class]) td {
+    padding: 0.42em 0.65em;
     min-width: 80px;
     max-width: 200px;
     white-space: normal;
@@ -144,9 +116,7 @@
   }
 }
 
-/* ════════════════════════════════
-   提示框
-   ════════════════════════════════ */
+/* ════════ 提示框 ════════ */
 
 .md-typeset .admonition,
 .md-typeset details {
@@ -164,9 +134,7 @@
 .md-typeset .admonition.info > .admonition-title::before,
 .md-typeset details.info > summary::before    { content: "ℹ️ "; }
 
-/* ════════════════════════════════
-   程式碼
-   ════════════════════════════════ */
+/* ════════ 程式碼 ════════ */
 
 .md-typeset code {
   font-size: 0.84em;
@@ -184,16 +152,25 @@
   line-height: 1.6;
 }
 
-/* ════════════════════════════════
-   手機整體
-   ════════════════════════════════ */
+/* ════════ 左側欄 TOC 整合後樣式 ════════ */
+
+/* TOC 在左欄時縮小字體，避免佔太多空間 */
+.md-nav--primary .md-nav--secondary .md-nav__link {
+  font-size: 0.78rem;
+  color: var(--md-default-fg-color--light);
+}
+
+.md-nav--primary .md-nav--secondary .md-nav__link:hover {
+  color: var(--md-primary-fg-color);
+}
+
+/* ════════ 手機整體 ════════ */
 
 @media screen and (max-width: 76.1875em) {
   .md-typeset {
     font-size: 0.98rem;
     line-height: 1.92;
   }
-
   .md-typeset h1 { font-size: 1.38rem; }
   .md-typeset h2 { font-size: 1.14rem; }
   .md-typeset h3 { font-size: 1.01rem; }
@@ -216,9 +193,7 @@
   .md-typeset h2 { font-size: 1.08rem; }
 }
 
-/* ════════════════════════════════
-   手機底部導覽列
-   ════════════════════════════════ */
+/* ════════ 手機底部導覽列 ════════ */
 
 #ccm-bnav { display: none; }
 
@@ -226,9 +201,7 @@
   #ccm-bnav {
     display: flex !important;
     position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    bottom: 0; left: 0; right: 0;
     height: var(--ccm-bnav-h);
     z-index: 9999;
     background: var(--md-default-bg-color);
@@ -244,8 +217,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex: 1;
-    min-width: 0;
+    flex: 1; min-width: 0;
     text-decoration: none !important;
     color: var(--md-default-fg-color--light);
     border-top: 2px solid transparent;
@@ -268,12 +240,10 @@
   }
 
   .ccm-ii { font-size: 1.22rem; line-height: 1; display: block; }
-  .ccm-il { font-size: 0.57rem; display: block; text-align: center; white-space: nowrap; letter-spacing: 0.01em; }
+  .ccm-il { font-size: 0.57rem; display: block; text-align: center; white-space: nowrap; }
 }
 
-/* ════════════════════════════════
-   首頁卡片
-   ════════════════════════════════ */
+/* ════════ 首頁卡片 ════════ */
 
 .home-grid {
   display: grid;
@@ -312,16 +282,11 @@
 @media screen and (max-width: 480px) {
   .home-grid { grid-template-columns: 1fr 1fr; gap: 0.65rem; }
   .home-card { padding: 0.8rem; }
-  .home-card p { display: none; }  /* 手機卡片只顯示標題 */
+  .home-card p { display: none; }
 }
 
-/* ════════════════════════════════
-   雜項
-   ════════════════════════════════ */
+/* ════════ 雜項 ════════ */
 
 .md-search__input::placeholder { color: var(--md-default-fg-color--light); }
 .md-top { padding: 0.5em 0.85em; border-radius: 20px; }
 .md-footer-meta { font-size: 0.78rem; }
-
-/* 側欄收合動畫順滑 */
-.md-nav__toggle ~ .md-nav { transition: max-height 0.2s ease; }

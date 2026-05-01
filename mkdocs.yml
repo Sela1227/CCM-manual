@@ -26,26 +26,51 @@ theme:
   features:
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.sections        # 有分組標題
-    # navigation.expand 刻意拿掉 → 側欄預設收合，可手動展開
+    - navigation.sections
     - navigation.top
     - navigation.indexes
     - navigation.instant
     - navigation.instant.progress
-    - navigation.prune           # 只渲染可見的導覽節點，效能更好
+    - navigation.prune
     - search.suggest
     - search.highlight
     - search.share
     - content.code.copy
     - content.tooltips
-    - toc.follow
+    - toc.integrate
 
 plugins:
   - search:
       lang:
         - zh
         - en
-      separator: '[\s\u200b\-\u3000-\u9FFF]'
+      # 正確的分隔符：只切標點，不切中文字
+      separator: '[\s\-\u3001\u3002\uff0c\uff01\uff1f\uff1a\u300a\u300b\u3010\u3011\uff08\uff09\u300c\u300d]'
+      jieba_dict: auto    # 使用 jieba 做中文斷詞
+
+nav:
+  - 首頁: index.md
+  - A｜新人通則:
+    - 工作指導手冊: A_work-guide.md
+    - 培訓計畫書: A_training-plan.md
+  - B｜軟體操作:
+    - B1. HIS 系統操作手冊: B1_HIS-manual.md
+    - B2. 其他工具使用說明: B2_other-tools.md
+  - C｜各癌別照護指引:
+    - C1. 肺癌照護指引: C1_lung-cancer.md
+    - C2. 乳癌照護指引: C2_breast-cancer.md
+    - C3–C6. 其他癌別照護指引: C3-C6_other-cancers.md
+  - D｜表單與範本:
+    - 表單與範本: D_forms.md
+  - E｜專題與進階:
+    - 專題與進階: E_advanced.md
+  - F｜臨床知識庫:
+    - 臨床知識庫: F_clinical-kb.md
+  - G｜品質指標:
+    - 品質指標速查: G_quality-index.md
+  - H｜專用軟體:
+    - 個管追蹤系統: H1_ccm-tracker-guide.md
+    - MDT 會議管理系統: H2_mdt-guide.md
 
 markdown_extensions:
   - admonition
@@ -67,38 +92,6 @@ markdown_extensions:
   - attr_list
   - md_in_html
   - def_list
-
-nav:
-  - 首頁: index.md
-
-  - A｜新人通則:
-    - 工作指導手冊: A_work-guide.md
-    - 培訓計畫書: A_training-plan.md
-
-  - B｜軟體操作:
-    - B1. HIS 系統操作手冊: B1_HIS-manual.md
-    - B2. 其他工具使用說明: B2_other-tools.md
-
-  - C｜各癌別照護指引:
-    - C1. 肺癌照護指引: C1_lung-cancer.md
-    - C2. 乳癌照護指引: C2_breast-cancer.md
-    - C3–C6. 其他癌別照護指引: C3-C6_other-cancers.md
-
-  - D｜表單與範本:
-    - 表單與範本: D_forms.md
-
-  - E｜專題與進階:
-    - 專題與進階: E_advanced.md
-
-  - F｜臨床知識庫:
-    - 臨床知識庫: F_clinical-kb.md
-
-  - G｜品質指標:
-    - 品質指標速查: G_quality-index.md
-
-  - H｜專用軟體:
-    - 個管追蹤系統: H1_ccm-tracker-guide.md
-    - MDT 會議管理系統: H2_mdt-guide.md
 
 extra:
   social:
