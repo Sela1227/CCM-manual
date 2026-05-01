@@ -1,0 +1,22 @@
+# MkDocs 產物
+site/
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+
+# 系統檔案
+.DS_Store
+Thumbs.db
+
+# 暫存
+*.log
+*.tmp

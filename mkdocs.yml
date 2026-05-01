@@ -10,10 +10,10 @@ theme:
     text: Noto Sans TC
     code: Noto Sans Mono
   palette:
-    # 淺色模式
+    # 淺色模式（預設，使用自訂主色 #C9C8C7）
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
+      primary: custom
       accent: indigo
       toggle:
         icon: material/weather-night

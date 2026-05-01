@@ -7,7 +7,7 @@
   "use strict";
 
   // 版本號（單一來源；CSS、README、CLAUDE.md 各自記錄即可）
-  var CCM_VERSION = "V3.0.0";
+  var CCM_VERSION = "V3.0.1";
 
   // ---- 推算 site root（不依賴 base.href，從 pathname 推）----
   function getSiteRoot() {

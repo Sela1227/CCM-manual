@@ -1,21 +1,57 @@
 /* ======================================================
-   癌症個管師指導書 V3.0.0
-   只做最小幅度調整，保留 mkdocs-material 預設行為
+   癌症個管師指導書 V3.0.1
+   - 自訂主色 #25506b（深藍灰）
+   - sidebar 永久顯示（>= 760px viewport，主內容並排）
    ====================================================== */
 
-/* 中文字體閱讀感微調：行高、字距 */
-.md-content,
+/* ======================================================
+   主色 #25506b（深藍灰）
+   深色背景配預設白字即可，不需改 --md-primary-bg-color
+   ====================================================== */
+[data-md-color-primary="custom"] {
+  --md-primary-fg-color:        #25506b;
+  --md-primary-fg-color--light:  #3a6e8c;
+  --md-primary-fg-color--dark:   #173a52;
+}
+
+/* ======================================================
+   中文字體閱讀感
+   ====================================================== */
 .md-typeset {
-  line-height: 1.75;
+  line-height: 1.85;
   letter-spacing: 0.02em;
 }
 
-/* 表格在窄螢幕可橫向捲動（避免擠爆） */
+/* h1/h2 用主色點綴 */
+.md-typeset h1 {
+  font-weight: 700;
+  border-bottom: 3px solid var(--md-primary-fg-color);
+  padding-bottom: 0.4em;
+  margin-bottom: 0.9em;
+}
+.md-typeset h2 {
+  font-weight: 600;
+  border-left: 4px solid var(--md-primary-fg-color);
+  padding-left: 0.6em;
+  margin-top: 1.7em;
+}
+.md-typeset h3 {
+  font-weight: 600;
+  color: var(--md-primary-fg-color);
+}
+
+/* ======================================================
+   表格：主色 header、窄螢幕橫向捲動
+   ====================================================== */
 .md-typeset__table {
   -webkit-overflow-scrolling: touch;
 }
+.md-typeset table:not([class]) th {
+  background-color: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  font-weight: 600;
+}
 
-/* 程式碼區塊在手機上字體不要太小 */
 @media screen and (max-width: 600px) {
   .md-typeset code,
   .md-typeset pre {
@@ -23,7 +59,69 @@
   }
 }
 
-/* 版本徽章（右下角浮動小標） */
+/* ======================================================
+   Sidebar 永久顯示（核心 4 條規則）
+   門檻 760px：手機（< 760）保留 drawer 模式，
+   平板/筆電/桌機（>= 760）sidebar 跟主內容並排
+   ====================================================== */
+@media screen and (min-width: 760px) {
+
+  /* 1. 隱藏 drawer 觸發鈕和 overlay */
+  .md-header__button[for=__drawer] { display: none !important; }
+  .md-overlay                      { display: none !important; }
+
+  /* 2. sidebar 改為 sticky in-flow（不再浮動覆蓋）*/
+  .md-sidebar--primary {
+    position: sticky !important;
+    top: 2.4rem !important;
+    height: 0 !important;
+    background-color: transparent !important;
+    transform: none !important;
+    transition: none !important;
+    z-index: 1 !important;
+    width: 12.1rem !important;
+  }
+  [dir=ltr] .md-sidebar--primary { left: auto !important; }
+
+  .md-sidebar--primary .md-sidebar__scrollwrap {
+    position: static !important;
+    overflow-y: auto !important;
+    margin: 0 0.2rem !important;
+  }
+
+  /* 3. nav 結構強制 in-flow（取消 drawer slide 動畫）*/
+  .md-nav--primary,
+  .md-nav--primary .md-nav {
+    position: static !important;
+    height: auto !important;
+    background-color: transparent !important;
+    display: block !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* 4. 隱藏 drawer 模式才會出現的「主選單」標題 */
+  .md-nav--primary > .md-nav__title { display: none !important; }
+
+  /* nav 項目樣式（平鋪、好讀） */
+  .md-nav--primary .md-nav__item {
+    padding: 0 !important;
+  }
+  .md-nav--primary .md-nav__link {
+    padding: 0.5em 0.5em !important;
+    font-size: 0.8rem !important;
+    line-height: 1.5 !important;
+  }
+  .md-nav--primary .md-nav__link--active {
+    font-weight: 700 !important;
+    color: var(--md-primary-fg-color) !important;
+  }
+}
+
+/* ======================================================
+   版本徽章（右下角浮動小標）
+   ====================================================== */
 #ccm-ver {
   position: fixed;
   bottom: 8px;
@@ -39,7 +137,6 @@
   user-select: none;
 }
 @media screen and (max-width: 768px) {
-  /* 手機上版本徽章移到左下角，避免擋住底部導覽列 */
   #ccm-ver {
     bottom: 60px;
     right: auto;
@@ -47,7 +144,9 @@
   }
 }
 
-/* 手機底部導覽列 */
+/* ======================================================
+   手機底部導覽列（< 768px 才顯示）
+   ====================================================== */
 #ccm-mobile-nav {
   display: none;
 }
@@ -80,6 +179,7 @@
   #ccm-mobile-nav a.active {
     color: #fff;
     background: rgba(0, 0, 0, 0.15);
+    font-weight: 700;
   }
   #ccm-mobile-nav .ccm-icon {
     font-size: 1.2rem;
@@ -87,7 +187,6 @@
     margin-bottom: 2px;
   }
 
-  /* 手機上預留底部空間，避免內容被導覽列蓋住 */
   .md-main {
     padding-bottom: 60px;
   }
