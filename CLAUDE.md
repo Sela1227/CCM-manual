@@ -1,7 +1,7 @@
 # CLAUDE.md｜彰濱秀傳癌症個管師手冊網站
 
 **專案**：MkDocs + Material Theme 部署在 GitHub Pages（私有 Repo + GitHub Pro）
-**當前版本**：V1.9.7
+**當前版本**：V1.9.8
 **網站用途**：彰濱秀傳癌症中心個管師工作手冊，供新進個管師隨時查詢，含即時搜尋功能
 
 ---
@@ -198,6 +198,12 @@ function getSiteRoot() {
 - 根本原因：MkDocs instant navigation 切換頁面後，`base.href` 在 Android 上解析為**目前頁面 URL 而非 site root**，導致路徑疊加（如 `/CCM-manual/G_quality-index/A_work-guide/`）
 - 修法：`getSiteRoot()` 完全不用 `base.href`，改從 `window.location.pathname` 切割路徑層級推算，任何頁面都回傳正確的 `/CCM-manual/`
 - 此問題已在坑 #4（V1.3.0）出現一次，但當時的修法仍依賴 base，Android 依然失效
+
+**#14（V1.9.8）navigation.indexes 導致頂端 tab 消失**
+- 症狀：部署後頂端 tab 導覽列不見，整個框架版面異常
+- 原因：`navigation.indexes` 功能需要每個 section 有對應的 index.md（section index page），我們的 nav 結構不符合，導致 Material theme 渲染異常
+- 另：JS comment 行 `V1.9.6` 沒有隨 variable 一起更新，version check 時造成混亂
+- 修法：從 mkdocs.yml features 移除 navigation.indexes；JS 版本號四處全部用 Python replace 確保一致
 
 ---
 
