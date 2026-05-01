@@ -1,5 +1,5 @@
 /* ============================================================
-   彰濱秀傳癌症中心 — 個管師教育訓練指導書  V2.0.3
+   彰濱秀傳癌症中心 — 個管師教育訓練指導書  V1.9.6
    ============================================================ */
 
 :root { --ccm-bnav-h: 62px; }
@@ -416,93 +416,5 @@
   .md-typeset table:not(.drug-table-wrapper table) td {
     font-size: 0.82rem;
     padding: 0.35rem 0.5rem;
-  }
-}
-
-/* ════════════════════════════════════════════════════════
-   桌機/筆電窄視窗 (760px+) 強制使用 wide-mode UI
-   ════════════════════════════════════════════════════════
-   背景：Material 預設 html font-size: 125% (20px base)，
-   導致 76.25em = 1525px 才切換成 wide mode，但多數
-   筆電/桌機視窗 (1024–1440px) 都低於這門檻。
-   此 override 讓 760px 以上就完整呈現 wide mode：
-   tabs 永久顯示、sidebar 永久顯示、不要 drawer 行為。
-   ════════════════════════════════════════════════════════ */
-@media screen and (min-width: 760px) {
-
-  /* ── 1. 隱藏 drawer 模式專屬元件 ─────────────────────── */
-  .md-header__button[for=__drawer] { display: none !important; }
-  .md-overlay                      { display: none !important; }
-
-  /* ── 2. 強制顯示頂端 tabs ────────────────────────────── */
-  .md-tabs { display: block !important; }
-
-  /* ── 3. 側欄改為永久 in-flow，不再 fixed off-screen ──── */
-  .md-sidebar--primary {
-    position: sticky !important;
-    top: 2.4rem !important;
-    height: 0 !important;
-    background-color: transparent !important;
-    transform: none !important;
-    transition: none !important;
-    z-index: 1 !important;
-    width: 12.1rem !important;
-  }
-  [dir=ltr] .md-sidebar--primary { left: auto !important; }
-
-  .md-sidebar--primary .md-sidebar__scrollwrap {
-    position: static !important;
-    overflow-y: auto !important;
-    margin: 0 .2rem !important;
-  }
-
-  /* ── 4. nav 結構強制 in-flow（取消 drawer slide 動畫）─ */
-  .md-nav--primary,
-  .md-nav--primary .md-nav {
-    position: static !important;
-    height: auto !important;
-    background-color: transparent !important;
-    display: block !important;
-    transform: none !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-
-  /* ── 5. 隱藏所有 drawer-style 的 nav 標題 ─────────────
-     包括「主選單」頂層標題，以及每個 nested section 內部
-     會重複出現的 section 名稱 (這是造成標題重複的元兇) */
-  .md-nav--primary .md-nav__title { display: none !important; }
-
-  /* ── 6. nav 項目樣式回歸 wide mode（去掉 drawer padding）*/
-  .md-nav--primary .md-nav__item {
-    border-top: none !important;
-    font-size: .7rem !important;
-    padding: 0 !important;
-  }
-
-  .md-nav--primary .md-nav__link {
-    padding: 0 !important;
-    margin-top: .625em !important;
-    font-size: .7rem !important;
-    line-height: 1.3 !important;
-  }
-
-  /* ── 7. 隱藏頂層 section 的展開箭頭（讓它看起來像標題）*/
-  .md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link .md-nav__icon,
-  .md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link > [for] {
-    display: none !important;
-  }
-
-  /* ── 8. 頂層 section 變成不可點的粗體標題 ─────────────── */
-  .md-nav--primary > .md-nav__list > .md-nav__item--nested > .md-nav__link {
-    font-weight: 700 !important;
-    pointer-events: none !important;
-    color: var(--md-default-fg-color--light) !important;
-  }
-
-  /* ── 9. section margin（讓段落感清晰）───────────────── */
-  .md-nav--primary > .md-nav__list > .md-nav__item--nested {
-    display: block !important;
-    margin: 1em 0 !important;
   }
 }

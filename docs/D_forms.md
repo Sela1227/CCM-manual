@@ -1307,7 +1307,7 @@ Response Evaluation Criteria in Solid Tumors（實體腫瘤療效評估標準）
 - 系統標記「嘗試聯絡中」
 - 記錄：每次嘗試的日期、時間、方式
 
-> 詳細失聯定義與後續處理流程：→ **[E｜困難個案處理](E_advanced.md)**
+> 詳細失聯定義與後續處理流程：→ **[E｜困難個案處理](../E_advanced/)**
 
 ---
 
