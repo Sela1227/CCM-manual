@@ -47,7 +47,7 @@
 
 <div class="home-card">
 <a href="H3_cancer-drugs/">💊 抗癌藥物速查</a>
-<p>健保給付 145 種抗癌藥物，依癌別篩選，含給付條件速查。</p>
+<p>評估表單、追蹤腳本、常用書信範本。</p>
 </div>
 
 </div>
