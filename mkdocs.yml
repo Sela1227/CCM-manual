@@ -70,6 +70,7 @@ nav:
     - 個管追蹤系統: H1_ccm-tracker-guide.md
     - MDT 會議管理系統: H2_mdt-guide.md
     - 抗癌藥物速查系統: H3_cancer-drugs.md
+    - 病歷互審系統: H4_peer-review-guide.md
 
 extra:
   social:

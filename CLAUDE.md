@@ -1,7 +1,7 @@
 # CLAUDE.md｜彰濱秀傳癌症個管師手冊網站
 
 **專案**：MkDocs + Material Theme 部署在 GitHub Pages（私有 Repo + GitHub Pro）
-**當前版本**：V1.7.1
+**當前版本**：V1.8.0
 **網站用途**：彰濱秀傳癌症中心個管師工作手冊，供新進個管師隨時查詢，含即時搜尋功能
 
 ---
@@ -30,6 +30,12 @@
 
 **正確寫法**：「使用你自己的帳號和密碼登入。如忘記帳號密碼，請洽系統管理員。」
 
+### 規則 3：所有專用軟體說明書的維護單位
+
+`H1_`、`H2_`、`H3_`、`H4_` 等所有軟體說明文件，維護單位欄位統一填寫：
+
+> 放射腫瘤科 林伯儒 醫師
+
 原因：這份手冊部署在公開 URL，任何人都能看到。
 
 ---
@@ -50,6 +56,7 @@
 | 個管追蹤系統說明 | `docs/H1_ccm-tracker-guide.md` |
 | MDT 會議系統說明 | `docs/H2_mdt-guide.md` |
 | 抗癌藥物速查說明 | `docs/H3_cancer-drugs.md` |
+| 病歷互審系統說明 | `docs/H4_peer-review-guide.md` |
 | 抗癌藥物速查系統本體 | `docs/drug-lookup/index.html` |
 
 ---
@@ -72,6 +79,7 @@
 | H｜專用軟體 | 個管追蹤系統 | `H1_ccm-tracker-guide.md` |
 | H｜專用軟體 | MDT 會議管理系統 | `H2_mdt-guide.md` |
 | H｜專用軟體 | 抗癌藥物速查系統 | `H3_cancer-drugs.md` |
+| H｜專用軟體 | 病歷互審系統 | `H4_peer-review-guide.md` |
 
 新增軟體說明時命名規則：`H4_`、`H5_` 依序遞增，全英文小寫加連字號。
 
@@ -131,6 +139,7 @@
 | V1.6.0 | G_quality-index 依 115 年版更新至 60 項指標 |
 | V1.7.0 | H3 抗癌藥物速查（drug-lookup/index.html，145 種），刪明文帳密（坑#7），版本號同步規則（坑#8），README.md |
 | V1.7.1 | 修 deploy.yml 移除 --strict，移除無效 jieba_dict:auto，修 A_work-guide.md 多個 h1（坑#9） |
+| V1.8.0 | 所有 H 章節補維護單位（放射腫瘤科 林伯儒 醫師），新增 H4 病歷互審系統說明書，CLAUDE.md 加規則 3 |
 
 ---
 
@@ -172,4 +181,4 @@ git push origin main
 
 ## 八、一句話總結
 
-V1.7.1 修復部署失敗：移除 --strict、移除無效 jieba_dict:auto、修 A_work-guide.md 多個 h1 錨點問題。下版重點是補系統截圖。
+V1.8.0 新增 H4 病歷互審系統說明書，補所有 H 章節維護單位（放射腫瘤科 林伯儒 醫師），建立規則 3。下版重點是補系統截圖。
