@@ -46,7 +46,7 @@
 </div>
 
 <div class="home-card">
-<a href="D_forms/">📝 表單與範本</a>
+<a href="H3_cancer-drugs/">💊 抗癌藥物速查</a>
 <p>評估表單、追蹤腳本、常用書信範本。</p>
 </div>
 

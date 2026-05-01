@@ -44,9 +44,8 @@ plugins:
       lang:
         - zh
         - en
-      # 正確的分隔符：只切標點，不切中文字
       separator: '[\s\-\u3001\u3002\uff0c\uff01\uff1f\uff1a\u300a\u300b\u3010\u3011\uff08\uff09\u300c\u300d]'
-      jieba_dict: auto    # 使用 jieba 做中文斷詞
+      jieba_dict: auto
 
 nav:
   - 首頁: index.md
@@ -71,27 +70,7 @@ nav:
   - H｜專用軟體:
     - 個管追蹤系統: H1_ccm-tracker-guide.md
     - MDT 會議管理系統: H2_mdt-guide.md
-
-markdown_extensions:
-  - admonition
-  - tables
-  - toc:
-      permalink: true
-      title: 本頁目錄
-  - pymdownx.details
-  - pymdownx.superfences
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.tabbed:
-      alternate_style: true
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - pymdownx.tasklist:
-      custom_checkbox: true
-  - attr_list
-  - md_in_html
-  - def_list
+    - 抗癌藥物速查系統: H3_cancer-drugs.md
 
 extra:
   social:
