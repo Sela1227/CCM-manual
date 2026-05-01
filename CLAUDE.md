@@ -1,7 +1,7 @@
 # CLAUDE.md｜彰濱秀傳癌症個管師手冊網站
 
 **專案**：MkDocs + Material Theme 部署在 GitHub Pages（私有 Repo + GitHub Pro）
-**當前版本**：V1.8.9
+**當前版本**：V1.8.7
 **網站用途**：彰濱秀傳癌症中心個管師工作手冊，供新進個管師隨時查詢，含即時搜尋功能
 
 ---
@@ -30,20 +30,7 @@
 
 **正確寫法**：「使用你自己的帳號和密碼登入。如忘記帳號密碼，請洽系統管理員。」
 
-### 規則 3：toc.integrate 不能移除
-
-`mkdocs.yml` 的 `features:` 區塊中，`toc.integrate` **永遠必須保留**。
-
-移除此設定會讓 TOC（本頁目錄）從左側欄搬到右側獨立面板，Sela 明確要求 TOC 固定在左側。
-此錯誤已在 V1.3.0（坑#4）和 V1.8.6（坑#12）兩度犯過，不可三度。
-
-```yaml
-features:
-  - navigation.prune
-  - toc.integrate    ← 這一行永遠保留，不可刪除
-```
-
-### 規則 4：所有專用軟體說明書的維護單位
+### 規則 3：所有專用軟體說明書的維護單位
 
 `H1_`、`H2_`、`H3_`、`H4_` 等所有軟體說明文件，維護單位欄位統一填寫：
 
@@ -147,12 +134,6 @@ features:
 - 側欄收合：`navigation.sections` 讓章節標頭變固定不可收合。移除後預設收合。同時移除 `toc.integrate`（TOC 回右側獨立面板，左側欄更乾淨）。
 - 表格破版：各欄 `white-space: nowrap` 互相競爭導致某些欄過寬。全站加 CSS：`word-break: break-word` + `max-width` 限制。
 
-**#12（V1.8.9）toc.integrate 再度被誤刪**
-- 症狀：TOC（本頁目錄）從左側欄搬到右側獨立面板
-- 原因：V1.8.6 修 F 索引問題時，順手移除 toc.integrate，沒意識到這會改變 TOC 位置
-- 這是第二次犯（V1.3.0 是第一次）
-- 做法：加回 toc.integrate；寫入永久規則 3（此設定不可移除）
-
 ---
 
 ## 四、版本歷程
@@ -175,9 +156,7 @@ features:
 | V1.8.4 | 修 mkdocs.yml 補上遺失的 markdown_extensions（admonition、pymdownx 系列），修正全站 !!! 區塊無法渲染問題（坑#10）|
 | V1.8.5 | 藥物速查表排版改善：5 欄精簡、癌別縮寫、橫向滾動容器（.drug-table-wrapper）、斑馬紋、縮小字體 0.75rem |
 | V1.8.6 | 三大系統性修正：①F heading 降級（F1/F2 h1→h2）②移除 navigation.sections 和 toc.integrate（側欄收合 + TOC 回右側）③全站表格 CSS 強制換行防破版（坑#11）|
-| V1.8.7 | F1 擴充三大節：NGS、病理 IHC 染色、常見影像檢查 |
-| V1.8.8 | F1 影像節補充：PSMA PET-CT、乳攝/乳超詳細對比、攝護腺癌影像節 |
-| V1.8.9 | 修 toc.integrate 被誤刪（坑#12），TOC 恢復左側欄；永久規則 3 寫入 CLAUDE.md |
+| V1.8.7 | F1 擴充三大節：NGS（組織型/液態切片/常見 panel/追蹤重點）、病理 IHC 染色（ER/PR/HER2/Ki-67/PD-L1/MMR/腫瘤來源/淋巴瘤）、常見影像檢查（各癌別、報告關鍵詞）|
 
 ---
 
@@ -219,4 +198,4 @@ git push origin main
 
 ## 八、一句話總結
 
-V1.8.9 修 toc.integrate 被誤刪問題（TOC 搬回左側欄），加入永久規則 3 防止再犯。
+V1.8.7 F1 擴充：NGS、IHC 病理染色、常見影像檢查三大節。新增 14 種單一基因檢測、liquid biopsy 說明、HER2 評分、MMR/dMMR、各癌別影像協議、報告關鍵詞速查。
