@@ -26,6 +26,7 @@ theme:
   features:
     - navigation.tabs
     - navigation.tabs.sticky
+    - navigation.sections
     - navigation.top
     - navigation.indexes
     - navigation.instant
@@ -36,6 +37,7 @@ theme:
     - search.share
     - content.code.copy
     - content.tooltips
+    - toc.integrate
 
 plugins:
   - search:

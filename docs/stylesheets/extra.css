@@ -1,5 +1,5 @@
 /* ============================================================
-   彰濱秀傳癌症中心 — 個管師教育訓練指導書  V1.8.7
+   彰濱秀傳癌症中心 — 個管師教育訓練指導書  V1.8.5
    ============================================================ */
 
 :root { --ccm-bnav-h: 62px; }
@@ -373,48 +373,5 @@
 @media screen and (max-width: 768px) {
   .drug-table-wrapper table {
     font-size: 0.7rem;
-  }
-}
-
-/* ════════ 全站表格系統性修正 ════════ */
-
-/* Material 已在 .md-typeset__table 加 overflow:auto，
-   這裡補強：確保每個儲存格文字可換行、不撐破版面 */
-.md-typeset table:not(.drug-table-wrapper table) {
-  width: 100%;
-  table-layout: auto;
-  word-break: break-word;
-  overflow-wrap: break-word;
-  hyphens: auto;
-}
-
-.md-typeset table:not(.drug-table-wrapper table) th,
-.md-typeset table:not(.drug-table-wrapper table) td {
-  word-break: break-word;
-  overflow-wrap: break-word;
-  white-space: normal;          /* 強制允許換行 */
-  min-width: 4rem;              /* 避免欄位被壓縮到幾乎消失 */
-  max-width: 28rem;             /* 避免單欄撐滿整個表格 */
-  vertical-align: top;
-}
-
-/* 第一欄（通常是標籤/名稱欄）稍緊，其餘欄可以放寬 */
-.md-typeset table:not(.drug-table-wrapper table) th:first-child,
-.md-typeset table:not(.drug-table-wrapper table) td:first-child {
-  min-width: 5rem;
-  max-width: 14rem;
-  font-weight: 500;
-}
-
-/* 手機：表格改用自動橫向滾動（Material 原生 .md-typeset__table 已處理），
-   但有些用 HTML 直接寫的表格需要額外處理 */
-@media screen and (max-width: 768px) {
-  .md-typeset__table {
-    -webkit-overflow-scrolling: touch;
-  }
-  .md-typeset table:not(.drug-table-wrapper table) th,
-  .md-typeset table:not(.drug-table-wrapper table) td {
-    font-size: 0.82rem;
-    padding: 0.35rem 0.5rem;
   }
 }

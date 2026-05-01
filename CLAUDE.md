@@ -1,7 +1,7 @@
 # CLAUDE.md｜彰濱秀傳癌症個管師手冊網站
 
 **專案**：MkDocs + Material Theme 部署在 GitHub Pages（私有 Repo + GitHub Pro）
-**當前版本**：V1.8.7
+**當前版本**：V1.8.5
 **網站用途**：彰濱秀傳癌症中心個管師工作手冊，供新進個管師隨時查詢，含即時搜尋功能
 
 ---
@@ -129,11 +129,6 @@
 - 原因：mkdocs.yml 從未加入 `markdown_extensions` 區塊，admonition 和 pymdownx 套件沒有啟用
 - 做法：補回完整的 markdown_extensions 區塊（admonition、pymdownx.details、superfences、highlight、tabbed、emoji、tasklist、tables、toc、attr_list）
 
-**#11（V1.8.6）F 章節索引不見 + 全站表格破版**
-- F 索引不見：`# F1.`/`# F2.` 是 h1，MkDocs TOC 從 h2 開始，所以不進索引。修法：降為 h2，子節依序降級。
-- 側欄收合：`navigation.sections` 讓章節標頭變固定不可收合。移除後預設收合。同時移除 `toc.integrate`（TOC 回右側獨立面板，左側欄更乾淨）。
-- 表格破版：各欄 `white-space: nowrap` 互相競爭導致某些欄過寬。全站加 CSS：`word-break: break-word` + `max-width` 限制。
-
 ---
 
 ## 四、版本歷程
@@ -155,8 +150,6 @@
 | V1.8.3 | F2 新增第十節藥物速查表（健保署 139 種抗癌藥物，依化療/標靶/免疫/荷爾蒙分類，含副作用與警示） |
 | V1.8.4 | 修 mkdocs.yml 補上遺失的 markdown_extensions（admonition、pymdownx 系列），修正全站 !!! 區塊無法渲染問題（坑#10）|
 | V1.8.5 | 藥物速查表排版改善：5 欄精簡、癌別縮寫、橫向滾動容器（.drug-table-wrapper）、斑馬紋、縮小字體 0.75rem |
-| V1.8.6 | 三大系統性修正：①F heading 降級（F1/F2 h1→h2）②移除 navigation.sections 和 toc.integrate（側欄收合 + TOC 回右側）③全站表格 CSS 強制換行防破版（坑#11）|
-| V1.8.7 | F1 擴充三大節：NGS（組織型/液態切片/常見 panel/追蹤重點）、病理 IHC 染色（ER/PR/HER2/Ki-67/PD-L1/MMR/腫瘤來源/淋巴瘤）、常見影像檢查（各癌別、報告關鍵詞）|
 
 ---
 
@@ -198,4 +191,4 @@ git push origin main
 
 ## 八、一句話總結
 
-V1.8.7 F1 擴充：NGS、IHC 病理染色、常見影像檢查三大節。新增 14 種單一基因檢測、liquid biopsy 說明、HER2 評分、MMR/dMMR、各癌別影像協議、報告關鍵詞速查。
+V1.8.5 藥物速查表排版改版：名稱商品名合欄、癌別縮寫、.drug-table-wrapper 橫向滾動容器、斑馬紋、0.75rem 小字。
