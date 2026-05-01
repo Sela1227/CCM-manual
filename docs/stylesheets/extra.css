@@ -1,7 +1,9 @@
 /* ======================================================
-   癌症個管師指導書 V3.0.2
-   - 主色 #25506b 用 :root 強制覆蓋（不依賴 custom palette）
+   癌症個管師指導書 V3.1.0
+   - 內容回到 V2.0.3 原檔（17 份精修 MD），框架沿用 V3
+   - 主色 #25506b 用 :root 強制覆蓋
    - sidebar 永久顯示 + 隱藏內嵌 TOC（避免左右兩側重複）
+   - 加 V2.0.3 的 home-grid 首頁卡片樣式
    ====================================================== */
 
 /* ======================================================
@@ -198,7 +200,59 @@
     margin-bottom: 2px;
   }
 
-  .md-main {
-    padding-bottom: 60px;
-  }
+/* ======================================================
+   首頁 home-grid 卡片（沿用 V2.0.3 設計）
+   ====================================================== */
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.9rem;
+  margin: 1.4rem 0;
+}
+
+.home-card {
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
+  transition: box-shadow 0.18s, border-color 0.18s;
+}
+
+.home-card:hover {
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  border-color: var(--md-primary-fg-color);
+}
+
+.home-card a {
+  font-weight: 600;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.28em;
+}
+
+.home-card p {
+  font-size: 0.81rem;
+  color: var(--md-default-fg-color--light);
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 480px) {
+  .home-grid { grid-template-columns: 1fr 1fr; gap: 0.65rem; }
+  .home-card { padding: 0.8rem; }
+  .home-card p { display: none; }
+}
+
+/* ======================================================
+   藥物速查表（F2 第十節）— V2.0.3 沿用
+   ====================================================== */
+.drug-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1rem 0;
+  border-radius: 4px;
+}
+.drug-table-wrapper table {
+  font-size: 0.75rem;
+  line-height: 1.35;
 }

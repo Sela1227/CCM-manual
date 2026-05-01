@@ -7,7 +7,7 @@
   "use strict";
 
   // 版本號（單一來源；CSS、README、CLAUDE.md 各自記錄即可）
-  var CCM_VERSION = "V3.0.2";
+  var CCM_VERSION = "V3.1.0";
 
   // ---- 推算 site root（不依賴 base.href，從 pathname 推）----
   function getSiteRoot() {
@@ -42,11 +42,10 @@
     var current = window.location.pathname;
 
     var items = [
-      { href: root,                  label: "首頁", icon: "🏠", match: /^\/[^\/]*\/?$|\/index\.html?$/ },
-      { href: root + "01_work/",     label: "工作", icon: "📋", match: /\/01_work\// },
-      { href: root + "02_training/", label: "養成", icon: "🎓", match: /\/02_training\// },
-      { href: root + "03_tools/",    label: "工具", icon: "🛠", match: /\/03_tools\// },
-      { href: root + "04_metrics/",  label: "指標", icon: "📊", match: /\/04_metrics\// }
+      { href: root,                          label: "首頁", icon: "🏠", match: /^\/[^\/]*\/?$|\/index\.html?$/ },
+      { href: root + "A_work-guide/",        label: "工作", icon: "📋", match: /\/A_work-guide\// },
+      { href: root + "B1_HIS-manual/",       label: "HIS",  icon: "💻", match: /\/B1_HIS-manual\// },
+      { href: root + "G_quality-index/",     label: "指標", icon: "📊", match: /\/G_quality-index\// }
     ];
 
     var nav = document.createElement("nav");
