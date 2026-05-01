@@ -27,6 +27,7 @@ theme:
   features:
     - navigation.tabs
     - navigation.tabs.sticky
+    - navigation.sections
     - navigation.top
     - navigation.instant
     - navigation.instant.progress
@@ -62,6 +63,9 @@ markdown_extensions:
   - toc:
       permalink: true
       title: 本頁目錄
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
   - attr_list
   - md_in_html
   - def_list

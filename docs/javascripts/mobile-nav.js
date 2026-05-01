@@ -2,15 +2,19 @@
    彰濱秀傳 個管師指導書
    ① 版本徽章注入 header
    ② 手機底部導覽列
-   V1.9.9
+   V2.0.0
    ============================================================ */
 
-var CCM_VERSION = "V1.9.9";
+var CCM_VERSION = "V2.0.0";
 
 /* ── 版本徽章 ─────────────────────────────────────────── */
 function injectVersionBadge() {
-  var old = document.getElementById("ccm-ver");
-  if (old) old.remove();
+  // 不 remove/recreate，避免 instant navigation 時閃爍延遲
+  var existing = document.getElementById("ccm-ver");
+  if (existing) {
+    if (existing.textContent !== CCM_VERSION) existing.textContent = CCM_VERSION;
+    return;
+  }
   var header = document.querySelector(".md-header__inner");
   if (!header) return;
   var badge = document.createElement("span");

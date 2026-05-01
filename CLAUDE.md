@@ -1,7 +1,7 @@
 # CLAUDE.md｜彰濱秀傳癌症個管師手冊網站
 
 **專案**：MkDocs + Material Theme 部署在 GitHub Pages（私有 Repo + GitHub Pro）
-**當前版本**：V1.9.9
+**當前版本**：V2.0.0
 **網站用途**：彰濱秀傳癌症中心個管師工作手冊，供新進個管師隨時查詢，含即時搜尋功能
 
 ---
@@ -199,11 +199,16 @@ function getSiteRoot() {
 - 修法：`getSiteRoot()` 完全不用 `base.href`，改從 `window.location.pathname` 切割路徑層級推算，任何頁面都回傳正確的 `/CCM-manual/`
 - 此問題已在坑 #4（V1.3.0）出現一次，但當時的修法仍依賴 base，Android 依然失效
 
-**#14（V1.9.9）navigation.indexes 導致頂端 tab 消失**
+**#14（V2.0.0）navigation.indexes 導致頂端 tab 消失**
 - 症狀：部署後頂端 tab 導覽列不見，整個框架版面異常
 - 原因：`navigation.indexes` 功能需要每個 section 有對應的 index.md（section index page），我們的 nav 結構不符合，導致 Material theme 渲染異常
 - 另：JS comment 行 `V1.9.6` 沒有隨 variable 一起更新，version check 時造成混亂
 - 修法：從 mkdocs.yml features 移除 navigation.indexes；JS 版本號四處全部用 Python replace 確保一致
+
+**#15（V2.0.0）navigation.sections 漏掉沒加回 + 中文錨點全壞**
+- 症狀：① 側欄變成收合式無法操作 ② 每頁頂端的 TOC 連結點了沒反應（共 60+ 個 broken anchor）③ 跨檔連結（../page/）部分頁面失效
+- 原因：① V1.8.6 移除 navigation.sections 後從未加回 ② MkDocs 預設 toc 不支援中文錨點，"## 1. 系統概述" 生成 id="1" 而非 id="1-系統概述" ③ 跨檔連結用 ../path/ 格式對 MD 不識別
+- 修法：① 加回 navigation.sections ② toc plugin 改用 pymdownx.slugs.slugify(case=lower) 支援 Unicode ③ 跨檔連結改用 page.md 格式 ④ 版本徽章不每次 remove/append 改成只 update textContent
 
 ---
 
