@@ -1,31 +1,12 @@
 # CLAUDE.md｜彰濱秀傳癌症個管師手冊網站
 
 **專案**：MkDocs + Material Theme 部署在 GitHub Pages（私有 Repo + GitHub Pro）
-**當前版本**：V1.9.6
+**當前版本**：V1.9.5
 **網站用途**：彰濱秀傳癌症中心個管師工作手冊，供新進個管師隨時查詢，含即時搜尋功能
 
 ---
 
 ## ⚠️ 永久規則（每版必遵守）
-
-> **Claude 自我檢查機制**：每次更新 CLAUDE.md（包含升版、加新規則、修坑記錄）之前，
-> 必須逐條重新確認以下規則是否依然有效並已執行。這是防止一錯再錯的核心機制。
-
----
-
-### 🔁 每次更新前的自我確認清單
-
-在執行任何版本變更前，逐項確認：
-
-- [ ] **規則 1**：版本號已在四個地方全部同步（JS / CSS / README / ZIP）？
-- [ ] **規則 2**：新增或修改的 H 章節有沒有出現明文帳號密碼？
-- [ ] **規則 3**：mkdocs.yml 的 `toc.integrate` 還在嗎？（`grep toc.integrate mkdocs.yml`）
-- [ ] **規則 4**：新增的 H 章節有填「放射腫瘤科 林伯儒 醫師」維護單位？
-- [ ] **規則 5**：手機導覽列的 getSiteRoot() 有沒有被改成依賴 base.href？（不能）
-- [ ] **版本歷程**：這版做了什麼已補進版本歷程表？
-- [ ] **一句話總結**：最後一行「一句話總結」有更新？
-
----
 
 ### 規則 1：版本號四處必須同步
 
@@ -68,27 +49,7 @@ features:
 
 > 放射腫瘤科 林伯儒 醫師
 
-### 規則 5：手機導覽列 getSiteRoot() 不可依賴 base.href
-
-`docs/javascripts/mobile-nav.js` 的 `getSiteRoot()` 函式**必須從 `window.location.pathname` 推算 site root**，不可使用 `base.href`、`document.querySelector("base").href` 或任何依賴 `<base>` tag 的寫法。
-
-原因：Android Chrome + MkDocs instant navigation 下，`base.href` 會解析成目前頁面 URL 而非 site root，導致導覽列路徑疊加跳 404。此問題已在 V1.3.0（坑#4）和 V1.9.6（坑#13）兩度犯過。
-
-```javascript
-// ✅ 正確（從 pathname 推算）
-function getSiteRoot() {
-  var segs = window.location.pathname.split("/").filter(function(s){ return s !== ""; });
-  if (segs.length && segs[segs.length-1] === "index.html") segs.pop();
-  if (segs.length <= 1) return window.location.origin + "/" + (segs[0] ? segs[0]+"/" : "");
-  return window.location.origin + "/" + segs.slice(0, segs.length-1).join("/") + "/";
-}
-
-// ❌ 錯誤（Android 會給錯誤的路徑）
-function getSiteRoot() {
-  var el = document.querySelector("base[href]");
-  return el ? el.href : window.location.origin + "/";
-}
-```
+原因：這份手冊部署在公開 URL，任何人都能看到。
 
 ---
 
@@ -192,12 +153,6 @@ function getSiteRoot() {
 - 原因：V1.8.6 修 F 索引問題時，順手移除 toc.integrate，沒意識到這會改變 TOC 位置
 - 這是第二次犯（V1.3.0 是第一次）
 - 做法：加回 toc.integrate；寫入永久規則 3（此設定不可移除）
-
-**#13（V1.9.6）Android 手機底部導覽列 404（第三度）**
-- 症狀：Android Chrome 上點導覽列按鈕跳 404
-- 根本原因：MkDocs instant navigation 切換頁面後，`base.href` 在 Android 上解析為**目前頁面 URL 而非 site root**，導致路徑疊加（如 `/CCM-manual/G_quality-index/A_work-guide/`）
-- 修法：`getSiteRoot()` 完全不用 `base.href`，改從 `window.location.pathname` 切割路徑層級推算，任何頁面都回傳正確的 `/CCM-manual/`
-- 此問題已在坑 #4（V1.3.0）出現一次，但當時的修法仍依賴 base，Android 依然失效
 
 ---
 
