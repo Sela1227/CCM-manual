@@ -1,5 +1,5 @@
 /* ============================================================
-   彰濱秀傳癌症中心 — 個管師教育訓練指導書  V2.0.1
+   彰濱秀傳癌症中心 — 個管師教育訓練指導書  V2.0.2
    ============================================================ */
 
 :root { --ccm-bnav-h: 62px; }
@@ -422,8 +422,8 @@
 /* ════════ 頂端 tab 導覽列顯示門檻調整 ════════ */
 /* Material 的 html font-size 為 125%（20px base），導致 76.25em = 1524px
    絕大多數桌機（1366px / 1440px）都低於此門檻，tabs 永遠不顯示。
-   改用 px 單位：>= 960px 就顯示 tabs，解決此問題。*/
-@media screen and (min-width: 960px) {
+   改用 px 單位：>= 760px 就顯示 tabs（覆蓋筆電 1024、小視窗 800–900）。*/
+@media screen and (min-width: 760px) {
   .md-tabs {
     display: block !important;
   }
@@ -431,8 +431,8 @@
 
 /* ════════ 側欄強制永久顯示（同 tabs 一樣的 960px 門檻）════════ */
 /* Material 在 < 76.25em（1525px）時把側欄改成 drawer slide-out。
-   配合 tabs 的 960px override，這裡也讓側欄在 >= 960px 永久顯示。 */
-@media screen and (min-width: 960px) {
+   配合 tabs 的 760px override，側欄在 >= 760px 也永久顯示。 */
+@media screen and (min-width: 760px) {
   /* 1. 側欄不再是 fixed off-screen，改回 sticky in-flow */
   .md-sidebar--primary {
     position: sticky !important;
