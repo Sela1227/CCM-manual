@@ -1,7 +1,7 @@
 # CLAUDE.md｜彰濱秀傳癌症個管師手冊網站
 
 **專案**：MkDocs + Material Theme 部署在 GitHub Pages（私有 Repo + GitHub Pro）
-**當前版本**：V1.8.7
+**當前版本**：V1.8.8
 **網站用途**：彰濱秀傳癌症中心個管師工作手冊，供新進個管師隨時查詢，含即時搜尋功能
 
 ---
@@ -156,7 +156,8 @@
 | V1.8.4 | 修 mkdocs.yml 補上遺失的 markdown_extensions（admonition、pymdownx 系列），修正全站 !!! 區塊無法渲染問題（坑#10）|
 | V1.8.5 | 藥物速查表排版改善：5 欄精簡、癌別縮寫、橫向滾動容器（.drug-table-wrapper）、斑馬紋、縮小字體 0.75rem |
 | V1.8.6 | 三大系統性修正：①F heading 降級（F1/F2 h1→h2）②移除 navigation.sections 和 toc.integrate（側欄收合 + TOC 回右側）③全站表格 CSS 強制換行防破版（坑#11）|
-| V1.8.7 | F1 擴充三大節：NGS（組織型/液態切片/常見 panel/追蹤重點）、病理 IHC 染色（ER/PR/HER2/Ki-67/PD-L1/MMR/腫瘤來源/淋巴瘤）、常見影像檢查（各癌別、報告關鍵詞）|
+| V1.8.7 | F1 擴充三大節：NGS、病理 IHC 染色、常見影像檢查 |
+| V1.8.8 | F1 影像節補充：PSMA PET-CT（攝護腺癌，含 ⁶⁸Ga/¹⁸F 說明、費用、預約追蹤）、乳攝/乳超詳細對比（BI-RADS、緻密乳房、互補使用）、攝護腺癌影像節（mpMRI/PI-RADS）|
 
 ---
 
@@ -198,4 +199,4 @@ git push origin main
 
 ## 八、一句話總結
 
-V1.8.7 F1 擴充：NGS、IHC 病理染色、常見影像檢查三大節。新增 14 種單一基因檢測、liquid biopsy 說明、HER2 評分、MMR/dMMR、各癌別影像協議、報告關鍵詞速查。
+V1.8.8 補充 PSMA PET-CT（攝護腺癌）、乳攝/乳超詳細說明（BI-RADS、緻密乳房互補原則）、攝護腺癌獨立影像節（mpMRI/PI-RADS）。
