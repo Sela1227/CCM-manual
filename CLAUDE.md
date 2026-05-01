@@ -1,7 +1,7 @@
 # CLAUDE.md｜彰濱秀傳癌症個管師手冊網站
 
 **專案**：MkDocs + Material Theme 部署在 GitHub Pages（私有 Repo + GitHub Pro）
-**當前版本**：V1.9.2
+**當前版本**：V1.8.9
 **網站用途**：彰濱秀傳癌症中心個管師工作手冊，供新進個管師隨時查詢，含即時搜尋功能
 
 ---
@@ -80,9 +80,8 @@ features:
 |---------|---------|-------|
 | A｜新人通則 | 工作指導手冊 | `A_work-guide.md` |
 | A｜新人通則 | 培訓計畫書 | `A_training-plan.md` |
-| B｜HIS 與通用工具 | B1. HIS 系統操作手冊 | `B1_HIS-manual.md` |
-| B｜HIS 與通用工具 | B2. 其他工具使用說明 | `B2_other-tools.md` |
-| C｜各癌別照護指引 | 癌症照護通論 | `C0_general.md` |
+| B｜軟體操作 | B1. HIS 系統操作手冊 | `B1_HIS-manual.md` |
+| B｜軟體操作 | B2. 其他工具使用說明 | `B2_other-tools.md` |
 | C｜各癌別照護指引 | C1. 肺癌 | `C1_lung-cancer.md` |
 | C｜各癌別照護指引 | C2. 乳癌 | `C2_breast-cancer.md` |
 | C｜各癌別照護指引 | C3–C6. 其他癌別 | `C3-C6_other-cancers.md` |
@@ -90,10 +89,10 @@ features:
 | E｜專題與進階 | 專題與進階 | `E_advanced.md` |
 | F｜臨床知識庫 | 臨床知識庫 | `F_clinical-kb.md` |
 | G｜品質指標 | 品質指標速查 | `G_quality-index.md` |
-| H｜癌症中心專用軟體 | 個管追蹤系統 | `H1_ccm-tracker-guide.md` |
-| H｜癌症中心專用軟體 | MDT 會議管理系統 | `H2_mdt-guide.md` |
-| H｜癌症中心專用軟體 | 抗癌藥物速查系統 | `H3_cancer-drugs.md` |
-| H｜癌症中心專用軟體 | 病歷互審系統 | `H4_peer-review-guide.md` |
+| H｜專用軟體 | 個管追蹤系統 | `H1_ccm-tracker-guide.md` |
+| H｜專用軟體 | MDT 會議管理系統 | `H2_mdt-guide.md` |
+| H｜專用軟體 | 抗癌藥物速查系統 | `H3_cancer-drugs.md` |
+| H｜專用軟體 | 病歷互審系統 | `H4_peer-review-guide.md` |
 
 新增軟體說明時命名規則：`H4_`、`H5_` 依序遞增，全英文小寫加連字號。
 
@@ -161,7 +160,7 @@ features:
 | 版本 | 主要異動 |
 |------|---------|
 | V1.0.0 | MkDocs 骨架，GitHub Actions 部署，MD 改英文檔名 |
-| V1.1.0 | 程式名稱定案，H｜癌症中心專用軟體章節（H1、H2），手機底部導覽列 |
+| V1.1.0 | 程式名稱定案，H｜專用軟體章節（H1、H2），手機底部導覽列 |
 | V1.2.0 | 手機表格換行，桌機表格欄寬，底部導覽列樣式 |
 | V1.3.0 | 底部導覽列路徑修正（坑#4），版本徽章改 JS（坑#5），側欄改可收合（坑#6） |
 | V1.4.0 | 表格欄寬改 auto，toc.integrate 消除右側欄 |
@@ -179,9 +178,6 @@ features:
 | V1.8.7 | F1 擴充三大節：NGS、病理 IHC 染色、常見影像檢查 |
 | V1.8.8 | F1 影像節補充：PSMA PET-CT、乳攝/乳超詳細對比、攝護腺癌影像節 |
 | V1.8.9 | 修 toc.integrate 被誤刪（坑#12），TOC 恢復左側欄；永久規則 3 寫入 CLAUDE.md |
-| V1.9.0 | F2 新增第十節局部介入治療：RFA/MWA（消融）、TACE（傳統/DEB）、HAIC（FOLFOX-HAIC/Reservoir Port），含術後症候群衛教、品質指標連結、三者比較表 |
-| V1.9.1 | B/H 重疊整合：B1 移除「癌症中心專屬系統」重複內容，B/H 定位明確 |
-| V1.9.2 | 新增 C0 癌症照護通論：TNM/特殊分期、病理報告解讀（R0/LVI/PNI）、ECOG 量表、確診流程、跨癌別個管原則、臨床縮寫速查（60+條）|
 
 ---
 
@@ -223,4 +219,4 @@ git push origin main
 
 ## 八、一句話總結
 
-V1.9.2 新增 C0 癌症照護通論（各癌別共同基礎）：分期系統、病理報告解讀、ECOG、確診流程、個管照護通則、60+ 臨床縮寫速查表。
+V1.8.9 修 toc.integrate 被誤刪問題（TOC 搬回左側欄），加入永久規則 3 防止再犯。

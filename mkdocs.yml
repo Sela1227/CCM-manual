@@ -71,11 +71,10 @@ nav:
   - A｜新人通則:
     - 工作指導手冊: A_work-guide.md
     - 培訓計畫書: A_training-plan.md
-  - B｜HIS 與通用工具:
+  - B｜軟體操作:
     - B1. HIS 系統操作手冊: B1_HIS-manual.md
     - B2. 其他工具使用說明: B2_other-tools.md
   - C｜各癌別照護指引:
-    - 癌症照護通論: C0_general.md
     - C1. 肺癌照護指引: C1_lung-cancer.md
     - C2. 乳癌照護指引: C2_breast-cancer.md
     - C3–C6. 其他癌別照護指引: C3-C6_other-cancers.md
@@ -87,7 +86,7 @@ nav:
     - 臨床知識庫: F_clinical-kb.md
   - G｜品質指標:
     - 品質指標速查: G_quality-index.md
-  - H｜癌症中心專用軟體:
+  - H｜專用軟體:
     - 個管追蹤系統: H1_ccm-tracker-guide.md
     - MDT 會議管理系統: H2_mdt-guide.md
     - 抗癌藥物速查系統: H3_cancer-drugs.md

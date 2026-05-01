@@ -5,7 +5,7 @@
    V1.7.0
    ============================================================ */
 
-var CCM_VERSION = "V1.9.2";
+var CCM_VERSION = "V1.8.9";
 
 /* ── 版本徽章 ─────────────────────────────────────────── */
 function injectVersionBadge() {
@@ -26,7 +26,7 @@ var NAV = [
   { icon: "🏠", label: "首頁",    path: "" },
   { icon: "📋", label: "新人通則", path: "A_work-guide/" },
   { icon: "🏥", label: "癌別指引", path: "C1_lung-cancer/" },
-  { icon: "💻", label: "專用軟體", path: "H1_ccm-tracker-guide/" },
+  { icon: "💻", label: "軟體操作", path: "H1_ccm-tracker-guide/" },
   { icon: "📊", label: "品質指標", path: "G_quality-index/" },
 ];
 
