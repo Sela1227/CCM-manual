@@ -1,7 +1,7 @@
 # CLAUDE.md｜彰濱秀傳癌症個管師手冊網站
 
 **專案**：MkDocs + Material Theme 部署在 GitHub Pages（私有 Repo + GitHub Pro）
-**當前版本**：V1.8.3
+**當前版本**：V1.8.4
 **網站用途**：彰濱秀傳癌症中心個管師工作手冊，供新進個管師隨時查詢，含即時搜尋功能
 
 ---
@@ -124,6 +124,11 @@
 - 症狀：A_work-guide.md 的部分標題（第一部分至第五部分）用 h1，MkDocs 錨點對非第一個 h1 行為不穩定
 - 做法：部分標題改為 h2（## 第X部分），保留第一個 h1 作為頁面標題
 
+**#10（V1.8.4）mkdocs.yml 遺失 markdown_extensions 導致全站 !!! 區塊不渲染**
+- 症狀：所有 `!!! warning`、`!!! tip`、`!!! note`、`!!! info` 顯示為純文字
+- 原因：mkdocs.yml 從未加入 `markdown_extensions` 區塊，admonition 和 pymdownx 套件沒有啟用
+- 做法：補回完整的 markdown_extensions 區塊（admonition、pymdownx.details、superfences、highlight、tabbed、emoji、tasklist、tables、toc、attr_list）
+
 ---
 
 ## 四、版本歷程
@@ -143,6 +148,7 @@
 | V1.8.1 | F5 癌症三大治療方式基礎（手術/化療/放療），連結至 A_training-plan.md 第 3.3 節 |
 | V1.8.2 | F_clinical-kb.md 全面整合重組：原 F1–F5 合為 F1（查表）+ F2（概念），消除重疊 |
 | V1.8.3 | F2 新增第十節藥物速查表（健保署 139 種抗癌藥物，依化療/標靶/免疫/荷爾蒙分類，含副作用與警示） |
+| V1.8.4 | 修 mkdocs.yml 補上遺失的 markdown_extensions（admonition、pymdownx 系列），修正全站 !!! 區塊無法渲染問題（坑#10）|
 
 ---
 
@@ -184,4 +190,4 @@ git push origin main
 
 ## 八、一句話總結
 
-V1.8.3 F2 整合健保署 139 種抗癌藥物速查表（化療 32 / 標靶 86 / 免疫 10 / 荷爾蒙 11）。下版重點是補系統截圖。
+V1.8.4 修 mkdocs.yml 補回 markdown_extensions，全站 admonition（!!! warning/tip/note/info）恢復正常渲染。

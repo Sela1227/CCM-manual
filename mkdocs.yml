@@ -46,6 +46,27 @@ plugins:
         - en
       separator: '[\s\-\u3001\u3002\uff0c\uff01\uff1f\uff1a\u300a\u300b\u3010\u3011\uff08\uff09\u300c\u300d]'
 
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - tables
+  - toc:
+      permalink: true
+      title: 本頁目錄
+  - attr_list
+  - md_in_html
+  - def_list
+
 nav:
   - 首頁: index.md
   - A｜新人通則:
