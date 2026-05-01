@@ -1,7 +1,7 @@
 # CLAUDE.md｜彰濱秀傳癌症個管師手冊網站
 
 **專案**：MkDocs + Material Theme 部署在 GitHub Pages（私有 Repo + GitHub Pro）
-**當前版本**：V1.8.4
+**當前版本**：V1.8.5
 **網站用途**：彰濱秀傳癌症中心個管師工作手冊，供新進個管師隨時查詢，含即時搜尋功能
 
 ---
@@ -149,6 +149,7 @@
 | V1.8.2 | F_clinical-kb.md 全面整合重組：原 F1–F5 合為 F1（查表）+ F2（概念），消除重疊 |
 | V1.8.3 | F2 新增第十節藥物速查表（健保署 139 種抗癌藥物，依化療/標靶/免疫/荷爾蒙分類，含副作用與警示） |
 | V1.8.4 | 修 mkdocs.yml 補上遺失的 markdown_extensions（admonition、pymdownx 系列），修正全站 !!! 區塊無法渲染問題（坑#10）|
+| V1.8.5 | 藥物速查表排版改善：5 欄精簡、癌別縮寫、橫向滾動容器（.drug-table-wrapper）、斑馬紋、縮小字體 0.75rem |
 
 ---
 
@@ -190,4 +191,4 @@ git push origin main
 
 ## 八、一句話總結
 
-V1.8.4 修 mkdocs.yml 補回 markdown_extensions，全站 admonition（!!! warning/tip/note/info）恢復正常渲染。
+V1.8.5 藥物速查表排版改版：名稱商品名合欄、癌別縮寫、.drug-table-wrapper 橫向滾動容器、斑馬紋、0.75rem 小字。

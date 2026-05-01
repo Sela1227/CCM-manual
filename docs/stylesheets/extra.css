@@ -1,5 +1,5 @@
 /* ============================================================
-   彰濱秀傳癌症中心 — 個管師教育訓練指導書  V1.8.4
+   彰濱秀傳癌症中心 — 個管師教育訓練指導書  V1.8.5
    ============================================================ */
 
 :root { --ccm-bnav-h: 62px; }
@@ -290,3 +290,88 @@
 .md-search__input::placeholder { color: var(--md-default-fg-color--light); }
 .md-top { padding: 0.5em 0.85em; border-radius: 20px; }
 .md-footer-meta { font-size: 0.78rem; }
+
+/* ════════ 藥物速查表（F2 第十節）════════ */
+
+/* 外層容器：橫向滾動防止破版 */
+.drug-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1rem 0;
+  border-radius: 4px;
+}
+
+/* 縮小字體、加大資訊密度 */
+.drug-table-wrapper table {
+  font-size: 0.75rem;
+  line-height: 1.35;
+  white-space: nowrap;          /* 預設不換行，讓 wrapper 橫捲 */
+  border-collapse: collapse;
+  width: max-content;
+  min-width: 100%;
+}
+
+/* 藥物名稱欄：允許換行 */
+.drug-table-wrapper table td:nth-child(1),
+.drug-table-wrapper table th:nth-child(1) {
+  white-space: normal;
+  min-width: 9rem;
+  max-width: 11rem;
+}
+
+/* 主要癌別欄 */
+.drug-table-wrapper table td:nth-child(2),
+.drug-table-wrapper table th:nth-child(2) {
+  white-space: normal;
+  min-width: 7rem;
+  max-width: 9rem;
+}
+
+/* 藥物分類欄 */
+.drug-table-wrapper table td:nth-child(3),
+.drug-table-wrapper table th:nth-child(3) {
+  white-space: normal;
+  min-width: 9rem;
+  max-width: 12rem;
+}
+
+/* 代表性副作用欄 */
+.drug-table-wrapper table td:nth-child(4),
+.drug-table-wrapper table th:nth-child(4) {
+  white-space: normal;
+  min-width: 10rem;
+  max-width: 14rem;
+}
+
+/* 警示症狀欄 */
+.drug-table-wrapper table td:nth-child(5),
+.drug-table-wrapper table th:nth-child(5) {
+  white-space: normal;
+  min-width: 9rem;
+  max-width: 12rem;
+}
+
+/* Header 底色加深，增強區別 */
+.drug-table-wrapper table thead tr {
+  background-color: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+}
+
+/* 斑馬紋 */
+.drug-table-wrapper table tbody tr:nth-child(odd) {
+  background-color: var(--md-code-bg-color);
+}
+
+/* cell 內距 */
+.drug-table-wrapper table th,
+.drug-table-wrapper table td {
+  padding: 0.3rem 0.5rem;
+  vertical-align: top;
+}
+
+/* 手機：更小字體 */
+@media screen and (max-width: 768px) {
+  .drug-table-wrapper table {
+    font-size: 0.7rem;
+  }
+}

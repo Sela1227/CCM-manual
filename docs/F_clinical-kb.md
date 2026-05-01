@@ -401,171 +401,184 @@
 > **完整給付條件** 請查 H3 抗癌藥物速查系統（可依癌別篩選，含詳細條文）。
 > **本表用途：** 個管師日常追蹤快速參考——每種藥列出代表性副作用與最重要警示症狀。
 
-!!! warning "警示症狀通則（所有化療/標靶/免疫藥物）"
-    以下症狀無論哪種藥物，均需立即就醫：
-    - 🚨 **發燒 > 38°C**（可能是感染性嗜中性球低下，24 小時內有生命危險）
-    - 突發胸痛或呼吸困難
-    - 意識改變、嚴重頭痛、暈厥
-    - 嚴重出血（腦、消化道、不明原因）
+!!! warning "警示症狀通則（所有藥物適用）"
+    不論哪種藥，以下症狀均需**立即就醫**：
+    🚨 **發燒 > 38°C** · 突發胸痛或呼吸困難 · 意識改變、暈厥 · 嚴重不明出血
 
 ### 💊 化療（32 種）
 
-| 藥物名稱 | 商品名 | 主要癌別 | 藥物分類 | 代表性副作用 | 🚨 最重要警示 |
-|---------|-------|---------|---------|------------|-------------|
-| Carboplatin | Paraplatin | 乳癌、肺癌、婦癌 | 鉑類化合物 (Platinum compound) | 骨髓抑制（70%以上）、噁心嘔吐（70%） | 發燒 ≥38°C |
-| Docetaxel | — | 乳癌、肺癌、肝膽胰胃癌、泌尿癌、頭頸癌 | 紫杉烷類 (Taxane) | 骨髓抑制(嗜中性球低下)（>90%）、過敏反應（5-10%(預防後)） | 發燒 ≥38°C(治療後 7-10 天最危險) |
-| Gemcitabine | Gemzar | 乳癌、肺癌、婦癌、肝膽胰胃癌、泌尿癌 | 嘧啶類核苷酸抑制劑 (Pyrimidine antime | 骨髓抑制（60-70%）、類流感症狀（20%） | 發燒、寒顫(類流感樣) |
-| Paclitaxel 成分注射劑 | — | 乳癌、肺癌、婦癌、其他癌 | 紫杉烷類 (Taxane) | 過敏反應（10%(預防後降到 1-2%)）、骨髓抑制（>80%） | 輸注中胸悶、呼吸困難、皮疹 |
-| Albumin-based paclitaxel | Abraxane | 肝膽胰胃癌 | 紫杉烷類 - 白蛋白結合型 (Albumin-bound | 骨髓抑制（>80%）、周邊神經病變（60-70%） | 發燒 ≥38°C |
-| Vinorelbine | — | 乳癌、肺癌 | 長春花鹼類 (Vinca alkaloid) | 骨髓抑制（>80%）、周邊神經病變（20-30%） | 注射部位疼痛、紅腫擴散 |
-| Oxaliplatin | — | 食道癌、大腸直腸癌、肝膽胰胃癌 | 鉑類化合物 (Platinum compound) | 急性冷誘發感覺異常（>90%）、慢性周邊神經病變（50%(累積劑量 >800mg/m²)） | 輸注中下顎痙攣、吞嚥困難 |
-| Uracil-Tegafur | Ufur | 乳癌、肺癌、大腸直腸癌、肝膽胰胃癌、頭頸癌 | 口服 5-FU 前驅藥 | 骨髓抑制(輕度)（30%）、腹瀉（30-40%） | 嚴重腹瀉 >7 次/天 |
-| Irinotecan | Campto injection | 大腸直腸癌 | 拓樸異構酶 I 抑制劑 | 腹瀉(早發或晚發)（>80%）、骨髓抑制（60%） | 腹瀉超過 24 小時或每天 >7 次 |
-| Irinotecan 微脂體注射劑 | Onivyde | 肝膽胰胃癌 | 拓樸異構酶 I 抑制劑(微脂體) | 腹瀉（60%）、骨髓抑制（70%） | 腹瀉嚴重(>5 次/天或脫水) |
-| Doxorubicin hydrochloride li | Lipo-Dox、Caelyx | 乳癌、婦癌 | 蒽環類抗生素(微脂體) | 手足症候群(掌蹠紅斑感覺異常)（50%）、口腔黏膜炎（40%） | 手足紅腫水泡疼痛影響行走 |
-| Tretinoin | Vesanoid Soft Gela | 血液淋巴癌 | 全反式 A 酸 (ATRA) | ATRA 症候群(分化症候群)（25%）、頭痛（60%） | 發燒 + 呼吸困難 + 體重增加 |
-| Topotecan 注射劑 | — | 肺癌、婦癌 | 拓樸異構酶 I 抑制劑 | 骨髓抑制（>90%）、腹瀉（30-40%） | 發燒 ≥38°C |
-| Topotecan 口服劑型 | — | 肺癌 | 拓樸異構酶 I 抑制劑(口服) | 骨髓抑制（80%）、腹瀉（40%） | 發燒 |
-| Capecitabine | Xeloda | 乳癌、大腸直腸癌、肝膽胰胃癌 | 口服 5-FU 前驅藥 | 手足症候群（50%）、腹瀉（40%） | 手足紅腫水泡疼痛影響日常 |
-| Estramustine sod. phosphate  | Estracyt | 泌尿癌 | 雌激素+烷化劑複合物 | 心血管事件(血栓)（10%）、男性女乳（50%） | 下肢腫脹疼痛 |
-| Fludarabine | — | 血液淋巴癌 | 嘌呤類核苷酸抑制劑 | 骨髓抑制(嚴重)（>90%）、感染(免疫抑制)（高風險） | 發燒 |
-| Arsenic trioxide | Asadin Inj. | 血液淋巴癌 | 三氧化二砷(分化誘導劑) | QT 間期延長（40%）、分化症候群(同 ATRA)（25%） | 心悸、暈眩、暈厥 |
-| Temozolomide | Temodal | 其他癌 | 口服烷化劑 | 骨髓抑制(尤其血小板)（20-30%）、噁心嘔吐（50%） | 嚴重出血、瘀青 |
-| Pemetrexed | Alimta | 肺癌 | 葉酸抗代謝劑 | 骨髓抑制（70%）、皮疹（40%） | 發燒 |
-| carmustine 植入劑 | Gliadel Wafer | 其他癌 | 亞硝基脲類烷化劑(植入劑) | 腦水腫（20%）、癲癇（20%） | 頭痛加劇、意識變化 |
-| Bendamustine | Innomustine | 血液淋巴癌 | 烷化劑+嘌呤類似物 hybrid | 骨髓抑制（>90%）、輸注反應（30%） | 輸注中發燒、皮疹、低血壓 |
-| Azacitidine 注射劑 | Vidaza | 血液淋巴癌 | 去甲基化劑(嘧啶類核苷酸類似物) | 骨髓抑制（>90%）、注射部位反應（70%） | 發燒 |
-| Azacitidine 口服製劑 | Onureg | 血液淋巴癌 | 去甲基化劑(口服) | 噁心嘔吐（70%）、腹瀉（50%） | 嚴重腹瀉 |
-| Tegafur/gimeracil/oteracil 複 | TS-1 | 肺癌、肝膽胰胃癌 | 口服 5-FU 複方(tegafur + gimerac | 骨髓抑制（40-50%）、腹瀉（30%） | 嚴重腹瀉 |
-| Eribulin | Halaven | 乳癌、泌尿癌、其他癌 | 微管動態抑制劑 | 骨髓抑制（>80%）、周邊神經病變（35%） | 發燒 |
-| Clofarabine | Evoltra | 血液淋巴癌 | 嘌呤類核苷酸抑制劑 | 骨髓抑制（>90%）、感染（>70%） | 突發水腫、呼吸困難、低血壓 |
-| Pralatrexate | Folotyn | 血液淋巴癌 | 葉酸抗代謝劑 | 骨髓抑制（60%）、口腔黏膜炎（70%） | 嚴重口腔潰瘍無法進食 |
-| Trifluridine/tipiracil | Lonsurf | 大腸直腸癌、肝膽胰胃癌 | 嘧啶類核苷酸類似物複方 | 骨髓抑制（50-60%）、噁心嘔吐（40%） | 發燒 |
-| Radium-223 | Xofigo | 泌尿癌 | α 粒子放射性同位素 | 骨髓抑制（50%）、腹瀉（25%） | 嚴重貧血 |
-| Ixabepilone | Ixempra | 乳癌 | Epothilone 類抗微管劑 | 周邊神經病變（60-70%）、骨髓抑制（70%） | 輸注中過敏反應 |
-| Decitabine | — | 血液淋巴癌 | 去甲基化劑 | 骨髓抑制（>90%）、感染（高） | 發燒 |
+<div class="drug-table-wrapper" markdown="1">
+
+| 藥物名稱 / 商品名 | 主要癌別 | 藥物分類 | 代表性副作用 | 🚨 最重要警示 |
+|-----------------|---------|---------|------------|-------------|
+| Carboplatin<br><small>Paraplatin</small> | 乳癌、肺癌、婦癌 | 鉑類化合物 | 骨髓抑制、噁心嘔吐 | 發燒 ≥38°C |
+| Docetaxel | 乳癌、肺癌、肝膽胰胃、泌尿、頭頸 | 紫杉烷類 | 骨髓抑制(嗜中性球低下)、過敏反應 | 發燒 ≥38°C(治療後 7-10 天最危險) |
+| Gemcitabine<br><small>Gemzar</small> | 乳癌、肺癌、婦癌、肝膽胰胃、泌尿 | 嘧啶類核苷酸抑制劑 | 骨髓抑制、類流感症狀 | 發燒、寒顫(類流感樣) |
+| Paclitaxel 成分注射劑 | 乳癌、肺癌、婦癌、其他 | 紫杉烷類 | 過敏反應、骨髓抑制 | 輸注中胸悶、呼吸困難、皮疹 |
+| Albumin-based paclitaxel<br><small>Abraxane</small> | 肝膽胰胃 | 紫杉烷類 - 白蛋白結合型 | 骨髓抑制、周邊神經病變 | 發燒 ≥38°C |
+| Vinorelbine | 乳癌、肺癌 | 長春花鹼類 | 骨髓抑制、周邊神經病變 | 注射部位疼痛、紅腫擴散 |
+| Oxaliplatin | 食道、大腸直腸、肝膽胰胃 | 鉑類化合物 | 急性冷誘發感覺異常、慢性周邊神經病變 | 輸注中下顎痙攣、吞嚥困難 |
+| Uracil-Tegafur<br><small>Ufur</small> | 乳癌、肺癌、大腸直腸、肝膽胰胃、頭頸 | 口服 5-FU 前驅藥 | 骨髓抑制(輕度)、腹瀉 | 嚴重腹瀉 >7 次/天 |
+| Irinotecan<br><small>Campto injecti</small> | 大腸直腸 | 拓樸異構酶 I 抑制劑 | 腹瀉(早發或晚發)、骨髓抑制 | 腹瀉超過 24 小時或每天 >7 次 |
+| Irinotecan 微脂體注射劑<br><small>Onivyde</small> | 肝膽胰胃 | 拓樸異構酶 I 抑制劑(微脂體) | 腹瀉、骨髓抑制 | 腹瀉嚴重(>5 次/天或脫水) |
+| Doxorubicin hydrochlorid<br><small>Lipo-Dox、Caely</small> | 乳癌、婦癌 | 蒽環類抗生素(微脂體) | 手足症候群(掌蹠紅斑感覺異常)、口腔黏膜炎 | 手足紅腫水泡疼痛影響行走 |
+| Tretinoin<br><small>Vesanoid Soft </small> | 血液淋巴 | 全反式 A 酸 (ATRA) | ATRA 症候群(分化症候群)、頭痛 | 發燒 + 呼吸困難 + 體重增加 |
+| Topotecan 注射劑 | 肺癌、婦癌 | 拓樸異構酶 I 抑制劑 | 骨髓抑制、腹瀉 | 發燒 ≥38°C |
+| Topotecan 口服劑型 | 肺癌 | 拓樸異構酶 I 抑制劑(口服) | 骨髓抑制、腹瀉 | 發燒 |
+| Capecitabine<br><small>Xeloda</small> | 乳癌、大腸直腸、肝膽胰胃 | 口服 5-FU 前驅藥 | 手足症候群、腹瀉 | 手足紅腫水泡疼痛影響日常 |
+| Estramustine sod. phosph<br><small>Estracyt</small> | 泌尿 | 雌激素+烷化劑複合物 | 心血管事件(血栓)、男性女乳 | 下肢腫脹疼痛 |
+| Fludarabine | 血液淋巴 | 嘌呤類核苷酸抑制劑 | 骨髓抑制(嚴重)、感染(免疫抑制) | 發燒 |
+| Arsenic trioxide<br><small>Asadin Inj.</small> | 血液淋巴 | 三氧化二砷(分化誘導劑) | QT 間期延長、分化症候群(同 ATRA) | 心悸、暈眩、暈厥 |
+| Temozolomide<br><small>Temodal</small> | 其他 | 口服烷化劑 | 骨髓抑制(尤其血小板)、噁心嘔吐 | 嚴重出血、瘀青 |
+| Pemetrexed<br><small>Alimta</small> | 肺癌 | 葉酸抗代謝劑 | 骨髓抑制、皮疹 | 發燒 |
+| carmustine 植入劑<br><small>Gliadel Wafer</small> | 其他 | 亞硝基脲類烷化劑(植入劑) | 腦水腫、癲癇 | 頭痛加劇、意識變化 |
+| Bendamustine<br><small>Innomustine</small> | 血液淋巴 | 烷化劑+嘌呤類似物 hybrid | 骨髓抑制、輸注反應 | 輸注中發燒、皮疹、低血壓 |
+| Azacitidine 注射劑<br><small>Vidaza</small> | 血液淋巴 | 去甲基化劑 | 骨髓抑制、注射部位反應 | 發燒 |
+| Azacitidine 口服製劑<br><small>Onureg</small> | 血液淋巴 | 去甲基化劑(口服) | 噁心嘔吐、腹瀉 | 嚴重腹瀉 |
+| Tegafur/gimeracil/oterac<br><small>TS-1</small> | 肺癌、肝膽胰胃 | 口服 5-FU 複方 | 骨髓抑制、腹瀉 | 嚴重腹瀉 |
+| Eribulin<br><small>Halaven</small> | 乳癌、泌尿、其他 | 微管動態抑制劑 | 骨髓抑制、周邊神經病變 | 發燒 |
+| Clofarabine<br><small>Evoltra</small> | 血液淋巴 | 嘌呤類核苷酸抑制劑 | 骨髓抑制、感染 | 突發水腫、呼吸困難、低血壓 |
+| Pralatrexate<br><small>Folotyn</small> | 血液淋巴 | 葉酸抗代謝劑 | 骨髓抑制、口腔黏膜炎 | 嚴重口腔潰瘍無法進食 |
+| Trifluridine/tipiracil<br><small>Lonsurf</small> | 大腸直腸、肝膽胰胃 | 嘧啶類核苷酸類似物複方 | 骨髓抑制、噁心嘔吐 | 發燒 |
+| Radium-223<br><small>Xofigo</small> | 泌尿 | α 粒子放射性同位素 | 骨髓抑制、腹瀉 | 嚴重貧血 |
+| Ixabepilone<br><small>Ixempra</small> | 乳癌 | Epothilone 類抗微管劑 | 周邊神經病變、骨髓抑制 | 輸注中過敏反應 |
+| Decitabine | 血液淋巴 | 去甲基化劑 | 骨髓抑制、感染 | 發燒 |
+
+</div>
 
 ### 🎯 標靶（86 種）
 
-| 藥物名稱 | 商品名 | 主要癌別 | 藥物分類 | 代表性副作用 | 🚨 最重要警示 |
-|---------|-------|---------|---------|------------|-------------|
-| Trastuzumab | Herceptin | 乳癌、肝膽胰胃癌 | 抗 HER2 單株抗體 | 心臟毒性(LVEF 下降)（5-10%）、輸注反應（30%(首次)） | 活動後氣喘、下肢水腫 |
-| Rituximab 注射劑 | — | 血液淋巴癌 | 抗 CD20 單株抗體(第一代) | 輸注反應（30%(首次)）、感染（高） | 輸注中嚴重反應 |
-| Imatinib | Glivec | 血液淋巴癌、其他癌 | BCR-ABL TKI(第一代) | 周邊水腫(尤其眼瞼)（60%）、肌肉痙攣（40%） | 嚴重水腫(肺水腫、腹水) |
-| Gefitinib | Iressa | 肺癌 | EGFR TKI(第一代) | 皮疹(類青春痘)（60%）、腹瀉（30%） | 新發乾咳、呼吸困難 |
-| Cetuximab | Erbitux | 大腸直腸癌、頭頸癌 | 抗 EGFR 單株抗體 | 皮疹(類青春痘,伴瘙癢)（85%）、輸注反應（20%(首次)） | 輸注中嚴重過敏 |
-| Bortezomib | Velcade | 血液淋巴癌 | 蛋白酶體抑制劑 | 周邊神經病變（30-50%(IV)、15%(SC)）、血小板低下（35%） | 嚴重周邊麻木無力 |
-| Erlotinib | Tarceva | 肺癌 | EGFR TKI(第一代) | 皮疹（70%）、腹瀉（55%） | 新發呼吸困難、乾咳 |
-| Dasatinib | Sprycel | 血液淋巴癌 | BCR-ABL TKI(第二代,多激酶) | 肋膜積液（20-30%）、骨髓抑制（60%） | 活動後氣喘、下肢水腫 |
-| Sunitinib | Sutent | 泌尿癌、其他癌 | 多重激酶 TKI (VEGFR/PDGFR/c-KIT) | 高血壓（30%）、手足症候群（30%） | 嚴重高血壓 |
-| Nilotinib | — | 血液淋巴癌 | BCR-ABL TKI(第二代) | QT 間期延長（10%）、高血糖（30%） | 心悸、暈厥 |
-| Nilotinib 200mg | Tasigna 200mg | 血液淋巴癌 | BCR-ABL TKI(第二代) (200mg) | QT 間期延長（10%）、高血糖（30%） | 心悸、暈厥 |
-| Nilotinib 150mg | Tasigna 150mg | 血液淋巴癌 | BCR-ABL TKI(第二代) (150mg,慢性期) | QT 間期延長（10%）、高血糖（30%） | 心悸、暈厥 |
-| Thalidomide | Thado | 血液淋巴癌 | 免疫調節劑(IMiD)第一代 | 周邊神經病變（>50%）、嗜睡、便秘（75%） | 懷孕(育齡女性) |
-| Sorafenib | Nexavar | 肝膽胰胃癌、泌尿癌、其他癌 | 多重激酶 TKI | 手足症候群（50%）、皮疹（40%） | 嚴重手足疼痛無法行走 |
-| Everolimus 5mg 及10mg | Afinitor 5mg 及10mg | 乳癌、泌尿癌、其他癌 | mTOR 抑制劑 | 口腔黏膜炎（65%）、皮疹（30%） | 嚴重口腔潰瘍無法進食 |
-| Everolimus 2.5mg 及5mg | Votubia | 其他癌 | mTOR 抑制劑(兒童適應症) | 口腔黏膜炎（60%）、感染（高） | 嚴重感染 |
-| Bevacizumab | Avastin | 肺癌、大腸直腸癌、婦癌、肝膽胰胃癌、其他癌 | 抗 VEGF 單株抗體 | 高血壓（30%）、蛋白尿（20%） | 嚴重高血壓 |
-| Temsirolimus | Torisel | 泌尿癌 | mTOR 抑制劑(IV) | 皮疹（45%）、口腔黏膜炎（40%） | 新發呼吸困難 |
-| Pazopanib | Votrient | 泌尿癌、其他癌 | 多重激酶 TKI(VEGFR) | 高血壓（40%）、腹瀉（55%） | 黃疸、暗尿 |
-| Lenalidomide | Revlimid | 血液淋巴癌 | 免疫調節劑(IMiD)第二代 | 骨髓抑制（>70%）、靜脈血栓（10-15%(併用 dex 更高)） | 懷孕(育齡女性) |
-| Afatinib | Giotrif | 肺癌 | EGFR TKI(第二代,不可逆) | 腹瀉（>95%）、皮疹（85%） | 嚴重腹瀉(>7 次/天) |
-| Lapatinib | Tykerb | 乳癌 | 雙重 EGFR/HER2 TKI | 腹瀉（65%）、皮疹（45%） | 嚴重腹瀉 |
-| Crizotinib | Xalkori | 肺癌 | ALK/ROS1/MET TKI | 視力異常(光暈、視覺軌跡)（60%）、噁心、腹瀉、嘔吐（55%） | 新發呼吸困難 |
-| Regorafenib | Stivarga | 大腸直腸癌、肝膽胰胃癌、其他癌 | 多重激酶 TKI | 手足症候群（50%）、腹瀉（40%） | 黃疸 |
-| Vemurafenib | Zelboraf | 其他癌 | BRAF V600 抑制劑 | 皮膚毒性(光敏感、皮疹、角化症)（>80%）、皮膚鱗狀細胞癌、角化棘皮瘤（20-25%） | 新長出皮膚硬塊、潰瘍 |
-| Panitumumab | Vectibix | 大腸直腸癌 | 抗 EGFR 單株抗體(全人源) | 皮疹(類青春痘)（90%）、低鎂血症（40%） | 嚴重皮疹 |
-| Ruxolitinib | Jakavi | 血液淋巴癌 | JAK1/JAK2 抑制劑 | 貧血（40%）、血小板低下（30%） | 發燒 |
-| Brentuximab vedotin | Adcetris | 血液淋巴癌 | ADC - 抗 CD30 抗體偶聯 MMAE | 周邊神經病變（60-70%）、骨髓抑制(嗜中性球低下)（55%） | 意識變化、視力異常、單側無力 |
-| Axitinib | Inlyta | 泌尿癌 | VEGFR TKI | 高血壓（40%）、腹瀉（55%） | 嚴重高血壓 |
-| Ceritinib | Zykadia | 肺癌 | ALK TKI(第二代) | 腹瀉（85%）、噁心嘔吐（75%） | 嚴重腹瀉 |
-| Alectinib | Alecensa | 肺癌 | ALK TKI(第二代) | 便秘（40%）、肌肉痛、CK 上升（40%） | 嚴重肌肉痛、深色尿 |
-| Ibrutinib | Imbruvica | 血液淋巴癌 | BTK 抑制劑(第一代) | 出血(包括嚴重)（30-50%）、心房顫動（10-15%） | 嚴重出血(腦、消化道) |
-| Pomalidomide | Pomalyst | 血液淋巴癌 | 免疫調節劑(IMiD)第三代 | 骨髓抑制（>70%）、感染（高） | 懷孕、感染、血栓(同其他 IMiD) |
-| Lenvatinib | Lenvima | 肝膽胰胃癌、其他癌 | 多重激酶 TKI | 高血壓（70%）、腹瀉（60%） | 嚴重高血壓 |
-| Ponatinib | Iclusig | 血液淋巴癌 | BCR-ABL TKI(第三代) | 動脈血栓事件（20%）、高血壓（30%） | 胸痛、呼吸困難 |
-| Pertuzumab | Perjeta | 乳癌 | 抗 HER2 單株抗體(雙聚化阻斷) | 腹瀉（65%）、脫髮(併用化療)（60%） | 嚴重腹瀉 |
-| Venetoclax | Venclexta | 血液淋巴癌 | BCL-2 抑制劑 | 腫瘤溶解症候群(TLS)（首劑高風險）、嗜中性球低下（60%） | 首次治療後嚴重肌肉抽搐、心律不整 |
-| CDK4/6抑制劑 | ribociclib | 乳癌 | CDK4/6 抑制劑 | 嗜中性球低下（>80%）、疲倦（40%） | 發燒 |
-| Inotuzumab ozogamicin | Besponsa | 血液淋巴癌 | ADC - 抗 CD22 抗體偶聯 calicheami | 肝靜脈閉塞病(VOD/SOS)（13-15%）、骨髓抑制（>90%） | 肝功能急速惡化、體重增加、腹脹 |
-| Cabozantinib | Cabometyx | 泌尿癌、其他癌 | 多重激酶 TKI(VEGFR/MET/AXL) | 腹瀉（65%）、手足症候群（40%） | 突發劇烈腹痛 |
-| Carfilzomib | Kyprolis | 血液淋巴癌 | 蛋白酶體抑制劑(不可逆) | 心臟毒性(心衰、心肌梗塞)（8%）、高血壓（30%） | 胸痛、呼吸困難、活動後氣喘 |
-| Midostaurin | Rydapt | 血液淋巴癌 | 多重激酶 TKI(FLT3、KIT) | 噁心嘔吐（80%）、黏膜炎（60%） | 持續嘔吐無法服藥 |
-| Ixazomib | Ninlaro | 血液淋巴癌 | 蛋白酶體抑制劑(口服) | 腹瀉（45%）、便秘（35%） | 嚴重腹瀉 |
-| Daratumumab | Darzalex 靜脈注射劑與皮下注 | 血液淋巴癌 | 抗 CD38 單株抗體 | 輸注反應（50%(首次)）、感染(包括上呼吸道、肺炎)（高） | 輸注中嚴重反應(每次都可能) |
-| Obinutuzumab | Gazyva | 血液淋巴癌 | 抗 CD20 單株抗體(第二代) | 輸注反應（65%(首次)）、腫瘤溶解症候群（高 tumor burden） | 輸注中嚴重反應(過敏、低血壓、呼吸困難) |
-| Osimertinib | Tagrisso | 肺癌 | EGFR TKI(第三代) | 腹瀉（50%）、皮疹（40%） | 新發乾咳、呼吸困難 |
-| Lorlatinib | Lorviqua | 肺癌 | ALK/ROS1 TKI(第三代) | 高血脂(膽固醇/三酸甘油脂)（>85%）、周邊水腫（50%） | 嚴重情緒變化 |
-| Brigatinib | Alunbrig | 肺癌 | ALK TKI(第二代) | 肺早期反應(呼吸困難)（3-9%）、腹瀉、噁心（40%） | 前 7 天突發呼吸困難 |
-| Dacomitinib | Vizimpro | 肺癌 | EGFR TKI(第二代,不可逆) | 腹瀉（85%）、皮疹（75%） | 嚴重腹瀉 |
-| PARP 抑制劑 | olaparib、niraparib | 乳癌、婦癌、泌尿癌 | PARP 抑制劑 | 骨髓抑制（60%）、噁心嘔吐（60-70%） | 嚴重貧血、心悸、頭暈 |
-| Vandetanib | Caprelsa | 其他癌 | 多重激酶 TKI(RET、VEGFR、EGFR) | QT 間期延長（10%）、腹瀉（50%） | 心悸、暈厥 |
-| Trastuzumab emtansine | Kadcyla | 乳癌 | ADC - HER2 抗體偶聯 DM1 | 血小板低下（30%）、肝毒性(GOT/GPT 上升)（30%） | 黃疸、嚴重腹脹 |
-| Dabrafenib | Tafinlar | 肺癌、其他癌 | BRAF V600 抑制劑 | 發燒(熱症)（55%(併用 trametinib 時)）、皮膚毒性(比 vemurafenib 輕)（30%） | 持續發燒 ≥38.5°C |
-| Ramucirumab | Cyramza | 肝膽胰胃癌 | 抗 VEGFR2 單株抗體 | 高血壓（20%）、蛋白尿（15%） | 嚴重高血壓 |
-| Entrectinib | Rozlytrek | 肺癌 | ROS1/NTRK/ALK TKI | 認知功能異常、平衡感（30%）、便秘（45%） | 嚴重認知障礙、平衡問題 |
-| Larotrectinib | Vitrakvi | 肺癌、大腸直腸癌、肝膽胰胃癌、其他癌 | NTRK 選擇性抑制劑 | 疲倦（30%）、肝功能異常（40%） | 黃疸、嚴重肝功能異常 |
-| Avapritinib | Ayvakit | 其他癌 | PDGFRA / KIT TKI | 認知障礙、健忘（40%）、周邊水腫（70%） | 頭痛劇烈、意識變化 |
-| Pemigatinib | Pemazyre | 血液淋巴癌、肝膽胰胃癌 | FGFR1-3 抑制劑 | 高磷血症（>90%）、脫髮（50%） | 視力模糊 |
-| Acalabrutinib | Calquence | 血液淋巴癌 | BTK 抑制劑(第二代) | 頭痛（40%）、腹瀉（30%） | 嚴重出血 |
-| Tepotinib | Tepmetko | 肺癌 | MET 抑制劑 | 周邊水腫（60%）、噁心、腹瀉（30-40%） | 嚴重水腫(肺水腫、心包積液) |
-| Zanubrutinib | Brukinsa | 血液淋巴癌 | BTK 抑制劑(第二代) | 出血、瘀青（30-50%）、嗜中性球低下（30%） | 嚴重出血 |
-| Polatuzumab vedotin | Polivy | 血液淋巴癌 | ADC - 抗 CD79b 抗體偶聯 MMAE | 周邊神經病變（40%）、骨髓抑制（>70%） | 嚴重周邊神經病變影響日常 |
-| Sacituzumab govitecan | Trodelvy | 乳癌 | ADC - 抗 Trop-2 抗體偶聯 SN-38 (I | 嚴重腹瀉(類似 irinotecan)（60%）、骨髓抑制（>70%） | 嚴重腹瀉(每天 >7 次或脫水) |
-| Abemaciclib | Verzenio | 乳癌 | CDK4/6 抑制劑 | 腹瀉（>85%）、嗜中性球低下（60%） | 嚴重腹瀉(>7 次/天或脫水) |
-| Isatuximab | Sarclisa | 血液淋巴癌 | 抗 CD38 單株抗體 | 輸注反應（40%(首次)）、嗜中性球低下、血小板低下（60%） | 輸注中嚴重反應 |
-| Enfortumab vedotin | Padcev | 泌尿癌 | ADC - 抗 Nectin-4 抗體偶聯 MMAE | 周邊神經病變（50%）、皮膚反應(包括 SJS/TEN)（55%(皮疹)） | 皮疹擴散、水泡、口腔潰瘍 |
-| Tirabrutinib | Velexbru | 血液淋巴癌 | BTK 抑制劑(第二代) | 皮疹（40%）、嗜中性球低下（30%） | 皮疹擴散嚴重 |
-| Elotuzumab | Empliciti | 血液淋巴癌 | 抗 SLAMF7 單株抗體 | 輸注反應（10%）、感染（高） | 輸注反應 |
-| Pertuzumab 與 trastuzumab 皮下注 | Phesgo | 乳癌 | HER2 雙抗體皮下複方 | 注射部位反應（10-15%）、腹瀉（55%(併用化療)） | 嚴重腹瀉 |
-| Gemtuzumab ozogamicin | Mylotarg | 血液淋巴癌 | ADC - 抗 CD33 抗體偶聯 calicheami | 肝靜脈閉塞病(VOD/SOS)（5%）、骨髓抑制（>90%） | 肝功能惡化、體重增加、腹脹 |
-| Fedratinib | Inrebic | 血液淋巴癌 | JAK2 抑制劑 | 腹瀉、噁心（60-70%）、貧血、血小板低下（60%） | 意識變化、平衡異常、視覺異常 |
-| Trastuzumab deruxtecan | Enhertu | 乳癌 | ADC - HER2 抗體偶聯 deruxtecan ( | 間質性肺炎/肺毒性（10-15%）、骨髓抑制（>60%） | 新發乾咳、呼吸困難、運動耐力下降 |
-| Selumetinib | Koselugo | 其他癌 | MEK 抑制劑 | 皮疹(類似青春痘)（85%）、腹瀉、噁心嘔吐（70%） | 視力模糊、視野缺損 |
-| Selinexor | Xpovio | 血液淋巴癌 | XPO1 抑制劑 | 噁心嘔吐（>70%）、疲倦（60%） | 持續嘔吐無法進食 |
-| Asciminib | Scemblix | 血液淋巴癌 | STAMP 機轉 BCR-ABL 抑制劑 | 肌肉骨骼痛（30%）、皮疹（20%） | 嚴重腹痛 |
-| Ripretinib | Qinlock | 其他癌 | KIT/PDGFRA 抑制劑 | 脫髮（50%）、疲倦（40%） | 新長出皮膚硬塊 |
-| Tafasitamab | Minjuvi | 血液淋巴癌 | 抗 CD19 單株抗體 | 嗜中性球低下（55%）、貧血、血小板低下（35%） | 發燒 |
-| Quizartinib | Vanflyta | 血液淋巴癌 | FLT3 抑制劑 | QT 間期延長（10%）、骨髓抑制（>90%） | 心悸、暈厥 |
-| Amivantamab | Rybrevant | 肺癌 | EGFR-MET 雙特異性抗體 | 輸注反應（65%(首次)）、皮疹(類青春痘)（75%） | 輸注中嚴重反應 |
-| Momelotinib | Omjjara | 血液淋巴癌 | JAK1/JAK2/ACVR1 抑制劑 | 血小板低下（30%）、頭暈、頭痛（30%） | 發燒 |
-| Tucidinostat | Kepida | 乳癌 | HDAC 抑制劑 | 骨髓抑制(尤其血小板)（60%）、腹瀉（30%） | 嚴重出血、瘀青 |
-| Alpelisib | Piqray | 乳癌 | PI3Kα 抑制劑 | 高血糖（>80%）、皮疹(包括嚴重 SJS)（55%） | 頻尿、口渴、噁心 |
-| Repotrectinib | Augtyro | 肺癌 | ROS1/NTRK TKI(新一代) | 頭暈、平衡感異常（60%）、感覺異常（40%） | 嚴重頭暈影響日常 |
-| Bosutinib | Bostini | 血液淋巴癌 | BCR-ABL TKI(第二代) | 腹瀉（70%）、噁心、嘔吐（40%） | 嚴重腹瀉(>7 次/天) |
-| Zolbetuximab | Vyloy | 肝膽胰胃癌 | 抗 CLDN18.2 單株抗體 | 噁心嘔吐（70%）、輸注反應（20%） | 嚴重嘔吐無法進食 |
-| Encorafenib | Braftovi | 大腸直腸癌 | BRAF V600 抑制劑 | 疲倦（50%）、噁心嘔吐（40%） | 新長出皮膚硬塊 |
+<div class="drug-table-wrapper" markdown="1">
+
+| 藥物名稱 / 商品名 | 主要癌別 | 藥物分類 | 代表性副作用 | 🚨 最重要警示 |
+|-----------------|---------|---------|------------|-------------|
+| Trastuzumab<br><small>Herceptin</small> | 乳癌、肝膽胰胃 | 抗 HER2 單株抗體 | 心臟毒性(LVEF 下降)、輸注反應 | 活動後氣喘、下肢水腫 |
+| Rituximab 注射劑 | 血液淋巴 | 抗 CD20 單株抗體(第一代) | 輸注反應、感染 | 輸注中嚴重反應 |
+| Imatinib<br><small>Glivec</small> | 血液淋巴、其他 | BCR-ABL TKI(第一代) | 周邊水腫(尤其眼瞼)、肌肉痙攣 | 嚴重水腫(肺水腫、腹水) |
+| Gefitinib<br><small>Iressa</small> | 肺癌 | EGFR TKI(第一代) | 皮疹(類青春痘)、腹瀉 | 新發乾咳、呼吸困難 |
+| Cetuximab<br><small>Erbitux</small> | 大腸直腸、頭頸 | 抗 EGFR 單株抗體 | 皮疹(類青春痘,伴瘙癢)、輸注反應 | 輸注中嚴重過敏 |
+| Bortezomib<br><small>Velcade</small> | 血液淋巴 | 蛋白酶體抑制劑 | 周邊神經病變、血小板低下 | 嚴重周邊麻木無力 |
+| Erlotinib<br><small>Tarceva</small> | 肺癌 | EGFR TKI(第一代) | 皮疹、腹瀉 | 新發呼吸困難、乾咳 |
+| Dasatinib<br><small>Sprycel</small> | 血液淋巴 | BCR-ABL TKI | 肋膜積液、骨髓抑制 | 活動後氣喘、下肢水腫 |
+| Sunitinib<br><small>Sutent</small> | 泌尿、其他 | 多重激酶 TKI | 高血壓、手足症候群 | 嚴重高血壓 |
+| Nilotinib | 血液淋巴 | BCR-ABL TKI(第二代) | QT 間期延長、高血糖 | 心悸、暈厥 |
+| Nilotinib 200mg<br><small>Tasigna 200mg</small> | 血液淋巴 | BCR-ABL TKI(第二代) (200mg) | QT 間期延長、高血糖 | 心悸、暈厥 |
+| Nilotinib 150mg<br><small>Tasigna 150mg</small> | 血液淋巴 | BCR-ABL TKI(第二代) | QT 間期延長、高血糖 | 心悸、暈厥 |
+| Thalidomide<br><small>Thado</small> | 血液淋巴 | 免疫調節劑(IMiD)第一代 | 周邊神經病變、嗜睡、便秘 | 懷孕(育齡女性) |
+| Sorafenib<br><small>Nexavar</small> | 肝膽胰胃、泌尿、其他 | 多重激酶 TKI | 手足症候群、皮疹 | 嚴重手足疼痛無法行走 |
+| Everolimus 5mg 及10mg<br><small>Afinitor 5mg 及</small> | 乳癌、泌尿、其他 | mTOR 抑制劑 | 口腔黏膜炎、皮疹 | 嚴重口腔潰瘍無法進食 |
+| Everolimus 2.5mg 及5mg<br><small>Votubia</small> | 其他 | mTOR 抑制劑(兒童適應症) | 口腔黏膜炎、感染 | 嚴重感染 |
+| Bevacizumab<br><small>Avastin</small> | 肺癌、大腸直腸、婦癌、肝膽胰胃、其他 | 抗 VEGF 單株抗體 | 高血壓、蛋白尿 | 嚴重高血壓 |
+| Temsirolimus<br><small>Torisel</small> | 泌尿 | mTOR 抑制劑(IV) | 皮疹、口腔黏膜炎 | 新發呼吸困難 |
+| Pazopanib<br><small>Votrient</small> | 泌尿、其他 | 多重激酶 TKI(VEGFR) | 高血壓、腹瀉 | 黃疸、暗尿 |
+| Lenalidomide<br><small>Revlimid</small> | 血液淋巴 | 免疫調節劑(IMiD)第二代 | 骨髓抑制、靜脈血栓 | 懷孕(育齡女性) |
+| Afatinib<br><small>Giotrif</small> | 肺癌 | EGFR TKI | 腹瀉、皮疹 | 嚴重腹瀉(>7 次/天) |
+| Lapatinib<br><small>Tykerb</small> | 乳癌 | 雙重 EGFR/HER2 TKI | 腹瀉、皮疹 | 嚴重腹瀉 |
+| Crizotinib<br><small>Xalkori</small> | 肺癌 | ALK/ROS1/MET TKI | 視力異常(光暈、視覺軌跡)、噁心、腹瀉、嘔吐 | 新發呼吸困難 |
+| Regorafenib<br><small>Stivarga</small> | 大腸直腸、肝膽胰胃、其他 | 多重激酶 TKI | 手足症候群、腹瀉 | 黃疸 |
+| Vemurafenib<br><small>Zelboraf</small> | 其他 | BRAF V600 抑制劑 | 皮膚毒性(光敏感、皮疹、角化症)、皮膚鱗狀細胞癌、角化棘皮瘤 | 新長出皮膚硬塊、潰瘍 |
+| Panitumumab<br><small>Vectibix</small> | 大腸直腸 | 抗 EGFR 單株抗體(全人源) | 皮疹(類青春痘)、低鎂血症 | 嚴重皮疹 |
+| Ruxolitinib<br><small>Jakavi</small> | 血液淋巴 | JAK1/JAK2 抑制劑 | 貧血、血小板低下 | 發燒 |
+| Brentuximab vedotin<br><small>Adcetris</small> | 血液淋巴 | ADC - 抗 CD30 抗體偶聯 MMAE | 周邊神經病變、骨髓抑制(嗜中性球低下) | 意識變化、視力異常、單側無力 |
+| Axitinib<br><small>Inlyta</small> | 泌尿 | VEGFR TKI | 高血壓、腹瀉 | 嚴重高血壓 |
+| Ceritinib<br><small>Zykadia</small> | 肺癌 | ALK TKI(第二代) | 腹瀉、噁心嘔吐 | 嚴重腹瀉 |
+| Alectinib<br><small>Alecensa</small> | 肺癌 | ALK TKI(第二代) | 便秘、肌肉痛、CK 上升 | 嚴重肌肉痛、深色尿 |
+| Ibrutinib<br><small>Imbruvica</small> | 血液淋巴 | BTK 抑制劑(第一代) | 出血(包括嚴重)、心房顫動 | 嚴重出血(腦、消化道) |
+| Pomalidomide<br><small>Pomalyst</small> | 血液淋巴 | 免疫調節劑(IMiD)第三代 | 骨髓抑制、感染 | 懷孕、感染、血栓(同其他 IMiD) |
+| Lenvatinib<br><small>Lenvima</small> | 肝膽胰胃、其他 | 多重激酶 TKI | 高血壓、腹瀉 | 嚴重高血壓 |
+| Ponatinib<br><small>Iclusig</small> | 血液淋巴 | BCR-ABL TKI(第三代) | 動脈血栓事件、高血壓 | 胸痛、呼吸困難 |
+| Pertuzumab<br><small>Perjeta</small> | 乳癌 | 抗 HER2 單株抗體(雙聚化阻斷) | 腹瀉、脫髮(併用化療) | 嚴重腹瀉 |
+| Venetoclax<br><small>Venclexta</small> | 血液淋巴 | BCL-2 抑制劑 | 腫瘤溶解症候群(TLS)、嗜中性球低下 | 首次治療後嚴重肌肉抽搐、心律不整 |
+| CDK4/6抑制劑<br><small>ribociclib</small> | 乳癌 | CDK4/6 抑制劑 | 嗜中性球低下、疲倦 | 發燒 |
+| Inotuzumab ozogamicin<br><small>Besponsa</small> | 血液淋巴 | ADC - 抗 CD22 抗體偶聯 calichea | 肝靜脈閉塞病(VOD/SOS)、骨髓抑制 | 肝功能急速惡化、體重增加、腹脹 |
+| Cabozantinib<br><small>Cabometyx</small> | 泌尿、其他 | 多重激酶 TKI | 腹瀉、手足症候群 | 突發劇烈腹痛 |
+| Carfilzomib<br><small>Kyprolis</small> | 血液淋巴 | 蛋白酶體抑制劑(不可逆) | 心臟毒性(心衰、心肌梗塞)、高血壓 | 胸痛、呼吸困難、活動後氣喘 |
+| Midostaurin<br><small>Rydapt</small> | 血液淋巴 | 多重激酶 TKI | 噁心嘔吐、黏膜炎 | 持續嘔吐無法服藥 |
+| Ixazomib<br><small>Ninlaro</small> | 血液淋巴 | 蛋白酶體抑制劑(口服) | 腹瀉、便秘 | 嚴重腹瀉 |
+| Daratumumab<br><small>Darzalex 靜脈注射劑</small> | 血液淋巴 | 抗 CD38 單株抗體 | 輸注反應、感染(包括上呼吸道、肺炎) | 輸注中嚴重反應(每次都可能) |
+| Obinutuzumab<br><small>Gazyva</small> | 血液淋巴 | 抗 CD20 單株抗體(第二代) | 輸注反應、腫瘤溶解症候群 | 輸注中嚴重反應(過敏、低血壓、呼吸困難) |
+| Osimertinib<br><small>Tagrisso</small> | 肺癌 | EGFR TKI(第三代) | 腹瀉、皮疹 | 新發乾咳、呼吸困難 |
+| Lorlatinib<br><small>Lorviqua</small> | 肺癌 | ALK/ROS1 TKI(第三代) | 高血脂(膽固醇/三酸甘油脂)、周邊水腫 | 嚴重情緒變化 |
+| Brigatinib<br><small>Alunbrig</small> | 肺癌 | ALK TKI(第二代) | 肺早期反應(呼吸困難)、腹瀉、噁心 | 前 7 天突發呼吸困難 |
+| Dacomitinib<br><small>Vizimpro</small> | 肺癌 | EGFR TKI | 腹瀉、皮疹 | 嚴重腹瀉 |
+| PARP 抑制劑<br><small>olaparib、nirap</small> | 乳癌、婦癌、泌尿 | PARP 抑制劑 | 骨髓抑制、噁心嘔吐 | 嚴重貧血、心悸、頭暈 |
+| Vandetanib<br><small>Caprelsa</small> | 其他 | 多重激酶 TKI | QT 間期延長、腹瀉 | 心悸、暈厥 |
+| Trastuzumab emtansine<br><small>Kadcyla</small> | 乳癌 | ADC - HER2 抗體偶聯 DM1 | 血小板低下、肝毒性(GOT/GPT 上升) | 黃疸、嚴重腹脹 |
+| Dabrafenib<br><small>Tafinlar</small> | 肺癌、其他 | BRAF V600 抑制劑 | 發燒(熱症)、皮膚毒性(比 vemurafenib 輕) | 持續發燒 ≥38.5°C |
+| Ramucirumab<br><small>Cyramza</small> | 肝膽胰胃 | 抗 VEGFR2 單株抗體 | 高血壓、蛋白尿 | 嚴重高血壓 |
+| Entrectinib<br><small>Rozlytrek</small> | 肺癌 | ROS1/NTRK/ALK TKI | 認知功能異常、平衡感、便秘 | 嚴重認知障礙、平衡問題 |
+| Larotrectinib<br><small>Vitrakvi</small> | 肺癌、大腸直腸、肝膽胰胃、其他 | NTRK 選擇性抑制劑 | 疲倦、肝功能異常 | 黃疸、嚴重肝功能異常 |
+| Avapritinib<br><small>Ayvakit</small> | 其他 | PDGFRA / KIT TKI | 認知障礙、健忘、周邊水腫 | 頭痛劇烈、意識變化 |
+| Pemigatinib<br><small>Pemazyre</small> | 血液淋巴、肝膽胰胃 | FGFR1-3 抑制劑 | 高磷血症、脫髮 | 視力模糊 |
+| Acalabrutinib<br><small>Calquence</small> | 血液淋巴 | BTK 抑制劑(第二代) | 頭痛、腹瀉 | 嚴重出血 |
+| Tepotinib<br><small>Tepmetko</small> | 肺癌 | MET 抑制劑 | 周邊水腫、噁心、腹瀉 | 嚴重水腫(肺水腫、心包積液) |
+| Zanubrutinib<br><small>Brukinsa</small> | 血液淋巴 | BTK 抑制劑(第二代) | 出血、瘀青、嗜中性球低下 | 嚴重出血 |
+| Polatuzumab vedotin<br><small>Polivy</small> | 血液淋巴 | ADC - 抗 CD79b 抗體偶聯 MMAE | 周邊神經病變、骨髓抑制 | 嚴重周邊神經病變影響日常 |
+| Sacituzumab govitecan<br><small>Trodelvy</small> | 乳癌 | ADC - 抗 Trop-2 抗體偶聯 SN-38 | 嚴重腹瀉(類似 irinotecan)、骨髓抑制 | 嚴重腹瀉(每天 >7 次或脫水) |
+| Abemaciclib<br><small>Verzenio</small> | 乳癌 | CDK4/6 抑制劑 | 腹瀉、嗜中性球低下 | 嚴重腹瀉(>7 次/天或脫水) |
+| Isatuximab<br><small>Sarclisa</small> | 血液淋巴 | 抗 CD38 單株抗體 | 輸注反應、嗜中性球低下、血小板低下 | 輸注中嚴重反應 |
+| Enfortumab vedotin<br><small>Padcev</small> | 泌尿 | ADC - 抗 Nectin-4 抗體偶聯 MMAE | 周邊神經病變、皮膚反應(包括 SJS/TEN) | 皮疹擴散、水泡、口腔潰瘍 |
+| Tirabrutinib<br><small>Velexbru</small> | 血液淋巴 | BTK 抑制劑(第二代) | 皮疹、嗜中性球低下 | 皮疹擴散嚴重 |
+| Elotuzumab<br><small>Empliciti</small> | 血液淋巴 | 抗 SLAMF7 單株抗體 | 輸注反應、感染 | 輸注反應 |
+| Pertuzumab 與 trastuzumab<br><small>Phesgo</small> | 乳癌 | HER2 雙抗體皮下複方 | 注射部位反應、腹瀉 | 嚴重腹瀉 |
+| Gemtuzumab ozogamicin<br><small>Mylotarg</small> | 血液淋巴 | ADC - 抗 CD33 抗體偶聯 calichea | 肝靜脈閉塞病(VOD/SOS)、骨髓抑制 | 肝功能惡化、體重增加、腹脹 |
+| Fedratinib<br><small>Inrebic</small> | 血液淋巴 | JAK2 抑制劑 | 腹瀉、噁心、貧血、血小板低下 | 意識變化、平衡異常、視覺異常 |
+| Trastuzumab deruxtecan<br><small>Enhertu</small> | 乳癌 | ADC - HER2 抗體偶聯 deruxtecan | 間質性肺炎/肺毒性、骨髓抑制 | 新發乾咳、呼吸困難、運動耐力下降 |
+| Selumetinib<br><small>Koselugo</small> | 其他 | MEK 抑制劑 | 皮疹(類似青春痘)、腹瀉、噁心嘔吐 | 視力模糊、視野缺損 |
+| Selinexor<br><small>Xpovio</small> | 血液淋巴 | XPO1 抑制劑 | 噁心嘔吐、疲倦 | 持續嘔吐無法進食 |
+| Asciminib<br><small>Scemblix</small> | 血液淋巴 | STAMP 機轉 BCR-ABL 抑制劑 | 肌肉骨骼痛、皮疹 | 嚴重腹痛 |
+| Ripretinib<br><small>Qinlock</small> | 其他 | KIT/PDGFRA 抑制劑 | 脫髮、疲倦 | 新長出皮膚硬塊 |
+| Tafasitamab<br><small>Minjuvi</small> | 血液淋巴 | 抗 CD19 單株抗體 | 嗜中性球低下、貧血、血小板低下 | 發燒 |
+| Quizartinib<br><small>Vanflyta</small> | 血液淋巴 | FLT3 抑制劑 | QT 間期延長、骨髓抑制 | 心悸、暈厥 |
+| Amivantamab<br><small>Rybrevant</small> | 肺癌 | EGFR-MET 雙特異性抗體 | 輸注反應、皮疹(類青春痘) | 輸注中嚴重反應 |
+| Momelotinib<br><small>Omjjara</small> | 血液淋巴 | JAK1/JAK2/ACVR1 抑制劑 | 血小板低下、頭暈、頭痛 | 發燒 |
+| Tucidinostat<br><small>Kepida</small> | 乳癌 | HDAC 抑制劑 | 骨髓抑制(尤其血小板)、腹瀉 | 嚴重出血、瘀青 |
+| Alpelisib<br><small>Piqray</small> | 乳癌 | PI3Kα 抑制劑 | 高血糖、皮疹(包括嚴重 SJS) | 頻尿、口渴、噁心 |
+| Repotrectinib<br><small>Augtyro</small> | 肺癌 | ROS1/NTRK TKI(新一代) | 頭暈、平衡感異常、感覺異常 | 嚴重頭暈影響日常 |
+| Bosutinib<br><small>Bostini</small> | 血液淋巴 | BCR-ABL TKI(第二代) | 腹瀉、噁心、嘔吐 | 嚴重腹瀉(>7 次/天) |
+| Zolbetuximab<br><small>Vyloy</small> | 肝膽胰胃 | 抗 CLDN18.2 單株抗體 | 噁心嘔吐、輸注反應 | 嚴重嘔吐無法進食 |
+| Encorafenib<br><small>Braftovi</small> | 大腸直腸 | BRAF V600 抑制劑 | 疲倦、噁心嘔吐 | 新長出皮膚硬塊 |
+
+</div>
 
 ### 🛡️ 免疫（10 種）
 
-| 藥物名稱 | 商品名 | 主要癌別 | 藥物分類 | 代表性副作用 | 🚨 最重要警示 |
-|---------|-------|---------|---------|------------|-------------|
-| Streptococcus pyrogene | Picibanil | 其他癌 | 鏈球菌製劑(免疫刺激) | 發燒、寒顫（>90%）、注射部位/腔室疼痛（70%） | 注射中嚴重過敏(蕁麻疹、呼吸困難、休克) |
-| Aldesleukin | Proleukin for Inje | 泌尿癌 | 高劑量 IL-2 細胞激素 | 微血管滲漏症候群(CLS)（>80%）、發燒、寒顫、肌肉痛(類流感)（>90%） | 急性低血壓、呼吸困難 |
-| Blinatumomab | Blincyto | 血液淋巴癌 | BiTE - CD19 × CD3 雙特異性 T 細胞接 | 細胞激素釋放症候群(CRS)（10-15%(重度)）、神經毒性(ICANS)（50%(輕中度),12% 重度） | 高燒不退、低血壓、呼吸喘 |
-| 免疫檢查點抑制劑 | — | 乳癌、肺癌、食道癌、大腸直腸癌、血液淋巴癌、肝膽胰胃癌、泌尿癌、頭頸癌、其他癌 | 免疫檢查點抑制劑(ICI) - PD-1/PD-L1/C | 免疫相關不良反應(irAE) - 全身性（整體 60-80%(任何 grade)）、皮膚毒性(皮疹、瘙癢、白斑)（30-50%） | 新發呼吸困難、乾咳 |
-| Dinutuximab beta | Qarziba | 其他癌 | 抗 GD2 單株抗體 | 神經痛(嚴重)（>90%）、發燒（75%） | 嚴重疼痛無法忍受 |
-| Tisagenlecleucel | Kymriah | 血液淋巴癌 | CD19 CAR-T 細胞療法 | 細胞激素釋放症候群(CRS)（75-95%(任何 grade)）、神經毒性(ICANS)（40-65%） | 高燒、低血壓、缺氧 |
-| Elranatamab | Elrexfio | 血液淋巴癌 | BCMA × CD3 雙特異性 T 細胞接合抗體 | 細胞激素釋放症候群(CRS)（60%(多輕度)）、神經毒性(ICANS)（5-10%） | 高燒、低血壓 |
-| Teclistamab | Tecvayli | 血液淋巴癌 | BCMA × CD3 雙特異性 T 細胞接合抗體 | 細胞激素釋放症候群(CRS)（70%(多輕中度)）、神經毒性(ICANS)（5-10%） | 持續發燒 |
-| Glofitamab | Columvi | 血液淋巴癌 | CD20 × CD3 雙特異性抗體 | 細胞激素釋放症候群(CRS)（65%(多輕中度)）、神經毒性(ICANS)（5-10%） | 高燒、低血壓 |
-| Epcoritamab | Epkinly | 血液淋巴癌 | CD20 × CD3 雙特異性抗體(皮下) | 細胞激素釋放症候群(CRS)（50-60%(多輕中度)）、神經毒性(ICANS)（5-10%） | 持續發燒、低血壓 |
+<div class="drug-table-wrapper" markdown="1">
+
+| 藥物名稱 / 商品名 | 主要癌別 | 藥物分類 | 代表性副作用 | 🚨 最重要警示 |
+|-----------------|---------|---------|------------|-------------|
+| Streptococcus pyrogene<br><small>Picibanil</small> | 其他 | 鏈球菌製劑(免疫刺激) | 發燒、寒顫、注射部位/腔室疼痛 | 注射中嚴重過敏(蕁麻疹、呼吸困難、休克) |
+| Aldesleukin<br><small>Proleukin for </small> | 泌尿 | 高劑量 IL-2 細胞激素 | 微血管滲漏症候群(CLS)、發燒、寒顫、肌肉痛(類流感) | 急性低血壓、呼吸困難 |
+| Blinatumomab<br><small>Blincyto</small> | 血液淋巴 | BiTE - CD19 × CD3 雙特異性 T 細 | 細胞激素釋放症候群(CRS)、神經毒性(ICANS) | 高燒不退、低血壓、呼吸喘 |
+| 免疫檢查點抑制劑 | 乳癌、肺癌、食道、大腸直腸、血液淋巴、肝膽胰胃、泌尿、頭頸、其他 | 免疫檢查點抑制劑(ICI) - PD-1/PD-L1 | 免疫相關不良反應(irAE) - 全身性、皮膚毒性(皮疹、瘙癢、白斑) | 新發呼吸困難、乾咳 |
+| Dinutuximab beta<br><small>Qarziba</small> | 其他 | 抗 GD2 單株抗體 | 神經痛(嚴重)、發燒 | 嚴重疼痛無法忍受 |
+| Tisagenlecleucel<br><small>Kymriah</small> | 血液淋巴 | CD19 CAR-T 細胞療法 | 細胞激素釋放症候群(CRS)、神經毒性(ICANS) | 高燒、低血壓、缺氧 |
+| Elranatamab<br><small>Elrexfio</small> | 血液淋巴 | BCMA × CD3 雙特異性 T 細胞接合抗體 | 細胞激素釋放症候群(CRS)、神經毒性(ICANS) | 高燒、低血壓 |
+| Teclistamab<br><small>Tecvayli</small> | 血液淋巴 | BCMA × CD3 雙特異性 T 細胞接合抗體 | 細胞激素釋放症候群(CRS)、神經毒性(ICANS) | 持續發燒 |
+| Glofitamab<br><small>Columvi</small> | 血液淋巴 | CD20 × CD3 雙特異性抗體 | 細胞激素釋放症候群(CRS)、神經毒性(ICANS) | 高燒、低血壓 |
+| Epcoritamab<br><small>Epkinly</small> | 血液淋巴 | CD20 × CD3 雙特異性抗體(皮下) | 細胞激素釋放症候群(CRS)、神經毒性(ICANS) | 持續發燒、低血壓 |
+
+</div>
 
 ### ⚗️ 荷爾蒙（11 種）
 
-| 藥物名稱 | 商品名 | 主要癌別 | 藥物分類 | 代表性副作用 | 🚨 最重要警示 |
-|---------|-------|---------|---------|------------|-------------|
-| Aromatase Inhibitors | — | 乳癌 | 芳香酶抑制劑(AI) | 骨質疏鬆、骨折風險（長期使用累積）、肌肉骨骼疼痛、關節僵硬（50%） | 新發劇烈背痛、髖部痛 |
-| Exemestane | Aromasin Sugar Coa | 乳癌 | AI - 不可逆性類固醇結構 | 肌肉骨骼疼痛（50%）、熱潮紅（35%） | 嚴重關節痛 |
-| Anastrozole | Arimidex | 乳癌 | AI - 可逆性非類固醇結構 | 肌肉骨骼疼痛（50%）、熱潮紅（35%） | 嚴重關節痛 |
-| Letrozole | — | 乳癌 | AI - 可逆性非類固醇結構 | 肌肉骨骼疼痛（55%）、熱潮紅（35%） | 嚴重關節痛 |
-| Toremifene | Fareston | 乳癌 | 選擇性雌激素受體調節劑(SERM) | 熱潮紅（35%）、陰道分泌物、出血（20%） | 下肢腫痛 |
-| Flutamide；buserelin | — | 泌尿癌 | 抗雄激素 / GnRH agonist | Flare 現象(buserelin 初期)（前 1-2 週）、性慾減退、勃起功能障礙（>90%） | 黃疸、暗尿 |
-| Bicalutamide | — | 泌尿癌 | 抗雄激素(第一代) | 男性女乳、乳房疼痛（30-50%）、熱潮紅（10-20%） | 黃疸、深色尿 |
-| Enzalutamide | Xtandi | 泌尿癌 | 抗雄激素(第二代,新型) | 疲倦（50%）、高血壓（15%） | 癲癇發作 |
-| Apalutamide | Erleada | 泌尿癌 | 抗雄激素(第二代) | 皮疹(包括嚴重 SJS)（25%(總)、5% 嚴重）、疲倦（40%） | 皮疹擴散、水泡 |
-| Darolutamide | Nubeqa | 泌尿癌 | 抗雄激素(第二代) | 疲倦（16%）、肢端疼痛（6%） | 新發癲癇(雖罕見) |
-| Fulvestrant | Fustron | 乳癌 | 選擇性雌激素受體降解劑(SERD) | 注射部位反應（30%）、熱潮紅（25%） | 嚴重注射部位疼痛、感染 |
+<div class="drug-table-wrapper" markdown="1">
+
+| 藥物名稱 / 商品名 | 主要癌別 | 藥物分類 | 代表性副作用 | 🚨 最重要警示 |
+|-----------------|---------|---------|------------|-------------|
+| Aromatase Inhibitors | 乳癌 | 芳香酶抑制劑(AI) | 骨質疏鬆、骨折風險、肌肉骨骼疼痛、關節僵硬 | 新發劇烈背痛、髖部痛 |
+| Exemestane<br><small>Aromasin Sugar</small> | 乳癌 | AI - 不可逆性類固醇結構 | 肌肉骨骼疼痛、熱潮紅 | 嚴重關節痛 |
+| Anastrozole<br><small>Arimidex</small> | 乳癌 | AI - 可逆性非類固醇結構 | 肌肉骨骼疼痛、熱潮紅 | 嚴重關節痛 |
+| Letrozole | 乳癌 | AI - 可逆性非類固醇結構 | 肌肉骨骼疼痛、熱潮紅 | 嚴重關節痛 |
+| Toremifene<br><small>Fareston</small> | 乳癌 | 選擇性雌激素受體調節劑(SERM) | 熱潮紅、陰道分泌物、出血 | 下肢腫痛 |
+| Flutamide；buserelin | 泌尿 | 抗雄激素 / GnRH agonist | Flare 現象(buserelin 初期)、性慾減退、勃起功能障礙 | 黃疸、暗尿 |
+| Bicalutamide | 泌尿 | 抗雄激素(第一代) | 男性女乳、乳房疼痛、熱潮紅 | 黃疸、深色尿 |
+| Enzalutamide<br><small>Xtandi</small> | 泌尿 | 抗雄激素 | 疲倦、高血壓 | 癲癇發作 |
+| Apalutamide<br><small>Erleada</small> | 泌尿 | 抗雄激素(第二代) | 皮疹(包括嚴重 SJS)、疲倦 | 皮疹擴散、水泡 |
+| Darolutamide<br><small>Nubeqa</small> | 泌尿 | 抗雄激素(第二代) | 疲倦、肢端疼痛 | 新發癲癇(雖罕見) |
+| Fulvestrant<br><small>Fustron</small> | 乳癌 | 選擇性雌激素受體降解劑(SERD) | 注射部位反應、熱潮紅 | 嚴重注射部位疼痛、感染 |
+
+</div>
 
 ---
 
