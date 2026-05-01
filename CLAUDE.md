@@ -1,7 +1,7 @@
 # CLAUDE.md｜彰濱秀傳癌症個管師手冊網站
 
 **專案**：MkDocs + Material Theme 部署在 GitHub Pages（私有 Repo + GitHub Pro）
-**當前版本**：V1.8.9
+**當前版本**：V1.9.0
 **網站用途**：彰濱秀傳癌症中心個管師工作手冊，供新進個管師隨時查詢，含即時搜尋功能
 
 ---
@@ -178,6 +178,7 @@ features:
 | V1.8.7 | F1 擴充三大節：NGS、病理 IHC 染色、常見影像檢查 |
 | V1.8.8 | F1 影像節補充：PSMA PET-CT、乳攝/乳超詳細對比、攝護腺癌影像節 |
 | V1.8.9 | 修 toc.integrate 被誤刪（坑#12），TOC 恢復左側欄；永久規則 3 寫入 CLAUDE.md |
+| V1.9.0 | F2 新增第十節局部介入治療：RFA/MWA（消融）、TACE（傳統/DEB）、HAIC（FOLFOX-HAIC/Reservoir Port），含術後症候群衛教、品質指標連結、三者比較表 |
 
 ---
 
@@ -219,4 +220,4 @@ git push origin main
 
 ## 八、一句話總結
 
-V1.8.9 修 toc.integrate 被誤刪問題（TOC 搬回左側欄），加入永久規則 3 防止再犯。
+V1.9.0 F2 新增局部介入治療節：RFA/MWA 消融、TACE 栓塞（含 cTACE/DEB-TACE）、HAIC 肝動脈灌注（含 FOLFOX-HAIC、Reservoir Port 管理）。
