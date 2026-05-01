@@ -1,86 +1,55 @@
-# 彰濱秀傳癌症中心 — 個管師教育訓練指導書
+# CCM Manual｜癌症個管師指導書
 
-> 彰濱秀傳癌症中心個案管理師工作手冊、培訓資源與專用軟體操作說明
+彰濱秀傳癌症中心癌症個案管理師工作資源平台。
 
-**當前版本：V1.8.5**
-
----
-
-## 網站
-
-部署於 GitHub Pages：
-
-```
-https://sela1227.github.io/CCM-manual/
-```
+**當前版本：V3.0.0**
 
 ---
 
-## 內容架構
+## 內容
 
-| 章節 | 內容 |
-|------|------|
-| A｜新人通則 | 工作指導手冊、四階段培訓計畫書 |
-| B｜軟體操作 | HIS 子系統、癌症中心五大自建系統 |
-| C｜各癌別照護指引 | 肺癌、乳癌、其他癌別照護要點 |
-| D｜表單與範本 | 評估表單、追蹤腳本、書信範本 |
-| E｜專題與進階 | 困難個案、安寧銜接、品質改善 |
-| F｜臨床知識庫 | 常用臨床知識快速查詢 |
-| G｜品質指標 | 國健署 115 年 60 項強制申報指標 |
-| H｜專用軟體 | 個管追蹤系統、MDT 會議系統、抗癌藥物速查 |
+- **首頁**：四篇導覽
+- **工作篇**：日常職責、各癌別照護、表單範本、臨床知識、困難個案處理
+- **養成篇**：12 個月分階段培訓、品質改善專案
+- **工具篇**：HIS 系統、院內自製工具操作手冊
+- **指標篇**：60 項強制申報指標、13 癌別速查
 
 ---
 
-## 專案結構
+## 本地預覽
 
-```
-CCM-manual/
-├── README.md
-├── CLAUDE.md                        ← AI 接手工作上下文
-├── mkdocs.yml                       ← 網站設定
-├── requirements.txt                 ← Python 套件
-├── .github/
-│   └── workflows/
-│       └── deploy.yml               ← 自動部署到 GitHub Pages
-└── docs/
-    ├── index.md                     ← 首頁
-    ├── stylesheets/extra.css        ← 自訂樣式
-    ├── javascripts/mobile-nav.js   ← 手機底部導覽列 + 版本徽章
-    ├── drug-lookup/index.html       ← 抗癌藥物速查系統（獨立 HTML）
-    ├── A_work-guide.md
-    ├── A_training-plan.md
-    ├── B1_HIS-manual.md
-    ├── B2_other-tools.md
-    ├── C1_lung-cancer.md
-    ├── C2_breast-cancer.md
-    ├── C3-C6_other-cancers.md
-    ├── D_forms.md
-    ├── E_advanced.md
-    ├── F_clinical-kb.md
-    ├── G_quality-index.md
-    ├── H1_ccm-tracker-guide.md
-    ├── H2_mdt-guide.md
-    └── H3_cancer-drugs.md
+```bash
+pip install -r requirements.txt
+mkdocs serve
 ```
 
----
-
-## 更新內容
-
-更新 MD 檔後推送到 main，GitHub Actions 自動重建網站（約 1-2 分鐘）。
-
-更新版本號時需同步修改：
-1. `docs/javascripts/mobile-nav.js` 的 `CCM_VERSION`
-2. `docs/stylesheets/extra.css` 頂部版本說明
-3. `README.md` 頂部「當前版本」
-4. ZIP 打包名稱 `CCM Manual V{版本號}.zip`
-5. `CLAUDE.md` 版本歷程
+開啟 http://127.0.0.1:8000
 
 ---
 
-## 技術
+## 部署
 
-- [MkDocs](https://www.mkdocs.org/) + [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)
-- GitHub Pages（私有 Repo + GitHub Pro）
-- GitHub Actions 自動部署
-- Jieba 中文斷詞（搜尋優化）
+推到 main 分支後，GitHub Actions 自動 build + deploy 到 GitHub Pages。
+
+部署網址：https://Sela1227.github.io/CCM-manual/
+
+---
+
+## 設計原則（V3.0.0 重做）
+
+V3.0.0 是從零開始重做的版本，**完全不延用 V2.x 的任何 CSS override**：
+
+- **5 個平鋪頂層頁面**，nav 沒有任何巢狀結構（V2.x sidebar 標題重複的根源就是巢狀 section，V3 直接從架構上消除）
+- **mkdocs-material 預設行為**：在窄螢幕用 drawer 模式（漢堡選單），寬螢幕自動 wide mode，不寫任何 viewport override
+- **中文搜尋**：用 jieba 分詞，搜「乳癌篩檢」可以同時找到「乳癌」和「篩檢」
+- **手機底部導覽列**：4 個快速切換按鈕，配合自製 JS（不依賴 base.href，從 pathname 推算）
+
+---
+
+## 永久規則
+
+1. **不要把 4 篇主檔再拆成巢狀**——這是 V2.x 出問題的根本原因
+2. **toc.integrate 不要用**（V2.x 已踩過兩次）
+3. **getSiteRoot() 從 pathname 推算**，不依賴 base.href
+4. H 章節維護單位：放射腫瘤科 林伯儒 醫師
+5. 內容修改在四份主檔裡做：`docs/01_work.md`、`02_training.md`、`03_tools.md`、`04_metrics.md`

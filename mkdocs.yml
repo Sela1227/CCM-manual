@@ -1,106 +1,110 @@
-site_name: 彰濱秀傳癌症中心 - 個管師教育訓練指導書
-site_description: 彰濱秀傳癌症中心個案管理師工作手冊、培訓資源與專用軟體操作說明
-site_author: 彰濱秀傳癌症中心
-docs_dir: docs
-site_dir: site
+site_name: 癌症個管師指導書
+site_description: 彰濱秀傳癌症中心｜癌症個案管理師工作資源平台
+site_url: https://Sela1227.github.io/CCM-manual/
 
+# 預設 Material 主題，最小化 features 設定
 theme:
   name: material
   language: zh-TW
-  palette:
-    - scheme: default
-      primary: teal
-      accent: cyan
-      toggle:
-        icon: material/brightness-7
-        name: 切換深色模式
-    - scheme: slate
-      primary: teal
-      accent: cyan
-      toggle:
-        icon: material/brightness-4
-        name: 切換淺色模式
   font:
     text: Noto Sans TC
-    code: Roboto Mono
+    code: Noto Sans Mono
+  palette:
+    # 淺色模式
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: 切換到深色模式
+    # 深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: 切換到淺色模式
   features:
-    - navigation.tabs
-    - navigation.tabs.sticky
-    - navigation.sections
-    - navigation.top
-    - navigation.indexes
-    - navigation.instant
-    - navigation.instant.progress
-    - navigation.prune
-    - search.suggest
-    - search.highlight
-    - search.share
-    - content.code.copy
-    - content.tooltips
-    - toc.integrate
+    # 導覽
+    - navigation.top              # 回到頁首按鈕
+    - navigation.tracking         # URL 跟著滾動更新
+    # 內容
+    - content.code.copy           # 程式碼複製按鈕
+    - content.tabs.link           # 同名 tab 連動
+    - toc.follow                  # TOC 跟著捲動
+    # 搜尋
+    - search.suggest              # 搜尋建議
+    - search.highlight            # 搜尋結果高亮
+  icon:
+    repo: fontawesome/brands/github
 
-plugins:
-  - search:
-      lang:
-        - zh
-        - en
-      separator: '[\s\-\u3001\u3002\uff0c\uff01\uff1f\uff1a\u300a\u300b\u3010\u3011\uff08\uff09\u300c\u300d]'
-
-markdown_extensions:
-  - admonition
-  - pymdownx.details
-  - pymdownx.superfences
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.tabbed:
-      alternate_style: true
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - pymdownx.tasklist:
-      custom_checkbox: true
-  - tables
-  - toc:
-      permalink: true
-      title: 本頁目錄
-  - attr_list
-  - md_in_html
-  - def_list
-
+# 5 個平鋪頂層頁面，沒有任何巢狀
 nav:
   - 首頁: index.md
-  - A｜新人通則:
-    - 工作指導手冊: A_work-guide.md
-    - 培訓計畫書: A_training-plan.md
-  - B｜軟體操作:
-    - B1. HIS 系統操作手冊: B1_HIS-manual.md
-    - B2. 其他工具使用說明: B2_other-tools.md
-  - C｜各癌別照護指引:
-    - C1. 肺癌照護指引: C1_lung-cancer.md
-    - C2. 乳癌照護指引: C2_breast-cancer.md
-    - C3–C6. 其他癌別照護指引: C3-C6_other-cancers.md
-  - D｜表單與範本:
-    - 表單與範本: D_forms.md
-  - E｜專題與進階:
-    - 專題與進階: E_advanced.md
-  - F｜臨床知識庫:
-    - 臨床知識庫: F_clinical-kb.md
-  - G｜品質指標:
-    - 品質指標速查: G_quality-index.md
-  - H｜專用軟體:
-    - 個管追蹤系統: H1_ccm-tracker-guide.md
-    - MDT 會議管理系統: H2_mdt-guide.md
-    - 抗癌藥物速查系統: H3_cancer-drugs.md
-    - 病歷互審系統: H4_peer-review-guide.md
+  - 工作: 01_work.md
+  - 養成: 02_training.md
+  - 工具: 03_tools.md
+  - 指標: 04_metrics.md
 
-extra:
-  social:
-    - icon: fontawesome/solid/hospital
-      link: https://www.chshowchwan.com.tw
-      name: 彰濱秀傳紀念醫院
+# 外掛
+plugins:
+  - search:
+      # 中文標點當分隔符；jieba 套件存在時，Material 內建 search 會自動啟用中文分詞
+      separator: '[\s\-\u3001\u3002\uff0c\uff01\uff1f\uff1a\u300a\u300b\u3010\u3011\uff08\uff09\u300c\u300d]'
 
+# 自訂 CSS / JS（極簡）
 extra_css:
   - stylesheets/extra.css
 
 extra_javascript:
-  - javascripts/mobile-nav.js
+  - javascripts/extra.js
+
+# Markdown 擴充
+markdown_extensions:
+  # 基礎
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+      slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
+  # PyMdown 擴充
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+# Repo 連結（顯示在右上角）
+repo_url: https://github.com/Sela1227/CCM-manual
+repo_name: Sela1227/CCM-manual
+edit_uri: ""
+
+# 頁尾額外資訊
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Sela1227/CCM-manual
