@@ -1,17 +1,19 @@
 /* ======================================================
-   癌症個管師指導書 V3.0.1
-   - 自訂主色 #25506b（深藍灰）
-   - sidebar 永久顯示（>= 760px viewport，主內容並排）
+   癌症個管師指導書 V3.0.2
+   - 主色 #25506b 用 :root 強制覆蓋（不依賴 custom palette）
+   - sidebar 永久顯示 + 隱藏內嵌 TOC（避免左右兩側重複）
    ====================================================== */
 
 /* ======================================================
-   主色 #25506b（深藍灰）
-   深色背景配預設白字即可，不需改 --md-primary-bg-color
+   主色 #25506b（深藍灰）— 直接覆蓋 CSS 變數
+   不靠 mkdocs.yml 的 palette: custom（坑 #19）
    ====================================================== */
-[data-md-color-primary="custom"] {
+:root,
+[data-md-color-scheme="default"] {
   --md-primary-fg-color:        #25506b;
   --md-primary-fg-color--light:  #3a6e8c;
   --md-primary-fg-color--dark:   #173a52;
+  --md-accent-fg-color:          #25506b;
 }
 
 /* ======================================================
@@ -22,7 +24,7 @@
   letter-spacing: 0.02em;
 }
 
-/* h1/h2 用主色點綴 */
+/* h1/h2/h3 用主色點綴 */
 .md-typeset h1 {
   font-weight: 700;
   border-bottom: 3px solid var(--md-primary-fg-color);
@@ -48,7 +50,7 @@
 }
 .md-typeset table:not([class]) th {
   background-color: var(--md-primary-fg-color);
-  color: var(--md-primary-bg-color);
+  color: #fff;
   font-weight: 600;
 }
 
@@ -60,9 +62,8 @@
 }
 
 /* ======================================================
-   Sidebar 永久顯示（核心 4 條規則）
-   門檻 760px：手機（< 760）保留 drawer 模式，
-   平板/筆電/桌機（>= 760）sidebar 跟主內容並排
+   Sidebar 永久顯示（>= 760px）
+   核心 5 條規則（V2.0.2 那 4 條 + 隱藏內嵌 TOC）
    ====================================================== */
 @media screen and (min-width: 760px) {
 
@@ -89,9 +90,8 @@
     margin: 0 0.2rem !important;
   }
 
-  /* 3. nav 結構強制 in-flow（取消 drawer slide 動畫）*/
-  .md-nav--primary,
-  .md-nav--primary .md-nav {
+  /* 3. 主 nav（第一層）強制 in-flow */
+  .md-nav--primary {
     position: static !important;
     height: auto !important;
     background-color: transparent !important;
@@ -104,18 +104,29 @@
   /* 4. 隱藏 drawer 模式才會出現的「主選單」標題 */
   .md-nav--primary > .md-nav__title { display: none !important; }
 
-  /* nav 項目樣式（平鋪、好讀） */
+  /* 5. 隱藏 sidebar 內嵌的當前頁 TOC（坑 #20）
+        Material drawer 模式下，當前頁 TOC 會嵌入 .md-nav--primary 結構，
+        強制顯示 sidebar 時這個 TOC 也跟著出來，
+        造成左右兩側 TOC 重複 */
+  .md-sidebar--primary .md-nav .md-nav { display: none !important; }
+
+  /* nav 項目樣式 */
   .md-nav--primary .md-nav__item {
     padding: 0 !important;
   }
   .md-nav--primary .md-nav__link {
     padding: 0.5em 0.5em !important;
-    font-size: 0.8rem !important;
+    font-size: 0.85rem !important;
     line-height: 1.5 !important;
   }
   .md-nav--primary .md-nav__link--active {
     font-weight: 700 !important;
     color: var(--md-primary-fg-color) !important;
+  }
+  /* active 項目隱藏箭頭（避免顯示「展開 TOC」的暗示）*/
+  .md-nav--primary .md-nav__item--active > .md-nav__link .md-nav__icon,
+  .md-nav--primary .md-nav__item--active > .md-nav__link .md-icon {
+    display: none !important;
   }
 }
 
