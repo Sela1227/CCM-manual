@@ -1,11 +1,12 @@
 /* ======================================================
-   彰濱秀傳癌症中心 - 個管師訓練系統 V3.4.1
+   彰濱秀傳癌症中心 - 個管師訓練系統 V3.4.2
    - 砍掉 V2.x/V3.0.x 的 sidebar override（坑 #16/#19/#20/#22 一筆勾消）
    - 回歸 Material 預設 wide-mode
    - 移除框架 emoji，改用 SVG（坑 #23）
    - 主色 #25506b 用 :root 強制覆蓋（坑 #18）
    - V3.4.0 加 SELA logo + 首頁 hero 區塊
    - V3.4.1 logo 收回 header 一處（內文與 drawer 邊欄都不再出現）；內文左右加呼吸感
+   - V3.4.2 強制 header logo 在所有 viewport 顯示（修 V3.4.1 tablet viewport 完全看不到 logo 的副作用）；內文左右 padding 再加大
    ====================================================== */
 
 /* ======================================================
@@ -213,29 +214,43 @@
 }
 
 /* ======================================================
-   V3.4.1 新增 1：行動裝置 drawer 邊欄不顯示 logo
-   - 規則：logo 只在 header 一處出現
-   - 隱藏 drawer 標題區塊裡的 .md-logo（保留站名與關閉鈕）
+   V3.4.2 修訂 1：行動裝置 drawer 邊欄不顯示 logo + header logo 強制顯示
+   - V3.4.1 砍 drawer logo 是對的，但忘了 Material 在 tablet viewport
+     （768–1219px）的 header 預設也不顯示 logo（給漢堡 + 站名空間）
+   - 結果 V3.4.1 在 tablet 範圍 logo 完全看不到（截圖實證）
+   - V3.4.2 補：用 !important 強制 header logo 在所有 viewport 顯示
    ====================================================== */
 .md-nav--primary > .md-nav__title .md-logo,
 .md-nav--primary > .md-nav__title img {
   display: none !important;
 }
 
+/* 強制 header 左上角 logo 在所有 viewport 都顯示（不只 wide mode）*/
+.md-header__button.md-logo {
+  display: inline-flex !important;
+  padding: 0.4rem !important;
+}
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  display: block;
+  height: 1.4rem;
+  width: auto;
+}
+
 /* ======================================================
-   V3.4.1 新增 2：內文左右呼吸感
-   - 截圖實測 V3.4.0 內文左邊太貼邊框、閱讀不易
-   - 加 padding 不會動到 sidebar 行為（規則 8 不破）
+   V3.4.2 修訂 2：內文左右呼吸感再加大
+   - V3.4.1 用 1rem / 1.5rem，Sela 反映還是太貼
+   - V3.4.2 提高到 1.4rem / 2.5rem
    ====================================================== */
 .md-content__inner {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 1.4rem;
+  padding-right: 1.4rem;
 }
 
 @media screen and (min-width: 768px) {
   .md-content__inner {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
   }
 }
 
