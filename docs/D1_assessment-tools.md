@@ -6,9 +6,6 @@
 
 ---
 
-
----
-
 ## 功能狀態評估
 
 ### ECOG Performance Status（每個病人都要評）
