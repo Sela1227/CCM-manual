@@ -66,7 +66,13 @@ nav:
     - C3–C6 其他癌別照護指引: C3-C6_other-cancers.md
   - D 表單與範本: D_forms.md
   - E 專題與進階: E_advanced.md
-  - F 臨床知識庫: F_clinical-kb.md
+  - F 臨床知識庫:
+    - F. 概覽: F_clinical-kb.md
+    - F1 檢驗判讀: F1_lab.md
+    - F2 分子與病理檢測: F2_pathology.md
+    - F3 影像判讀: F3_imaging.md
+    - F4 癌症治療: F4_treatment.md
+    - F5 個管師追蹤速查: F5_followup.md
   - G 品質指標速查: G_quality-index.md
 
 # 外掛
