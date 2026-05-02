@@ -1,11 +1,14 @@
-site_name: 癌症個管師指導書
-site_description: 彰濱秀傳癌症中心｜癌症個案管理師工作資源平台
+site_name: 彰濱秀傳癌症中心 - 個管師訓練系統
+site_description: 彰濱秀傳癌症中心癌症個案管理師工作資源平台
 site_url: https://Sela1227.github.io/CCM-manual/
 
 # 預設 Material 主題，最小化 features 設定
 theme:
   name: material
   language: zh-TW
+  # Logo（左上角 header）+ favicon（瀏覽器分頁）
+  logo: assets/logo-header.png
+  favicon: assets/favicon.png
   font:
     text: Noto Sans TC
     code: Noto Sans Mono
@@ -37,15 +40,18 @@ theme:
     # 搜尋
     - search.suggest              # 搜尋建議
     - search.highlight            # 搜尋結果高亮
-  icon:
-    repo: fontawesome/brands/github
 
-# 17 條平鋪頂層頁面（無巢狀，遵守規則 3）
-# 用編號（A1/A2/B1/B2/C0–C6/D/E/F/G/H1–H4）做視覺分組，無 emoji
+# Nav 結構
+# 規則 3 修訂版（V3.3.0）：巢狀允許但需符合條件——
+#   1. CSS 不可加回 sidebar override（@media min-width: 760px）
+#   2. 部署後實測 sidebar 無重複/標題錯位
+#   3. 出問題就 git revert，不要試著用 CSS 蓋
+# V3.3.0 路線 B：先巢狀 A 組水溫，其他 16 條仍平鋪
 nav:
   - 首頁: index.md
-  - A1 工作指導手冊: A_work-guide.md
-  - A2 培訓計畫書: A_training-plan.md
+  - A 新人通則:
+    - A1 工作指導手冊: A_work-guide.md
+    - A2 培訓計畫書: A_training-plan.md
   - B1 HIS 系統操作手冊: B1_HIS-manual.md
   - B2 其他工具使用說明: B2_other-tools.md
   - C0 癌症照護通論: C0_general.md
@@ -67,7 +73,7 @@ plugins:
       # 中文標點當分隔符；jieba 套件存在時，Material 內建 search 會自動啟用中文分詞
       separator: '[\s\-\u3001\u3002\uff0c\uff01\uff1f\uff1a\u300a\u300b\u3010\u3011\uff08\uff09\u300c\u300d]'
 
-# 自訂 CSS / JS（極簡）
+# 自訂 CSS / JS
 extra_css:
   - stylesheets/extra.css
 
@@ -110,14 +116,6 @@ markdown_extensions:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
-# Repo 連結（顯示在右上角）
-repo_url: https://github.com/Sela1227/CCM-manual
-repo_name: Sela1227/CCM-manual
-edit_uri: ""
-
-# 頁尾額外資訊
+# 頁尾
 extra:
   generator: false
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/Sela1227/CCM-manual

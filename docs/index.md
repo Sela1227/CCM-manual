@@ -1,6 +1,12 @@
-# 個管師教育訓練指導書
+<div class="home-hero" markdown>
 
-**彰濱秀傳癌症中心｜個案管理師工作資源平台**
+<img src="assets/logo.png" alt="SELA logo" class="home-logo">
+
+# 彰濱秀傳癌症中心 - 個管師訓練系統
+
+**個案管理師工作資源平台**
+
+</div>
 
 > 使用右上角搜尋圖示搜尋任何關鍵字，例如「完治率」「失聯率」「肺癌追蹤」「MDT 會議」。
 

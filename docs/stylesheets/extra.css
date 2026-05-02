@@ -1,9 +1,10 @@
 /* ======================================================
-   癌症個管師指導書 V3.2.0
-   - 砍掉 V2.x/V3.0.x 的 sidebar override（坑 #16/#19/#20 一筆勾消）
-   - 回歸 Material 預設 wide-mode（你 viewport 2160px，遠超 1525px 門檻）
-   - 移除框架 emoji，改用 SVG（mobile nav、首頁卡片、inline icon）
-   - 主色 #25506b 用 :root 強制覆蓋（坑 #18 做法保留）
+   彰濱秀傳癌症中心 - 個管師訓練系統 V3.3.0
+   - 砍掉 V2.x/V3.0.x 的 sidebar override（坑 #16/#19/#20/#22 一筆勾消）
+   - 回歸 Material 預設 wide-mode
+   - 移除框架 emoji，改用 SVG（坑 #23）
+   - 主色 #25506b 用 :root 強制覆蓋（坑 #18）
+   - V3.3.0 加 SELA logo + 首頁 hero 區塊
    ====================================================== */
 
 /* ======================================================
@@ -81,6 +82,40 @@
   display: inline-block;
   vertical-align: -0.15em;
   fill: currentColor;
+}
+
+/* ======================================================
+   首頁 hero 區塊（V3.3.0 加大 logo + 標題）
+   ====================================================== */
+.home-hero {
+  text-align: center;
+  margin: 1.5rem 0 2rem;
+}
+
+.home-hero .home-logo {
+  width: 160px;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  margin-bottom: 1rem;
+}
+
+.home-hero h1 {
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0.3em !important;
+  font-size: 1.8rem;
+}
+
+.home-hero p {
+  color: var(--md-default-fg-color--light);
+  font-size: 1rem;
+  margin-top: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .home-hero .home-logo { width: 110px; }
+  .home-hero h1 { font-size: 1.4rem; }
 }
 
 /* ======================================================

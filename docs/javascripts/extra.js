@@ -1,5 +1,5 @@
 /* ======================================================
-   癌症個管師指導書 V3.2.0
+   癌症個管師指導書 V3.3.0
    - 版本徽章 + 手機底部導覽列（SVG 圖示，無 emoji）
    - getSiteRoot() 從 window.location.pathname 推算（坑 #4/#13/規則 5）
    ====================================================== */
@@ -7,7 +7,7 @@
 (function () {
   "use strict";
 
-  var CCM_VERSION = "V3.2.0";
+  var CCM_VERSION = "V3.3.0";
 
   // ---- 推算 site root（不依賴 base.href）----
   function getSiteRoot() {
