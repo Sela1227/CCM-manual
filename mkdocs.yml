@@ -64,7 +64,12 @@ nav:
     - C1 肺癌照護指引: C1_lung-cancer.md
     - C2 乳癌照護指引: C2_breast-cancer.md
     - C3–C6 其他癌別照護指引: C3-C6_other-cancers.md
-  - D 表單與範本: D_forms.md
+  - D 表單與範本:
+    - D. 概覽: D_forms.md
+    - D1 評估量表彙整: D1_assessment-tools.md
+    - D2 衛教單張索引: D2_education.md
+    - D3 電話追蹤腳本: D3_phone-scripts.md
+    - D4 書信與轉介範本: D4_letters.md
   - E 專題與進階: E_advanced.md
   - F 臨床知識庫:
     - F. 概覽: F_clinical-kb.md
