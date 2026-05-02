@@ -1,14 +1,13 @@
 /* ======================================================
-   癌症個管師指導書 V3.1.0
-   - 內容回到 V2.0.3 原檔（17 份精修 MD），框架沿用 V3
-   - 主色 #25506b 用 :root 強制覆蓋
-   - sidebar 永久顯示 + 隱藏內嵌 TOC（避免左右兩側重複）
-   - 加 V2.0.3 的 home-grid 首頁卡片樣式
+   癌症個管師指導書 V3.2.0
+   - 砍掉 V2.x/V3.0.x 的 sidebar override（坑 #16/#19/#20 一筆勾消）
+   - 回歸 Material 預設 wide-mode（你 viewport 2160px，遠超 1525px 門檻）
+   - 移除框架 emoji，改用 SVG（mobile nav、首頁卡片、inline icon）
+   - 主色 #25506b 用 :root 強制覆蓋（坑 #18 做法保留）
    ====================================================== */
 
 /* ======================================================
    主色 #25506b（深藍灰）— 直接覆蓋 CSS 變數
-   不靠 mkdocs.yml 的 palette: custom（坑 #19）
    ====================================================== */
 :root,
 [data-md-color-scheme="default"] {
@@ -64,72 +63,85 @@
 }
 
 /* ======================================================
-   Sidebar 永久顯示（>= 760px）
-   核心 5 條規則（V2.0.2 那 4 條 + 隱藏內嵌 TOC）
+   SVG 圖示統一樣式（替代 emoji）
+   .ccm-icon 用於首頁卡片大圖示，.ccm-icon-inline 用於內文小圖示
    ====================================================== */
-@media screen and (min-width: 760px) {
+.ccm-icon {
+  width: 28px;
+  height: 28px;
+  display: inline-block;
+  vertical-align: middle;
+  fill: var(--md-primary-fg-color);
+  stroke: var(--md-primary-fg-color);
+  stroke-width: 0;
+}
+.ccm-icon-inline {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: -0.15em;
+  fill: currentColor;
+}
 
-  /* 1. 隱藏 drawer 觸發鈕和 overlay */
-  .md-header__button[for=__drawer] { display: none !important; }
-  .md-overlay                      { display: none !important; }
+/* ======================================================
+   首頁 home-grid 卡片（沿用 V2.0.3 設計，emoji 改 SVG）
+   ====================================================== */
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.9rem;
+  margin: 1.4rem 0;
+}
 
-  /* 2. sidebar 改為 sticky in-flow（不再浮動覆蓋）*/
-  .md-sidebar--primary {
-    position: sticky !important;
-    top: 2.4rem !important;
-    height: 0 !important;
-    background-color: transparent !important;
-    transform: none !important;
-    transition: none !important;
-    z-index: 1 !important;
-    width: 12.1rem !important;
-  }
-  [dir=ltr] .md-sidebar--primary { left: auto !important; }
+.home-card {
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
+  transition: box-shadow 0.18s, border-color 0.18s, transform 0.18s;
+}
 
-  .md-sidebar--primary .md-sidebar__scrollwrap {
-    position: static !important;
-    overflow-y: auto !important;
-    margin: 0 0.2rem !important;
-  }
+.home-card:hover {
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  border-color: var(--md-primary-fg-color);
+  transform: translateY(-2px);
+}
 
-  /* 3. 主 nav（第一層）強制 in-flow */
-  .md-nav--primary {
-    position: static !important;
-    height: auto !important;
-    background-color: transparent !important;
-    display: block !important;
-    transform: none !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
+.home-card a {
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-bottom: 0.4em;
+  color: var(--md-primary-fg-color);
+}
 
-  /* 4. 隱藏 drawer 模式才會出現的「主選單」標題 */
-  .md-nav--primary > .md-nav__title { display: none !important; }
+.home-card p {
+  font-size: 0.81rem;
+  color: var(--md-default-fg-color--light);
+  margin: 0;
+  line-height: 1.5;
+}
 
-  /* 5. 隱藏 sidebar 內嵌的當前頁 TOC（坑 #20）
-        Material drawer 模式下，當前頁 TOC 會嵌入 .md-nav--primary 結構，
-        強制顯示 sidebar 時這個 TOC 也跟著出來，
-        造成左右兩側 TOC 重複 */
-  .md-sidebar--primary .md-nav .md-nav { display: none !important; }
+@media screen and (max-width: 480px) {
+  .home-grid { grid-template-columns: 1fr 1fr; gap: 0.65rem; }
+  .home-card { padding: 0.8rem; }
+  .home-card p { display: none; }
+}
 
-  /* nav 項目樣式 */
-  .md-nav--primary .md-nav__item {
-    padding: 0 !important;
-  }
-  .md-nav--primary .md-nav__link {
-    padding: 0.5em 0.5em !important;
-    font-size: 0.85rem !important;
-    line-height: 1.5 !important;
-  }
-  .md-nav--primary .md-nav__link--active {
-    font-weight: 700 !important;
-    color: var(--md-primary-fg-color) !important;
-  }
-  /* active 項目隱藏箭頭（避免顯示「展開 TOC」的暗示）*/
-  .md-nav--primary .md-nav__item--active > .md-nav__link .md-nav__icon,
-  .md-nav--primary .md-nav__item--active > .md-nav__link .md-icon {
-    display: none !important;
-  }
+/* ======================================================
+   藥物速查表（H3 沿用 V2.0.3）
+   ====================================================== */
+.drug-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1rem 0;
+  border-radius: 4px;
+}
+.drug-table-wrapper table {
+  font-size: 0.75rem;
+  line-height: 1.35;
 }
 
 /* ======================================================
@@ -159,6 +171,7 @@
 
 /* ======================================================
    手機底部導覽列（< 768px 才顯示）
+   emoji 改 SVG，由 extra.js 動態注入
    ====================================================== */
 #ccm-mobile-nav {
   display: none;
@@ -171,7 +184,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 50px;
+    height: 54px;
     background: var(--md-primary-fg-color);
     box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
     z-index: 50;
@@ -187,6 +200,7 @@
     font-size: 0.7rem;
     padding: 4px 0;
     border-right: 1px solid rgba(255, 255, 255, 0.15);
+    gap: 2px;
   }
   #ccm-mobile-nav a:last-child { border-right: none; }
   #ccm-mobile-nav a.active {
@@ -194,65 +208,13 @@
     background: rgba(0, 0, 0, 0.15);
     font-weight: 700;
   }
-  #ccm-mobile-nav .ccm-icon {
-    font-size: 1.2rem;
-    line-height: 1;
-    margin-bottom: 2px;
+  #ccm-mobile-nav a svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
   }
 
-/* ======================================================
-   首頁 home-grid 卡片（沿用 V2.0.3 設計）
-   ====================================================== */
-.home-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 0.9rem;
-  margin: 1.4rem 0;
-}
-
-.home-card {
-  background: var(--md-default-bg-color);
-  border: 1px solid var(--md-default-fg-color--lightest);
-  border-radius: 8px;
-  padding: 1rem 1.1rem;
-  transition: box-shadow 0.18s, border-color 0.18s;
-}
-
-.home-card:hover {
-  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
-  border-color: var(--md-primary-fg-color);
-}
-
-.home-card a {
-  font-weight: 600;
-  text-decoration: none;
-  display: block;
-  margin-bottom: 0.28em;
-}
-
-.home-card p {
-  font-size: 0.81rem;
-  color: var(--md-default-fg-color--light);
-  margin: 0;
-  line-height: 1.5;
-}
-
-@media screen and (max-width: 480px) {
-  .home-grid { grid-template-columns: 1fr 1fr; gap: 0.65rem; }
-  .home-card { padding: 0.8rem; }
-  .home-card p { display: none; }
-}
-
-/* ======================================================
-   藥物速查表（F2 第十節）— V2.0.3 沿用
-   ====================================================== */
-.drug-table-wrapper {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  margin: 1rem 0;
-  border-radius: 4px;
-}
-.drug-table-wrapper table {
-  font-size: 0.75rem;
-  line-height: 1.35;
+  .md-main {
+    padding-bottom: 60px;
+  }
 }

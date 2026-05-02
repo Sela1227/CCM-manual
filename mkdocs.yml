@@ -41,25 +41,25 @@ theme:
     repo: fontawesome/brands/github
 
 # 17 條平鋪頂層頁面（無巢狀，遵守規則 3）
-# 用 emoji + 編號做視覺分組（A1/A2/B1/B2/C0–C6/D/E/F/G/H1–H4）
+# 用編號（A1/A2/B1/B2/C0–C6/D/E/F/G/H1–H4）做視覺分組，無 emoji
 nav:
   - 首頁: index.md
-  - 📋 A1 工作指導手冊: A_work-guide.md
-  - 🎓 A2 培訓計畫書: A_training-plan.md
-  - 💻 B1 HIS 系統操作手冊: B1_HIS-manual.md
-  - 🔧 B2 其他工具使用說明: B2_other-tools.md
-  - 🏥 C0 癌症照護通論: C0_general.md
-  - 🫁 C1 肺癌照護指引: C1_lung-cancer.md
-  - 🎀 C2 乳癌照護指引: C2_breast-cancer.md
-  - 🩺 C3–C6 其他癌別照護指引: C3-C6_other-cancers.md
-  - 📑 D 表單與範本: D_forms.md
-  - ⭐ E 專題與進階: E_advanced.md
-  - 📚 F 臨床知識庫: F_clinical-kb.md
-  - 📊 G 品質指標速查: G_quality-index.md
-  - 🗂️ H1 個管追蹤系統: H1_ccm-tracker-guide.md
-  - 👥 H2 MDT 會議管理系統: H2_mdt-guide.md
-  - 💊 H3 抗癌藥物速查: H3_cancer-drugs.md
-  - 🔍 H4 病歷互審系統: H4_peer-review-guide.md
+  - A1 工作指導手冊: A_work-guide.md
+  - A2 培訓計畫書: A_training-plan.md
+  - B1 HIS 系統操作手冊: B1_HIS-manual.md
+  - B2 其他工具使用說明: B2_other-tools.md
+  - C0 癌症照護通論: C0_general.md
+  - C1 肺癌照護指引: C1_lung-cancer.md
+  - C2 乳癌照護指引: C2_breast-cancer.md
+  - C3–C6 其他癌別照護指引: C3-C6_other-cancers.md
+  - D 表單與範本: D_forms.md
+  - E 專題與進階: E_advanced.md
+  - F 臨床知識庫: F_clinical-kb.md
+  - G 品質指標速查: G_quality-index.md
+  - H1 個管追蹤系統: H1_ccm-tracker-guide.md
+  - H2 MDT 會議管理系統: H2_mdt-guide.md
+  - H3 抗癌藥物速查: H3_cancer-drugs.md
+  - H4 病歷互審系統: H4_peer-review-guide.md
 
 # 外掛
 plugins:

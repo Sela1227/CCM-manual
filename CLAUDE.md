@@ -1,13 +1,14 @@
 # CLAUDE.md｜彰濱秀傳癌症個管師手冊網站
 
 **專案**：MkDocs + Material Theme，部署在 GitHub Pages（私有 Repo + GitHub Pro）
-**當前版本**：V3.1.0
+**當前版本**：V3.2.0
 **網站用途**：彰濱秀傳癌症中心個管師工作手冊，供新進個管師隨時查詢，含中文搜尋
 **對話脈絡**：
 - V2.0.x：17 份 MD + 巢狀 nav，連續打地鼠 sidebar 標題重複
 - V3.0.0：把 17 份合併成 4 份平鋪主檔，從架構上消除巢狀
 - V3.0.1–V3.0.2：修主色與內嵌 TOC bug（坑 #18、#19）
-- **V3.1.0（本版）**：發現 V2.0.3 的 17 份 MD 內容是「討論很多次後改出來的精修版」，比合併過程做的 strip/demote 結果好。本版**內容回退到 V2.0.3 原檔**，**框架沿用 V3**（平鋪 nav，但改成 17 條而非 5 條）。坑 #20 記錄這個教訓
+- V3.1.0：發現 V2.0.3 的 17 份 MD 才是精修版，內容回退到 V2.0.3 原檔，框架沿用 V3（坑 #20、#21）
+- **V3.2.0（本版）**：發現「viewport 885px」是**測量錯誤**——Sela 滿屏 + DevTools 拖出獨立視窗後實測 **2160px**，遠超 Material wide-mode 門檻 1525px。意思是 V2.x 整段 760px sidebar override 從一開始就建在錯誤前提上。本版**砍掉所有 sidebar override CSS**，回歸 Material 預設 wide-mode；同時把所有框架 emoji（nav、卡片、底部導覽）改成 SVG。坑 #22、#23 記錄這個重大教訓
 
 ---
 
@@ -19,13 +20,14 @@
 
 - [ ] **規則 1**：版本號在五個地方全部同步（JS / CSS / README / CLAUDE.md / ZIP 檔名）？
 - [ ] **規則 2**：H1–H4 院內系統說明書有沒有出現明文帳號密碼？
-- [ ] **規則 3**：mkdocs.yml 的 `nav:` 是否仍是平鋪、沒有任何巢狀？（V3.1.0 是 17 條 + 首頁）
+- [ ] **規則 3**：mkdocs.yml 的 `nav:` 是否仍是平鋪、沒有任何巢狀？（V3.2.0 是 17 條 + 首頁）
 - [ ] **規則 4**：H1–H4 院內系統說明書有填「放射腫瘤科 林伯儒 醫師」維護單位？
 - [ ] **規則 5**：手機底部導覽列的 `getSiteRoot()` 有沒有被改成依賴 base.href？（不能）
 - [ ] **規則 6**：`mkdocs build --strict` 過了？（0 warning）
 - [ ] **規則 7**：主色用 `:root` 強制覆蓋（不是 `palette: custom`，坑 #18）？
-- [ ] **規則 8**：sidebar 內第二層 `.md-nav` 有 `display: none`（坑 #19，避免左右側 TOC 重複）？
+- [ ] **規則 8**：extra.css 有沒有偷偷加回 sidebar override（`@media min-width: 760px` 那一大段，坑 #22 教訓）？
 - [ ] **規則 9**：drug-lookup/ 子資料夾有複製到 docs/（坑 #21，H3 抗癌藥物速查的本體）？
+- [ ] **規則 10**：所有框架元素（nav / 首頁卡片 / 手機底部導覽）使用 SVG，沒有 emoji（坑 #23）？
 - [ ] **版本歷程**：這版做了什麼已補進版本歷程表？
 - [ ] **下版候選工作**：重新排序、砍掉已做的？
 - [ ] **一句話總結**：最後一段已更新？
@@ -47,7 +49,7 @@
 ```python
 # 升版時用 Python replace 批次處理，不用 sed 逐行（坑 #14 教訓）
 import re, pathlib
-old, new = "V3.1.0", "V3.1.0"
+old, new = "V3.2.0", "V3.2.1"  # 假設下版
 for p in ["docs/javascripts/extra.js", "docs/stylesheets/extra.css",
           "README.md", "CLAUDE.md"]:
     f = pathlib.Path(p)
@@ -66,12 +68,12 @@ H1–H4 系列（個管追蹤系統 / MDT / 抗癌藥物 / 病歷互審）以及
 ### 規則 3：nav 必須平鋪、無巢狀
 
 ```yaml
-# ✅ 正確（V3.1.0 平鋪 17 條，視覺用 emoji + 編號做分組暗示）
+# ✅ 正確（V3.2.0 平鋪 17 條，純文字 + 編號，無 emoji）
 nav:
   - 首頁: index.md
-  - 📋 A1 工作指導手冊: A_work-guide.md
-  - 🎓 A2 培訓計畫書: A_training-plan.md
-  - 💻 B1 HIS 系統操作手冊: B1_HIS-manual.md
+  - A1 工作指導手冊: A_work-guide.md
+  - A2 培訓計畫書: A_training-plan.md
+  - B1 HIS 系統操作手冊: B1_HIS-manual.md
   # ... 共 17 條
 ```
 
@@ -85,7 +87,7 @@ nav:
 
 V2.x 的所有 sidebar 標題重複問題、9 組 CSS 補丁、760px viewport hack，根源都是巢狀 nav（坑 #16）。V3 從架構上消除這個問題，加回巢狀就是回到 V2.x 那個地獄。
 
-**平鋪 nav 的條目數量沒有上限**——V3.1.0 是 17 條（含首頁），sidebar 可滾動，使用者照常瀏覽。如果未來需要分組視覺感，用 emoji + 編號（A1/A2/B1...）暗示分類，但 yaml 結構必須是平的。
+**平鋪 nav 的條目數量沒有上限**——V3.2.0 是 17 條（含首頁），sidebar 可滾動，使用者照常瀏覽。如果未來需要分組視覺感，用編號（A1/A2/B1...）暗示分類，**不要用 emoji**（坑 #23），yaml 結構必須是平的。
 
 ### 規則 4：院內系統說明書（H 系列）的維護單位
 
@@ -144,7 +146,7 @@ mkdocs build --strict 2>&1 | tail -10
 
 ## 二、Nav 結構對映表
 
-V3.1.0 平鋪 17 條 + 首頁，**沒有任何巢狀**：
+V3.2.0 平鋪 17 條 + 首頁，**沒有任何巢狀**：
 
 | Nav 顯示 | 對應檔案 | 內容範圍 |
 |---------|---------|---------|
@@ -275,17 +277,39 @@ V3.1.0 平鋪 17 條 + 首頁，**沒有任何巢狀**：
   V3 平鋪 nav 下，sidebar 內第二層 `.md-nav` 唯一來源就是當前頁 TOC，安全可全隱藏
 - 教訓：「強制顯示 sidebar」≠「強制顯示 sidebar 內所有元素」。drawer 與 wide 兩種模式的 HTML 內部結構不同——drawer 模式下嵌入的東西，必須在強制顯示 sidebar 時針對性隱藏
 
-**#20（V3.0.0–V3.0.2 → V3.1.0）合併 MD 會丟失原檔精修內容**
+**#20（V3.0.0–V3.0.2 → V3.2.0）合併 MD 會丟失原檔精修內容**
 - 症狀：V3.0.0 把 V2.0.3 的 17 份 MD 用腳本合併成 4 份（工作 / 養成 / 工具 / 指標），過程做了 strip_first_h1、demote、strip_doc_meta、strip_part_header 等處理。Sela 反映「2.03 版的內容是討論很多次後改出來的，比 files 夾裡的好，你應該要以 2.03 為主，只能改排版框架」
 - 原因：V2.0.3 的 17 份 MD 是經過反覆討論精修的版本，每一份都有獨立的章節編號、目錄、副標籤、文件資訊區塊；合併過程的 strip / demote 雖然產出乾淨大檔，但隱性丟失了一些細節（章節編號層次、原始排版意圖）
-- 做法：V3.1.0 把 docs/ 下的 4 份合併 MD 全砍，改回 V2.0.3 的 17 份原檔；nav 從 5 條平鋪改成 17 條平鋪（仍遵守規則 3 無巢狀）；index.md 用 V2.0.3 的 home-grid 卡片版（也是精修過的）；framework 部分（mkdocs.yml / extra.css / extra.js）保留 V3 的設計
+- 做法：V3.2.0 把 docs/ 下的 4 份合併 MD 全砍，改回 V2.0.3 的 17 份原檔；nav 從 5 條平鋪改成 17 條平鋪（仍遵守規則 3 無巢狀）；index.md 用 V2.0.3 的 home-grid 卡片版（也是精修過的）；framework 部分（mkdocs.yml / extra.css / extra.js）保留 V3 的設計
 - 教訓：**內容是反覆討論的成果，框架是技術選擇**。下次做大規模重構時，要區分清楚「我在動內容還是動框架」——動框架可以激進，動內容要極度保守，能保留原檔就保留原檔
 
 **#21（V3.1.0）H3 抗癌藥物速查的本體在 docs/drug-lookup/ 子目錄**
 - 症狀：V3.0.0 重做時忘了把 `docs/drug-lookup/index.html` 帶過來，部署後 H3 的「點此查藥物」連結變 404
 - 原因：H3_cancer-drugs.md 只是「說明書」，實際 145 種藥物的查詢介面是獨立的 HTML（`docs/drug-lookup/index.html`），MkDocs 會把這個資料夾原封不動複製到 `site/drug-lookup/`
-- 做法：每次重組 docs/ 結構時，drug-lookup/ 子目錄一定要一起搬（V3.1.0 已修正，加入煙霧測試 step 2「drug-lookup 有複製？」）
+- 做法：每次重組 docs/ 結構時，drug-lookup/ 子目錄一定要一起搬（V3.1.0 已修正，加入煙霧測試 step「drug-lookup 有複製？」）
 - 注意：drug-lookup 是 `<index.html>` 不是 `.md`，是個自成一體的單頁 web app（含 145 種藥物的健保給付條件）。未來有新版時，整個資料夾原地替換即可
+
+**#22（V2.0.x → V3.2.0，連續 8 版重大教訓）「viewport 885px」是錯誤的測量前提**
+- 症狀：V2.x 整段 760px sidebar override CSS（9 條規則）建立在「Sela 的 MacBook Air viewport 是 885px」這個前提上。Material 預設 wide-mode 門檻是 76.25em（約 1525px CSS px），885 < 1525 所以用 drawer 模式，這成為連續 8 版打地鼠的「事實」
+- 真相：V3.2.0 對話中 Sela 用 `javascript:alert(innerWidth)` 在網址列實測，**滿屏 + DevTools 拖出獨立視窗後 viewport 是 2160px**，遠超 1525px wide-mode 門檻。意思是：
+  - Sela 滿屏使用瀏覽器時，根本不需要任何 sidebar override
+  - 之前量到的 885 是「視窗沒滿屏 + DevTools 開在側邊」的結果，不是 viewport 上限
+  - V2.0.x → V3.0.x 的整個 760px 補丁路線**從一開始就建在錯誤前提上**
+- 做法：V3.2.0 把 extra.css 整段 `@media screen and (min-width: 760px)` sidebar override（包括 V3.0.2 加的「隱藏內嵌 TOC」那條，因為沒有 override 就沒有重複問題）**全部砍除**。CSS 從 200+ 行縮到 80 行左右，回歸 Material 原廠 wide-mode
+- 教訓：
+  - **量 viewport 要在「實際使用情境」量**——Sela 平常不會開 DevTools 在側邊看網站，那就不該用 DevTools 開著的數字當前提
+  - 量法：網址列貼 `javascript:alert("CSS寬度: " + innerWidth + " / DPR: " + devicePixelRatio)`，這樣 DevTools 不會干擾
+  - 任何「框架預設不對」的判斷之前，先確認自己量的數字對不對。**錯誤前提下的解法只會堆積技術債**
+
+**#23（V3.2.0）框架 emoji 跨平台渲染不穩定**
+- 症狀：V3.1.0 在 mkdocs.yml nav、index.md 卡片、extra.js 手機底部導覽都用 emoji（📋 🎓 💻 🔧 🏥 🫁 🎀 🩺 📑 ⭐ 📚 📊 🗂️ 👥 💊 🔍 🏠 🛠 等）。emoji 渲染由作業系統字體決定——同一個 🩺 在 Mac 是醫師圖、Windows 是另一種風格、舊 Android 可能變方框
+- 風險：醫療系統使用者裝置雜（醫院電腦多半是舊版 Windows），emoji 在某些終端可能顯示成方框或變成 Apple 風格在 Windows 上看起來突兀
+- 做法：V3.2.0 把所有「框架層級」的 emoji 改成 inline SVG：
+  - `mkdocs.yml` nav：直接拿掉 emoji，純文字「A1 工作指導手冊」（編號本身就是視覺辨識）
+  - `docs/index.md` 首頁卡片：8 張卡片改用 `<svg class="ccm-icon" viewBox="0 0 24 24"><path d="..."/></svg>`，path 用 Material Symbols 風格的圖形
+  - `docs/javascripts/extra.js` 手機底部導覽：4 個 icon 改 SVG，存在 `ICONS` 物件用 innerHTML 注入
+  - SVG 的 fill 用 `currentColor` 或 `var(--md-primary-fg-color)`，會跟著主題色走
+- 注意：「**內容層級**」（個管師寫在 MD 內文裡的 emoji，例如「✅ 完成」「⚠️ 注意」「🔍 搜尋『XXX』」）**不需要改**——那是文章作者的修辭，不是網站框架。本規則只管框架元素
 
 ---
 
@@ -303,7 +327,8 @@ V3.1.0 平鋪 17 條 + 首頁，**沒有任何巢狀**：
 | **V3.0.0** | **從零重做框架**：17 份巢狀 MD → 4 篇平鋪主檔（工作 / 養成 / 工具 / 指標）+ 首頁，nav 完全無巢狀，從架構上消除坑 #16 |
 | V3.0.1 | 嘗試主色 #25506b（用 `palette: custom` + attribute selector，**失敗，主色沒換**）+ sidebar 永久顯示（造成左右兩側 TOC 重複）→ 兩個問題都記成坑 #18、#19 |
 | V3.0.2 | **修補 V3.0.1 兩個 bug**：主色改用 `:root` 強制覆蓋變數（坑 #18）+ 加一條 CSS 隱藏 sidebar 內嵌 TOC（坑 #19）。CLAUDE.md 規則 1 從「四處」擴充為「五處」 |
-| **V3.1.0** | **內容回到 V2.0.3 原檔**（17 份精修 MD + drug-lookup/）：發現合併版會丟失原檔精修內容（坑 #20）、補回 H3 抗癌藥物速查本體（坑 #21）。nav 從 5 條平鋪改 17 條平鋪（仍遵守規則 3 無巢狀），首頁用 V2.0.3 的 home-grid 卡片設計 |
+| V3.1.0 | **內容回到 V2.0.3 原檔**（17 份精修 MD + drug-lookup/）：發現合併版會丟失原檔精修內容（坑 #20）、補回 H3 抗癌藥物速查本體（坑 #21）。nav 從 5 條平鋪改 17 條平鋪（仍遵守規則 3 無巢狀），首頁用 V2.0.3 的 home-grid 卡片設計 |
+| **V3.2.0** | **重大轉折**：發現「viewport 885px」是錯誤前提（坑 #22）——實測 2160px，根本不需要任何 sidebar override。砍掉 V2.x→V3.0.x 累積的整段 sidebar override CSS（200+ 行→80 行），回歸 Material 預設 wide-mode。同時所有框架 emoji 改 SVG（坑 #23），跨平台渲染穩定 |
 
 ---
 
@@ -391,16 +416,15 @@ grep -c "md-nav__item--nested" site/index.html
 
 按優先序：
 
-1. **驗證 V3.1.0 sidebar 顯示與配色實際效果** — Sela 部署後第一件事，需要截圖確認 (a) 左邊 sidebar 是 17 條平鋪、跟主內容並排不浮動 (b) 主色 #25506b 確實生效（不是 indigo）(c) 右側 TOC 不再跟左側重複 (d) 手機底部 4 鍵正常
-2. 評估右側 TOC 要不要拿掉 — 如果 sidebar 17 條已經夠用、TOC 反而干擾，加一行 `.md-sidebar--secondary { display: none !important; }` 就拿掉
-3. 評估 sidebar 17 條是否擠 — 如果 sidebar 太長，可以縮小 nav `font-size`、或拿掉 emoji 簡化視覺
-4. 補 B1 五大 HIS 系統的操作截圖（系統陸續上線後補入，新人最需要）
-5. 抗癌藥物速查若有新版，整個 `docs/drug-lookup/` 資料夾原地替換 + 改 H3 版本說明（坑 #21）
-6. 子宮頸癌 / 子宮體癌 / 卵巢癌完治率定義補入 G_quality-index.md（待各團隊討論）
-7. 評估 C3–C6 是否需要拆成獨立 MD（如果拆，nav 平鋪變 20 條，仍遵守規則 3）
+1. **驗證 V3.2.0 在實際使用情境下表現** — Sela 部署後第一件事，需要滿屏截圖確認 (a) 主色 #25506b 生效（header 深藍灰，不是 indigo）(b) sidebar Material 預設 wide-mode 自動跑出來（17 條 nav 在左、TOC 在右、主內容在中、無漢堡）(c) 手機底部 4 個 SVG icon 顯示正確、無方框、active 切換正常 (d) 首頁卡片 8 個 SVG 圖示視覺平衡
+2. 評估 sidebar 17 條視覺是否擠 — 如果太長，可以縮小 nav `font-size`、或加分組分隔線；但不可加回巢狀（規則 3）
+3. 補 B1 五大 HIS 系統的操作截圖（系統陸續上線後補入，新人最需要）
+4. 抗癌藥物速查若有新版，整個 `docs/drug-lookup/` 資料夾原地替換 + 改 H3 版本說明（坑 #21）
+5. 子宮頸癌 / 子宮體癌 / 卵巢癌完治率定義補入 G_quality-index.md（待各團隊討論）
+6. 評估 C3–C6 是否需要拆成獨立 MD（如果拆，nav 平鋪變 20 條，仍遵守規則 3）
 
 ---
 
 ## 八、一句話總結
 
-V3.1.0：把 V3.0.x 的「合併版 4 份」全砍，內容回到 V2.0.3 那 17 份精修 MD（包含 drug-lookup/ 子目錄），nav 改 17 條平鋪（仍無巢狀，遵守規則 3），首頁用 V2.0.3 的 home-grid 卡片設計。框架（主色 #25506b、sidebar 永久顯示、隱藏內嵌 TOC、手機底部導覽）沿用 V3.0.2。坑 #20 教訓：**內容是反覆討論的成果（保守對待），框架是技術選擇（可以激進）**。下版可以開始補 HIS 截圖、藥物速查更新等實際內容，不必再動框架。
+V3.2.0：發現「viewport 885px」是錯誤的測量前提（坑 #22）——實測 2160px，Material 預設 wide-mode 自己會處理一切。砍掉 V2.x→V3.0.x 累積的整段 sidebar override CSS（200+ 行壓到 80 行），同時所有框架 emoji 改成 inline SVG（坑 #23）跨平台穩定。連續 9 版打地鼠的 sidebar 戰役在認知到「我量錯了」這一刻終結。**最大教訓：錯誤前提下的解法只會堆積技術債，動手解問題之前先驗證自己量的數字對不對**。下版開始補實際內容（HIS 截圖、藥物速查更新），不再動框架。
