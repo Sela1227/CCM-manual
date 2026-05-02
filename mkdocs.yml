@@ -52,9 +52,13 @@ nav:
   - A 新人通則:
     - A1 工作指導手冊: A_work-guide.md
     - A2 培訓計畫書: A_training-plan.md
-  - B HIS 與通用工具:
+  - 軟體與工具:
     - B1 HIS 系統操作手冊: B1_HIS-manual.md
     - B2 其他工具使用說明: B2_other-tools.md
+    - H1 個管追蹤系統（癌症中心專用）: H1_ccm-tracker-guide.md
+    - H2 MDT 會議管理系統（癌症中心專用）: H2_mdt-guide.md
+    - H3 抗癌藥物速查（癌症中心專用）: H3_cancer-drugs.md
+    - H4 病歷互審系統（癌症中心專用）: H4_peer-review-guide.md
   - C 各癌別照護指引:
     - C0 癌症照護通論: C0_general.md
     - C1 肺癌照護指引: C1_lung-cancer.md
@@ -64,11 +68,6 @@ nav:
   - E 專題與進階: E_advanced.md
   - F 臨床知識庫: F_clinical-kb.md
   - G 品質指標速查: G_quality-index.md
-  - H 癌症中心專用軟體:
-    - H1 個管追蹤系統: H1_ccm-tracker-guide.md
-    - H2 MDT 會議管理系統: H2_mdt-guide.md
-    - H3 抗癌藥物速查: H3_cancer-drugs.md
-    - H4 病歷互審系統: H4_peer-review-guide.md
 
 # 外掛
 plugins:
