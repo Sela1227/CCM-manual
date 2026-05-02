@@ -63,7 +63,17 @@ nav:
     - C0 癌症照護通論: C0_general.md
     - C1 肺癌照護指引: C1_lung-cancer.md
     - C2 乳癌照護指引: C2_breast-cancer.md
-    - C3–C6 其他癌別照護指引: C3-C6_other-cancers.md
+    - C3 大腸直腸癌照護指引: C3_colorectal-cancer.md
+    - C4 肝癌照護指引: C4_liver-cancer.md
+    - C5 頭頸癌照護指引: C5_head-neck-cancer.md
+    - C6 攝護腺癌照護指引: C6_prostate-cancer.md
+    - C7 食道癌照護指引: C7_esophageal-cancer.md
+    - C8 胃癌照護指引: C8_gastric-cancer.md
+    - C9 肝膽胰癌照護指引: C9_biliary-pancreatic-cancer.md
+    - C10 泌尿癌照護指引: C10_urological-cancer.md
+    - C11 婦癌照護指引: C11_gynecologic-cancer.md
+    - C12 血液及淋巴癌照護指引: C12_hematologic-cancer.md
+    - C13 其他癌照護指引: C13_other-cancers.md
   - D 表單與範本:
     - D. 概覽: D_forms.md
     - D1 評估量表彙整: D1_assessment-tools.md
