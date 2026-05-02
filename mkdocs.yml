@@ -42,30 +42,33 @@ theme:
     - search.highlight            # 搜尋結果高亮
 
 # Nav 結構
-# 規則 3 修訂版（V3.3.0）：巢狀允許但需符合條件——
+# 規則 3 修訂版（V3.4.0 路線 C）：viewport 真相揭露 + V3.3.0 巢狀 A 組實測通過後，
+# 推到 8 組全巢狀。條件不變：
 #   1. CSS 不可加回 sidebar override（@media min-width: 760px）
 #   2. 部署後實測 sidebar 無重複/標題錯位
 #   3. 出問題就 git revert，不要試著用 CSS 蓋
-# V3.3.0 路線 B：先巢狀 A 組水溫，其他 16 條仍平鋪
 nav:
   - 首頁: index.md
   - A 新人通則:
     - A1 工作指導手冊: A_work-guide.md
     - A2 培訓計畫書: A_training-plan.md
-  - B1 HIS 系統操作手冊: B1_HIS-manual.md
-  - B2 其他工具使用說明: B2_other-tools.md
-  - C0 癌症照護通論: C0_general.md
-  - C1 肺癌照護指引: C1_lung-cancer.md
-  - C2 乳癌照護指引: C2_breast-cancer.md
-  - C3–C6 其他癌別照護指引: C3-C6_other-cancers.md
+  - B HIS 與通用工具:
+    - B1 HIS 系統操作手冊: B1_HIS-manual.md
+    - B2 其他工具使用說明: B2_other-tools.md
+  - C 各癌別照護指引:
+    - C0 癌症照護通論: C0_general.md
+    - C1 肺癌照護指引: C1_lung-cancer.md
+    - C2 乳癌照護指引: C2_breast-cancer.md
+    - C3–C6 其他癌別照護指引: C3-C6_other-cancers.md
   - D 表單與範本: D_forms.md
   - E 專題與進階: E_advanced.md
   - F 臨床知識庫: F_clinical-kb.md
   - G 品質指標速查: G_quality-index.md
-  - H1 個管追蹤系統: H1_ccm-tracker-guide.md
-  - H2 MDT 會議管理系統: H2_mdt-guide.md
-  - H3 抗癌藥物速查: H3_cancer-drugs.md
-  - H4 病歷互審系統: H4_peer-review-guide.md
+  - H 癌症中心專用軟體:
+    - H1 個管追蹤系統: H1_ccm-tracker-guide.md
+    - H2 MDT 會議管理系統: H2_mdt-guide.md
+    - H3 抗癌藥物速查: H3_cancer-drugs.md
+    - H4 病歷互審系統: H4_peer-review-guide.md
 
 # 外掛
 plugins:

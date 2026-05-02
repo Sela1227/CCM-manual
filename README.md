@@ -2,7 +2,7 @@
 
 癌症個案管理師工作資源平台。
 
-**當前版本：V3.3.0**
+**當前版本：V3.4.0**
 
 部署網址：https://Sela1227.github.io/CCM-manual/
 
@@ -45,7 +45,7 @@ Sela 用自製 Git Pusher V1.5.5 匯入 `CCM Manual V?.?.?.zip` → 自動 commi
 ## 設計原則
 
 - **17 份 MD**：每篇獨立，內容是反覆討論精修的（V2.0.3 沿用，不再合併）
-- **Nav 巢狀有條件允許**：V3.3.0 開始試巢狀 A 組水溫，其他平鋪。詳見 CLAUDE.md 規則 3
+- **Nav 巢狀有條件允許**：V3.4.0 開始試巢狀 A 組水溫，其他平鋪。詳見 CLAUDE.md 規則 3
 - **回歸 Material 預設 wide-mode**：viewport 真相揭露後（CLAUDE.md 坑 #22），不再寫任何 sidebar override CSS
 - **中文搜尋**：jieba 分詞
 - **手機底部導覽列**：4 個 SVG 快速入口（首頁 / 工作 / HIS / 指標）

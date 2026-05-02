@@ -1,10 +1,10 @@
 /* ======================================================
-   彰濱秀傳癌症中心 - 個管師訓練系統 V3.3.0
+   彰濱秀傳癌症中心 - 個管師訓練系統 V3.4.0
    - 砍掉 V2.x/V3.0.x 的 sidebar override（坑 #16/#19/#20/#22 一筆勾消）
    - 回歸 Material 預設 wide-mode
    - 移除框架 emoji，改用 SVG（坑 #23）
    - 主色 #25506b 用 :root 強制覆蓋（坑 #18）
-   - V3.3.0 加 SELA logo + 首頁 hero 區塊
+   - V3.4.0 加 SELA logo + 首頁 hero 區塊
    ====================================================== */
 
 /* ======================================================
@@ -85,7 +85,7 @@
 }
 
 /* ======================================================
-   首頁 hero 區塊（V3.3.0 加大 logo + 標題）
+   首頁 hero 區塊（V3.4.0 加大 logo + 標題）
    ====================================================== */
 .home-hero {
   text-align: center;
@@ -180,28 +180,44 @@
 }
 
 /* ======================================================
-   版本徽章（右下角浮動小標）
+   版本號徽章（V3.4.0 移到 header，貼在站名旁邊）
+   由 extra.js 動態插入到 .md-header__title 內
    ====================================================== */
-#ccm-ver {
-  position: fixed;
-  bottom: 8px;
-  right: 8px;
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  padding: 2px 8px;
-  border-radius: 10px;
-  font-size: 0.7rem;
+.ccm-ver-inline {
+  display: inline-block;
+  margin-left: 0.6em;
+  padding: 1px 7px;
+  font-size: 0.65rem;
   font-family: monospace;
-  z-index: 100;
-  pointer-events: none;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 9px;
+  vertical-align: middle;
   user-select: none;
 }
-@media screen and (max-width: 768px) {
-  #ccm-ver {
-    bottom: 60px;
-    right: auto;
-    left: 8px;
+
+@media screen and (max-width: 600px) {
+  /* 手機 header 空間小，版本號縮一點 */
+  .ccm-ver-inline {
+    font-size: 0.6rem;
+    margin-left: 0.4em;
+    padding: 1px 5px;
   }
+}
+
+/* ======================================================
+   修底部黑邊（V3.4.0）
+   Material 預設 .md-footer 在某些頁面尾部會留一條深色帶
+   ====================================================== */
+.md-footer-meta.md-typeset {
+  background-color: var(--md-primary-fg-color--dark);
+}
+/* 如果使用者連 footer-meta 都不要，把整段 footer 背景對齊主色 */
+.md-footer {
+  background-color: var(--md-primary-fg-color--dark);
 }
 
 /* ======================================================
