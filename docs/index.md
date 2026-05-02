@@ -1,7 +1,5 @@
 <div class="home-hero" markdown>
 
-<img src="assets/logo.png" alt="SELA logo" class="home-logo">
-
 # 彰濱秀傳癌症中心 - 個管師訓練系統
 
 **個案管理師工作資源平台**

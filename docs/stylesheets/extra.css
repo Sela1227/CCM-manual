@@ -1,10 +1,11 @@
 /* ======================================================
-   彰濱秀傳癌症中心 - 個管師訓練系統 V3.4.0
+   彰濱秀傳癌症中心 - 個管師訓練系統 V3.4.1
    - 砍掉 V2.x/V3.0.x 的 sidebar override（坑 #16/#19/#20/#22 一筆勾消）
    - 回歸 Material 預設 wide-mode
    - 移除框架 emoji，改用 SVG（坑 #23）
    - 主色 #25506b 用 :root 強制覆蓋（坑 #18）
    - V3.4.0 加 SELA logo + 首頁 hero 區塊
+   - V3.4.1 logo 收回 header 一處（內文與 drawer 邊欄都不再出現）；內文左右加呼吸感
    ====================================================== */
 
 /* ======================================================
@@ -85,19 +86,11 @@
 }
 
 /* ======================================================
-   首頁 hero 區塊（V3.4.0 加大 logo + 標題）
+   首頁 hero 區塊（V3.4.1 拿掉 hero 內 logo，只留標題）
    ====================================================== */
 .home-hero {
   text-align: center;
   margin: 1.5rem 0 2rem;
-}
-
-.home-hero .home-logo {
-  width: 160px;
-  height: auto;
-  border-radius: 18px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-  margin-bottom: 1rem;
 }
 
 .home-hero h1 {
@@ -114,7 +107,6 @@
 }
 
 @media screen and (max-width: 600px) {
-  .home-hero .home-logo { width: 110px; }
   .home-hero h1 { font-size: 1.4rem; }
 }
 
@@ -218,6 +210,33 @@
 /* 如果使用者連 footer-meta 都不要，把整段 footer 背景對齊主色 */
 .md-footer {
   background-color: var(--md-primary-fg-color--dark);
+}
+
+/* ======================================================
+   V3.4.1 新增 1：行動裝置 drawer 邊欄不顯示 logo
+   - 規則：logo 只在 header 一處出現
+   - 隱藏 drawer 標題區塊裡的 .md-logo（保留站名與關閉鈕）
+   ====================================================== */
+.md-nav--primary > .md-nav__title .md-logo,
+.md-nav--primary > .md-nav__title img {
+  display: none !important;
+}
+
+/* ======================================================
+   V3.4.1 新增 2：內文左右呼吸感
+   - 截圖實測 V3.4.0 內文左邊太貼邊框、閱讀不易
+   - 加 padding 不會動到 sidebar 行為（規則 8 不破）
+   ====================================================== */
+.md-content__inner {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .md-content__inner {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
 }
 
 /* ======================================================
