@@ -1,5 +1,5 @@
 /* ======================================================
-   彰濱秀傳癌症中心 - 個管師訓練系統 V3.4.21
+   彰濱秀傳癌症中心 - 個管師訓練系統 V3.4.22
    - 版本徽章改 inline，注入到 header 站名旁（不再右下角浮動）
    - 手機底部導覽列（V3.4.4 從 4 個改 6 個進階員工常用入口，SVG 圖示）
    - getSiteRoot() 從 window.location.pathname 推算（規則 5）
@@ -8,7 +8,7 @@
 (function () {
   "use strict";
 
-  var CCM_VERSION = "V3.4.21";
+  var CCM_VERSION = "V3.4.22";
 
   // ---- 推算 site root（不依賴 base.href）----
   function getSiteRoot() {
@@ -28,25 +28,16 @@
     kb:      '<svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>'
   };
 
-  // ---- 版本徽章注入到 header 站名旁 ----
+  // ---- 版本徽章注入到 footer 右下角（從 header 移到 footer，美編 7 件之一）----
   function injectVersionBadge() {
     // 先清掉舊的（避免 instant-nav 重複）
-    var olds = document.querySelectorAll(".ccm-ver-inline");
+    var olds = document.querySelectorAll(".ccm-ver-footer, .ccm-ver-inline");
     olds.forEach(function (n) { n.remove(); });
 
-    // 找站名 ellipsis（Material 把站名放這）
-    var titleEllipsis = document.querySelector(
-      ".md-header__title .md-header__topic:first-child .md-ellipsis"
-    );
-    if (!titleEllipsis) {
-      titleEllipsis = document.querySelector(".md-header__title .md-header__topic");
-    }
-    if (!titleEllipsis) return;
-
-    var badge = document.createElement("span");
-    badge.className = "ccm-ver-inline";
+    var badge = document.createElement("div");
+    badge.className = "ccm-ver-footer";
     badge.textContent = CCM_VERSION;
-    titleEllipsis.appendChild(badge);
+    document.body.appendChild(badge);
   }
 
   // ---- 手機底部導覽列 ----
@@ -60,9 +51,9 @@
       { href: root,                          label: "首頁", icon: ICONS.home,    match: /^\/[^\/]*\/?$|\/index\.html?$/ },
       { href: root + "H1_ccm-tracker-guide/", label: "個管", icon: ICONS.tracker, match: /\/H1_ccm-tracker-guide\// },
       { href: root + "H2_mdt-guide/",        label: "MDT",  icon: ICONS.mdt,     match: /\/H2_mdt-guide\// },
-      { href: root + "H3_cancer-drugs/",     label: "藥物", icon: ICONS.drugs,   match: /\/H3_cancer-drugs\/|\/drug-lookup\// },
-      { href: root + "G_quality-index/",     label: "指標", icon: ICONS.metrics, match: /\/G_quality-index\// },
-      { href: root + "F_clinical-kb/",       label: "知識", icon: ICONS.kb,      match: /\/F_clinical-kb\// }
+      { href: root + "H3_cancer-drugs/",     label: "藥",   icon: ICONS.drugs,   match: /\/H3_cancer-drugs\/|\/drug-lookup\// },
+      { href: root + "G_quality-index/",     label: "品質", icon: ICONS.metrics, match: /\/G_quality-index\// },
+      { href: root + "F_clinical-kb/",       label: "臨床", icon: ICONS.kb,      match: /\/F_clinical-kb\// }
     ];
 
     var nav = document.createElement("nav");

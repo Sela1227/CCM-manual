@@ -1,17 +1,10 @@
 /* ======================================================
-   彰濱秀傳癌症中心 - 個管師訓練系統 V3.4.21
-   - 砍掉 V2.x/V3.0.x 的 sidebar override（坑 #16/#19/#20/#22 一筆勾消）
-   - 回歸 Material 預設 wide-mode
-   - 移除框架 emoji，改用 SVG（坑 #23）
-   - 主色 #25506b 用 :root 強制覆蓋（坑 #18）
-   - V3.4.0 加 SELA logo + 首頁 hero 區塊
-   - V3.4.1 logo 收回 header 一處（內文與 drawer 邊欄都不再出現）；內文左右加呼吸感
-   - V3.4.2 強制 header logo 在所有 viewport 顯示（修 V3.4.1 tablet viewport 完全看不到 logo 的副作用）；內文左右 padding 再加大
-   - V3.4.3 右側 TOC 縮 10rem（內文多 35px）；修首頁卡片 mobile 變空白方框 bug（坑 #28）
-   - V3.4.4 手機底部導覽從 4 個改 6 個進階員工常用入口（首頁／個管／MDT／藥物／指標／知識）
-   - V3.4.5 純內容版本：F 檔（臨床知識庫）從原 F1/F2 兩段重排為 F1–F5 五段（坑 #29）
-   - V3.4.6 純內容版本：A1/B1 重排（方案 C），A1 砍第三部分軟體上手指南、B1 從 15 章變 18 章（坑 #30）
-   - V3.4.21 純內容版本：A 檔層級降級+內容重整，依新規則 12（5 H2+27 H3+71 H4，TOC 32 項）（坑 #31）
+   彰濱秀傳癌症中心 - 個管師訓練系統
+   stylesheet 版本：V3.4.22（隨主版本同步）
+   最後 CSS 結構變更：V3.4.22（美編視角 7 件修補）
+   架構說明：主色 + h1/h2/h3 樣式 + 表格 + SVG 圖示 + 首頁
+            hero/grid + 藥物表 + 版本徽章 + footer + 內文
+            padding + 右側 TOC + 手機底部導覽
    ====================================================== */
 
 /* ======================================================
@@ -49,6 +42,10 @@
 .md-typeset h3 {
   font-weight: 600;
   color: var(--md-primary-fg-color);
+  font-size: 1.1rem;
+  border-left: 2px solid var(--md-primary-fg-color--light);
+  padding-left: 0.5em;
+  margin-top: 1.3em;
 }
 
 /* ======================================================
@@ -58,9 +55,10 @@
   -webkit-overflow-scrolling: touch;
 }
 .md-typeset table:not([class]) th {
-  background-color: var(--md-primary-fg-color);
-  color: #fff;
-  font-weight: 600;
+  background-color: #eef2f5;
+  color: var(--md-primary-fg-color);
+  font-weight: 700;
+  border-bottom: 2px solid var(--md-primary-fg-color);
 }
 
 @media screen and (max-width: 600px) {
@@ -151,10 +149,10 @@
 }
 
 .home-card p {
-  font-size: 0.81rem;
+  font-size: 0.9rem;
   color: var(--md-default-fg-color--light);
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 @media screen and (max-width: 480px) {
@@ -185,28 +183,30 @@
    版本號徽章（V3.4.0 移到 header，貼在站名旁邊）
    由 extra.js 動態插入到 .md-header__title 內
    ====================================================== */
-.ccm-ver-inline {
-  display: inline-block;
-  margin-left: 0.6em;
-  padding: 1px 7px;
+.ccm-ver-footer {
+  position: fixed;
+  bottom: 6px;
+  right: 10px;
+  z-index: 40;
+  padding: 2px 8px;
   font-size: 0.65rem;
   font-family: monospace;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.02em;
-  background: rgba(255, 255, 255, 0.18);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.35);
+  color: rgba(255, 255, 255, 0.9);
   border-radius: 9px;
-  vertical-align: middle;
   user-select: none;
+  pointer-events: none;
+  opacity: 0.7;
 }
 
-@media screen and (max-width: 600px) {
-  /* 手機 header 空間小，版本號縮一點 */
-  .ccm-ver-inline {
+/* 手機底部有 6 鈕導覽列、版本徽章閃避到上方 */
+@media screen and (max-width: 768px) {
+  .ccm-ver-footer {
+    bottom: 60px;
     font-size: 0.6rem;
-    margin-left: 0.4em;
-    padding: 1px 5px;
+    padding: 1px 6px;
   }
 }
 
