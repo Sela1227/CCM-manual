@@ -2,9 +2,11 @@
 
 癌症個案管理師工作資源平台。
 
-**當前版本：V3.4.28**
+**當前版本：V4.0.0**
 
 部署網址：https://Sela1227.github.io/CCM-manual/
+
+**對齊規範**：[SELA Starter Kit V1.9.0](https://github.com/Sela1227)（V4.0.0 起首次對齊；衝突仲裁見 [CLAUDE.md](CLAUDE.md) 開頭區塊；handoff 見 [SELA-handoff.md](SELA-handoff.md)）
 
 ---
 

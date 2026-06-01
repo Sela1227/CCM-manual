@@ -1,22 +1,54 @@
+# === CCM Manual .gitignore (V4.0.0 對齊 Kit V1.9.0) ===
+
 # MkDocs 產物
 site/
 
 # Python
 __pycache__/
 *.py[cod]
+*$py.class
 *.so
 .Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
 venv/
+ENV/
+env/
 .venv/
 
 # IDE
 .vscode/
 .idea/
+*.swp
+*.swo
 
-# 系統檔案
+# Environment
+.env
+.env.local
+*.local
+
+# Logs
+*.log
+logs/
+
+# OS
 .DS_Store
 Thumbs.db
 
 # 暫存
-*.log
 *.tmp
