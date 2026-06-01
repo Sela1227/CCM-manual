@@ -89,7 +89,9 @@ nav:
     - F3 影像判讀: F3_imaging.md
     - F4 癌症治療: F4_treatment.md
     - F5 個管師追蹤速查: F5_followup.md
-  - G 品質指標速查: G_quality-index.md
+  - G 品質指標:
+    - G 品質指標速查（定義）: G_quality-index.md
+    - G2 114 年度本院實際成績: G2_114-quality-report.md
 
 # 外掛
 plugins:
