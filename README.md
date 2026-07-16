@@ -1,12 +1,18 @@
-# 彰濱秀傳癌症中心 - 個管師訓練系統
+<div align="center">
+  <h1>彰濱秀傳癌症中心 - 個管師訓練系統</h1>
+  <p>癌症個案管理師工作資源平台</p>
+  <p>
+    <img src="docs/assets/sela-logo/sela.svg" width="48" alt="SELA"/>
+    <br>
+    <sub><em>Maintained by SELA</em></sub>
+  </p>
+</div>
 
-癌症個案管理師工作資源平台。
-
-**當前版本：V4.1.1**
+**當前版本：V4.2.0**
 
 部署網址：https://Sela1227.github.io/CCM-manual/
 
-**對齊規範**：[SELA Starter Kit V1.9.0](https://github.com/Sela1227)（首次對齊於 V4 系列起點；衝突仲裁見 [CLAUDE.md](CLAUDE.md) 開頭區塊；handoff 見 [SELA-handoff.md](SELA-handoff.md)）
+**對齊規範**：[SELA Starter Kit V1.25.0](https://github.com/Sela1227)（首次對齊於 V4 系列起點、之後隨 Kit 跳版逐次跟進；衝突仲裁見 [CLAUDE.md](CLAUDE.md) 開頭區塊；handoff 見 [SELA-handoff.md](SELA-handoff.md)）
 
 ---
 

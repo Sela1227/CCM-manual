@@ -1,6 +1,6 @@
 /* ======================================================
-   彰濱秀傳癌症中心 - 個管師訓練系統 V4.1.1
-   - 版本徽章改 inline，注入到 header 站名旁（不再右下角浮動）
+   彰濱秀傳癌症中心 - 個管師訓練系統 V4.2.0
+   - 版本號 footer + header 雙處顯示（SPEC §10.6 UI 版號鐵律）
    - 手機底部導覽列（V3.4.4 從 4 個改 6 個進階員工常用入口，SVG 圖示）
    - getSiteRoot() 從 window.location.pathname 推算（規則 5）
    ====================================================== */
@@ -8,7 +8,7 @@
 (function () {
   "use strict";
 
-  var CCM_VERSION = "V4.1.1";
+  var CCM_VERSION = "V4.2.0";
 
   // ---- 推算 site root（不依賴 base.href）----
   function getSiteRoot() {
@@ -28,16 +28,48 @@
     kb:      '<svg viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg>'
   };
 
-  // ---- 版本徽章注入到 footer 右下角（從 header 移到 footer，美編 7 件之一）----
+  // ---- 版本徽章注入到 footer 右下角 ----
   function injectVersionBadge() {
     // 先清掉舊的（避免 instant-nav 重複）
-    var olds = document.querySelectorAll(".ccm-ver-footer, .ccm-ver-inline");
+    var olds = document.querySelectorAll(".ccm-ver-footer");
     olds.forEach(function (n) { n.remove(); });
 
     var badge = document.createElement("div");
     badge.className = "ccm-ver-footer";
     badge.textContent = CCM_VERSION;
     document.body.appendChild(badge);
+  }
+
+  // ---- header 版號注入到站名右側（SPEC §10.6 UI 版號鐵律、footer + header 雙包）----
+  function injectHeaderVersion() {
+    var olds = document.querySelectorAll(".ccm-ver-inline");
+    olds.forEach(function (n) { n.remove(); });
+
+    // Material Theme header 站名容器（優先 .md-header__topic 首個 .md-ellipsis）
+    var host = document.querySelector(".md-header__title .md-header__topic:first-child .md-ellipsis");
+    if (!host) host = document.querySelector(".md-header__title .md-ellipsis");
+    if (!host) return;
+
+    var tag = document.createElement("span");
+    tag.className = "ccm-ver-inline";
+    tag.textContent = CCM_VERSION;
+    tag.title = "目前版本 " + CCM_VERSION;
+    host.appendChild(tag);
+  }
+
+  // ---- SELA 歸屬印記注入（Kit V1.21.0 雙軌 logo 系統、本版加入）----
+  function injectSelaCredit() {
+    var olds = document.querySelectorAll(".ccm-sela-credit");
+    olds.forEach(function (n) { n.remove(); });
+
+    var credit = document.createElement("a");
+    credit.className = "ccm-sela-credit";
+    credit.href = "https://github.com/Sela1227";
+    credit.target = "_blank";
+    credit.rel = "noopener";
+    credit.title = "本系統由 SELA 維護";
+    credit.innerHTML = '<img src="' + getSiteRoot() + 'assets/sela-logo/sela.svg" alt="SELA"/>by SELA';
+    document.body.appendChild(credit);
   }
 
   // ---- 手機底部導覽列 ----
@@ -72,6 +104,8 @@
 
   function init() {
     injectVersionBadge();
+    injectHeaderVersion();
+    injectSelaCredit();
     injectMobileNav();
   }
 
@@ -85,6 +119,8 @@
   if (typeof document$ !== "undefined" && document$.subscribe) {
     document$.subscribe(function () {
       injectVersionBadge();
+      injectHeaderVersion();
+      injectSelaCredit();
 
       var nav = document.getElementById("ccm-mobile-nav");
       if (!nav) {

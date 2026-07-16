@@ -1,25 +1,38 @@
 # CLAUDE.md｜彰濱秀傳癌症中心 - 個管師訓練系統
 
 > **⚠ 給同時拿到 SELA-Starter-Kit 的 Claude：**
-> 這是**已對齊 Kit V1.9.0 的成熟專案**（**首次對齊版**起對齊），不是新專案。
+> 這是**已對齊 Kit V1.25.0 的成熟專案**（首次對齊於 V4 系列起點、之後隨 Kit 跳版逐次跟進），不是新專案。
+>
+> **本專案屬 Kit claude-init 第二章「已對齊過、但 Kit 已跳版（落差 ≥ 3 個 b 版）」情境**（V1.25.0 新增）——Kit 迭代快、本專案每次只評估落差區間的新規範，不重跑首次對齊。
 >
 > **衝突仲裁規則：**
 > 1. **以本專案 CLAUDE.md 為主、Kit 為輔**
 > 2. **本專案刻意不對齊 Kit 的部分**：
->    - **保留現有 logo-header.png**（不套 SELA logo）—— 已累積醫院使用者識別度、配合彰濱秀傳形象。Kit V1.8.2 規則「仍是 SELA 個人品牌、問 SELA 要不要補」，Sela 明確要求保留現狀
+>    - **header logo 保留 logo-header.png**（不換成 SELA logo 當主視覺）—— 已累積醫院使用者識別度、配合彰濱秀傳形象
+>    - **但已補 SELA logo 歸屬印記**（footer 右下角小印記、Kit V1.13.0 雙軌 logo 系統）—— 兼顧醫院形象 + SELA 品牌歸屬
+>    - **不做 app logo 設計**（Kit V1.13.0 §8.3「既有業務 app 首次對齊要主動詢問」）—— 現有 logo-header.png 已是事實上的 app logo、醫院使用者已認得，不另做
 >    - **配色用 #25506b 深藍**（非 Kit 預設 #5A7A8B 北歐霧藍）—— 自 V1.x 起累積 6+ 個月使用者驗證、跟癌症中心識別調性吻合
->    - **既有 52 個坑保留敘述體**（非 Kit 章法手冊「症狀→原因→做法」三段式）—— 工程巨大、回顧價值低；從坑 #53 起用三段式（規則 16）
+>    - **既有 #1-#52 坑保留敘述體**（非 Kit 章法手冊三段式）—— 工程巨大、回顧價值低；從坑 #53 起用三段式（規則 16）
 >    - **章法手冊「業務對映表 / 升版必讀 / 煙霧測試指令 / 關鍵路徑」4 個段落不適用**—— 本專案是 MkDocs 文檔網站、無 schema 也無 migration、煙霧測試就是 `mkdocs build --strict`（已寫進規則 6）
->    - **既有 15 條本專案規則保留全部**（規則 1-15）—— MkDocs / 醫療文檔特化、不回流 Kit
+>    - **既有 18 條本專案規則保留全部**（規則 1-18）—— MkDocs / 醫療文檔特化、不回流 Kit
+>    - **OPT-1/2/3 不適用**（CCM 是純靜態 MkDocs、無後端排程 / DB / 外部呼叫）；**OPT-4「生成後配自我驗證」已實質落實**（規則 6 + 坑 #50/#52 都對應此原則、見規則 17）
 > 3. **不要為對齊 Kit 而動既有設計**—— 已驗證的就是事實標準
-> 4. **版號規則照 Kit**（三位數、b+1 / c+1 / a+1 進位邏輯）—— 首次對齊 Kit 是**重大里程碑（V4 系列起點）**
-> 5. **下次完成版本時記得評估 SELA-handoff.md**（Kit 鐵律 #0 — 完整見 Kit master CLAUDE.md）—— 本專案**首份 handoff 已於首次對齊版產出**
+> 4. **版號規則照 Kit**（**只有 c 逢十進位 0-9；a、b 不設上限**）—— 首次對齊 Kit 是**重大里程碑（V4 系列起點）**
+>    - **UI 版號鐵律**（SPEC §10.6）：版號在 **header 站名旁 + footer 右下徽章 + 肺淋巴圖譜 masthead** 三處可見，升版時跟 zip 檔名版號一致（規則 1）
+> 5. **下次完成版本時記得評估 SELA-handoff.md**（Kit 鐵律 #0 — 完整見 Kit master CLAUDE.md）—— 本專案 handoff 每次跟進 Kit 跳版時改寫，**目前是第三份**
+> 6. **交付閉環**（Kit V1.23.0 §10）：每次交付前逐條核對 Kit §3 鐵律，並**在交付訊息中回報核對結果**（見規則 18）
+>
+> **CCM 已貢獻給 Kit 的坑**（首份 handoff → Kit V1.10.0 收錄）：
+> - Kit 坑 #48「環境重置從 outputs 解壓 zip」← CCM 坑 #52
+> - Kit 坑 #49「歷史註解不寫死版本號」← CCM 坑 #46 + 規則 1 補充澄清
+>
+> **Kit 反向影響 CCM 的坑**：Kit 坑 #67「GitHub Pages concurrency + cancel-in-progress」（從 OncoPA 反饋）→ CCM 跟進 Kit V1.25.0 時改 `deploy.yml` + 加 `.nojekyll`（坑 #58）
 >
 > **跨專案脈絡升 Kit 時請看**：[SELA-handoff.md](SELA-handoff.md)（不用挖整份 CLAUDE.md）
 
 ---
 
-**當前版本**：V4.1.1
+**當前版本**：V4.2.0
 **Stack**：MkDocs + Material Theme（jieba 中文分詞），GitHub Pages（私有 Repo + GitHub Pro）
 **Repo**：Sela1227/CCM-manual（部署不顯示連結，header repo 已拿掉）
 **部署工具**：Sela 自製 Git Pusher V1.5.5（匯入 Zip 自動 push）
@@ -55,24 +68,30 @@
 - [ ] 一句話總結已更新
 - [ ] 部署後實測：footer 沒有黑色橫條（坑 #25）、4 組巢狀沒翻車
 
-### 規則 1：版本號五處必須同步
+### 規則 1：版本號六處必須同步
 
-| 位置 | 改什麼 |
-|------|--------|
-| `docs/javascripts/extra.js` | `var CCM_VERSION = "V?.?.?"` |
-| `docs/stylesheets/extra.css` | 頂部版本說明 comment |
-| `README.md` | 頂部「當前版本：V?.?.?」 |
-| `CLAUDE.md` | 頂部「當前版本：V?.?.?」 |
-| ZIP 檔名 | `CCM Manual V?.?.?.zip` |
+| 位置 | 改什麼 | UI 可見？ |
+|------|--------|----------|
+| `docs/javascripts/extra.js` | `var CCM_VERSION = "V?.?.?"` | ✓ header 站名旁 + footer 右下徽章 |
+| `docs/lung-nodal-map/index.html` | 檔尾 `var CCM_VERSION = "V?.?.?"` | ✓ 圖譜 masthead eyebrow 旁 |
+| `docs/stylesheets/extra.css` | 頂部版本說明 comment | ✗ |
+| `README.md` | 頂部「當前版本：V?.?.?」 | ✗ |
+| `CLAUDE.md` | 頂部「當前版本：V?.?.?」 | ✗ |
+| ZIP 檔名 | `CCM Manual V?.?.?.zip` | ✗ |
 
-```python
-# 用 Python 批次處理，不用 sed 逐行（坑 #14 教訓）
-import pathlib
-old, new = "V3.4.0", "V3.4.1"  # 假設下版
-for p in ["docs/javascripts/extra.js", "docs/stylesheets/extra.css",
-          "README.md", "CLAUDE.md"]:
-    f = pathlib.Path(p)
-    f.write_text(f.read_text().replace(old, new))
+> **Kit SPEC §10.6 鐵律**：UI 版號 = zip 檔名版號。前兩列是使用者看得到的版號、**升版後必須 grep 驗證**。
+
+```bash
+# 升版：sed 限定 5 個檔案（規則 1 補充澄清 + 坑 #53：不要全 repo 掃）
+OLD="V4.1.2"; NEW="V4.2.0"
+sed -i "s/${OLD}/${NEW}/g" docs/javascripts/extra.js docs/stylesheets/extra.css \
+                            docs/lung-nodal-map/index.html README.md
+sed -i "0,/${OLD}/{s/${OLD}/${NEW}/}" CLAUDE.md   # 只改第一個出現位置
+
+# 驗證（OPT-4：生成完不是結束、是驗證的開始）
+grep -c "${NEW}" docs/javascripts/extra.js docs/stylesheets/extra.css \
+                 docs/lung-nodal-map/index.html README.md
+grep "當前版本" CLAUDE.md | head -1
 ```
 
 ### 規則 2：H 系列說明書不寫明文帳密
@@ -741,6 +760,8 @@ V3.4.26 EGFR 補助專案啟示「明確截止日」+ V3.4.27 五癌篩檢「每
 
 **規則 15 條文**：所有具時效性的內容（外部資源、補助、推廣、政策、給付規定等）都需在文件中明確標示時效類型，並提示讀者**驗證時點**。避免文件因時間流逝而誤導使用者。
 
+> 🤝 **與 Kit 跨專案坑同源**：Kit V1.10.0 新增坑 #51「NCCN Cat 1 推薦 ≠ 健保給付」+ 坑 #52「健保條文每季可能修訂」（從 Cancer Navigation 反饋）跟本規則 15 同源——CCM V4.1.1 ribociclib 段「FDA 已核准 vs 台灣健保未給付、需自費」+ H3 drug-lookup 版本日期都是這原則的實際應用。**不同專案獨立演化出同一原則 = 強烈共識訊號**。
+
 **規則 16（V4.0.1 對齊 Kit 新增）新坑用三段式**
 
 從 V4.0.0 起、新踩到的坑（#53+）依 SELA Kit 章法手冊「症狀 → 原因 → 做法」三段式撰寫：
@@ -761,17 +782,66 @@ V3.4.26 EGFR 補助專案啟示「明確截止日」+ V3.4.27 五癌篩檢「每
 
 **規則 1 補充澄清（V4.0.0）**：
 
-「版本號 4 處同步」指的是**會隨升版而動的當前版本標記**：
-1. `docs/javascripts/extra.js` 的 `CCM_VERSION`
-2. `docs/stylesheets/extra.css` 開頭版本標記
-3. `README.md` 標題
-4. `CLAUDE.md` 開頭「當前版本」欄位
+「版本號 5 處同步」指的是**會隨升版而動的當前版本標記**（不含 zip 檔名）：
+1. `docs/javascripts/extra.js` 的 `CCM_VERSION`（→ header + footer UI 版號）
+2. `docs/lung-nodal-map/index.html` 檔尾的 `CCM_VERSION`（→ 圖譜 masthead UI 版號）
+3. `docs/stylesheets/extra.css` 開頭版本標記
+4. `README.md` 標題
+5. `CLAUDE.md` 開頭「當前版本」欄位
 
 **版本中性敘述合法例外**：
 - **規則 / 坑 / 版本歷程內提到的「歷史錨點版本號」**（如「規則 16（V4.0.0 對齊 Kit 新增）」「坑 #50（V3.4.26）」「V3.4.18 加課程表 cross-ref」）—— 這是**過去事件的時間戳記**、不該被 sed 升版動到
-- **升版 sed 指令的精準性**：用 `sed -i 's/V<舊版>/V<新版>/g'` 只對 4 處檔案執行（extra.js / extra.css / README / CLAUDE.md 頂部）、**不要全 repo 掃**
+- **升版 sed 指令的精準性**：用 `sed -i 's/V<舊版>/V<新版>/g'` 只對 5 個檔案執行（extra.js / lung-nodal-map/index.html / extra.css / README / CLAUDE.md 頂部）、**不要全 repo 掃**
 
 **為什麼**：歷史錨點若被 sed 誤動會破壞版本歷程的真實性（「規則 16 在哪版建立」變成不確定）、且每次升版要記得這個禁忌很累。最簡單做法是 sed 指令限定檔案範圍。
+
+> 🏆 **此規則已回流 Kit**：V4.0.0 handoff 第二節建議「歷史註解不該寫死版本號」被收錄為 Kit V1.10.0 cross-project-pitfalls 坑 #49（從 CCM Manual 反饋）。
+
+---
+
+**規則 17（V4.1.2 對齊 Kit V1.21.0 新增）優化體檢結果（OPT-1~4）**
+
+對齊 Kit V1.17.0 起鐵律「優化體檢」，CCM 對照 Kit `optimizations.md` 的 OPT-1~4 條目，產出本專案適用性報告：
+
+| OPT | 主題 | CCM 適用？ | 說明 |
+|---|---|---|---|
+| OPT-1 | cron/APScheduler → threading.Timer | ❌ 不適用 | CCM 是純靜態 MkDocs、無後端排程 |
+| OPT-2 | 散落種子資料 → master JSON + seed loader | ❌ 不適用 | CCM 沒 DB 種子資料、所有內容在 markdown |
+| OPT-3 | 直接外部請求 → outbox queue | ❌ 不適用 | CCM 沒外部呼叫 |
+| OPT-4 | **生成後配自我驗證** | ✅ **已實質落實** | 規則 6（`mkdocs build --strict` 0 warning）+ 坑 #50（grep 看實際格式不憑記憶）+ 坑 #52（grep WARNING/ERROR 而非看 tail）+ 規則 1 修訂（assert old in text 而非 if old in text）都是 OPT-4「生成完不是結束、是驗證的開始」的具體實作 |
+
+**OPT-4 在 CCM 的具體應用心得**（可供 Kit 第二輪 handoff 反饋）：
+
+- **批次改 markdown**：用 `assert old in text` 強制驗證、不用 `if old in text`（會靜默漏掉）
+- **資料萃取**：抽 G2 63 指標 / A3 38 醫師時、抽完後 grep 計數驗證
+- **anchor cross-ref**：靠 build --strict 驗證 anchor 有效性、不憑記憶寫 slug
+- **升版同步**：sed 限定 4 個檔案、不全 repo 掃（規則 1 補充澄清）
+- **環境重置回復**：從 outputs 解壓 zip 重建、驗證 CCM_VERSION 正確（坑 #52）
+
+**為什麼這條規則**：「優化體檢」不是「全部 OPT 都套」、而是「**對照後標明適用性 + 已實質落實的列出證據**」——讓下次 Claude 接手時知道「OPT 條目跟本專案是什麼關係」、不會誤以為「該套但沒套」。
+
+---
+
+**規則 18（跟進 Kit V1.25.0 新增）交付閉環：§3 鐵律逐條核對並回報**
+
+Kit V1.23.0 起 §10 是**閉環不是建議**：「生成端的規則遵循是機率性的，**檢核端的逐條核對才接近確定性**」。
+
+**每次交付前兩個動作**：
+
+1. **逐條核對 Kit §3 全部鐵律**（品牌 / 程式 / 交付三組，以當下 Kit §3 內容為準、不背複本）
+2. **在交付訊息中回報核對結果**——一行「§3 鐵律逐條核對 ✓，其中 X 條不適用於本專案」即可；有違反就明說哪條、怎麼處理
+
+**CCM 專用核對速查**（本專案性質決定的常態答案，仍須每次確認、不可跳過）：
+
+| Kit §3 鐵律組 | CCM 常態 |
+|---|---|
+| 品牌（不改 logo 色 / 不重畫 / 不去 ® / 不擅換 logo）| SELA logo 原檔取用、只當 footer 歸屬印記 ✓ |
+| 程式（無絕對路徑 / 跨平台 / 無 Git 自動化 / 無 venv / 無 debug print）| 純靜態 MkDocs、無 Python 主程式 → 多數不適用；`.gitignore` 已排除 `site/` `venv/` `__pycache__/` |
+| 交付（.gitignore / README / CLAUDE.md / zip 空格命名 / CLAUDE.md 有推進 / UI 有版號 / 英文檔名）| 全部適用、逐項確認；UI 版號見規則 1 |
+
+**為什麼**：Kit 反覆觀察到「Claude 讀了規則、生成時還是會漏」——不是不想遵守，是**生成當下注意力被任務佔滿**。把核對搬到交付前的獨立步驟、且要求「說出來」，才能從機率性變成可驗證。這跟規則 17 的 OPT-4「生成完不是結束、是驗證的開始」是同一件事的不同層級（OPT-4 管內容、規則 18 管規範）。
+
+---
 
 **#52（V3.4.28）新建 G2 114 年度本院實際品質指標成績**
 
@@ -1266,6 +1336,26 @@ V3.4.9 部署 ok，Sela 點頭一次處理 4 件事：
 - 自費溝通 Q：寫了「先講清楚 3 件事」（健保不給付/療程長/副作用集中前 6-8 月）+ 財務評估動作 + 病人不用時的替代追蹤
 - 基因檢測時機 Q：明確「只有 T2/N0/Grade 2 才碰到」+ Ki-67 ≥ 20% 不需再做 + 常見檢測 + 台灣自費現況
 
+
+**#57（V4.1.2）對齊 Kit V1.21.0 — str_replace 大段替換失敗**
+
+- **症狀**：V4.1.2 件 2 想用一次大段 str_replace 替換 CLAUDE.md 衝突仲裁區塊（20+ 行）、拋 AssertionError；同腳本因此中斷、件 4/5/6 全部沒執行
+- **原因**：衝突仲裁區塊原文是 V4.0.0 寫的、V4.0.1 升版時 sed 把「V4.0.0 是首次對齊 Kit 重大里程碑」改寫成「首次對齊 Kit 是**重大里程碑（V4 系列起點）**」（V4.0.1 起為了規避坑 #53 改寫成版本中性敘述）—— 我寫 old_block 時憑 V4.0.0 原文記憶寫、跟現況不符
+- **做法**：
+  1. **改前先 `sed -n` 看實際格式**（規則 1 補充澄清的延伸）
+  2. **大段改動拆 5-10 小段 str_replace**——每段 1-3 行、容錯率高（本版件 2 拆 6 段成功）
+  3. **Python 腳本內混用 assert + str_replace 時**：assert 失敗會中斷後續腳本、所以「件 1 已完成」但「件 4-6 還沒做」就直接被中斷——應該**每件獨立寫 try/except 或拆獨立腳本**，避免一件失敗影響其他件
+
+
+**#58（本版）跟進 Kit V1.25.0：GitHub Pages 部署鎖 + 分期版本落差 + 站別教材整合**
+
+- **症狀**：三件事同時浮現——(a) Kit 坑 #67 指出 `cancel-in-progress: false` 會讓密集 push 時新舊部署搶鎖、CCM 的 `deploy.yml` 正是 false 且缺 `.nojekyll`；(b) 肺淋巴圖譜依 **AJCC 第 9 版**（N2 細分 N2a/N2b）、但 C1 分期表仍是**第 8 版**、G2 個管實務對照卻已在用 `pN2a`/`pN2b` —— 同一站台三種版本並存；(c) 841 行互動 HTML 教材沒有版號、不符 Kit SPEC §10.6
+- **原因**：(a) CCM 的 workflow 是 V3.x 時代自己寫的、Kit 坑 #67 是 V1.24.0 才從 OncoPA 反饋進來——**Kit 跳版時新坑會回頭咬既有專案**，這正是 Kit V1.25.0 新增「已對齊過但 Kit 已跳版」情境要解的問題；(b) 醫療準則改版（AJCC 8→9）跟文件改版不同步，屬規則 15「不定期更新」類但**之前沒有把「準則版本」納入規則 15 的盤點範圍**；(c) 外部來的獨立 HTML 教材沒有納入規則 1 的版號同步清單
+- **做法**：
+  1. **workflow**：`cancel-in-progress: false` → `true`、根目錄補 `.nojekyll`；順帶確認 `path: site`（非 `path: "."`）→ CLAUDE.md / handoff 不會被 Pages 公開（Kit 坑 #67 相鄰註記 1）
+  2. **分期版本落差不默默改**：C1 N 分期表下加 ⚠️ 標示「本表為 AJCC 第 8 版；第 9 版已細分 N2a/N2b，院內報告若出現 pN2a/pN2b 即為第 9 版」+ cross-ref 圖譜，並列入候選清單請醫師團隊確認本院採用版本。**準則版本是臨床決定、不是文件決定**
+  3. **教材納入版號體系**：`docs/lung-nodal-map/index.html` 檔尾加 `CCM_VERSION` 常數 + masthead 顯示、**規則 1 從 5 處擴為 6 處**（含 zip 檔名）
+
 ## 四、版本歷程
 
 > 留最近 6 版（章法 7：過期上下文等於垃圾）。完整在 README.md。
@@ -1274,14 +1364,14 @@ V3.4.9 部署 ok，Sela 點頭一次處理 4 件事：
 |------|---------|
 | V3.4.3 | TOC 縮窄 12.1rem → 10rem（內文每邊多 17px）；修首頁卡片手機變空白方框 bug（CSS 選擇器把標題 `<p>` 也砍了，坑 #28）|
 
-| V3.4.25 | **A3 注入 MDT 系統主檔實際資料**：Sela 上傳 MDT_master_export.zip（38 醫師/14 科別/6 會議室/8 例會），A3 重寫 259→380 行（坑 #49）|
-| V3.4.26 | **補入肺癌 EGFR 基因檢測補助專案資料**：Sela 上傳 PDF（台癌基金會專案，Ib/II/IIIa 期肺癌 / 最高 12,000 元 / 2026/12/31 截止）→ 整合到 4 處 + 規則 14 套用（坑 #50）|
 | V3.4.27 | **補入「五癌篩檢推廣」資料 + 訂規則 15**：3 處整合（D2 為單一資料源 + A1 + C0）+ 訂規則 15 時效性內容處理（坑 #51）|
 | V3.4.28 | **新建 G2 114 年度本院實際品質指標成績**：Sela 上傳 HTML（13 癌別 63 指標 + 團隊檢討），Python 腳本抽 JS 資料→ 生成 1152 行 markdown（坑 #52）|
 | V4.0.0 | **首次對齊 SELA Kit V1.9.0**（a+1 大改版、重大里程碑）：(1) CLAUDE.md 加 Kit 衝突仲裁開頭區塊（明寫不對齊 Kit 的部分 + 理由）(2) .gitignore 用 Kit 模板補強 (3) README.md 加 Kit 對齊聲明 (4) 下版候選 #1 加解釋（章法五）(5) 一句話總結縮短到 ~110 字（章法四）(6) 新規則 16「新坑用三段式」(7) **產出首份 SELA-handoff.md**（鐵律 #0、首次對齊必含）。**規則 1 補充澄清**：版本號 4 處（不再說「五處」）、規則/坑/版本歷程內歷史錨點版本號是合法例外、sed 限定檔案範圍。坑 #53 是首個三段式坑範例 |
 | V4.0.1 | **使用者視角去重 8 件**：(1-4) A1 第 4 欄簡化、C0 砍五癌篩條件表、A3 砍負責癌別欄、A3 同日連續開會只留 1 處；(5) G2 details 段精簡（砍定義/分子/分母、留實際數據+ cross-ref G 主檔）(6) G 主檔加 cross-ref 欄指向 G2 對應段 (7) C1/C2 改「個管師日常追蹤重點」（C3-C13 之前已做）(8) G 主檔快速查表 vs G2 重要指標分類速查整合分工。**G/G2/C 三者明確分工**：G 主檔=定義 / G2=本年成績 / C 系列=個管師日常追蹤重點（坑 #54）|
 | V4.1.0 | **CDK4/6 抑制劑乳癌教育訓練整合**（b+1 新功能）：Sela 上傳完整教材→ 個管實用化整合至 C2（新 H3「CDK4/6 抑制劑」段含 3 藥對照+9.107 健保+9.72 健保+副作用衛教+事前審查 checklist + C2 日常追蹤加 1 條 + C2 FAQ 加 5 個 Q）+ F2 Ki-67 行加 Grade 2+ 高 Ki-67 觀念並 cross-ref C2。**跟 Cancer Drug 藥物查詢系統 V4.1.0 版本號同步**（坑 #55）|
-| **V4.1.1** | **ribociclib 早期乳癌輔助治療資料補完**（c+1 補完缺漏）：Sela 上傳 NATALEE 完整參考資料 → 填補 V4.1.0 留⚠「需查證」的空白。C2 6 處改動：三藥表加自費附註、重寫 9.107 段為並排對照（abemaciclib vs ribociclib）、副作用段加 ribociclib 400 mg 發生率+監測排程、FAQ「LN- 能不能用」改寫去⚠+補 N0 高風險表、加 2 個新 FAQ（基因檢測時機、自費溝通）、日常追蹤加 ribociclib 輔助一項（坑 #56）|
+| V4.1.1 | **ribociclib 早期乳癌輔助治療資料補完**（c+1 補完缺漏）：Sela 上傳 NATALEE 完整參考資料 → 填補 V4.1.0 留⚠「需查證」的空白。C2 6 處改動：三藥表加自費附註、重寫 9.107 段為並排對照（abemaciclib vs ribociclib）、副作用段加 ribociclib 400 mg 發生率+監測排程、FAQ「LN- 能不能用」改寫去⚠+補 N0 高風險表、加 2 個新 FAQ（基因檢測時機、自費溝通）、日常追蹤加 ribociclib 輔助一項（坑 #56）|
+| V4.1.2 | **對齊 SELA Kit V1.21.0**（c+1 跟進 Kit 升版維護）：Kit 從 V1.9.0 → V1.21.0 跨 12 小版本。8 件全做——(1) SELA logo 歸屬印記補到 footer 右下（雙軌 logo 系統 V1.13.0）(2) CLAUDE.md 衝突仲裁區塊更新（V1.9.0→V1.21.0 + 雙軌 logo + OPT 對應 + CCM 已貢獻 Kit 紀錄）(3) README 升 V1.21.0 對齊聲明 + 開頭加 SELA logo (4) 加規則 17「優化體檢結果（OPT-1~4 適用性報告）」(5) 規則 1 補充加「已回流 Kit V1.10.0 坑 #49」榮譽紀錄 (6) 規則 15 加「與 Kit 跨專案坑 #51 #52 同源」說明 (7) **產出第二份 SELA-handoff.md**（覆蓋 V4.0.0 首份）(8) 加坑 #57（坑 #53 系列）。**重大成就**：V4.0.0 handoff 建議的 3 條坑被 Kit V1.10.0 收錄 2 條（#48 環境重置 + #49 歷史註解版本號）（坑 #57）|
+| **V4.2.0** | **跟進 Kit V1.25.0 + UI 版號雙包 + 肺淋巴分區教材**（b+1 新功能）：(1) **新建 `docs/lung-nodal-map/`**——IASLC 淋巴分區互動圖譜（互動 SVG／站別速查／N 分期判定／個管實務對照／小測驗），加 CCM 版號 + 返回 C1 + SELA 印記；C1／F2／G／G2 四檔加 cross-ref (2) **UI 版號 header + footer 雙包**（Kit SPEC §10.6）、規則 1 擴為六處同步 (3) **Kit 坑 #67**：`deploy.yml` `cancel-in-progress` → true、補 `.nojekyll` (4) 衝突仲裁區塊升 V1.25.0（含「已對齊過但 Kit 已跳版」情境）(5) 加**規則 18 交付閉環**（§3 鐵律逐條核對並回報）(6) 第三份 SELA-handoff.md。**發現**：C1 分期表停在 AJCC 第 8 版、但圖譜與 G2 已用第 9 版 N2a/N2b → 標示落差、列候選請醫師確認（坑 #58）|
 | V4.0.1 | **使用者視角去重 8 件 + 重新定位 G/G2/C 三者分工**（c+1 純精簡）：(1) A1 多專科團隊列表第 4 欄移除時間（移到 A3）(2) C0「六、五癌篩檢」砍 5 條件表只留引言 + cross-ref D2 (3) A3「個管師團隊」砍「負責癌別」欄 (4) A3 同日連續開會說明只留 1 處 (5) **G2 details 段砍「定義/分子/分母」**（指向 G 主檔）（6) G 主檔總覽表加「本年成績」cross-ref 欄 (7) **C 系列 11 檔「五、品質指標」改「五、個管師日常追蹤重點」**（個管師工作內容、不抄國健署核心指標）(8) G2 砍「負向指標清單」（與 G 主檔負向定義表重複）。**G2 從 1152→953 行**。坑 #54 三段式（規則 1 修訂後仍踩到——README 歷史錨點「V4.0.0 起」被 sed 誤改成「V4.0.1 起」）|
 
 ---
@@ -1363,52 +1453,53 @@ grep -c "彰濱秀傳癌症中心 - 個管師訓練系統" site/index.html  # �
 
 按優先序：
 
-1. **驗證 V4.1.1 ribociclib 補完落實** — **本版重點交付物的可用性確認**。檢查 (a) C2 三藥表 ribociclib 那欄有「輔助 = 自費」附註 (b) 9.107 段有 abemaciclib vs ribociclib 並排對照表 (c) C2 副作用段有 ribociclib 400 mg 發生率表 + 監測排程表 (d) FAQ「LN- 能不能用」無 ⚠ 標示、有完整 N0 高風險表 (e) FAQ 多 2 個 Q（基因檢測時機 / ribociclib 自費溝通）(f) 日常追蹤加 ribociclib 輔助
+1. **驗證 V4.2.0 三件交付** — **本版三件都改到使用者看得到的層面，未驗證等於未交付**。檢查 (a) header 站名旁有版號徽章、footer 右下也有（雙包）(b) `/lung-nodal-map/` 開得起來、masthead 有版號 + 返回 C1、footer 有 SELA 印記、互動圖譜點得動 (c) C1／F2／G／G2 四處 cross-ref 都連得到圖譜 (d) 部署後 Actions log 是單一鏈且 `Reported success!`（Kit 坑 #67 生效驗證）(e) `mkdocs build --strict` 0 warning
+
+**需要醫師團隊決定（本版新發現，卡住後續內容）**
+
+2. **確認本院肺癌分期採 AJCC 第 8 版還是第 9 版** — C1 分期表是第 8 版、肺淋巴圖譜與 G2 個管實務對照已用第 9 版（N2a/N2b）。**同站台三種版本並存會誤導個管師**。確認後：第 9 版 → C1 N 分期表改寫 + 綜合分期表連動；仍第 8 版 → 圖譜加註「本院報告尚未採用 N2a/N2b」
+3. **C2 CDK4/6 + ribociclib 段醫師審稿**（健保條件、副作用發生率、自費溝通、ribociclib TFDA 藥證進度）
+4. **C7-C13 七個新檔請醫師團隊審閱** — 現在有 A3 醫師清單 + G2 實際成績 + C 系列重新定位可對應
+5. **C3-C6 已補內容醫師審**
 
 **等資料 / 待整合**
 
-2. **Cancer Drug 藥物查詢系統 V4.1.0 整合進 CCM Manual drug-lookup**（Sela 說另一個程式處理好給）
-3. **H3 章節文字更新同步**（資料截止 115/5/22、v4.1.0、139 衛教資料庫）
+6. **Cancer Drug V4.1.0 整合進 drug-lookup**（145+ 藥物 + 139 衛教資料庫 + 115/5/22 公告版）——Sela 說另一個程式處理好給
+7. **H3 章節文字更新同步**（資料截止 115/5/22、v4.1.0、139 衛教資料庫）
 
-**最重要的下一步：C 系列醫師審稿**
+**剩餘 placeholder（同批詢問主管）**
 
-4. **C7-C13 七個新檔請醫師團隊審閱** — 現在有 A3 + G2 + C 系列重新定位 + **C2 CDK4/6 + ribociclib 完整資料**可對應
-5. **C3-C6 V3.4.18 已補的內容也要醫師審**
-6. **C2 新 CDK4/6 + ribociclib 段也請醫師審稿**（健保條件、副作用發生率、ribociclib 自費溝通細節、ribociclib TFDA 藥證狀態追蹤）
-
-**剩餘 placeholder（A3 + 環境章節 + 五癌篩檢承辦人，同批詢問主管）**
-
-7. A3 剩餘 placeholder（V3.4.25）
-8. V3.4.23 環境章節 placeholder
-9. V3.4.27 五癌篩檢推廣承辦人
+8. A3 剩餘 placeholder：38 醫師分機 / 個管師真名 / 共通支援單位 / 行政秘書 / 會議室命名
+9. 環境章節 placeholder：5 工作空間樓層、14 跨科單位分機、員工餐廳時段、服儀規範
+10. 五癌篩檢推廣承辦人
 
 **等醫師團隊**
 
-10. C1 肺癌剩餘 placeholder
-11. F 系列治療概念引用準則版本
-12. H2 MDT 系統「個案資料最少必填欄位」
-13. **ribociclib 在台灣的 TFDA 藥證進度**——若已核准輔助、健保是否跟進；本檔需同步更新
+11. C1 肺癌剩餘 placeholder
+12. F 系列治療概念引用準則版本
+13. H2 MDT 系統「個案資料最少必填欄位」
+14. ribociclib 在台灣的 TFDA 藥證進度
 
 **老手視角剩餘**
 
-14. **電話追蹤內容三處整合（D3/F5/A1，規則 14 待套用）**
+15. **電話追蹤內容三處整合（D3/F5/A1，規則 14 待套用）**
 
 **等資料類**
 
-15. 補 B1 各 HIS 子系統的操作截圖
-16. NGS 內容後續更新
-17. **時效性內容年度檢視**（規則 15）：每年檢視 EGFR / 五癌篩檢 / 健保藥物（含 9.107/9.72 跨線排他規則 + ribociclib 輔助健保狀態） / **G2 替換為 115 年度版**
-18. 五癌篩檢推廣 QR code 2027 年改版
-19. **其他癌別專屬深度教材**（候選：HER2+ 乳癌的 T-DXd / 肺癌 EGFR-TKI 三代演進 / 大腸癌 RAS-MAPK / 攝護腺癌 ARSI）
+16. 補 B1 各 HIS 子系統的操作截圖
+17. NGS 內容後續更新
+18. **時效性內容年度檢視**（規則 15）：EGFR 補助 / 五癌篩檢 / 健保藥物（9.107/9.72/ribociclib 輔助）/ **臨床準則版本（AJCC、NCCN）** / G2 換 115 年度
+19. 五癌篩檢推廣 QR code 2027 年改版
+20. **其他癌別互動教材**（肺淋巴圖譜模式可複製）：乳癌腋下淋巴分 level I/II/III、頭頸癌頸部 level I–VI、大腸癌 TME 平面
 
 **雜項**
 
-20. 美編+UI 第二輪審視
-21. emoji 用法一致化（觀察 #8，工程大）
-22. 再做一次 QA 試用（醫師審稿回饋整合後）
+21. 美編+UI 第二輪審視
+22. emoji 用法一致化（觀察 #8，工程大）
+23. 再做一次 QA 試用（醫師審稿回饋整合後）
 
 ---
 
 ## 八、一句話總結
 
-V4.1.1 **ribociclib 早期乳癌輔助治療資料補完**：Sela 上傳 NATALEE 完整參考資料 → 填補 V4.1.0 留 ⚠「需查證」的空白（ribociclib 台灣藥證/健保狀態）。C2 內 6 處改動——重寫「9.107」段為 **abemaciclib vs ribociclib 並排對照**（8 個面向）、副作用段加 ribociclib 400 mg 發生率表+監測排程、FAQ「LN- 能不能用」改寫去 ⚠ + 補 N0 高風險完整表、新增 2 個 FAQ（基因檢測時機 / 自費溝通）、日常追蹤補 ribociclib 一項。**個管實用化重點**：自費溝通 Q 寫「先講清楚 3 件事」+ 財務評估；基因檢測 Q 明確「只有 T2/N0/Grade 2 才碰到」。**版本號 c+1**——補完缺漏不是新功能、且跟 V4.1.0 CDK4/6 主題延續。**下版第一優先**：驗證 V4.1.1 ribociclib 補完落實。
+V4.2.0 三件：**(1) 新建肺部淋巴分區互動圖譜** `docs/lung-nodal-map/`（IASLC · AJCC 9th，含互動 SVG／站別速查／N 分期判定／個管實務對照／小測驗），C1／F2／G／G2 四處 cross-ref——直接支援本院未達標的核心指標「縱膈淋巴結取樣 ≥ 3 站」（114 年 75%）；**(2) UI 版號 header + footer 雙包**（Kit SPEC §10.6），規則 1 擴為六處同步；**(3) 跟進 Kit V1.25.0**——Kit 坑 #67 修 `cancel-in-progress: true` + `.nojekyll`、衝突仲裁區塊升版、加規則 18 交付閉環、產第三份 handoff。**本版最重要的發現**：C1 分期表停在 AJCC 第 8 版、但圖譜與 G2 已用第 9 版 N2a/N2b——**沒有默默改**，標示落差並列為下版第 2 順位請醫師團隊確認。**下版第一優先**：驗證 V4.2.0 三件交付（含部署後 Actions log 確認 Kit 坑 #67 生效）。

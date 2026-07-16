@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>肺癌淋巴分區圖譜 — 個管師教學 | 彰濱秀傳癌症中心</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#E9EDEF;
+  --surface:#FFFFFF;
+  --surface-2:#F3F5F6;
+  --ink:#23303A;
+  --ink-2:#4A5C68;
+  --muted:#7E8F9A;
+  --line:#D3DBDF;
+  --slate:#2E3A44;
+  --blue:#5B7A94;
+  --olive:#71805A;
+  --brick:#9C5B52;
+  --brand:#FA7A35;
+  --n1:#71805A;
+  --n2:#5B7A94;
+  --n3:#9C5B52;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --sans:"IBM Plex Sans","Microsoft JhengHei","微軟正黑體","Noto Sans TC",-apple-system,sans-serif;
+  --r:4px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+
+/* ===== CCM Manual 整合層（版號 + 返回 + SELA 印記）===== */
+.ccm-ver-inline{
+  display:inline-block;margin-left:8px;padding:1px 7px;
+  font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.02em;
+  vertical-align:middle;border:1px solid var(--line);border-radius:8px;
+  background:var(--surface-2);color:var(--ink-2);user-select:none;white-space:nowrap;
+}
+.ccm-back{
+  display:inline-flex;align-items:center;gap:5px;
+  font-family:var(--mono);font-size:12px;color:var(--ink-2);text-decoration:none;
+  padding:4px 10px;border:1px solid var(--line);border-radius:var(--r);
+  background:var(--surface);transition:all .15s;
+}
+.ccm-back:hover{border-color:var(--slate);color:var(--ink);}
+.ccm-foot{
+  border-top:1px solid var(--line);background:var(--surface);
+  padding:22px 0 26px;margin-top:8px;
+}
+.ccm-foot .wrap{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;}
+.ccm-foot .note{font-size:12px;color:var(--muted);line-height:1.7;max-width:640px;}
+.ccm-sela{
+  display:inline-flex;align-items:center;gap:5px;
+  font-family:var(--mono);font-size:11px;color:var(--muted);text-decoration:none;
+  opacity:.75;transition:opacity .15s;
+}
+.ccm-sela:hover{opacity:1;}
+.ccm-sela img{width:15px;height:15px;display:block;}
+@media(max-width:600px){
+  .ccm-ver-inline{font-size:10px;padding:0 5px;margin-left:5px;}
+  .ccm-foot .wrap{gap:10px;}
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:15px;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* ---------- header ---------- */
+.masthead{border-bottom:1px solid var(--line);background:var(--surface);}
+.masthead .wrap{padding-top:44px;padding-bottom:36px}
+.eyebrow{
+  font-family:var(--mono);font-size:11px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--muted);display:flex;gap:10px;align-items:center;
+}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--brand)}
+h1{
+  font-size:clamp(28px,4.4vw,44px);line-height:1.25;font-weight:600;
+  letter-spacing:-.01em;margin:14px 0 12px;
+}
+.lede{color:var(--ink-2);max-width:56ch;font-size:16px}
+.meta{
+  font-family:var(--mono);font-size:11.5px;color:var(--muted);
+  margin-top:20px;padding-top:16px;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:6px 24px;
+}
+
+/* ---------- section ---------- */
+section{padding:56px 0}
+section + section{border-top:1px solid var(--line)}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
+.sec-num{
+  font-family:var(--mono);font-size:12px;font-weight:500;
+  color:var(--brand);letter-spacing:.08em;
+}
+h2{font-size:22px;font-weight:600;letter-spacing:-.005em}
+.sec-sub{color:var(--ink-2);margin-bottom:28px;max-width:62ch}
+
+/* ---------- map layout ---------- */
+.mapgrid{display:grid;grid-template-columns:1fr 340px;gap:24px;align-items:start}
+.mapcard{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+  padding:18px;position:relative;
+}
+.modebar{
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center;
+  padding-bottom:14px;margin-bottom:8px;border-bottom:1px solid var(--line);
+}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.seg button{
+  font-family:var(--sans);font-size:13px;padding:7px 14px;border:0;cursor:pointer;
+  background:var(--surface);color:var(--ink-2);transition:background .15s,color .15s;
+}
+.seg button + button{border-left:1px solid var(--line)}
+.seg button[aria-pressed="true"]{background:var(--slate);color:#fff}
+.seg button:focus-visible{outline:2px solid var(--brand);outline-offset:-2px}
+.sidepick{display:none;gap:8px;align-items:center;margin-left:auto}
+.sidepick.on{display:flex}
+.sidepick .lbl{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.1em}
+
+/* ---------- svg ---------- */
+svg.map{width:100%;height:auto;display:block;touch-action:manipulation}
+.lung{fill:#EFF2F3;stroke:#BCC8CE;stroke-width:1.6}
+.fissure{fill:none;stroke:#CDD7DC;stroke-width:1.2;stroke-dasharray:5 4}
+.airway{fill:none;stroke:#9FB6C2;stroke-linecap:round;stroke-linejoin:round}
+.lumen{fill:#DCE8EE;stroke:#9FB6C2;stroke-width:1.4}
+.ring{stroke:#9FB6C2;stroke-width:1.2;opacity:.85}
+.aorta{fill:none;stroke:#D7BDB8;stroke-width:12;stroke-linecap:round}
+.vein{fill:none;stroke:#B9CBD8;stroke-width:10;stroke-linecap:round}
+.eso{fill:none;stroke:#CFD8D2;stroke-width:10;stroke-linecap:round;stroke-dasharray:7 5}
+.bone{fill:#E4E9EB;stroke:#C3CDD3;stroke-width:1.2}
+.zone4r{fill:var(--brand);opacity:.07}
+.zone4r-line{fill:none;stroke:var(--brand);stroke-width:1;stroke-dasharray:3 3;opacity:.6}
+/* 解剖分區配色（認識分區模式） */
+.node.zn-supraclavicular circle{fill:#9C5B52;stroke:#9C5B52}
+.node.zn-upper circle,.node.zn-aortic circle,.node.zn-inferior circle{fill:#5B7A94;stroke:#5B7A94}
+.node.zn-hilar circle{fill:#71805A;stroke:#71805A}
+.node.zn-intra circle{fill:#A3B08C;stroke:#A3B08C}
+.node[class*="zn-"] text{fill:#fff}
+.guide{stroke:var(--brand);stroke-width:1;stroke-dasharray:4 4;opacity:.75}
+.guidetxt{font-family:var(--mono);font-size:8.5px;fill:var(--brand);letter-spacing:.04em}
+.orient{font-family:var(--mono);font-size:9.5px;fill:var(--muted);letter-spacing:.14em}
+.organtxt{font-family:var(--sans);font-size:9.5px;fill:#9EAEB6}
+
+.node{cursor:pointer}
+.node circle{
+  fill:#fff;stroke:var(--muted);stroke-width:1.6;
+  transition:fill .25s,stroke .25s,r .15s;
+}
+.node text{
+  font-family:var(--mono);font-size:10px;font-weight:600;
+  fill:var(--slate);text-anchor:middle;dominant-baseline:central;
+  pointer-events:none;transition:fill .25s;
+}
+.node:hover circle{stroke:var(--brand);stroke-width:2.4}
+.node.active circle{stroke:var(--brand);stroke-width:2.8}
+.node.dashed circle{stroke-dasharray:3 2.5}
+.node.cat-N1 circle{fill:var(--n1);stroke:var(--n1)}
+.node.cat-N2 circle{fill:var(--n2);stroke:var(--n2)}
+.node.cat-N3 circle{fill:var(--n3);stroke:var(--n3)}
+.node.cat-N1 text,.node.cat-N2 text,.node.cat-N3 text{fill:#fff}
+.node.picked circle{stroke:var(--brand);stroke-width:3.4}
+.node:focus{outline:none}
+.node:focus-visible circle{stroke:var(--brand);stroke-width:3.4}
+
+/* ---------- detail panel ---------- */
+.panel{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+  padding:20px;position:sticky;top:20px;min-height:320px;
+}
+.panel .ph{color:var(--muted);font-size:13.5px}
+.p-id{
+  font-family:var(--mono);font-size:38px;font-weight:600;line-height:1;
+  letter-spacing:-.02em;color:var(--slate);
+}
+.p-name{font-size:15px;font-weight:600;margin:6px 0 2px}
+.p-en{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.02em}
+.p-tag{
+  display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;
+  padding:2px 8px;border-radius:2px;color:#fff;margin-top:10px;
+}
+.p-row{border-top:1px solid var(--line);padding:11px 0;font-size:13.5px;color:var(--ink-2)}
+.p-row b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;
+  color:var(--muted);font-weight:500;margin-bottom:3px;text-transform:uppercase}
+.p-why{background:var(--surface-2);border-left:2px solid var(--brand);padding:10px 12px;
+  font-size:13px;color:var(--ink-2);margin-top:12px}
+
+/* ---------- readout ---------- */
+.readout{display:none;margin-top:14px}
+.readout.on{display:block}
+.ro-box{border:1px solid var(--line);border-radius:var(--r);padding:14px;background:var(--surface-2)}
+.ro-n{font-family:var(--mono);font-size:34px;font-weight:600;letter-spacing:-.02em;line-height:1.1}
+.ro-why{font-size:13px;color:var(--ink-2);margin-top:6px}
+.ro-list{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:10px;
+  padding-top:10px;border-top:1px solid var(--line);word-break:break-all}
+.btn-reset{
+  font-family:var(--sans);font-size:12.5px;background:none;border:1px solid var(--line);
+  border-radius:var(--r);padding:5px 12px;color:var(--ink-2);cursor:pointer;margin-top:12px;
+}
+.btn-reset:hover{border-color:var(--brand);color:var(--brand)}
+
+/* ---------- legend ---------- */
+.legend{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:14px;padding-top:14px;
+  border-top:1px solid var(--line);font-family:var(--mono);font-size:11px;color:var(--ink-2)}
+.legend span{display:flex;align-items:center;gap:7px}
+.dot{width:11px;height:11px;border-radius:50%;flex:none}
+
+/* ---------- table ---------- */
+.tablewrap{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--surface)}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);font-weight:500;text-align:left;padding:11px 14px;
+  background:var(--surface-2);border-bottom:1px solid var(--line);
+}
+tbody td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink-2)}
+tbody tr:last-child td{border-bottom:0}
+tbody tr:hover td{background:var(--surface-2)}
+td.st{font-family:var(--mono);font-weight:600;color:var(--slate);white-space:nowrap}
+.zonerow td{background:var(--slate);color:#fff;font-family:var(--mono);font-size:10.5px;
+  letter-spacing:.14em;text-transform:uppercase;padding:7px 14px}
+.zonerow:hover td{background:var(--slate)}
+
+/* ---------- N rules ---------- */
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.rule{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+  padding:18px;border-top:3px solid var(--line)}
+.rule.r1{border-top-color:var(--n1)}
+.rule.r2a,.rule.r2b{border-top-color:var(--n2)}
+.rule.r3{border-top-color:var(--n3)}
+.rule h3{font-family:var(--mono);font-size:19px;font-weight:600;letter-spacing:-.01em}
+.rule p{font-size:13.5px;color:var(--ink-2);margin-top:6px}
+.rule .st9{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:10px;
+  padding-top:10px;border-top:1px solid var(--line)}
+
+/* ---------- practice ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.card .k{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--brand);
+  text-transform:uppercase}
+.card h4{font-size:15px;font-weight:600;margin:8px 0 6px}
+.card p{font-size:13.5px;color:var(--ink-2)}
+
+/* ---------- quiz ---------- */
+.quiz{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.q + .q{border-top:1px solid var(--line);margin-top:20px;padding-top:20px}
+.q .qn{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:var(--muted)}
+.q .qt{font-size:14.5px;font-weight:500;margin:6px 0 12px}
+.opts{display:flex;flex-direction:column;gap:7px}
+.opt{
+  text-align:left;font-family:var(--sans);font-size:13.5px;background:var(--surface-2);
+  border:1px solid var(--line);border-radius:var(--r);padding:9px 13px;cursor:pointer;
+  color:var(--ink-2);transition:border-color .15s,background .15s;
+}
+.opt:hover{border-color:var(--muted)}
+.opt:focus-visible{outline:2px solid var(--brand);outline-offset:1px}
+.opt.ok{border-color:var(--olive);background:#EDF0E8;color:var(--olive);font-weight:500}
+.opt.no{border-color:var(--brick);background:#F5EAE8;color:var(--brick)}
+.fb{display:none;font-size:13px;color:var(--ink-2);margin-top:10px;
+  background:var(--surface-2);border-left:2px solid var(--brand);padding:9px 12px}
+.fb.on{display:block}
+
+footer{border-top:1px solid var(--line);background:var(--surface);padding:28px 0 44px}
+footer p{font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1.9}
+
+@media (max-width:900px){
+  .mapgrid{grid-template-columns:1fr}
+  .panel{position:static;min-height:0}
+  .sidepick{margin-left:0;width:100%}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div style="margin-bottom:14px"><a class="ccm-back" href="../C1_lung-cancer/">← 回 C1 肺癌照護指引</a></div>
+    <div class="eyebrow">IASLC Nodal Map · AJCC 9th ed.<span class="ccm-ver-inline" id="ccmVer">V0.0.0</span></div>
+    <h1>肺部淋巴分區<br>看懂 1 到 14 站</h1>
+    <p class="lede">病理報告上的「4R」「7」「10L」不是編號而已——它決定病人是 N1、N2 還是 N3，也決定接下來是開刀、化療、放療，還是先做全身治療。這份圖譜讓你在讀報告時知道自己在看哪裡。</p>
+    <div class="meta">
+      <span>對象：癌症個案管理師</span>
+      <span>依據：IASLC 淋巴結圖譜 · AJCC 第 9 版（2025）</span>
+      <span>圖為示意，非等比解剖圖</span>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">01</span><h2>互動圖譜</h2></div>
+    <p class="sec-sub">先用「認識分區」點站別，讀懂每一站在哪裡。再切到「判讀 N 分期」——選腫瘤在哪一側，然後點出報告上寫有轉移的站別，看 N 怎麼算出來。<strong>同一站，腫瘤在左邊是 N2，在右邊就變 N3</strong>，這是最容易錯的地方。</p>
+
+    <div class="mapgrid">
+      <div class="mapcard">
+        <div class="modebar">
+          <div class="seg" role="group" aria-label="模式">
+            <button id="mExplore" aria-pressed="true">認識分區</button>
+            <button id="mAssess" aria-pressed="false">判讀 N 分期</button>
+          </div>
+          <div class="sidepick" id="sidepick">
+            <span class="lbl">腫瘤側</span>
+            <div class="seg" role="group" aria-label="腫瘤側">
+              <button id="sR" aria-pressed="true">患者右肺</button>
+              <button id="sL" aria-pressed="false">患者左肺</button>
+            </div>
+          </div>
+        </div>
+
+        <svg class="map" viewBox="86 30 610 640" role="img" aria-label="IASLC 淋巴結分區解剖示意圖：前面觀，含支氣管樹、主動脈弓、奇靜脈與食道">
+
+          <!-- ===== 肺輪廓 ===== -->
+          <path class="lung" d="M212,102 C154,118 122,194 112,294 C104,390 108,488 122,564 C129,606 148,630 184,632 L290,634 C310,600 316,542 314,470 C312,404 318,362 307,332 C317,300 315,240 307,190 C299,140 264,98 234,96 C226,95 218,99 212,102 Z"/>
+          <path class="lung" d="M552,102 C610,118 642,194 652,294 C660,390 656,488 642,564 C635,606 616,630 580,632 L502,634 C488,602 482,572 488,542 C498,502 510,472 502,442 C496,412 472,402 468,382 C464,357 478,342 482,332 C472,300 478,240 488,190 C496,140 530,98 550,96 Z"/>
+          <!-- 葉間裂 -->
+          <path class="fissure" d="M120,268 L306,352"/>
+          <path class="fissure" d="M126,486 L308,398"/>
+          <path class="fissure" d="M646,300 L488,438"/>
+
+          <!-- ===== 骨性標記 ===== -->
+          <path class="bone" d="M292,104 L364,88 L366,97 L294,113 Z"/>
+          <path class="bone" d="M470,88 L542,104 L540,113 L468,97 Z"/>
+          <rect class="bone" x="368" y="86" width="30" height="12" rx="3"/>
+          <text class="organtxt" x="272" y="118" text-anchor="end">鎖骨</text>
+
+          <!-- ===== 食道（後方，先畫＝被氣管遮住） ===== -->
+          <path class="eso" d="M381,46 L381,298 L384,660"/>
+
+          <!-- ===== 主動脈（後方） ===== -->
+          <path class="aorta" d="M424,302 C419,238 448,210 478,222 C505,233 508,268 504,302"/>
+          <path class="aorta" style="stroke-width:11" d="M504,302 C502,344 468,362 460,404 L451,656"/>
+          <text class="organtxt" x="478" y="207" text-anchor="middle">主動脈弓</text>
+          <text class="organtxt" x="437" y="600" text-anchor="middle">降主動脈</text>
+
+          <!-- ===== 靜脈 ===== -->
+          <path class="vein" d="M344,182 L344,296"/>
+          <path class="vein" style="stroke-width:9" d="M424,192 C392,172 362,172 346,184"/>
+          <path class="vein" style="stroke-width:8" d="M388,290 C374,274 354,274 346,290"/>
+          <text class="organtxt" x="332" y="178" text-anchor="end">無名靜脈 ＝ 4R 上界</text>
+          <text class="organtxt" x="326" y="232" text-anchor="end">上腔靜脈</text>
+          <text class="organtxt" x="300" y="274" text-anchor="end">奇靜脈弓 ＝ 4R 下界</text>
+
+          <!-- ===== 4R 跨中線示意區 ===== -->
+          <rect class="zone4r" x="330" y="200" width="68" height="82" rx="4"/>
+          <rect class="zone4r-line" x="330" y="200" width="68" height="82" rx="4"/>
+
+          <!-- ===== 支氣管樹 ===== -->
+          <!-- 氣管 -->
+          <rect class="lumen" x="363" y="44" width="36" height="256" rx="6"/>
+          <g class="ring">
+            <line x1="363" y1="62" x2="399" y2="62"/><line x1="363" y1="84" x2="399" y2="84"/>
+            <line x1="363" y1="106" x2="399" y2="106"/><line x1="363" y1="128" x2="399" y2="128"/>
+            <line x1="363" y1="150" x2="399" y2="150"/><line x1="363" y1="172" x2="399" y2="172"/>
+            <line x1="363" y1="194" x2="399" y2="194"/><line x1="363" y1="216" x2="399" y2="216"/>
+            <line x1="363" y1="238" x2="399" y2="238"/><line x1="363" y1="260" x2="399" y2="260"/>
+            <line x1="363" y1="282" x2="399" y2="282"/>
+          </g>
+          <!-- 右側 -->
+          <path class="airway" style="stroke-width:22" d="M369,296 L312,332"/>
+          <path class="airway" style="stroke-width:17" d="M312,332 L298,394"/>
+          <path class="airway" style="stroke-width:14" d="M314,330 L262,308"/>
+          <path class="airway" style="stroke-width:7" d="M262,308 L236,268 M262,308 L220,296 M262,308 L240,342"/>
+          <path class="airway" style="stroke-width:3.5" d="M236,268 L214,240 M236,268 L248,236 M220,296 L188,282 M220,296 L192,312 M240,342 L212,356 M240,342 L232,376"/>
+          <path class="airway" style="stroke-width:12" d="M298,392 L252,418"/>
+          <path class="airway" style="stroke-width:8" d="M252,418 L216,464"/>
+          <path class="airway" style="stroke-width:5" d="M216,464 L186,510"/>
+          <path class="airway" style="stroke-width:2.5" d="M186,510 L164,540 M186,510 L196,546"/>
+          <path class="airway" style="stroke-width:4" d="M216,464 L182,458 M252,418 L228,388"/>
+          <path class="airway" style="stroke-width:14" d="M298,394 L288,462"/>
+          <path class="airway" style="stroke-width:8" d="M288,462 L248,502 M288,462 L280,532 M288,462 L312,510"/>
+          <path class="airway" style="stroke-width:3.5" d="M248,502 L214,528 M248,502 L238,544 M280,532 L262,570 M280,532 L296,566 M312,510 L308,556"/>
+          <!-- 左側 -->
+          <path class="airway" style="stroke-width:20" d="M393,296 L478,342"/>
+          <path class="airway" style="stroke-width:14" d="M476,340 L524,318"/>
+          <path class="airway" style="stroke-width:7" d="M524,318 L556,282 M524,318 L580,306 M524,318 L548,358"/>
+          <path class="airway" style="stroke-width:3.5" d="M556,282 L578,252 M556,282 L544,248 M580,306 L612,292 M580,306 L610,322 M548,358 L578,372 M548,358 L556,392"/>
+          <path class="airway" style="stroke-width:15" d="M478,342 L496,406"/>
+          <path class="airway" style="stroke-width:11" d="M496,404 L548,428"/>
+          <path class="airway" style="stroke-width:8" d="M548,428 L584,472"/>
+          <path class="airway" style="stroke-width:5" d="M584,472 L616,514"/>
+          <path class="airway" style="stroke-width:2.5" d="M616,514 L638,544 M616,514 L608,548"/>
+          <path class="airway" style="stroke-width:4" d="M584,472 L618,466 M548,428 L570,398"/>
+          <path class="airway" style="stroke-width:12" d="M496,406 L490,470"/>
+          <path class="airway" style="stroke-width:7" d="M490,470 L520,506 M490,470 L486,534 M490,470 L556,498"/>
+          <path class="airway" style="stroke-width:3.5" d="M520,506 L544,540 M486,534 L468,566 M486,534 L502,570 M556,498 L582,528"/>
+
+          <text class="organtxt" x="381" y="40" text-anchor="middle">氣管</text>
+          <text class="organtxt" x="381" y="668" text-anchor="middle">食道（虛線＝位於氣管後方）</text>
+
+          <!-- ===== 定義線 ===== -->
+          <line class="guide" x1="398" y1="46" x2="398" y2="300"/>
+          <line class="guide" x1="200" y1="162" x2="396" y2="162"/>
+          <text class="guidetxt" x="200" y="144">氣管左側緣 ＝ 2R／4R 的左界</text>
+          <text class="guidetxt" x="200" y="156">4R 由此跨過中線抵達此線</text>
+          <line class="guide" x1="290" y1="96" x2="546" y2="96"/>
+          <text class="guidetxt" x="290" y="76">鎖骨與胸骨柄上緣 —— 以上為 station 1（永遠 N3）</text>
+          <line class="guide" x1="381" y1="46" x2="381" y2="96"/>
+
+          <!-- ===== 方位 ===== -->
+          <text class="orient" x="120" y="52">患者右 · RIGHT</text>
+          <text class="orient" x="662" y="52" text-anchor="end">患者左 · LEFT</text>
+          <text class="orient" x="391" y="60" text-anchor="start" style="font-size:8">前面觀</text>
+
+          <g id="nodes"></g>
+        </svg>
+        <p style="font-family:var(--mono);font-size:10px;color:var(--muted);line-height:1.7;margin-top:8px">
+          前面觀示意圖，非等比解剖圖。station 12／13／14 每一葉都有，圖上各側僅畫一條代表鏈。<br>
+          橘色網底＝station 4R 的範圍，注意它<strong>跨過中線</strong>抵達氣管左側緣。
+        </p>
+
+        <div class="legend" id="legExplore">
+          <span><i class="dot" style="background:#9C5B52"></i>Station 1 · 鎖骨上</span>
+          <span><i class="dot" style="background:#5B7A94"></i>Station 2–9 · 縱膈</span>
+          <span><i class="dot" style="background:#71805A"></i>Station 10–11 · 肺門／葉間</span>
+          <span><i class="dot" style="background:#A3B08C"></i>Station 12–14 · 肺內</span>
+          <span><i class="dot" style="background:#fff;border:1.6px dashed var(--muted)"></i>虛線＝不在此平面（3a 在前、3p 在後）</span>
+          <span style="color:var(--muted)">解剖分區 ≠ N 分期</span>
+        </div>
+        <div class="legend" id="legAssess" style="display:none">
+          <span><i class="dot" style="background:var(--n1)"></i>N1 · 同側肺門／肺內</span>
+          <span><i class="dot" style="background:var(--n2)"></i>N2 · 同側縱膈</span>
+          <span><i class="dot" style="background:var(--n3)"></i>N3 · 對側或鎖骨上</span>
+          <span><i class="dot" style="background:#fff;border:3px solid var(--brand)"></i>已選（報告有轉移）</span>
+        </div>
+      </div>
+
+      <aside class="panel" id="panel">
+        <p class="ph" id="ph">點圖上任一站別，這裡會顯示它的位置、邊界，以及為什麼臨床上在意它。</p>
+        <div id="detail" hidden>
+          <div class="p-id" id="dId"></div>
+          <div class="p-name" id="dName"></div>
+          <div class="p-en" id="dEn"></div>
+          <span class="p-tag" id="dTag"></span>
+          <div class="p-row"><b>Location</b><span id="dLoc"></span></div>
+          <div class="p-row"><b>Boundary</b><span id="dBd"></span></div>
+          <div class="p-why" id="dWhy"></div>
+        </div>
+
+        <div class="readout" id="readout">
+          <div class="ro-box">
+            <div class="ro-n" id="roN">N0</div>
+            <div class="ro-why" id="roWhy">尚未選取任何轉移站別。</div>
+            <div class="ro-list" id="roList"></div>
+          </div>
+          <button class="btn-reset" id="reset">清除選取</button>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">02</span><h2>站別速查</h2></div>
+    <p class="sec-sub">病理或影像報告寫的站號，對照這張表就能定位。R = 患者右側，L = 患者左側。</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th style="width:88px">站別</th><th style="width:170px">名稱</th><th>邊界重點</th></tr></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">03</span><h2>N 分期怎麼算</h2></div>
+    <p class="sec-sub">AJCC 第 9 版正式採用 IASLC 提出的 N2a／N2b 分類，以區分單站與多站縱膈淋巴結轉移。single-station 與 multi-station 的預後差異，IASLC 資料庫早已描述，第 9 版是把它<strong>正式納入分期描述子</strong>——而這個區分會一路影響到要不要做術後放療。</p>
+    <div class="rules">
+      <div class="rule r1">
+        <h3>N1</h3>
+        <p>同側肺門、肺葉間、肺葉、肺節、肺節下淋巴結——第 10、11、12、13、14 站，含原發腫瘤直接侵犯。</p>
+        <div class="st9">10R–14R（右肺原發）／ 10L–14L（左肺原發）</div>
+      </div>
+      <div class="rule r2a">
+        <h3>N2a</h3>
+        <p>同側縱膈淋巴結（<strong>包括 station 7</strong>）僅侵犯<strong>單一站</strong>。相較 N2b 預後較佳，但仍屬 Stage III。</p>
+        <div class="st9">Single ipsilateral mediastinal station<br>例如只有 station 4R；或只有 station 7</div>
+      </div>
+      <div class="rule r2b">
+        <h3>N2b</h3>
+        <p>同側縱膈淋巴結<strong>侵犯兩站以上</strong>。預後較 N2a 差，全身性復發風險高。</p>
+        <div class="st9">Multiple ipsilateral mediastinal stations<br>例如 4R + 7；或 4L + 5 + 7</div>
+      </div>
+      <div class="rule r3">
+        <h3>N3</h3>
+        <p>對側縱膈、對側肺門、任一側前斜角肌或鎖骨上淋巴結。通常代表無法手術。</p>
+        <div class="st9">1R／1L 永遠是 N3；右肺原發卻有 4L → N3</div>
+      </div>
+    </div>
+    <div class="cards" style="margin-top:20px">
+      <div class="card">
+        <div class="k">必記 01</div>
+        <h4>Station 7 永遠是 N2</h4>
+        <p>隆突下位於正中，不論腫瘤在左在右，侵犯 station 7 都算同側縱膈。<strong>station 7 永遠不會因左右不同而變成 N3。</strong>station 3a、3p 同理。</p>
+      </div>
+      <div class="card">
+        <div class="k">必記 02</div>
+        <h4>4R 跨過中線</h4>
+        <p>右側氣管旁區<strong>不是</strong>以中線為界，而是延伸到氣管的左側緣（上界 innominate vein 下緣，下界 azygos vein 下緣）。緊貼氣管左前方的結仍可能是 4R——這一站最常被畫太小。</p>
+      </div>
+      <div class="card">
+        <div class="k">必記 03</div>
+        <h4>Station 5、6 只有左側有</h4>
+        <p>主動脈下（AP window）與主動脈旁站，解剖上只存在於左側。左上葉腫瘤常轉移到這裡，是 N2；右肺腫瘤跑到 station 5 或 6 就是 N3。</p>
+      </div>
+      <div class="card">
+        <div class="k">術語陷阱</div>
+        <h4>Station ≠ Group</h4>
+        <p>IASLC 官方用的是 <strong>station 1–14</strong>。若院內病理報告寫「group 3」「group 1–9」，那是院內慣用或 <strong>Naruke 分群</strong>，編號邏輯與 IASLC 不完全對應。讀報告時先確認用的是哪一套，溝通與登錄一律回到 station。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">04</span><h2>個管實務對照</h2></div>
+    <p class="sec-sub">報告上看到什麼 → 代表什麼 → 你要跟進什麼。</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th style="width:26%">報告寫法</th><th style="width:24%">臨床意義</th><th>個管跟進</th></tr></thead>
+        <tbody>
+          <tr><td class="st">pN2a<br>single station</td><td>同側縱膈單站轉移。<strong>相較 N2b 預後較佳，但仍屬 Stage III</strong>，需要完整的輔助治療評估</td><td>確認驅動基因（EGFR／ALK）與 PD-L1 是否已送檢；輔助化療排程；追蹤是否已有 PET-CT 與腦部 MRI。<strong>不可向病人傳達「只有一顆沒關係」</strong></td></tr>
+          <tr><td class="st">pN2b<br>multi-station</td><td>同側縱膈多站轉移，全身性復發風險較高</td><td>同上，並提早介入營養與體能評估；MDT 討論排入</td></tr>
+          <tr><td class="st">cN3</td><td>對側縱膈或鎖骨上，通常不開刀</td><td>轉銜同步化放療或全身治療路徑；病人常誤以為「只是淋巴結」，需衛教說明治療方向改變的原因</td></tr>
+          <tr><td class="st">ENE (+)<br>extranodal extension</td><td>腫瘤穿出淋巴結被膜，屬<strong>局部復發的高危險因子</strong></td><td>可列入 MDT 討論 PORT 的考量因素之一。<strong>目前無 guideline 認定 ENE(+) 即需 PORT</strong>，不要在病人面前預告放療</td></tr>
+          <tr><td class="st">15 顆取樣<br>1 顆陽性</td><td>淋巴結負荷低</td><td>仍須確認是否完成 <strong>systematic mediastinal lymph node dissection</strong> 或符合 systematic sampling 標準——顆數多 ≠ 一定清乾淨，關鍵是<strong>採了哪幾站</strong>。確認後方可作為溝通預後的參考</td></tr>
+          <tr><td class="st">"skip metastasis"</td><td>N1 陰性但 N2 陽性，跳站轉移</td><td>不影響 N 分期判定，但屬預後相對較好的 N2 亞型，常見於上葉腫瘤</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">05</span><h2>試試看</h2></div>
+    <p class="sec-sub">四題，都是報告上真的會出現的寫法。</p>
+    <div class="quiz" id="quiz"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>教學用途，非臨床決策工具。分期以主治醫師判讀與病理報告正本為準。<br>
+    本教材一律使用 IASLC 的 station 命名；若院內報告使用 group（Naruke）分群，請先行對照確認。<br>
+    參考：IASLC Lymph Node Map（Rusch et al.）· AJCC Cancer Staging Manual, 9th edition（2025 生效）· IASLC N-descriptor 修訂建議<br>
+    V1.2 · 圖譜改為解剖式前面觀（支氣管樹、主動脈弓、奇靜脈、無名靜脈、食道）；station 12／13／14 拆分為獨立節點<br>V1.1 · 依臨床審查修訂（N2a 定義、4R 完整邊界、station/group 術語、ENE 與淋巴結取樣的表述強度）</p>
+  </div>
+</footer>
+
+<script>
+const STATIONS = [
+ {id:"1R",n:"低位頸／鎖骨上（右）",en:"Low cervical, supraclavicular, sternal notch",side:"R",zone:"supraclavicular",
+  loc:"環狀軟骨下緣到鎖骨、胸骨柄上緣之間，氣管中線右側。",
+  bd:"上：環狀軟骨下緣。下：鎖骨與胸骨柄上緣。左右以氣管中線分 1R／1L。",
+  why:"只要這裡有轉移，不論腫瘤在哪一側，一律是 N3。這是「能不能開刀」的分水嶺。",x:350,y:62},
+ {id:"1L",n:"低位頸／鎖骨上（左）",en:"Low cervical, supraclavicular, sternal notch",side:"L",zone:"supraclavicular",
+  loc:"同 1R，位於氣管中線左側。",
+  bd:"上：環狀軟骨下緣。下：鎖骨與胸骨柄上緣。",
+  why:"同 1R，永遠是 N3。理學檢查摸得到的鎖骨上結就在這裡，門診常由個管師先發現。",x:412,y:62},
+
+ {id:"2R",n:"上氣管旁（右）",en:"Upper paratracheal, right",side:"R",zone:"upper",
+  loc:"胸骨柄上緣以下，到無名靜脈與氣管交會處的下緣。",
+  bd:"左界不是中線，而是<strong>氣管的左側緣</strong>。",
+  why:"右肺上葉腫瘤最常見的縱膈轉移路徑之一。左界的定義是最常被誤解的地方。",x:346,y:140},
+ {id:"2L",n:"上氣管旁（左）",en:"Upper paratracheal, left",side:"L",zone:"upper",
+  loc:"胸骨柄上緣以下，到主動脈弓上緣。",
+  bd:"右界為氣管左側緣。所以 2L 的範圍比 2R 窄。",
+  why:"左上葉腫瘤的上縱膈引流站。範圍窄，影像上容易與 4L 混淆。",x:416,y:140},
+
+ {id:"3a",n:"血管前",en:"Prevascular",side:"M",zone:"upper",dashed:true,
+  loc:"位於大血管<strong>前方</strong>的前縱膈脂肪內（此圖為冠狀示意，實際在更前方）。",
+  bd:"前：胸骨後。後：上腔靜脈（右）／左頸動脈（左）。",
+  why:"標準縱膈鏡摸不到這裡，需要靠影像或前縱膈切開術。報告若寫 3a，代表用了特殊術式。",x:300,y:206},
+ {id:"3p",n:"氣管後",en:"Retrotracheal",side:"M",zone:"upper",dashed:true,
+  loc:"氣管<strong>後方</strong>，貼著食道與脊椎前方（虛線＝位於氣管背側）。",
+  bd:"上：胸廓入口。下：隆突。",
+  why:"位置隱蔽，常需 EBUS 或 EUS 才採得到。屬中線站，兩側原發都算 N2。",x:381,y:196},
+
+ {id:"4R",n:"下氣管旁（右）",en:"Lower paratracheal, right",side:"R",zone:"upper",
+  loc:"氣管右側，從無名靜脈與氣管交會下緣延伸至奇靜脈下緣。",
+  bd:"上：innominate vein 下緣與氣管交會處。下：azygos vein 下緣。左界：<strong>跨過中線，到氣管左側緣</strong>。<br><span style=\"font-family:var(--mono);font-size:10.5px\">4R extends across the midline to the left lateral border of the trachea.</span>",
+  why:"右肺所有葉別最重要的縱膈引流站，EBUS 必採。右肺原發若 4R 陽性 → N2。<strong>很多人會把 4R 畫太小</strong>——它是跨中線的。",x:346,y:246},
+ {id:"4L",n:"下氣管旁（左）",en:"Lower paratracheal, left",side:"L",zone:"upper",
+  loc:"從主動脈弓上緣到左主支氣管上緣。",
+  bd:"右界為氣管左側緣；外側界為動脈韌帶。",
+  why:"左肺原發的關鍵站。右肺原發若出現 4L → 對側縱膈 → N3，治療方向整個改變。",x:410,y:272},
+
+ {id:"5",n:"主動脈下（AP window）",en:"Subaortic",side:"L",zone:"aortic",
+  loc:"主動脈弓<strong>下方</strong>、動脈韌帶外側，左肺動脈上方。",
+  bd:"上：主動脈弓下緣。下：左肺動脈上緣。此站<strong>只有左側有</strong>。",
+  why:"左上葉腫瘤的第一線引流站。縱膈鏡採不到，需 VATS 或 Chamberlain 術式。",x:458,y:290},
+ {id:"6",n:"主動脈旁",en:"Para-aortic (ascending aorta / phrenic)",side:"L",zone:"aortic",
+  loc:"升主動脈與主動脈弓的<strong>前外側</strong>。",
+  bd:"上：主動脈弓上緣切線。下：主動脈弓下緣。<strong>只有左側有</strong>。",
+  why:"與第 5 站常一起被侵犯。右肺原發若出現 6 → N3。",x:508,y:232},
+
+ {id:"7",n:"隆突下",en:"Subcarinal",side:"M",zone:"inferior",
+  loc:"氣管分叉<strong>正下方</strong>，兩側主支氣管之間。",
+  bd:"上：隆突。下：右側到中葉支氣管上緣、左側到下葉支氣管上緣。",
+  why:"位於正中線，<strong>左右肺原發都算 N2；station 7 永遠不會因左右不同而變成 N3</strong>。任何肺葉都可能轉移到這裡，EBUS 必採。",x:381,y:348},
+ {id:"8R",n:"食道旁（右，隆突下）",en:"Paraesophageal, right",side:"R",zone:"inferior",
+  loc:"隆突以下，緊貼食道右側壁。",
+  bd:"上：接第 7 站下界。下：橫膈。",
+  why:"下葉腫瘤的引流路徑。位置深，多靠 EUS 採檢。",x:353,y:430},
+ {id:"8L",n:"食道旁（左，隆突下）",en:"Paraesophageal, left",side:"L",zone:"inferior",
+  loc:"隆突以下，緊貼食道左側壁。",
+  bd:"上：接第 7 站下界。下：橫膈。",
+  why:"同 8R。若術後要放療，此站入 CTV 時食道劑量必然上升。",x:409,y:430},
+ {id:"9R",n:"肺韌帶（右）",en:"Pulmonary ligament, right",side:"R",zone:"inferior",
+  loc:"下肺韌帶內，靠近下肺靜脈。",
+  bd:"上：下肺靜脈。下：橫膈。",
+  why:"右下葉腫瘤才較常見。手術中順手取樣，臨床上較少單獨陽性。",x:338,y:556},
+ {id:"9L",n:"肺韌帶（左）",en:"Pulmonary ligament, left",side:"L",zone:"inferior",
+  loc:"下肺韌帶內，靠近下肺靜脈。",
+  bd:"上：下肺靜脈。下：橫膈。",
+  why:"左下葉腫瘤的引流站。與 8L 位置接近，報告需看清楚寫的是哪一站。",x:426,y:556},
+
+ {id:"10R",n:"肺門（右）",en:"Hilar, right",side:"R",zone:"hilar",
+  loc:"奇靜脈下緣以下，緊鄰右主支氣管與肺門血管。",
+  bd:"近端：奇靜脈下緣。遠端：葉間區（葉間裂反摺處）。",
+  why:"分界關鍵：<strong>station 10 以下（含）屬 N1</strong>，仍在可切除範圍內。10 站的上界正是 4R 的下界，兩站緊鄰。",x:312,y:332},
+ {id:"10L",n:"肺門（左）",en:"Hilar, left",side:"L",zone:"hilar",
+  loc:"主動脈弓下緣以下，緊鄰左主支氣管與肺門血管。",
+  bd:"近端：<strong>主動脈弓下緣</strong>（不是奇靜脈）。遠端：葉間區。",
+  why:"N1。左右兩側的上界定義不同——右邊看奇靜脈，左邊看主動脈弓，這點常被記反。",x:480,y:344},
+ {id:"11R",n:"葉間（右）",en:"Interlobar, right",side:"R",zone:"hilar",
+  loc:"右側各葉支氣管起始處之間，位於葉間裂內。",
+  bd:"11s：上葉與中葉之間；11i：中葉與下葉之間。",
+  why:"N1。術中冰凍切片常查這一站，用來決定切除範圍。報告可能細分寫成 11s／11i。",x:294,y:378},
+ {id:"11L",n:"葉間（左）",en:"Interlobar, left",side:"L",zone:"hilar",
+  loc:"左側上葉與下葉支氣管之間，位於左葉間裂內。",
+  bd:"左肺僅一條葉間裂。",
+  why:"N1。左側無中葉，故<strong>無 11s／11i 之分</strong>。",x:506,y:388},
+ {id:"12R",n:"葉支氣管旁（右）",en:"Lobar, right",side:"R",zone:"intra",
+  loc:"緊貼各葉支氣管（上葉／中葉／下葉）遠端。",
+  bd:"位於葉間區遠端、節支氣管近端之間。",
+  why:"N1。每一葉都有 12 站，圖上僅畫代表位置。報告若只寫「12」而無側別，需回頭對照手術記錄的切除葉別。",x:252,y:418},
+ {id:"13R",n:"節支氣管旁（右）",en:"Segmental, right",side:"R",zone:"intra",
+  loc:"緊貼肺節支氣管。",
+  bd:"12 站遠端、14 站近端。",
+  why:"N1。幾乎只會在切除標本中發現，術前 EBUS 到不了這裡。",x:216,y:464},
+ {id:"14R",n:"節下支氣管旁（右）",en:"Subsegmental, right",side:"R",zone:"intra",
+  loc:"肺實質內最周邊的一級，緊貼節下支氣管。",
+  bd:"13 站遠端。",
+  why:"N1。要靠病理切片才驗得到。周邊型小腫瘤若 14 站陽性，代表已有淋巴引流。",x:186,y:510},
+ {id:"12L",n:"葉支氣管旁（左）",en:"Lobar, left",side:"L",zone:"intra",
+  loc:"緊貼左上葉或左下葉支氣管遠端。",
+  bd:"位於葉間區遠端、節支氣管近端之間。",
+  why:"N1。每一葉都有 12 站，圖上僅畫代表位置。",x:548,y:428},
+ {id:"13L",n:"節支氣管旁（左）",en:"Segmental, left",side:"L",zone:"intra",
+  loc:"緊貼左肺各節支氣管。",
+  bd:"12 站遠端、14 站近端。",
+  why:"N1。幾乎只會在切除標本中發現。",x:584,y:472},
+ {id:"14L",n:"節下支氣管旁（左）",en:"Subsegmental, left",side:"L",zone:"intra",
+  loc:"左肺實質內最周邊的一級。",
+  bd:"13 站遠端。",
+  why:"N1。要靠病理切片才驗得到。",x:616,y:514}
+];
+
+const ZONE_LABEL = {supraclavicular:"鎖骨上區 · Supraclavicular（station 1）",
+  upper:"上縱膈 · Superior mediastinal（station 2–4）",
+  aortic:"主動脈區 · Aortic（station 5–6，僅左側）",
+  inferior:"下縱膈 · Inferior mediastinal（station 7–9）",
+  hilar:"肺門／葉間 · Hilar & interlobar（station 10–11）",
+  intra:"肺內 · Intrapulmonary（station 12–14）"};
+const CAT_COLOR = {N1:"var(--n1)",N2:"var(--n2)",N3:"var(--n3)"};
+const ZONE_ORDER = ["supraclavicular","upper","aortic","inferior","hilar","intra"];
+
+function categoryOf(st, tumorSide){
+  if(st.zone === "supraclavicular") return "N3";                       // station 1 恆為 N3
+  if(st.zone === "hilar" || st.zone === "intra")                       // station 10–14
+    return st.side === tumorSide ? "N1" : "N3";
+  if(st.side === "M") return "N2";                                     // station 3a/3p/7 位於中線
+  return st.side === tumorSide ? "N2" : "N3";                          // station 2,4,5,6,8,9
+}
+
+/* ---- render nodes ---- */
+const NS = "http://www.w3.org/2000/svg";
+const gNodes = document.getElementById("nodes");
+STATIONS.forEach(st=>{
+  const g = document.createElementNS(NS,"g");
+  g.setAttribute("class","node"+(st.dashed?" dashed":""));
+  g.setAttribute("tabindex","0");
+  g.setAttribute("role","button");
+  g.setAttribute("aria-label","第 "+st.id+" 站，"+st.n);
+  g.dataset.id = st.id;
+  const c = document.createElementNS(NS,"circle");
+  c.setAttribute("cx",st.x); c.setAttribute("cy",st.y);
+  c.setAttribute("r", 13);
+  const t = document.createElementNS(NS,"text");
+  t.setAttribute("x",st.x); t.setAttribute("y",st.y+.5);
+  t.setAttribute("font-size", st.id.length>2 ? "8.5" : "10");
+  t.textContent = st.id;
+  g.append(c,t);
+  g.addEventListener("click",()=>onNode(st.id));
+  g.addEventListener("keydown",e=>{ if(e.key==="Enter"||e.key===" "){e.preventDefault();onNode(st.id);} });
+  gNodes.appendChild(g);
+});
+
+/* ---- table ---- */
+const tb = document.getElementById("tbody");
+ZONE_ORDER.forEach(z=>{
+  const zr = document.createElement("tr"); zr.className="zonerow";
+  zr.innerHTML = '<td colspan="3">'+ZONE_LABEL[z]+'</td>'; tb.appendChild(zr);
+  STATIONS.filter(s=>s.zone===z).forEach(s=>{
+    const tr = document.createElement("tr");
+    tr.innerHTML = '<td class="st">'+s.id+'</td><td>'+s.n+'<br><span style="font-family:var(--mono);font-size:10.5px;color:var(--muted)">'+s.en+'</span></td><td>'+s.bd+'</td>';
+    tb.appendChild(tr);
+  });
+});
+
+/* ---- state ---- */
+let mode = "explore";
+let tumorSide = "R";
+let picked = new Set();
+let activeId = null;
+
+const $ = id => document.getElementById(id);
+
+function paint(){
+  document.querySelectorAll(".node").forEach(g=>{
+    const st = STATIONS.find(s=>s.id===g.dataset.id);
+    g.classList.remove("cat-N1","cat-N2","cat-N3","picked","active");
+    ZONE_ORDER.forEach(z=>g.classList.remove("zn-"+z));
+    if(mode==="assess"){
+      g.classList.add("cat-"+categoryOf(st,tumorSide));
+      if(picked.has(st.id)) g.classList.add("picked");
+    } else {
+      g.classList.add("zn-"+st.zone);
+    }
+    if(activeId===st.id) g.classList.add("active");
+  });
+}
+
+function showDetail(st){
+  $("ph").hidden = true;
+  $("detail").hidden = false;
+  $("dId").textContent = st.id;
+  $("dName").textContent = st.n;
+  $("dEn").textContent = st.en;
+  $("dLoc").innerHTML = st.loc;
+  $("dBd").innerHTML = st.bd;
+  $("dWhy").innerHTML = st.why;
+  const tag = $("dTag");
+  if(mode==="assess"){
+    const cat = categoryOf(st,tumorSide);
+    tag.textContent = cat + " · 腫瘤在" + (tumorSide==="R"?"右肺":"左肺");
+    tag.style.background = CAT_COLOR[cat];
+    tag.style.display = "inline-block";
+  } else {
+    tag.textContent = ZONE_LABEL[st.zone].split(" · ")[0];
+    tag.style.background = "var(--slate)";
+    tag.style.display = "inline-block";
+  }
+}
+
+function computeN(){
+  const sel = STATIONS.filter(s=>picked.has(s.id));
+  if(!sel.length) return {n:"N0",why:"尚未選取任何轉移站別。",color:"var(--slate)"};
+  const cats = sel.map(s=>categoryOf(s,tumorSide));
+  if(cats.includes("N3")){
+    const bad = sel.filter(s=>categoryOf(s,tumorSide)==="N3").map(s=>s.id);
+    return {n:"N3",color:"var(--n3)",
+      why:bad.join("、")+" 屬於對側縱膈／肺門或鎖骨上，只要有一站落在這裡，整體就是 N3。"};
+  }
+  const n2 = sel.filter(s=>categoryOf(s,tumorSide)==="N2").map(s=>s.id);
+  if(n2.length===1) return {n:"N2a",color:"var(--n2)",
+    why:"同側縱膈僅侵犯單一站（station "+n2[0]+"）→ N2a。相較 N2b 預後較佳，但仍屬 Stage III。"};
+  if(n2.length>1) return {n:"N2b",color:"var(--n2)",
+    why:"同側縱膈侵犯 "+n2.length+" 站（"+n2.join("、")+"）→ N2b。"};
+  const n1 = sel.map(s=>s.id);
+  return {n:"N1",color:"var(--n1)",why:"僅同側肺門／肺內淋巴結（"+n1.join("、")+"）→ N1。"};
+}
+
+function refreshReadout(){
+  const r = computeN();
+  $("roN").textContent = r.n;
+  $("roN").style.color = r.color;
+  $("roWhy").textContent = r.why;
+  $("roList").textContent = picked.size ? "已選：" + [...picked].join(" · ") : "";
+}
+
+function onNode(id){
+  const st = STATIONS.find(s=>s.id===id);
+  activeId = id;
+  if(mode==="assess"){
+    picked.has(id) ? picked.delete(id) : picked.add(id);
+    refreshReadout();
+  }
+  showDetail(st);
+  paint();
+}
+
+function setMode(m){
+  mode = m;
+  $("mExplore").setAttribute("aria-pressed", m==="explore");
+  $("mAssess").setAttribute("aria-pressed", m==="assess");
+  $("sidepick").classList.toggle("on", m==="assess");
+  $("readout").classList.toggle("on", m==="assess");
+  $("legExplore").style.display = m==="assess" ? "none" : "flex";
+  $("legAssess").style.display  = m==="assess" ? "flex" : "none";
+  if(m==="explore"){ picked.clear(); }
+  refreshReadout();
+  if(activeId) showDetail(STATIONS.find(s=>s.id===activeId));
+  paint();
+}
+function setSide(s){
+  tumorSide = s;
+  $("sR").setAttribute("aria-pressed", s==="R");
+  $("sL").setAttribute("aria-pressed", s==="L");
+  refreshReadout();
+  if(activeId) showDetail(STATIONS.find(s=>s.id===activeId));
+  paint();
+}
+
+$("mExplore").onclick = ()=>setMode("explore");
+$("mAssess").onclick = ()=>setMode("assess");
+$("sR").onclick = ()=>setSide("R");
+$("sL").onclick = ()=>setSide("L");
+$("reset").onclick = ()=>{ picked.clear(); refreshReadout(); paint(); };
+
+/* ---- quiz ---- */
+const QUIZ = [
+ {q:"右上葉腺癌，術後病理：station 4R 有 1 顆轉移，其餘 14 顆陰性。N 分期是？",
+  o:["N1","N2a","N2b","N3"],a:1,
+  f:"4R 對右肺原發而言屬同側縱膈 → N2；僅單一站 → <strong>N2a</strong>。注意：這仍是 Stage III，輔助治療評估不能省。"},
+ {q:"左上葉腺癌，報告：station 5 與 station 7 皆有轉移。N 分期是？",
+  o:["N2a","N2b","N3","N1"],a:1,
+  f:"station 5 是左側特有的主動脈下站，對左肺原發是同側縱膈；station 7 位於中線，兩側都算 N2。共兩站 → <strong>N2b</strong>。"},
+ {q:"右下葉腺癌，EBUS 顯示 station 4L 有轉移，4R 陰性。N 分期是？",
+  o:["N2a","N2b","N3","N1"],a:2,
+  f:"腫瘤在右肺，4L 是<strong>對側</strong>縱膈 → N3。這是最常見的誤判：看到「4」就以為是 N2。側別比編號重要。"},
+ {q:"左下葉腺癌，只有 station 11L 與 12L 陽性，縱膈全部陰性。N 分期是？",
+  o:["N0","N1","N2a","N3"],a:1,
+  f:"station 11 與 12 屬肺門／肺內，且與腫瘤同側 → N1。station 10 以下（含）都是 N1 的範圍。"}
+];
+const qWrap = document.getElementById("quiz");
+QUIZ.forEach((item,i)=>{
+  const d = document.createElement("div"); d.className="q";
+  d.innerHTML = '<div class="qn">Q'+String(i+1).padStart(2,"0")+'</div><div class="qt">'+item.q+'</div>';
+  const ow = document.createElement("div"); ow.className="opts";
+  item.o.forEach((txt,j)=>{
+    const b = document.createElement("button"); b.className="opt"; b.textContent = txt;
+    b.onclick = ()=>{
+      ow.querySelectorAll(".opt").forEach((x,k)=>{
+        x.classList.remove("ok","no");
+        if(k===item.a) x.classList.add("ok");
+      });
+      if(j!==item.a) b.classList.add("no");
+      fb.classList.add("on");
+    };
+    ow.appendChild(b);
+  });
+  const fb = document.createElement("div"); fb.className="fb"; fb.innerHTML = item.f;
+  d.append(ow,fb); qWrap.appendChild(d);
+});
+
+paint();
+</script>
+
+<footer class="ccm-foot">
+  <div class="wrap">
+    <div class="note">
+      <strong>彰濱秀傳癌症中心 · 個管師訓練系統</strong>　教學用途，臨床判讀請以主治醫師與病理報告為準。<br>
+      分區依據 IASLC 淋巴結圖譜與 AJCC 第 9 版（2025）；圖為示意，非等比解剖圖。
+    </div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <a class="ccm-back" href="../C1_lung-cancer/">← 回 C1 肺癌</a>
+      <a class="ccm-sela" href="https://github.com/Sela1227" target="_blank" rel="noopener" title="本系統由 SELA 維護">
+        <img src="../assets/sela-logo/sela.svg" alt="SELA"/>by SELA
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* CCM Manual 版號同步（SPEC §10.6：UI 版號 = zip 檔名版號；規則 1 同步位置之一） */
+var CCM_VERSION = "V4.2.0";
+document.getElementById("ccmVer").textContent = CCM_VERSION;
+document.getElementById("ccmVer").title = "個管師訓練系統 " + CCM_VERSION;
+</script>
+</body>
+</html>

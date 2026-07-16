@@ -1,10 +1,11 @@
 /* ======================================================
    彰濱秀傳癌症中心 - 個管師訓練系統
-   stylesheet 版本：V4.1.1（隨主版本同步）
-   最後 CSS 結構變更：V4.1.1（美編視角 7 件修補）
+   stylesheet 版本：V4.2.0（隨主版本同步）
+   最後 CSS 結構變更：V4.2.0（header 版號徽章 .ccm-ver-inline）
    架構說明：主色 + h1/h2/h3 樣式 + 表格 + SVG 圖示 + 首頁
-            hero/grid + 藥物表 + 版本徽章 + footer + 內文
-            padding + 右側 TOC + 手機底部導覽
+            hero/grid + 藥物表 + 版本徽章（header inline + footer
+            浮動）+ SELA 歸屬印記 + footer + 內文 padding
+            + 右側 TOC + 手機底部導覽
    ====================================================== */
 
 /* ======================================================
@@ -183,6 +184,35 @@
    版本號徽章（V3.4.0 移到 header，貼在站名旁邊）
    由 extra.js 動態插入到 .md-header__title 內
    ====================================================== */
+/* header 版號（SPEC §10.6：UI 版號 = zip 檔名版號；footer + header 雙包保險）
+   由 extra.js 動態插入到 .md-header__title 內、站名右側 */
+.ccm-ver-inline {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 6px;
+  font-size: 0.6rem;
+  font-family: monospace;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  vertical-align: middle;
+  background: rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* 手機版 header 空間窄、版號縮小但仍可見 */
+@media screen and (max-width: 600px) {
+  .ccm-ver-inline {
+    margin-left: 5px;
+    padding: 0 4px;
+    font-size: 0.5rem;
+  }
+}
+
 .ccm-ver-footer {
   position: fixed;
   bottom: 6px;
@@ -199,6 +229,51 @@
   user-select: none;
   pointer-events: none;
   opacity: 0.7;
+}
+
+/* SELA 歸屬印記（雙軌 logo 系統 Kit V1.13.0 引入、本專案於 V4 系列維護版本補入）—— Footer 右下、版本徽章左側 */
+.ccm-sela-credit {
+  position: fixed;
+  bottom: 6px;
+  right: 90px;  /* 版本徽章在 right: 10px、SELA 印記在版本徽章左側 */
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  font-size: 0.6rem;
+  font-family: monospace;
+  letter-spacing: 0.02em;
+  background: rgba(0, 0, 0, 0.35);
+  color: rgba(255, 255, 255, 0.85);
+  border-radius: 9px;
+  user-select: none;
+  opacity: 0.7;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.ccm-sela-credit:hover {
+  opacity: 1;
+  color: #fff;
+}
+.ccm-sela-credit img {
+  width: 14px;
+  height: 14px;
+  display: block;
+}
+
+/* 手機底部有 6 鈕導覽列、SELA 印記也要閃避 */
+@media screen and (max-width: 768px) {
+  .ccm-sela-credit {
+    bottom: 60px;
+    right: 75px;
+    font-size: 0.55rem;
+    padding: 1px 6px;
+  }
+  .ccm-sela-credit img {
+    width: 12px;
+    height: 12px;
+  }
 }
 
 /* 手機底部有 6 鈕導覽列、版本徽章閃避到上方 */
