@@ -40,10 +40,10 @@
 .ccm-back{
   display:inline-flex;align-items:center;gap:5px;
   font-family:var(--mono);font-size:12px;color:var(--ink-2);text-decoration:none;
-  padding:4px 10px;border:1px solid var(--line);border-radius:var(--r);
+  padding:4px 10px;border:1px solid var(--line);border-radius:var(--r,8px);
   background:var(--surface);transition:all .15s;
 }
-.ccm-back:hover{border-color:var(--slate);color:var(--ink);}
+.ccm-back:hover{border-color:var(--ink-2);color:var(--ink);}
 .ccm-foot{
   border-top:1px solid var(--line);background:var(--surface);
   padding:22px 0 26px;margin-top:8px;
@@ -73,6 +73,14 @@ body{
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
 
 /* ---------- header ---------- */
+.orgbar{background:var(--slate);color:#fff}
+.orgbar .wrap{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}
+.orgbar .org{font-size:13.5px;font-weight:600;letter-spacing:.03em}
+.orgbar .prog{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;color:#A9BAC4;
+  border-left:1px solid rgba(255,255,255,.22);padding-left:14px}
+.orgbar .by{margin-left:auto;font-family:var(--mono);font-size:10.5px;color:#93A6B0;letter-spacing:.06em}
+.orgbar .by b{color:#D7E0E5;font-weight:500}
+@media(max-width:640px){.orgbar .by{margin-left:0;width:100%;padding-top:2px}}
 .masthead{border-bottom:1px solid var(--line);background:var(--surface);}
 .masthead .wrap{padding-top:44px;padding-bottom:36px}
 .eyebrow{
@@ -282,17 +290,27 @@ footer p{font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1
 </head>
 <body>
 
+<div class="orgbar">
+  <div class="wrap">
+    <span class="org">彰濱秀傳癌症中心</span>
+    <span class="prog">個管師訓練</span>
+    <span class="by">作者　<b>林伯儒 醫師</b></span>
+  </div>
+</div>
+
+
 <header class="masthead">
   <div class="wrap">
     <div style="margin-bottom:14px"><a class="ccm-back" href="../C1_lung-cancer/">← 回 C1 肺癌照護指引</a></div>
     <div class="eyebrow">IASLC Nodal Map · AJCC 9th ed.<span class="ccm-ver-inline" id="ccmVer">V0.0.0</span></div>
     <h1>肺部淋巴分區<br>看懂 1 到 14 站</h1>
-    <p class="lede">病理報告上的「4R」「7」「10L」不是編號而已——它決定病人是 N1、N2 還是 N3，也決定接下來是開刀、化療、放療，還是先做全身治療。這份圖譜讓你在讀報告時知道自己在看哪裡。</p>
+    <p class="lede">病理報告上的「4R」「7」「10L」不是編號而已——<strong>站別的位置與側別決定了 N1、N2 還是 N3</strong>，而 N 分期是治療討論的重要輸入之一。<br>但要留意：<strong>N 分期本身不決定術式或照射範圍</strong>，實際治療仍須依 T、生物標記、體能狀態、影像與 MDT 判斷個別決定。</p>
     <div class="meta">
       <span>對象：癌症個案管理師</span>
-      <span>依據：IASLC 淋巴結圖譜 · AJCC Version 9（肺癌 2025/1/1 生效）</span>
+      <span>依據：IASLC 淋巴結圖譜 · AJCC Cancer Staging System: Lung, Version 9</span>
+      <span>AJCC 已由「版次（Edition）」改為逐疾病更新的「版本（Version）」；肺癌 Version 9 自 2025/1/1 生效。其他癌別是否已有 Version 9 需個別確認</span>
       <span>圖為示意，非等比解剖圖</span>
-      <span>其他癌別版本對照見 <a href="../C0_general/#分期系統版本對照ajcc-已改逐部位滾動更新" style="color:inherit">C0</a></span>
+      <span>其他癌別分期版本對照見 <a href="../C0_general/#分期系統版本對照ajcc-已改逐部位滾動更新" style="color:inherit">C0 → 分期系統版本對照表</a></span>
     </div>
   </div>
 </header>
@@ -300,7 +318,7 @@ footer p{font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1
 <section>
   <div class="wrap">
     <div class="sec-head"><span class="sec-num">01</span><h2>互動圖譜</h2></div>
-    <p class="sec-sub">先用「認識分區」點站別，讀懂每一站在哪裡。再切到「判讀 N 分期」——選腫瘤在哪一側，然後點出報告上寫有轉移的站別，看 N 怎麼算出來。<strong>同一站，腫瘤在左邊是 N2，在右邊就變 N3</strong>，這是最容易錯的地方。</p>
+    <p class="sec-sub">先用「認識分區」點站別，讀懂每一站在哪裡。再切到「判讀 N 分期」——選腫瘤在哪一側，然後點出報告上寫有轉移的站別，看 N 怎麼算出來。<strong>同一站，腫瘤在左邊是 N2，在右邊就變 N3</strong>，這是最容易錯的地方。<br>肺癌的 cN 與 pN 用<strong>同一套 N 定義</strong>，但臨床意義不同：cN2 常走術前討論，pN2 走術後輔助。</p>
 
     <div class="mapgrid">
       <div class="mapcard">
@@ -416,7 +434,7 @@ footer p{font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1
         </svg>
         <p style="font-family:var(--mono);font-size:10px;color:var(--muted);line-height:1.7;margin-top:8px">
           前面觀示意圖，非等比解剖圖。station 12／13／14 每一葉都有，圖上各側僅畫一條代表鏈。<br>
-          橘色網底＝station 4R 的範圍，注意它<strong>跨過中線</strong>抵達氣管左側緣。
+          橘色網底＝station 4R，注意它<strong>跨過中線</strong>抵達氣管左側緣。
         </p>
 
         <div class="legend" id="legExplore">
@@ -476,7 +494,7 @@ footer p{font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1
 <section>
   <div class="wrap">
     <div class="sec-head"><span class="sec-num">03</span><h2>N 分期怎麼算</h2></div>
-    <p class="sec-sub">AJCC 第 9 版正式採用 IASLC 提出的 N2a／N2b 分類，以區分單站與多站縱膈淋巴結轉移。single-station 與 multi-station 的預後差異，IASLC 資料庫早已描述，第 9 版是把它<strong>正式納入分期描述子</strong>——而這個區分會一路影響到要不要做術後放療。</p>
+    <p class="sec-sub">AJCC 肺癌 Version 9 把 N2 拆成 <strong>N2a（單站）與 N2b（多站）</strong>——單站縱膈轉移的預後明顯較好。<br><strong>但分期改變不等於治療改變</strong>：N2a／N2b 並非術後放療的適應症，治療決策仍由 MDT 依個別狀況判定。</p>
     <div class="rules">
       <div class="rule r1">
         <h3>N1</h3>
@@ -554,10 +572,11 @@ footer p{font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1
 
 <footer>
   <div class="wrap">
-    <p>教學用途，非臨床決策工具。分期以主治醫師判讀與病理報告正本為準。<br>
+    <p><strong style="color:var(--ink)">彰濱秀傳癌症中心　個管師訓練</strong>　·　作者：林伯儒 醫師<br>
+    教學用途，非臨床決策工具。分期以主治醫師判讀與病理報告正本為準。<br>
     本教材一律使用 IASLC 的 station 命名；若院內報告使用 group（Naruke）分群，請先行對照確認。<br>
-    參考：IASLC Lymph Node Map（Rusch et al.）· AJCC Cancer Staging Manual, 9th edition（2025 生效）· IASLC N-descriptor 修訂建議<br>
-    V1.2 · 圖譜改為解剖式前面觀（支氣管樹、主動脈弓、奇靜脈、無名靜脈、食道）；station 12／13／14 拆分為獨立節點<br>V1.1 · 依臨床審查修訂（N2a 定義、4R 完整邊界、station/group 術語、ENE 與淋巴結取樣的表述強度）</p>
+    參考：IASLC Lymph Node Map（Rusch et al.）· AJCC Cancer Staging System: Lung, Version 9（2025 年 1 月 1 日生效，取代第 8 版的肺癌內容）· IASLC 第 9 版 TNM 建議<br>
+    V1.4　2026/7</p>
   </div>
 </footer>
 
@@ -566,11 +585,11 @@ const STATIONS = [
  {id:"1R",n:"低位頸／鎖骨上（右）",en:"Low cervical, supraclavicular, sternal notch",side:"R",zone:"supraclavicular",
   loc:"環狀軟骨下緣到鎖骨、胸骨柄上緣之間，氣管中線右側。",
   bd:"上：環狀軟骨下緣。下：鎖骨與胸骨柄上緣。左右以氣管中線分 1R／1L。",
-  why:"只要這裡有轉移，不論腫瘤在哪一側，一律是 N3。這是「能不能開刀」的分水嶺。",x:350,y:62},
+  why:"只要這裡有轉移，不論腫瘤在哪一側，一律是 N3。N3 屬 Stage IIIB 以上，<strong>多數不以手術為主要治療</strong>，但是否可切除仍須個別評估，不是由 N 分期單獨決定。",x:350,y:62},
  {id:"1L",n:"低位頸／鎖骨上（左）",en:"Low cervical, supraclavicular, sternal notch",side:"L",zone:"supraclavicular",
   loc:"同 1R，位於氣管中線左側。",
   bd:"上：環狀軟骨下緣。下：鎖骨與胸骨柄上緣。",
-  why:"同 1R，永遠是 N3。理學檢查摸得到的鎖骨上結就在這裡，門診常由個管師先發現。",x:412,y:62},
+  why:"同 1R，永遠是 N3。門診觸診可及的鎖骨上結就在這一區——<strong>但小型淋巴結未必摸得到</strong>，仍須影像評估。摸到腫塊時常由個管師先發現。",x:412,y:62},
 
  {id:"2R",n:"上氣管旁（右）",en:"Upper paratracheal, right",side:"R",zone:"upper",
   loc:"胸骨柄上緣以下，到無名靜脈與氣管交會處的下緣。",
@@ -584,7 +603,7 @@ const STATIONS = [
  {id:"3a",n:"血管前",en:"Prevascular",side:"M",zone:"upper",dashed:true,
   loc:"位於大血管<strong>前方</strong>的前縱膈脂肪內（此圖為冠狀示意，實際在更前方）。",
   bd:"前：胸骨後。後：上腔靜脈（右）／左頸動脈（左）。",
-  why:"標準縱膈鏡摸不到這裡，需要靠影像或前縱膈切開術。報告若寫 3a，代表用了特殊術式。",x:300,y:206},
+  why:"<strong>標準頸部縱膈鏡到不了此區</strong>，通常需靠影像判讀，或前縱膈切開術（Chamberlain）、VATS 等術式取得。報告若出現 3a，值得回頭確認取得方式是影像或病理。",x:300,y:206},
  {id:"3p",n:"氣管後",en:"Retrotracheal",side:"M",zone:"upper",dashed:true,
   loc:"氣管<strong>後方</strong>，貼著食道與脊椎前方（虛線＝位於氣管背側）。",
   bd:"上：胸廓入口。下：隆突。",
@@ -593,16 +612,16 @@ const STATIONS = [
  {id:"4R",n:"下氣管旁（右）",en:"Lower paratracheal, right",side:"R",zone:"upper",
   loc:"氣管右側，從無名靜脈與氣管交會下緣延伸至奇靜脈下緣。",
   bd:"上：innominate vein 下緣與氣管交會處。下：azygos vein 下緣。左界：<strong>跨過中線，到氣管左側緣</strong>。<br><span style=\"font-family:var(--mono);font-size:10.5px\">4R extends across the midline to the left lateral border of the trachea.</span>",
-  why:"右肺所有葉別最重要的縱膈引流站，EBUS 必採。右肺原發若 4R 陽性 → N2。<strong>很多人會把 4R 畫太小</strong>——它是跨中線的。",x:346,y:246},
+  why:"右肺各葉別最重要的縱膈引流站，<strong>系統性 EBUS 分期時的常規採樣重點</strong>。右肺原發若 4R 陽性 → N2。<strong>很多人會把 4R 畫太小</strong>——它是跨中線的。",x:346,y:246},
  {id:"4L",n:"下氣管旁（左）",en:"Lower paratracheal, left",side:"L",zone:"upper",
   loc:"從主動脈弓上緣到左主支氣管上緣。",
   bd:"右界為氣管左側緣；外側界為動脈韌帶。",
-  why:"左肺原發的關鍵站。右肺原發若出現 4L → 對側縱膈 → N3，治療方向整個改變。",x:410,y:272},
+  why:"左肺原發的關鍵站。右肺原發若出現 4L → <strong>對側縱膈 → N3</strong>，期別與治療討論的方向都會不同。",x:410,y:272},
 
  {id:"5",n:"主動脈下（AP window）",en:"Subaortic",side:"L",zone:"aortic",
   loc:"主動脈弓<strong>下方</strong>、動脈韌帶外側，左肺動脈上方。",
   bd:"上：主動脈弓下緣。下：左肺動脈上緣。此站<strong>只有左側有</strong>。",
-  why:"左上葉腫瘤的第一線引流站。縱膈鏡採不到，需 VATS 或 Chamberlain 術式。",x:458,y:290},
+  why:"左上葉腫瘤的第一線引流站。<strong>標準頸部縱膈鏡通常到不了</strong>，多需 VATS、前縱膈切開術（Chamberlain）或延伸式頸部縱膈鏡。",x:458,y:290},
  {id:"6",n:"主動脈旁",en:"Para-aortic (ascending aorta / phrenic)",side:"L",zone:"aortic",
   loc:"升主動脈與主動脈弓的<strong>前外側</strong>。",
   bd:"上：主動脈弓上緣切線。下：主動脈弓下緣。<strong>只有左側有</strong>。",
@@ -611,7 +630,7 @@ const STATIONS = [
  {id:"7",n:"隆突下",en:"Subcarinal",side:"M",zone:"inferior",
   loc:"氣管分叉<strong>正下方</strong>，兩側主支氣管之間。",
   bd:"上：隆突。下：右側到中葉支氣管上緣、左側到下葉支氣管上緣。",
-  why:"位於正中線，<strong>左右肺原發都算 N2；station 7 永遠不會因左右不同而變成 N3</strong>。任何肺葉都可能轉移到這裡，EBUS 必採。",x:381,y:348},
+  why:"位於正中線，<strong>左右肺原發都算 N2；station 7 永遠不會因左右不同而變成 N3</strong>。各葉別均可能引流至此，<strong>是系統性 EBUS 分期的常規採樣重點</strong>。",x:381,y:348},
  {id:"8R",n:"食道旁（右，隆突下）",en:"Paraesophageal, right",side:"R",zone:"inferior",
   loc:"隆突以下，緊貼食道右側壁。",
   bd:"上：接第 7 站下界。下：橫膈。",
@@ -619,7 +638,7 @@ const STATIONS = [
  {id:"8L",n:"食道旁（左，隆突下）",en:"Paraesophageal, left",side:"L",zone:"inferior",
   loc:"隆突以下，緊貼食道左側壁。",
   bd:"上：接第 7 站下界。下：橫膈。",
-  why:"同 8R。若術後要放療，此站入 CTV 時食道劑量必然上升。",x:409,y:430},
+  why:"同 8R。8 站緊貼食道，<strong>若此站納入放療 CTV，食道劑量通常會上升</strong>，是食道炎衛教的提前訊號。",x:409,y:430},
  {id:"9R",n:"肺韌帶（右）",en:"Pulmonary ligament, right",side:"R",zone:"inferior",
   loc:"下肺韌帶內，靠近下肺靜脈。",
   bd:"上：下肺靜脈。下：橫膈。",
@@ -632,7 +651,7 @@ const STATIONS = [
  {id:"10R",n:"肺門（右）",en:"Hilar, right",side:"R",zone:"hilar",
   loc:"奇靜脈下緣以下，緊鄰右主支氣管與肺門血管。",
   bd:"近端：奇靜脈下緣。遠端：葉間區（葉間裂反摺處）。",
-  why:"分界關鍵：<strong>station 10 以下（含）屬 N1</strong>，仍在可切除範圍內。10 站的上界正是 4R 的下界，兩站緊鄰。",x:312,y:332},
+  why:"分界關鍵：<strong>station 10 以下（含）屬 N1</strong>。10 站的上界正是 4R 的下界，兩站緊鄰——差一站就是 N1 與 N2 之別。<strong>N1 不等於一定可切除</strong>，可切除性另由 T、肺功能、體能狀態等決定。",x:312,y:332},
  {id:"10L",n:"肺門（左）",en:"Hilar, left",side:"L",zone:"hilar",
   loc:"主動脈弓下緣以下，緊鄰左主支氣管與肺門血管。",
   bd:"近端：<strong>主動脈弓下緣</strong>（不是奇靜脈）。遠端：葉間區。",
@@ -652,11 +671,11 @@ const STATIONS = [
  {id:"13R",n:"節支氣管旁（右）",en:"Segmental, right",side:"R",zone:"intra",
   loc:"緊貼肺節支氣管。",
   bd:"12 站遠端、14 站近端。",
-  why:"N1。幾乎只會在切除標本中發現，術前 EBUS 到不了這裡。",x:216,y:464},
+  why:"N1。<strong>多數在切除標本中才發現</strong>；此站位於支氣管樹遠端，一般的凸型 EBUS-TBNA 難以到達。",x:216,y:464},
  {id:"14R",n:"節下支氣管旁（右）",en:"Subsegmental, right",side:"R",zone:"intra",
   loc:"肺實質內最周邊的一級，緊貼節下支氣管。",
   bd:"13 站遠端。",
-  why:"N1。要靠病理切片才驗得到。周邊型小腫瘤若 14 站陽性，代表已有淋巴引流。",x:186,y:510},
+  why:"N1。<strong>一般靠切除標本的病理切片才確認得到</strong>。周邊型小腫瘤若 14 站陽性，代表已有淋巴引流。",x:186,y:510},
  {id:"12L",n:"葉支氣管旁（左）",en:"Lobar, left",side:"L",zone:"intra",
   loc:"緊貼左上葉或左下葉支氣管遠端。",
   bd:"位於葉間區遠端、節支氣管近端之間。",
@@ -664,11 +683,11 @@ const STATIONS = [
  {id:"13L",n:"節支氣管旁（左）",en:"Segmental, left",side:"L",zone:"intra",
   loc:"緊貼左肺各節支氣管。",
   bd:"12 站遠端、14 站近端。",
-  why:"N1。幾乎只會在切除標本中發現。",x:584,y:472},
+  why:"N1。<strong>多數在切除標本中才發現。</strong>",x:584,y:472},
  {id:"14L",n:"節下支氣管旁（左）",en:"Subsegmental, left",side:"L",zone:"intra",
   loc:"左肺實質內最周邊的一級。",
   bd:"13 站遠端。",
-  why:"N1。要靠病理切片才驗得到。",x:616,y:514}
+  why:"N1。<strong>一般靠切除標本的病理切片才確認得到。</strong>",x:616,y:514}
 ];
 
 const ZONE_LABEL = {supraclavicular:"鎖骨上區 · Supraclavicular（station 1）",
@@ -876,7 +895,7 @@ paint();
   <div class="wrap">
     <div class="note">
       <strong>彰濱秀傳癌症中心 · 個管師訓練系統</strong>　教學用途，臨床判讀請以主治醫師與病理報告為準。<br>
-      分區依據 IASLC 淋巴結圖譜與 AJCC 第 9 版（2025）；圖為示意，非等比解剖圖。
+      分區依據 IASLC 淋巴結圖譜；分期依據 AJCC Cancer Staging System: Lung, Version 9（2025/1/1 生效）。圖為示意，非等比解剖圖。
     </div>
     <div style="display:flex;align-items:center;gap:12px">
       <a class="ccm-back" href="../C1_lung-cancer/">← 回 C1 肺癌</a>
@@ -889,7 +908,7 @@ paint();
 
 <script>
 /* CCM Manual 版號同步（SPEC §10.6：UI 版號 = zip 檔名版號；規則 1 同步位置之一） */
-var CCM_VERSION = "V4.3.0";
+var CCM_VERSION = "V4.4.0";
 document.getElementById("ccmVer").textContent = CCM_VERSION;
 document.getElementById("ccmVer").title = "個管師訓練系統 " + CCM_VERSION;
 </script>
