@@ -16,7 +16,9 @@
 
 > ⚠️ **準則引用**：**BCLC 2026 update**（Reig M, et al. *J Hepatol* 2026;84(3):631-654，doi: 10.1016/j.jhep.2025.10.020；勘誤 *J Hepatol* 2026;84(6):1193-1195）、台灣肝癌醫學會／台灣消化系醫學會 HCC 共識、台灣肝癌醫學會中期肝癌管理共識、院內實際治療流程。**待醫師團隊確認本院實作差異**。
 >
-> ✅ **本檔的 BCLC 內容已對照原文全文撰寫**（Sela 提供 PDF，V4.11.0）——**不是二手摘要**。原文的證據截止日為 **2025/8/5**。
+> ✅ **來源層級：① 原文全文**——本檔的 BCLC 內容已對照原文全文撰寫（Sela 提供 PDF），**不是二手摘要**。原文的證據截止日為 **2025/8/5**。
+>
+> 📊 **本檔是全站 13 個癌別檔裡唯一達「原文全文」等級的**——全站盤點見 [C0 → 治療準則版本對照表](C0_general.md#治療準則版本對照nccnbclcasco)。
 >
 > 📅 **準則版本查證日期：2026 年 7 月**。**本檔曾停在 BCLC 2022 長達四年**——準則版本要納入年度檢視（規則 15 第 4 類、見 CLAUDE.md 候選 #1）。
 
@@ -330,18 +332,37 @@
 
     **目前國際上的第一線選項至少包括**：atezolizumab + bevacizumab、tremelimumab + durvalumab（STRIDE）、nivolumab + ipilimumab、lenvatinib、sorafenib。
 
-!!! danger "🔴 國際核准 ≠ 台灣可用"
-    **實際使用必須同時確認**：
+!!! success "✅ 台灣健保已查證（V4.13.0）——第一線「四選一、不得互換」"
+    **健保「晚期肝細胞癌」條文原文重點**（修訂到 **114/6/1**）：
 
-    | 待確認 | 找誰 |
-    |--------|------|
-    | **TFDA 藥證**現行適應症 | 藥局 / 主治醫師 |
-    | **台灣健保**給付條件與線別 | 院內事審窗口 / [drug-lookup 抗癌藥物速查](../drug-lookup/){target=_blank} |
-    | **院內事審條件** | 事審窗口 |
+    **給付對象**：轉移性或無法手術切除且**不適合局部治療或局部治療失敗**之 **Child-Pugh A class** 晚期 HCC 成人，**並符合下列條件之一**：
 
-    📅 **查證日期**：（待填——完成查證後填入）
+    | # | 條件 |
+    |:-:|------|
+    | Ⅰ | **肝外轉移**（遠端轉移或肝外淋巴結侵犯）|
+    | Ⅱ | **大血管侵犯**（腫瘤侵犯主門靜脈，或侵犯左／右靜脈第一或第二分支）|
+    | Ⅲ | 🔴 **TACE 失敗者**——**需提供患者於 12 個月內 ≥ 3 次局部治療之記錄** |
 
-    ⚠️ **個管師不要跟病人說「現在第一線都用某某藥」**——請他們問醫師。（同 [C2 ribociclib](C2_breast-cancer.md#ribociclib-輔助治療要點natalee--自費)、[C3 BRAF](C3_colorectal-cancer.md#braf-v600e治療組合已變動不要背固定配方) 的教訓）
+    **審查**：須經事前審查核准；**初次療程 3 個月**為限，之後**每 3 個月評估一次**，送審需檢送影像資料，**無疾病惡化方可繼續**。
+
+    🔴 **最重要的兩條排他規則**：
+
+    | # | 規則 |
+    |:-:|------|
+    | 1 | **lenvatinib、sorafenib、atezolizumab 併用 bevacizumab、tremelimumab 併用 durvalumab —— 僅得擇一給付，不得互換** |
+    | 2 | **lenvatinib 治療失敗後，不得申請使用 regorafenib 或 ramucirumab** |
+
+    **所以**：
+
+    - ✅ **台灣健保第一線有 4 個選項**（lenvatinib／sorafenib／atezo+bev／treme+durva）—— **但四選一、不得互換**
+    - 🔴 **nivolumab + ipilimumab 不在健保條文裡** —— 國際上是第一線選項，**台灣健保未給付**
+    - 🔴 **camrelizumab + rivoceranib 也不在** —— 同上
+
+    **仍待確認（只有藥局／醫師知道）**：**TFDA 藥證**現行適應症。
+
+    ⚠️ **個管師不要跟病人說「現在第一線都用某某藥」**——**台灣的第一線是「四選一」，而且選了就不能換**。這件事要讓病人知道，因為它影響後續。
+
+    📚 **查證來源**：健保署第九節抗癌瘤藥物給付規定 **115/6/23 版原文**（專案內 `chap9_1150623.pdf`）。**查證日期：2026 年 7 月**（V4.13.0）。條文以 [drug-lookup 抗癌藥物速查](../drug-lookup/){target=_blank} 最新版為準（規則 15）。
 
 #### 第二線：不是可互換的藥物清單
 
@@ -351,6 +372,18 @@
     | **Regorafenib** | **限「sorafenib-tolerant」**——證據來自**曾耐受 sorafenib 且進展**者（RESORCE）|
     | **Ramucirumab** | 🔴 **限 AFP > 400 ng/ml**（REACH-2）——**不論先前是否耐受 sorafenib**。**AFP 沒到就不適用** |
     | **Cabozantinib** | **不論先前是否耐受 sorafenib** 都可用（CELESTIAL）；**也可作為第三線** |
+
+    !!! danger "🔴 台灣健保的第二線排他規則（V4.13.0 查證，我上一版漏掉）"
+        **健保條文明訂**：
+
+        | # | 規則 |
+        |:-:|------|
+        | 1 | 🔴 **lenvatinib 治療失敗後，不得申請使用 regorafenib 或 ramucirumab** |
+        | 2 | 🔴 **晚期 HCC 的 pembrolizumab 與 regorafenib、ramucirumab 僅能擇一使用，且治療失敗時不可互換**（且該適應症限 109/4/1 前經審核同意用藥者續用）|
+
+        **對個管師的意義**：**第一線選哪個，會決定第二線還剩什麼**。這跟 [C2 CDK4/6 的跨線排他](C2_breast-cancer.md#轉移性-cdk46i972-palbociclib--ribociclib) 是同一類問題——**要完整記錄用藥史**。
+
+        📚 **查證來源**：健保署第九節抗癌瘤藥物給付規定 **115/6/23 版原文**（專案內 `chap9_1150623.pdf`）。**查證日期：2026 年 7 月**（V4.13.0）。條文以 [drug-lookup 抗癌藥物速查](../drug-lookup/){target=_blank} 最新版為準（規則 15）。
 
     !!! danger "🔴 原文最重要的一句：只有 sorafenib 之後有實證的接續路徑"
         **原文**：「Among first-line therapies, **only sorafenib supports an evidence-based sequencing strategy**, as validated pathways following other first-line regimens are lacking.」
