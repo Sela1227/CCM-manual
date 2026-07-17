@@ -8,7 +8,7 @@
   </p>
 </div>
 
-**當前版本：V4.6.0**
+**當前版本：V4.7.0**
 
 部署網址：https://Sela1227.github.io/CCM-manual/
 

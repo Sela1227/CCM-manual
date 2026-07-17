@@ -1,5 +1,5 @@
 /* ======================================================
-   彰濱秀傳癌症中心 - 個管師訓練系統 V4.6.0
+   彰濱秀傳癌症中心 - 個管師訓練系統 V4.7.0
    - 版本號 footer + header 雙處顯示（SPEC §10.6 UI 版號鐵律）
    - 手機底部導覽列（V3.4.4 從 4 個改 6 個進階員工常用入口，SVG 圖示）
    - getSiteRoot() 從 window.location.pathname 推算（規則 5）
@@ -8,7 +8,7 @@
 (function () {
   "use strict";
 
-  var CCM_VERSION = "V4.6.0";
+  var CCM_VERSION = "V4.7.0";
 
   // ---- 推算 site root（不依賴 base.href）----
   function getSiteRoot() {
