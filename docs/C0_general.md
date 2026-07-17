@@ -293,7 +293,7 @@ AJCC 在 2021 年起把 **《Cancer Staging Manual》（手冊 / Edition）** �
 | **C2** 乳癌 | 「建議引用：台灣乳房醫學會、NCCN Breast Cancer、ESMO、台灣癌症醫學會共識」| 🔴 **④ 未查證** | **連版本號都沒有** |
 | **C3** 大腸直腸癌 | NCCN Colon/Rectal Cancer **2025**、ASCO 指引、台灣大腸直腸外科醫學會 | 🔴 **④ 未查證** | 見下方 NCCN 說明 |
 | **C5** 頭頸癌 | NCCN Head and Neck Cancers、ASCO 頸部處理指引、台灣頭頸部腫瘤醫學會 | 🔴 **④ 未查證** | |
-| **C6** 攝護腺癌 | NCCN Prostate Cancer **2025**、台灣泌尿科醫學會 | 🔴 **④ 未查證** | |
+| **C6** 攝護腺癌 | **EAU Prostate Cancer Guidelines**（uroweb.org 線上全文）+ **健保第九節原文**（115/6/23）| ✅ **① 原文全文** | **查證日期 2026/7**；🔑 **EAU 免費線上全文、不需帳號**——見下方說明。~~中山醫大 2017 版~~已刪除 |
 | **C7** 食道癌 | NCCN Esophageal and EGJ Cancers **2025**、台灣消化系外科醫學會 | 🔴 **④ 未查證** | |
 | **C8** 胃癌 | NCCN Gastric Cancer **2025**、台灣胃癌醫學會 | 🔴 **④ 未查證** | |
 | **C9** 膽道胰臟癌 | NCCN Hepatobiliary **2025**、NCCN Pancreatic Adenocarcinoma **2025**、台灣肝臟醫學會、台灣胰臟醫學會 | 🔴 **④ 未查證** | |
@@ -301,7 +301,29 @@ AJCC 在 2021 年起把 **《Cancer Staging Manual》（手冊 / Edition）** �
 | **C11** 婦癌 | NCCN Cervical/Uterine/Ovarian **2025**、台灣婦癌醫學會、FIGO | 🔴 **④ 未查證** | FIGO 版本見上一節 |
 | **C12** 血液淋巴癌 | NCCN Hematologic Cancers **2025**、台灣血液病學會、台灣骨髓移植醫學會 | 🔴 **④ 未查證** | |
 
-> **13 個癌別檔，只有 1 個（C4）是「原文全文」等級。**
+> **13 個癌別檔，目前 2 個（C4、C6）是「原文全文」等級。**
+
+!!! success "🔑 V4.14.0 的發現：有些學會的準則是「免費線上全文」——不是每個準則都像 NCCN 那樣要帳號"
+    改寫 C6 時發現：**EAU（歐洲泌尿科學會）指引在 uroweb.org 是免費線上全文，不需註冊、可直接讀、可標查證日期**。
+
+    這件事的意義比 C6 一檔大：
+
+    | | NCCN | **EAU** |
+    |---|---|---|
+    | 取得 | **需註冊帳號** | ✅ **免費線上全文** |
+    | 版本標示 | Version X.YYYY，**一年改 2–8 次** | 每年更新、線上版即現行版 |
+    | 我能不能做到 ①？ | 🔴 **不能**（這是 🅑，機構要決定）| ✅ **能** |
+
+    **所以「NCCN 拿不到」不等於「這個癌別只能停在 ④」**——**要先問「這個癌別有沒有別的、拿得到原文的權威準則？」**
+
+    | 癌別 | 可能的免費全文替代 | 狀態 |
+    |---|---|---|
+    | **C6** 攝護腺癌 | **EAU Prostate Cancer** | ✅ **已用（V4.14.0）** |
+    | **C10** 泌尿癌（腎、膀胱）| **EAU Renal Cell Carcinoma／EAU Bladder Cancer** | 🔎 **下一個該試的** |
+    | **C4** 肝細胞癌 | BCLC（*J Hepatol*）| ✅ 已用 |
+    | 其他 | ESMO Clinical Practice Guidelines 多數公開 | 🔎 待評估 |
+
+    🔑 **判準**：**「拿不到 A 來源」不是「查不到」，是「還沒找 B 來源」**（坑 #70 的延伸——我把 NCCN 拿不到，直接當成整個癌別無法查證，**但 EAU 一直公開在那裡**）。
 
 !!! warning "⚠️ 「NCCN Xxx 2025」不是有效的版本標示"
     **NCCN 的正式版本格式是 `Version X.YYYY`**（例如 `NCCN Guidelines Version 3.2025 — Non-Small Cell Lung Cancer`），而且——
