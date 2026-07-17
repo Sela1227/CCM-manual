@@ -107,6 +107,13 @@ extra_javascript:
   - javascripts/extra.js
 
 # Markdown 擴充
+# 連結驗證（V4.8.0 加：死 anchor 預設只報 INFO，會被 grep 濾掉 → 升級成 WARNING 讓 --strict 擋下來）
+validation:
+  links:
+    anchors: warn              # 連到不存在的 anchor → WARNING → --strict 直接 fail
+    absolute_links: warn
+    unrecognized_links: info   # ../lung-nodal-map/ 這類教材連結是故意的，維持 info
+
 markdown_extensions:
   # 基礎
   - abbr
