@@ -1,7 +1,7 @@
 /* ======================================================
    彰濱秀傳癌症中心 - 個管師訓練系統
-   stylesheet 版本：V4.18.0（隨主版本同步）
-   最後 CSS 結構變更：V4.2.0（header 版號徽章 .ccm-ver-inline）
+   stylesheet 版本：V4.19.0（隨主版本同步）
+   最後 CSS 結構變更：V4.19.0（四元件 admonition + H3 降噪 + hub/首頁四區）
    架構說明：主色 + h1/h2/h3 樣式 + 表格 + SVG 圖示 + 首頁
             hero/grid + 藥物表 + 版本徽章（header inline + footer
             浮動）+ SELA 歸屬印記 + footer + 內文 padding
@@ -41,12 +41,10 @@
   margin-top: 1.7em;
 }
 .md-typeset h3 {
-  font-weight: 600;
-  color: var(--md-primary-fg-color);
-  font-size: 1.1rem;
-  border-left: 2px solid var(--md-primary-fg-color--light);
-  padding-left: 0.5em;
-  margin-top: 1.3em;
+  /* V4.19.0 降噪（UI 審稿 #8）：拿掉左線，改純粗體——長篇教材每層都有藍線反而沒有層級 */
+  font-weight: 700;
+  border-left: none;
+  padding-left: 0;
 }
 
 /* ======================================================
@@ -398,3 +396,101 @@
     padding-bottom: 60px;
   }
 }
+
+
+/* ====================================================================
+   V4.19.0　四元件教材語言（UI 審稿 #9，定義見 C0 → 教材元件語言）
+   必須知道 must-know ｜ 個管行動 action ｜ 立即升級 escalate ｜ 自我檢核 self-check
+   本版起新內容使用；舊檔於各自下次修訂時逐版遷移（不一次批次轉）
+   ==================================================================== */
+.md-typeset .admonition.must-know, .md-typeset details.must-know {
+  border-color: #1e6091;
+}
+.md-typeset .must-know > .admonition-title, .md-typeset .must-know > summary {
+  background-color: rgba(30, 96, 145, .1);
+}
+.md-typeset .must-know > .admonition-title::before, .md-typeset .must-know > summary::before {
+  background-color: #1e6091;
+  -webkit-mask-image: var(--md-admonition-icon--abstract);
+          mask-image: var(--md-admonition-icon--abstract);
+}
+.md-typeset .admonition.action, .md-typeset details.action {
+  border-color: #2d7d46;
+}
+.md-typeset .action > .admonition-title, .md-typeset .action > summary {
+  background-color: rgba(45, 125, 70, .1);
+}
+.md-typeset .action > .admonition-title::before, .md-typeset .action > summary::before {
+  background-color: #2d7d46;
+  -webkit-mask-image: var(--md-admonition-icon--success);
+          mask-image: var(--md-admonition-icon--success);
+}
+.md-typeset .admonition.escalate, .md-typeset details.escalate {
+  border-color: #c62828;
+  box-shadow: 0 0 0 1px rgba(198, 40, 40, .15);
+}
+.md-typeset .escalate > .admonition-title, .md-typeset .escalate > summary {
+  background-color: rgba(198, 40, 40, .12);
+}
+.md-typeset .escalate > .admonition-title::before, .md-typeset .escalate > summary::before {
+  background-color: #c62828;
+  -webkit-mask-image: var(--md-admonition-icon--danger);
+          mask-image: var(--md-admonition-icon--danger);
+}
+.md-typeset .admonition.self-check, .md-typeset details.self-check {
+  border-color: #8e6a00;
+}
+.md-typeset .self-check > .admonition-title, .md-typeset .self-check > summary {
+  background-color: rgba(142, 106, 0, .1);
+}
+.md-typeset .self-check > .admonition-title::before, .md-typeset .self-check > summary::before {
+  background-color: #8e6a00;
+  -webkit-mask-image: var(--md-admonition-icon--question);
+          mask-image: var(--md-admonition-icon--question);
+}
+
+/* ====================================================================
+   V4.19.0　首頁四區 + hub 頁（UI 審稿 P0）
+   ==================================================================== */
+/* 第一區：學習階段條 */
+.home-stages { display:flex; flex-wrap:wrap; gap:8px; margin:14px 0 8px; }
+.home-stage {
+  flex:1 1 110px; text-align:center; padding:12px 8px;
+  border:1.5px solid var(--md-default-fg-color--lightest); border-radius:10px;
+  text-decoration:none !important; color:var(--md-default-fg-color) !important;
+  font-weight:600; font-size:.82rem; line-height:1.4; transition:all .15s;
+  background:var(--md-default-bg-color);
+}
+.home-stage:hover { border-color: var(--md-primary-fg-color); transform:translateY(-2px); }
+.home-stage small { display:block; font-weight:400; color:var(--md-default-fg-color--light); font-size:.7rem; margin-top:2px; }
+.home-stage .arrow { display:none; }
+@media (min-width:760px){
+  .home-stages { flex-wrap:nowrap; align-items:stretch; }
+}
+/* 第二區：任務鈕 */
+.home-tasks { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:14px 0; }
+@media (min-width:760px){ .home-tasks { grid-template-columns:repeat(6,1fr); } }
+.home-task {
+  display:flex; flex-direction:column; align-items:center; gap:6px;
+  padding:14px 6px; border-radius:12px; text-align:center;
+  border:1.5px solid var(--md-default-fg-color--lightest);
+  text-decoration:none !important; color:var(--md-default-fg-color) !important;
+  font-weight:700; font-size:.85rem; transition:all .15s; background:var(--md-default-bg-color);
+}
+.home-task:hover { border-color: var(--md-primary-fg-color); background: var(--md-primary-fg-color--transparent, rgba(30,96,145,.06)); }
+/* 第三區：首頁搜尋 */
+.home-search-btn {
+  display:flex; align-items:center; gap:10px; width:100%;
+  padding:13px 18px; margin:10px 0 4px;
+  border:1.5px solid var(--md-default-fg-color--lighter); border-radius:12px;
+  background:var(--md-default-bg-color); cursor:pointer;
+  color:var(--md-default-fg-color--light); font-size:.9rem; text-align:left;
+}
+.home-search-btn:hover { border-color: var(--md-primary-fg-color); }
+.home-search-btn svg { width:20px; height:20px; fill:currentColor; flex:none; }
+/* 資源庫（第四區）縮小舊卡片 */
+.home-grid.compact .home-card { padding:10px 12px; }
+.home-grid.compact .home-card p { font-size:.72rem; margin:4px 0 0; }
+/* hub 頁任務鏈 */
+.hub-chain { font-size:.85rem; color:var(--md-default-fg-color--light); margin:2px 0 12px; }
+.hub-chain a { font-weight:600; }

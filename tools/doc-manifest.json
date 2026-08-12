@@ -1,7 +1,7 @@
 {
   "C0_general.md": {
-    "hash": "ad674536a53fc594",
-    "version": "V4.17.0"
+    "hash": "df29913c84b7c729",
+    "version": "V4.19.0"
   },
   "C10_urological-cancer.md": {
     "hash": "2fea9a40ef9fd7fb",
@@ -58,5 +58,25 @@
   "D2_education.md": {
     "hash": "d0843e6e244688e8",
     "version": "V4.13.0"
+  },
+  "hub_admin.md": {
+    "hash": "a3f5aacf92a805e7",
+    "version": "V4.19.0"
+  },
+  "hub_cancer.md": {
+    "hash": "a9e97b9ef6aa578a",
+    "version": "V4.19.0"
+  },
+  "hub_daily.md": {
+    "hash": "c1cbe378a71cd448",
+    "version": "V4.19.0"
+  },
+  "hub_learning.md": {
+    "hash": "c2dedc44e035b264",
+    "version": "V4.19.0"
+  },
+  "hub_lookup.md": {
+    "hash": "3315e847e4adbbbc",
+    "version": "V4.19.0"
   }
 }

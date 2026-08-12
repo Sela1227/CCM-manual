@@ -1,5 +1,5 @@
 /* ======================================================
-   彰濱秀傳癌症中心 - 個管師訓練系統 V4.18.0
+   彰濱秀傳癌症中心 - 個管師訓練系統 V4.19.0
    - 版本號 footer + header 雙處顯示（SPEC §10.6 UI 版號鐵律）
    - 手機底部導覽列（V3.4.4 從 4 個改 6 個進階員工常用入口，SVG 圖示）
    - getSiteRoot() 從 window.location.pathname 推算（規則 5）
@@ -8,7 +8,7 @@
 (function () {
   "use strict";
 
-  var CCM_VERSION = "V4.18.0";
+  var CCM_VERSION = "V4.19.0";
 
   // ---- 推算 site root（不依賴 base.href）----
   function getSiteRoot() {
@@ -20,6 +20,7 @@
   // ---- SVG 圖示庫（Material Symbols 風格，24×24 viewBox）----
   // V3.4.4 改 6 個進階員工常用入口：首頁 / H1 個管 / H2 MDT / H3 藥物 / G 指標 / F 知識
   var ICONS = {
+    search: '<svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/></svg>',
     home:    '<svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>',
     tracker: '<svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 11h-3v3h-4v-3H7v-4h3V7h4v3h3z"/></svg>',
     mdt:     '<svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>',
@@ -72,6 +73,14 @@
     document.body.appendChild(credit);
   }
 
+  // ---- 搜尋觸發（V4.19.0：首頁搜尋框 + 底部「搜尋」鈕共用）----
+  window.ccmOpenSearch = function () {
+    var cb = document.getElementById("__search");      // Material 手機搜尋 overlay 開關
+    if (cb) cb.checked = true;
+    var inp = document.querySelector(".md-search__input");
+    if (inp) setTimeout(function () { inp.focus(); }, 60);
+  };
+
   // ---- 手機底部導覽列 ----
   function injectMobileNav() {
     if (document.getElementById("ccm-mobile-nav")) return;
@@ -79,13 +88,14 @@
     var root = getSiteRoot();
     var current = window.location.pathname;
 
+    // V4.19.0（UI 審稿 P0）：6 個「進階員工工作列」→ 5 個一級分類（底部列=一級分類、側欄=完整目錄、首頁=情境快捷）
+    // 舊的 個管/MDT/藥/品質/臨床 都可從「工作」hub 或首頁任務鈕到達
     var items = [
-      { href: root,                          label: "首頁", icon: ICONS.home,    match: /^\/[^\/]*\/?$|\/index\.html?$/ },
-      { href: root + "H1_ccm-tracker-guide/", label: "個管", icon: ICONS.tracker, match: /\/H1_ccm-tracker-guide\// },
-      { href: root + "H2_mdt-guide/",        label: "MDT",  icon: ICONS.mdt,     match: /\/H2_mdt-guide\// },
-      { href: root + "H3_cancer-drugs/",     label: "藥",   icon: ICONS.drugs,   match: /\/H3_cancer-drugs\/|\/drug-lookup\// },
-      { href: root + "G_quality-index/",     label: "品質", icon: ICONS.metrics, match: /\/G_quality-index\// },
-      { href: root + "F_clinical-kb/",       label: "臨床", icon: ICONS.kb,      match: /\/F_clinical-kb\// }
+      { href: root,                    label: "首頁", icon: ICONS.home,    match: /^\/[^\/]*\/?$|\/index\.html?$/ },
+      { href: root + "hub_learning/",  label: "學習", icon: ICONS.kb,      match: /\/hub_learning\/|\/A_work-guide\/|\/A_training-plan\// },
+      { href: root + "hub_daily/",     label: "工作", icon: ICONS.tracker, match: /\/hub_daily\/|\/hub_admin\/|\/H[124]_|\/D[1-4]_|\/G2?_/ },
+      { href: root + "hub_cancer/",    label: "癌別", icon: ICONS.mdt,     match: /\/hub_cancer\/|\/C\d+_|\/lung-nodal-map\/|\/head-neck-levels\/|\/prostate-mhspc-mcrpc\// },
+      { href: "#ccm-search",           label: "搜尋", icon: ICONS.search,  match: /$^/, onclick: true }
     ];
 
     var nav = document.createElement("nav");
@@ -94,6 +104,9 @@
     items.forEach(function (item) {
       var a = document.createElement("a");
       a.href = item.href;
+      if (item.onclick) {
+        a.addEventListener("click", function (e) { e.preventDefault(); window.ccmOpenSearch(); });
+      }
       if (item.match.test(current)) a.className = "active";
       a.innerHTML = item.icon + '<span>' + item.label + '</span>';
       nav.appendChild(a);

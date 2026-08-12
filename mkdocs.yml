@@ -49,6 +49,12 @@ theme:
 #   3. 出問題就 git revert，不要試著用 CSS 蓋
 nav:
   - 首頁: index.md
+  - 快速入口:
+    - 🎓 學習中心: hub_learning.md
+    - 🛠 日常工作: hub_daily.md
+    - 🎗 癌別照護: hub_cancer.md
+    - 🔍 臨床速查: hub_lookup.md
+    - ⚙️ 系統與管理: hub_admin.md
   - A 新人通則:
     - A1 工作指導手冊: A_work-guide.md
     - A2 培訓計畫書（制度文件）: A_training-plan.md

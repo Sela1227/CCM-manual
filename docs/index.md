@@ -4,13 +4,41 @@
 
 </div>
 
-> 使用右上角搜尋圖示搜尋任何關鍵字，例如「完治率」「失聯率」「肺癌追蹤」「MDT 會議」。
+## 你現在在哪個階段？
+
+<div class="home-stages" markdown>
+<a class="home-stage" href="A_work-guide/#報到前兩週放射腫瘤科跟診">報到<small>前兩週跟診</small></a>
+<a class="home-stage" href="A_work-guide/#第一階段打基礎第-1-3-個月">第 1–3 月<small>打基礎</small></a>
+<a class="home-stage" href="A_work-guide/#第二階段學專科第-4-6-個月">第 4–6 月<small>學專科</small></a>
+<a class="home-stage" href="A_work-guide/#第三階段獨立作業第-7-12-個月">第 7–12 月<small>獨立作業</small></a>
+<a class="home-stage" href="A_training-plan/#22-帶人指引資深個管師版">資深<small>帶人與進階</small></a>
+</div>
+
+> 🎓 完整學習路徑、能力地圖與考核見 [學習中心](hub_learning/)。
+
+## 我現在要做什麼？
+
+<div class="home-tasks" markdown>
+<a class="home-task" href="hub_daily/#新病人收案">📋 收案</a>
+<a class="home-task" href="hub_daily/#電話追蹤">📞 追蹤</a>
+<a class="home-task" href="hub_daily/#mdt-準備">👥 MDT</a>
+<a class="home-task" href="H3_cancer-drugs/">💊 查藥</a>
+<a class="home-task" href="hub_cancer/">🎗 查癌別</a>
+<a class="home-task" href="hub_daily/#緊急處理">🚨 緊急處理</a>
+</div>
+
+## 搜尋個管師手冊
+
+<button class="home-search-btn" onclick="ccmOpenSearch()" type="button">
+<svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/></svg>
+搜尋癌別、藥物、指標、症狀、系統操作……
+</button>
 
 ---
 
-## 快速導覽
+## 完整資源庫
 
-<div class="home-grid" markdown>
+<div class="home-grid compact" markdown>
 
 <div class="home-card" markdown>
 <a href="A_work-guide/">
