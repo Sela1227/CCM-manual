@@ -107,10 +107,11 @@ plugins:
 
 # 自訂 CSS / JS
 extra_css:
-  - stylesheets/extra.css
+  # ?v= 隨版本 sed 更新（規則 1）——否則瀏覽器快取舊 CSS/JS，站上版號顯示舊版（坑 #78）
+  - stylesheets/extra.css?v=4.20.2
 
 extra_javascript:
-  - javascripts/extra.js
+  - javascripts/extra.js?v=4.20.2
 
 # Markdown 擴充
 # 連結驗證（V4.8.0 加：死 anchor 預設只報 INFO，會被 grep 濾掉 → 升級成 WARNING 讓 --strict 擋下來）

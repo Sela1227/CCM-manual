@@ -1,5 +1,5 @@
 /* ======================================================
-   彰濱秀傳癌症中心 - 個管師訓練系統 V4.20.1
+   彰濱秀傳癌症中心 - 個管師訓練系統 V4.20.2
    - 版本號 footer + header 雙處顯示（SPEC §10.6 UI 版號鐵律）
    - 手機底部導覽列（V3.4.4 從 4 個改 6 個進階員工常用入口，SVG 圖示）
    - getSiteRoot() 從 window.location.pathname 推算（規則 5）
@@ -8,7 +8,7 @@
 (function () {
   "use strict";
 
-  var CCM_VERSION = "V4.20.1";
+  var CCM_VERSION = "V4.20.2";
 
   // ---- 推算 site root（不依賴 base.href）----
   function getSiteRoot() {
@@ -18,7 +18,7 @@
   }
 
   // ---- SVG 圖示庫（Material Symbols 風格，24×24 viewBox）----
-  // V4.20.1 現行：5 個一級分類（首頁/學習/工作/癌別/搜尋）；歷史：V3.4.4 曾為 6 個進階員工入口
+  // 現行：5 個一級分類（首頁/學習/工作/癌別/搜尋）
   var ICONS = {
     search: '<svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/></svg>',
     home:    '<svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>',
@@ -73,7 +73,7 @@
     document.body.appendChild(credit);
   }
 
-  // ---- 搜尋觸發（V4.20.1：首頁搜尋框 + 底部「搜尋」鈕共用）----
+  // ---- 搜尋觸發（V4.20.2：首頁搜尋框 + 底部「搜尋」鈕共用）----
   window.ccmOpenSearch = function () {
     var cb = document.getElementById("__search");      // Material 手機搜尋 overlay 開關
     if (cb) cb.checked = true;
@@ -82,7 +82,7 @@
   };
 
 var NAV_ITEMS = [
-      { path: "",               label: "首頁", icon: ICONS.home,    match: /^\/[^\/]*\/?$|\/index\.html?$/ },
+      { path: "",               label: "首頁", icon: ICONS.home,    isHome: true },  // 首頁用 root 等值比較，不用 regex 猜層數（V4.20.2：舊 regex 會匹配所有單層路徑）
       { path: "hub_learning/",  label: "學習", icon: ICONS.kb,      match: /\/hub_learning\/|\/A_work-guide\/|\/A_training-plan\// },
       { path: "hub_daily/",     label: "工作", icon: ICONS.tracker, match: /\/hub_daily\/|\/hub_admin\/|\/H[1-4]_|\/D[1-4]_|\/G2?_/ },
       { path: "hub_cancer/",    label: "癌別", icon: ICONS.mdt,     match: /\/hub_cancer\/|\/C\d+_|\/lung-nodal-map\/|\/head-neck-levels\/|\/prostate-mhspc-mcrpc\// },
@@ -92,10 +92,16 @@ var NAV_ITEMS = [
   function setMobileNavActive() {
     var nav = document.getElementById("ccm-mobile-nav");
     if (!nav) return;
+    var root = getSiteRoot();
     var current = window.location.pathname;
     nav.querySelectorAll("a").forEach(function (a, idx) {
       var item = NAV_ITEMS[idx];
-      if (item && item.match.test(current)) a.classList.add("active");
+      var on = false;
+      if (item) {
+        if (item.isHome) on = (current === root || current === root + "index.html");
+        else if (item.match) on = item.match.test(current);
+      }
+      if (on) a.classList.add("active");
       else a.classList.remove("active");
     });
   }
@@ -106,7 +112,7 @@ var NAV_ITEMS = [
 
     var root = getSiteRoot();
 
-  // V4.20.1（UI 再審 P2）：items 提到模組層，active 判斷抽成單一函式——初始與 instant navigation 共用同一套規則
+  // V4.20.2（UI 再審 P2）：items 提到模組層，active 判斷抽成單一函式——初始與 instant navigation 共用同一套規則
   
 
     var nav = document.createElement("nav");
