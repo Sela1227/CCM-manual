@@ -8,24 +8,24 @@
     "version": "V4.20.0"
   },
   "C11_gynecologic-cancer.md": {
-    "hash": "09a6ec11352dda9c",
-    "version": "V4.20.0"
+    "hash": "796b43171eb3afb4",
+    "version": "V4.20.1"
   },
   "C12_hematologic-cancer.md": {
-    "hash": "60f2e69ad3645917",
-    "version": "V4.20.0"
+    "hash": "2965968cc86e99c8",
+    "version": "V4.20.1"
   },
   "C13_other-cancers.md": {
-    "hash": "96cb9b2ff4064826",
-    "version": "V4.20.0"
+    "hash": "f821ed4995079e68",
+    "version": "V4.20.1"
   },
   "C1_lung-cancer.md": {
     "hash": "a01025a38901b643",
     "version": "V4.20.0"
   },
   "C2_breast-cancer.md": {
-    "hash": "65caf02d88a34470",
-    "version": "V4.20.0"
+    "hash": "2ee6c86dca1f3065",
+    "version": "V4.20.1"
   },
   "C3_colorectal-cancer.md": {
     "hash": "b9364050b04055c6",
@@ -52,8 +52,8 @@
     "version": "V4.20.0"
   },
   "C9_biliary-pancreatic-cancer.md": {
-    "hash": "5651e8200f6e44b9",
-    "version": "V4.20.0"
+    "hash": "ee7545f9a78f24a7",
+    "version": "V4.20.1"
   },
   "D2_education.md": {
     "hash": "d0843e6e244688e8",
@@ -64,8 +64,8 @@
     "version": "V4.19.0"
   },
   "hub_cancer.md": {
-    "hash": "4dc01676376b5880",
-    "version": "V4.20.0"
+    "hash": "d0a0e3a24e603203",
+    "version": "V4.20.1"
   },
   "hub_daily.md": {
     "hash": "c1cbe378a71cd448",

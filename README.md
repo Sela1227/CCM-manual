@@ -8,7 +8,7 @@
   </p>
 </div>
 
-**當前版本：V4.20.0**
+**當前版本：V4.20.1**
 
 部署網址：https://Sela1227.github.io/CCM-manual/
 
@@ -56,7 +56,7 @@ Sela 用自製 Git Pusher V1.5.5 匯入 `CCM Manual V?.?.?.zip` → 自動 commi
 - **Nav 巢狀有條件允許**：V3.4.0 開始試巢狀 A 組水溫，其他平鋪。詳見 CLAUDE.md 規則 3
 - **回歸 Material 預設 wide-mode**：viewport 真相揭露後（CLAUDE.md 坑 #22），不再寫任何 sidebar override CSS
 - **中文搜尋**：jieba 分詞
-- **手機底部導覽列**：4 個 SVG 快速入口（首頁 / 工作 / HIS / 指標）
+- **手機底部導覽列**：5 個一級分類（V4.20.1 現行） 快速入口（首頁 / 工作 / HIS / 指標）
 
 ---
 
