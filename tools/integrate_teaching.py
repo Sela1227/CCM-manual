@@ -54,6 +54,16 @@ REGISTRY: dict[str, dict[str, str]] = {
             "（鼻咽／p16+ 口咽為 Version 9，口腔・喉・下咽為第 8 版）。右頸側面觀，投影示意。"
         ),
     },
+    # mHSPC/mCRPC 教材：獨立模板（A4 列印導向、自帶 style、非 eyebrow 結構）。
+    # integrate() 的錨點對它不適用——它的整合層是 V4.18.0 手工套的（見 CLAUDE.md 坑 #76）。
+    # 但 --bump / --check 只依 slug 掃 docs/<slug>/index.html，不依 integrate 錨點，
+    # 所以登記在此即可讓版號同步（規則 1）與煙霧測試（規則 6 第三道）涵蓋它。
+    "prostate-mhspc-mcrpc": {
+        "back_href": "../C6_prostate-cancer/",
+        "back_label": "C6 攝護腺癌照護指引",
+        "back_label_short": "C6 攝護腺癌",
+        "_manual_layer": True,  # 標記：整合層為手工套用，integrate() 不適用（錨點不同源）
+    },
 }
 
 DOCS = Path("docs")

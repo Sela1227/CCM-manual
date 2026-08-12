@@ -1,11 +1,11 @@
 {
   "C0_general.md": {
-    "hash": "63d90d1d85b9745e",
-    "version": "V4.16.0"
+    "hash": "ad674536a53fc594",
+    "version": "V4.17.0"
   },
   "C10_urological-cancer.md": {
-    "hash": "49166b8ccdc82a3f",
-    "version": "V4.13.0"
+    "hash": "2fea9a40ef9fd7fb",
+    "version": "V4.17.0"
   },
   "C11_gynecologic-cancer.md": {
     "hash": "f6d677c5f037c32b",
@@ -40,8 +40,8 @@
     "version": "V4.13.0"
   },
   "C6_prostate-cancer.md": {
-    "hash": "b77b33cbb9f658a4",
-    "version": "V4.14.0"
+    "hash": "4799c60dc1833fe4",
+    "version": "V4.18.0"
   },
   "C7_esophageal-cancer.md": {
     "hash": "044e582f5bd2a38d",

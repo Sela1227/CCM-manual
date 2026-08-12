@@ -15,6 +15,8 @@
 
     💡 **EAU 指引是免費線上全文、不需帳號**——這是它跟 NCCN 最大的差別，也是本檔能做到 ① 的原因。全站盤點見 [C0 → 治療準則版本對照表](C0_general.md#治療準則版本對照nccnbclcasco)。
 
+> 🎓 **轉移性攝護腺癌深度教材（V4.18.0 新增）**：**mHSPC／mCRPC 的個管師操作細節**——**風險分層三套定義不可混用**（CHAARTED／LATITUDE／健保混合定義）、**Doublet vs Triplet 選擇邏輯**、**四種 ARPI 條文對照**、**ARANOTE／ARASENS 判讀與衛教口徑**、**PSA 事審判讀規則**、**mCRPC 換線排序（CARD 交叉抗藥性）**、**darolutamide 9.94 事審檢核表**——已整理成獨立教學頁：**[👉 轉移性攝護腺癌 mHSPC 與 mCRPC 完整教育訓練](../prostate-mhspc-mcrpc/)**。本檔第三章 C／D／E 節是概念骨架，**送審與換線的操作深度看那份教材**。
+
 > ⚠️ **本版（V4.14.0）大幅修正了前版的分流錯誤**——最重要的是**積極監控與觀察等待寫反了**（見 [三、先分岔](#-先分岔積極監控active-surveillancevs-觀察等待watchful-waiting)）。若你讀過舊版，請重讀第三章。
 
 ---
@@ -367,6 +369,8 @@ PSA 異常 / 肛門指診（DRE）異常 / 症狀
 
 ### C. 轉移性去勢敏感性攝護腺癌（mHSPC / mCSPC）
 
+> 🎓 **深入**：**Doublet（ADT＋ARPI）vs Triplet（ADT＋docetaxel＋ARPI）怎麼選**、**ADT 三種做法（GnRH 促效劑 flare vs 拮抗劑）**、**風險分層三套定義為何不可混用**、**ARANOTE／ARASENS 判讀與「延緩惡化 ≠ 延長壽命」的衛教口徑**——全在 [🎓 mHSPC/mCRPC 教材 §1–§9](../prostate-mhspc-mcrpc/)。
+
 !!! danger "🔴 前版寫「ADT + (Docetaxel 或 Abiraterone 或 Enzalutamide / Apalutamide)」——方向對，但漏了關鍵"
     **最重要的一句**：**適合治療的轉移性去勢敏感病人，一般不再以 ADT 單藥為標準。**
 
@@ -385,6 +389,8 @@ PSA 異常 / 肛門指診（DRE）異常 / 症狀
 
 ### D. 非轉移性去勢抗性（nmCRPC）——前版完全沒有這個疾病狀態
 
+> 🎓 **深入**：**PSA doubling time 的線性回歸算法與三大退件原因**、**PSA progression vs 停藥門檻的差別**、**darolutamide 9.94 情境 B 事審檢核表**——全在 [🎓 mHSPC/mCRPC 教材 §8、§10、附 A](../prostate-mhspc-mcrpc/)。
+
 !!! success "🆕 本版新增：這一格前版是空的，但健保給付得很清楚"
     **nmCRPC = 已經去勢抗性（testosterone 已達去勢濃度但 PSA 仍上升），但影像看不到遠端轉移。**
 
@@ -393,6 +399,8 @@ PSA 異常 / 肛門指診（DRE）異常 / 症狀
     **健保的核心條件是 PSA doubling time ≤ 10 個月**——這代表**個管師手上的那一串 PSA 數值，會直接決定病人能不能用藥**。詳見 [四、健保給付](#-nmcrpc-的-psa-doubling-time個管師的-psa-紀錄會決定病人能不能用藥)。
 
 ### E. 轉移性去勢抗性（mCRPC）
+
+> 🎓 **深入**：**mCRPC 換線前先問五件事**、**六大治療機轉（選機轉不是排藥名）**、**CARD 試驗（docetaxel＋ARPI 後改 cabazitaxel 優於換另一種 ARPI）**、**olaparib 的 germline/somatic 排程**——全在 [🎓 mHSPC/mCRPC 教材 §13、§14](../prostate-mhspc-mcrpc/)。
 
 !!! danger "🔴 前版的「一線／二線藥名表」已整段刪除"
     前版把 Abiraterone、Enzalutamide、Docetaxel 列「一線」，Cabazitaxel、Radium-223、Olaparib、Lutetium-177-PSMA 列「二線後」。
@@ -834,7 +842,7 @@ A: 🔴 **不能只看年齡。**
 
 | 項目 | 內容 |
 |------|------|
-| **最後更新** | **V4.14.0**（2026 年 7 月）|
+| **最後更新** | **V4.18.0**（2026 年 7 月，新增 mHSPC/mCRPC 深度教材連結）|
 | 建立日期 | 2026 年 1 月 |
 | **來源層級** | ✅ **① 原文全文**（EAU 線上全文 + 健保第九節原文）|
 | **查證日期** | **2026 年 7 月** |

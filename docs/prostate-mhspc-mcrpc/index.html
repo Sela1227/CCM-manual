@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>轉移性攝護腺癌 mHSPC 與 mCRPC — 個管師教育訓練 | 彰濱秀傳癌症中心</title>
+<style>
+  @page {
+    size: A4;
+    margin: 12mm 12mm 13mm 12mm;
+    @bottom-left { content: "彰濱秀傳癌症中心　個管師教育訓練資料";
+      font-family: "Noto Sans CJK TC"; font-size: 7pt; color: #9aa5b1; }
+    @bottom-right { content: counter(page) " / " counter(pages);
+      font-family: "Noto Sans CJK TC"; font-size: 7pt; color: #9aa5b1; }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Noto Sans CJK TC", sans-serif; font-size: 9.2pt; line-height: 1.5; color: #1f2933; }
+
+  @media screen {
+    html { background: #e8edef; }
+    body { max-width: 880px; margin: 30px auto 60px; padding: 40px 46px 52px; background: #fff;
+           box-shadow: 0 2px 20px rgba(19,78,74,.12); font-size: 10.6pt; }
+  }
+  @media screen and (max-width: 720px) {
+    body { max-width: none; margin: 0; padding: 18px 14px 36px; box-shadow: none; font-size: 10.6pt; }
+    .grid2, .grid3 { flex-direction: column; gap: 8px; }
+    .grid2 > *, .grid3 > * { width: 100%; min-width: 0; }
+    table { font-size: 9pt; } td, th { padding: 6px 7px; }
+    .sh .en { display: none; }
+  }
+
+  .hero { background: #134e4a; color: #fff; padding: 14px 18px; border-radius: 8px; margin-bottom: 13px; }
+  .hero h1 { font-size: 15.5pt; font-weight: 900; letter-spacing: .3px; }
+  .hero .org { font-size: 9pt; font-weight: 700; color: #a7f3d0; letter-spacing: 1px;
+               margin-bottom: 5px; padding-bottom: 5px; border-bottom: 1px solid rgba(255,255,255,.22); }
+  .hero .sub { font-size: 8.6pt; opacity: .9; margin-top: 3px; }
+  .hero .note { font-size: 7.6pt; margin-top: 8px; padding: 3px 9px; background: rgba(255,255,255,.14);
+                border-radius: 4px; display: inline-block; }
+
+  .toc { border: 1px solid #cfe0dc; background: #f4faf8; border-radius: 7px; padding: 8px 12px; margin-bottom: 12px; font-size: 8.3pt; }
+  .toc b { color: #134e4a; }
+
+  .sec { margin-bottom: 10px; }
+  .sh { font-size: 11pt; font-weight: 900; color: #134e4a; margin-bottom: 7px; padding-bottom: 3px;
+        border-bottom: 2px solid #134e4a; display: flex; align-items: baseline; gap: 7px; page-break-after: avoid; }
+  .sh .n { background: #134e4a; color: #fff; font-size: 7.6pt; font-weight: 900; min-width: 17px; height: 17px;
+           border-radius: 4px; display: inline-flex; align-items: center; justify-content: center; }
+  .sh .en { font-size: 7.8pt; color: #6b7280; font-weight: 400; margin-left: auto; }
+
+  .card { border: 1px solid #e4e7eb; border-radius: 7px; padding: 8px 11px; margin-bottom: 6px; page-break-inside: avoid; }
+  .grid2 { display: flex; gap: 7px; } .grid2 > * { flex: 1; margin-bottom: 0; }
+  .grid3 { display: flex; gap: 7px; } .grid3 > * { flex: 1; margin-bottom: 0; }
+  h4 { font-size: 8.8pt; font-weight: 900; color: #2d3748; margin-bottom: 4px; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 8.6pt; }
+  th { background: #134e4a; color: #fff; text-align: left; padding: 5px 8px; font-size: 8.2pt; font-weight: 700; }
+  td { padding: 5px 8px; border-bottom: 1px solid #e4e7eb; vertical-align: top; }
+  tr:nth-child(even) td { background: #f7f9f9; }
+  .ok { color: #15803d; font-weight: 900; } .no { color: #c2410c; font-weight: 900; }
+
+  .call { border-radius: 6px; padding: 7px 10px; margin: 5px 0; font-size: 8.6pt; line-height: 1.46; page-break-inside: avoid; }
+  .call .l { font-weight: 900; }
+  .key { background: #fef2f2; border-left: 4px solid #dc2626; } .key .l { color: #b91c1c; }
+  .pt  { background: #ecfdf5; border-left: 4px solid #059669; } .pt .l { color: #047857; }
+  .cf  { background: #fefce8; border-left: 4px solid #ca8a04; } .cf .l { color: #a16207; }
+
+  ul { list-style: none; margin: 2px 0; }
+  li { padding-left: 14px; position: relative; margin-bottom: 2.5px; line-height: 1.45; }
+  li::before { content: "·"; position: absolute; left: 4px; color: #134e4a; font-weight: 900; font-size: 12pt; top: -2px; }
+  .chk li::before { content: "☐"; color: #6b7280; font-size: 9.5pt; left: 0; top: 0; }
+  ol { margin: 2px 0 2px 16px; font-size: 8.6pt; }
+  ol li { padding-left: 0; } ol li::before { content: none; }
+
+  b { font-weight: 900; }
+  .sm { font-size: 7.8pt; color: #6b7280; }
+  .lead { font-size: 8.8pt; color: #374151; margin-bottom: 6px; }
+
+  .status { display: block; font-size: 8.4pt; font-weight: 700; padding: 5px 10px; border-radius: 6px; margin-bottom: 7px; line-height: 1.4; }
+  .status b { font-weight: 900; }
+  .status.yes { background: #ecfdf5; border: 1px solid #6ee7b7; color: #065f46; }
+  .status.no  { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
+  .status .mk { font-size: 9.5pt; font-weight: 900; margin-right: 4px; }
+
+/* ===== CCM Manual 整合層（返回 + 版號 + SELA 印記）===== */
+.ccm-ver-inline{display:inline-block;margin-left:8px;padding:1px 7px;font-size:11px;font-weight:600;vertical-align:middle;border:1px solid #d7dee6;border-radius:8px;background:#f4f7fa;color:#5a6472;white-space:nowrap;font-family:ui-monospace,Menlo,Consolas,monospace;}
+.ccm-back{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:#5a6472;text-decoration:none;padding:4px 10px;border:1px solid #d7dee6;border-radius:8px;background:#fff;transition:all .15s;}
+.ccm-back:hover{border-color:#5a6472;color:#1f2933;}
+.ccm-foot{border-top:1px solid #e4e9ef;background:#fafbfc;padding:22px 20px 26px;margin-top:28px;}
+.ccm-foot .cwrap{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;max-width:1000px;margin:0 auto;}
+.ccm-foot .cnote{font-size:12px;color:#9aa5b1;line-height:1.7;max-width:660px;}
+.ccm-sela{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:#9aa5b1;text-decoration:none;opacity:.8;transition:opacity .15s;}
+.ccm-sela:hover{opacity:1;}
+.ccm-sela img{width:15px;height:15px;display:block;}
+@media print{.ccm-back,.ccm-foot{display:none!important;}}
+
+</style>
+</head>
+<body>
+
+  <div class="hero">
+      <div style="margin-bottom:14px"><a class="ccm-back" href="../C6_prostate-cancer/">← 回 C6 攝護腺癌照護指引</a><span class="ccm-ver-inline" id="ccmVer">V0.0.0</span></div>
+      <div class="org">彰濱秀傳癌症中心　│　個管師教育訓練資料</div>
+    <h1>轉移性攝護腺癌：mHSPC 與 mCRPC 完整教育訓練</h1>
+    <div class="sub">疾病分期與風險分層 ・ ADT 與四種新型荷爾蒙藥物 ・ ARANOTE／ARASENS 判讀 ・ 健保四藥條文對照與排他規則 ・ PSA 判讀與事前審查 ・ 副作用監測 ・ mCRPC 治療排序 ・ 放射治療角色</div>
+    <div class="note">資料查證日：2026-08-11　│　文件性質：<b>個管師教育訓練用</b>，非事前審查作業標準；實際送審一律以健保署現行公告條文為準</div>
+  </div>
+
+  <div class="toc">
+    <b>本文架構：</b>
+    §1 疾病階段與 ADT　│　§2 風險分層三套定義　│　§3 四種 ARPI 機轉差異　│　§4 mHSPC 治療全景　│　§5 ARANOTE 判讀　│　§6 Doublet vs Triplet　│　§7 健保四藥條文對照　│　§8 darolutamide 9.94 詳解　│　§9 藥證與健保落差　│　§10 PSA 判讀規則　│　§11 副作用與監測　│　§12 骨骼健康　│　§13 mCRPC 治療排序　│　§14 生物標記與基因檢測　│　§15 放射治療角色　│　§16 衛教用語與常見問答　│　附 A 事前審查檢核表　│　附 B 追蹤時序表
+  </div>
+
+  <div class="sec">
+    <div class="sh"><span class="n">1</span>疾病階段與治療骨幹 ADT<span class="en">disease states</span></div>
+    <div class="lead">攝護腺癌細胞依賴雄性素（androgen）生長。<b>去勢療法（ADT）</b>把睪固酮壓到去勢水準，是所有轉移性階段的治療骨幹；後續所有藥物都是「<b>加在 ADT 之上</b>」，不是取代它。</div>
+
+    <div class="grid2">
+      <div class="card"><h4>四個疾病狀態（先學會畫這張表）</h4>
+        <table>
+          <tr><th>　</th><th>無遠端轉移</th><th>有遠端轉移</th></tr>
+          <tr><td><b>去勢敏感</b><br><span class="sm">ADT 仍有效</span></td><td>局部／局部晚期<br>生化復發（BCR）</td><td><b>mHSPC ＝ mCSPC</b><br><span class="sm">今晚第一場主題</span></td></tr>
+          <tr><td><b>去勢抗性</b><br><span class="sm">睪固酮已低仍惡化</span></td><td>nmCRPC</td><td><b>mCRPC</b><br><span class="sm">今晚第二場主題</span></td></tr>
+        </table>
+        <ul style="margin-top:5px">
+          <li><b>mHSPC 與 mCSPC 是同一件事</b>（hormone-sensitive／castration-sensitive）。健保條文一律用 <b>mCSPC</b>，講者多用 mHSPC。</li>
+          <li><b>de novo（同時性）</b>：初診斷即為轉移。<b>metachronous（異時性）</b>：先治療局部病灶，日後才轉移。兩者預後不同，也影響治療強度。</li>
+        </ul>
+      </div>
+      <div class="card"><h4>ADT 的三種做法與臨床差異</h4>
+        <table>
+          <tr><th>方式</th><th>代表藥／做法</th><th>個管師要注意</th></tr>
+          <tr><td>GnRH 促效劑</td><td>leuprolide、goserelin、triptorelin</td><td><b>起始有睪固酮衝高期（flare）</b>，前 1–2 週可能骨痛加劇、尿路阻塞或脊髓壓迫惡化；常需先／同時給抗雄性素藥物覆蓋</td></tr>
+          <tr><td>GnRH 拮抗劑</td><td>degarelix 等</td><td>睪固酮下降快、<b>無 flare</b>；適合高腫瘤負荷、有脊髓壓迫風險者</td></tr>
+          <tr><td>手術去勢</td><td>雙側睪丸切除</td><td>不可逆，但立即且無 flare；免除長期針劑回診</td></tr>
+        </table>
+        <div class="call pt" style="margin-bottom:0"><span class="l">去勢水準：</span>睪固酮 <b>&lt; 50 ng/dL</b>。這是判定「去勢抗性」的前提——<b>睪固酮沒壓下去，就不能叫去勢抗性</b>，個管師接到「PSA 又升了」的通報時，第一件事是確認最近一次睪固酮值與針劑是否按時施打。</div>
+      </div>
+    </div>
+
+    <div class="call key"><span class="l">最常見的衛教誤解：</span>病人（甚至部分醫護）以為「變成抗藥性就不用打針了」。<b>錯。ADT 需終身持續</b>，即使進入 CRPC 也不停——停掉會讓睪固酮回升、餵養腫瘤，並使後續所有 AR 路徑藥物失去作用前提。</div>
+  </div>
+
+  <div class="sec">
+    <div class="sh"><span class="n">2</span>風險分層：三套定義不可混用<span class="en">risk stratification</span></div>
+    <div class="lead">「高風險」「高腫瘤負荷」在不同場合指的是<b>不同東西</b>。講者引用試驗時用的是試驗定義，但我們送健保事前審查時必須用健保定義。混用是事審被退件的常見原因。</div>
+
+    <table>
+      <tr><th>來源</th><th>名稱</th><th>定義</th><th>用途</th></tr>
+      <tr><td>CHAARTED 試驗</td><td><b>高腫瘤負荷</b><br>high volume</td><td>有內臟轉移，<b>和／或</b> 骨轉移 ≧ 4 處且至少 1 處超出脊柱與骨盆範圍</td><td>判斷是否加 docetaxel 的傳統依據；講者談 doublet／triplet 時多用此定義</td></tr>
+      <tr><td>LATITUDE 試驗</td><td><b>高風險</b><br>high risk</td><td>下列三項符合 ≧ 2 項：Gleason ≧ 8；骨轉移 ≧ 3 處；可測量之內臟轉移</td><td>abiraterone 於 mCSPC 的試驗族群定義</td></tr>
+      <tr><td><b>台灣健保</b><br><span class="sm">9.49／9.54／9.94</span></td><td><b>高風險 mCSPC</b></td><td>下列三項符合 <b>≧ 2 項</b>：<br>① Gleason score ≧ 8<br>② 骨骼掃描出現 <b>3 個（含）以上</b>病灶，且至少一處為<b>非脊柱、非骨盆腔</b>轉移<br>③ 出現內臟轉移</td><td><b>事前審查唯一依據</b>。9.49／9.54／9.90／9.94 <b>四條文原文均已核對，自 113/8/1 起採同一定義</b></td></tr>
+    </table>
+
+    <div class="call cf"><span class="l">注意這個混合定義：</span>健保的第 ② 項是<b>混合體</b>——病灶數採 LATITUDE 的 3 個，但位置條件採 CHAARTED 的「超出脊柱與骨盆」。所以<b>健保「高風險」既不等於 CHAARTED 高負荷，也不完全等於 LATITUDE 高風險</b>。不可用試驗定義直接套用送審。</div>
+    <div class="call pt"><span class="l">個管師實務：</span>骨掃報告若只寫「多處骨轉移」而未描述位置，事審會缺乏第 ② 項證據。<b>應在申請前先確認骨掃／影像報告是否明確載明病灶數與部位</b>，必要時請放射科補述。</div>
+  </div>
+
+  <div class="sec">
+    <div class="sh"><span class="n">3</span>四種新型荷爾蒙藥物（ARPI）機轉差異<span class="en">mechanism</span></div>
+    <div class="lead">ARPI ＝ androgen receptor pathway inhibitor，也稱 ARi、NHA、新型荷爾蒙藥品。四種藥不是同一個作用點。</div>
+
+    <div class="grid2">
+      <div class="card"><h4>兩類作用機轉</h4>
+        <ul>
+          <li><b>阻斷雄性素「合成」——abiraterone</b>：抑制 CYP17A1，同時阻斷睪丸、腎上腺與腫瘤內部的雄性素製造。因阻斷路徑上游，會造成礦皮質素過量，<b>所以必須併用 prednisone／prednisolone</b>，並監測血鉀、血壓、水腫。</li>
+          <li><b>阻斷雄性素「受體」——enzalutamide、apalutamide、darolutamide</b>：直接拮抗雄性素受體（AR），阻止結合、細胞核轉位與 DNA 結合。不需併用類固醇。</li>
+        </ul>
+      </div>
+      <div class="card"><h4>darolutamide 的結構特點</h4>
+        <ul>
+          <li>化學結構與 enzalutamide／apalutamide 不同，<b>極性較高、血腦障壁穿透較低</b>。</li>
+          <li>其臨床試驗中<b>中樞相關不良反應（疲倦、頭暈、跌倒、認知影響）整體較少</b>；但因缺乏與其他 ARPI 的頭對頭隨機試驗，<b>不宜據此宣稱安全性優於其他 ARPI</b>。</li>
+          <li>ARANOTE 中疲倦 5.6%（安慰劑組 8.1%）、因不良事件停藥 6.1%（安慰劑組 9.0%）。</li>
+          <li>劑量：<b>600 mg（300 mg × 2 錠）每日兩次，須與食物併服</b>——空腹服用吸收會下降，是衛教重點。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="call cf"><span class="l">證據邊界：</span>ARANOTE、ARASENS 皆為<b>藥物 vs 安慰劑</b>的試驗，<b>不是 darolutamide 與其他 ARPI 的頭對頭比較</b>。可以說「試驗中中樞相關事件少、耐受性良好」；<b>不可以說「比其他 ARPI 安全」</b>。跨試驗比較的族群、年代與評估方式都不同。</div>
+  </div>
+
+  <div class="sec">
+    <div class="sh"><span class="n">4</span>mHSPC 治療全景：從 ADT 單用到 Doublet、Triplet<span class="en">treatment landscape</span></div>
+    <div class="lead">過去二十年 mHSPC 的演進可以用一句話概括：<b>治療強度不斷前移</b>。原本留給 CRPC 階段的藥物，現在都被移到還有荷爾蒙敏感性的時候就使用。</div>
+
+    <table>
+      <tr><th>階段</th><th>組合</th><th>代表試驗</th><th>意義</th></tr>
+      <tr><td>1990s–2014</td><td>ADT 單用</td><td>—</td><td>曾是標準；今日<b>僅適用於無法耐受強化治療者</b></td></tr>
+      <tr><td>2015 起</td><td>ADT ＋ docetaxel</td><td>CHAARTED、STAMPEDE</td><td>證實化療前移可延長存活，尤其高腫瘤負荷者</td></tr>
+      <tr><td>2017 起</td><td><b>ADT ＋ ARPI（doublet）</b></td><td>LATITUDE／STAMPEDE（abiraterone）、TITAN（apalutamide）、ARCHES／ENZAMET（enzalutamide）</td><td>建立「ADT ＋ 一種 ARPI」為標準選項；不需化療</td></tr>
+      <tr><td>2022 起</td><td><b>ADT ＋ docetaxel ＋ ARPI（triplet）</b></td><td><b>ARASENS</b>（darolutamide）、PEACE-1（abiraterone）</td><td>三合一在適合化療的族群再進一步延長存活</td></tr>
+      <tr><td>2024–2025</td><td><b>ADT ＋ darolutamide（不含化療）</b></td><td><b>ARANOTE</b></td><td>補上 darolutamide 唯一缺的那格：不打化療也能用</td></tr>
+    </table>
+
+    <div class="call pt"><span class="l">為什麼 ARANOTE 重要：</span>在 ARANOTE 之前，darolutamide 在 mHSPC 的證據<b>只存在於三合一組合</b>（ARASENS）。對不適合或不願接受化療的病人，過去無法單獨使用 darolutamide。ARANOTE 補上了這一格，也直接促成健保給付範圍的擴增（見 §8）。</div>
+  </div>
+
+  <div class="sec">
+    <div class="sh"><span class="n">5</span>ARANOTE 試驗判讀<span class="en">ARANOTE</span></div>
+
+    <div class="grid2">
+      <div class="card"><h4>試驗設計</h4>
+        <ul>
+          <li>第三期、隨機、雙盲、安慰劑對照。</li>
+          <li>669 位 mCSPC 病人，<b>2:1</b> 隨機分配。</li>
+          <li>試驗組：darolutamide 600 mg 每日兩次 ＋ ADT。對照組：安慰劑 ＋ ADT。</li>
+          <li><b>兩組皆不含 docetaxel</b>——這是與 ARASENS 最大的差別。</li>
+          <li>主要療效指標：<b>影像學無惡化存活（rPFS）</b>。</li>
+        </ul>
+      </div>
+      <div class="card"><h4>結果</h4>
+        <table>
+          <tr><th>指標</th><th>結果</th></tr>
+          <tr><td><b>rPFS</b>（主要指標）</td><td class="ok">HR 0.54（95% CI 0.41–0.71）<br><span class="sm">惡化或死亡風險降低約 46%</span></td></tr>
+          <tr><td>進展至去勢抗性的時間</td><td class="ok">HR 0.40</td></tr>
+          <tr><td>PSA 惡化</td><td class="ok">HR 0.31</td></tr>
+          <tr><td>PSA 降至 &lt; 0.2 ng/mL</td><td class="ok">62.6% vs 18.5%</td></tr>
+          <tr><td>疼痛惡化</td><td class="ok">HR 0.72</td></tr>
+          <tr><td><b>整體存活（OS）</b></td><td class="no">HR 0.81（95% CI 0.59–1.12）<br><b>未達統計顯著</b>；24 個月存活率 79.8% vs 75.5%</td></tr>
+        </table>
+        <div class="sm" style="margin-top:4px">高腫瘤負荷與低腫瘤負荷次族群均觀察到 rPFS 獲益。</div>
+      </div>
+    </div>
+
+    <div class="call pt"><span class="l">衛教口徑（請照唸）：</span>ARANOTE 證明的是「<b>更晚出現影像惡化、更慢進展為去勢抗性、PSA 控制更好</b>」。對病人請說「<b>延緩病情惡化</b>」，<b>不要說「已證實延長壽命」</b>。在 darolutamide 的 mHSPC 第三期證據中，<b>已明確證實 OS 獲益的是 ARASENS 三合一組合</b>（OS HR 0.68，4 年存活率 62.7% vs 50.4%）。</div>
+    <div class="call key"><span class="l">不要延伸成「doublet 沒有 OS 證據」：</span>ARANOTE 的 OS 結果<b>只適用於 darolutamide 這一項試驗</b>。其他 ARPI 的 mHSPC doublet 試驗（LATITUDE／STAMPEDE 的 abiraterone、TITAN 的 apalutamide、ARCHES／ENZAMET 的 enzalutamide）<b>均已報告存活獲益</b>。「ADT ＋ ARPI」作為治療策略的 OS 證據是充分的；未達顯著的是 ARANOTE 這一個試驗的 OS 終點。</div>
+    <div class="call cf"><span class="l">為什麼 ARANOTE 的 OS 還沒顯著：</span>可能是追蹤時間尚短、事件數不足，也可能是對照組惡化後接續使用了有效的後線治療而稀釋了差異。<b>「未達統計顯著」不等於「證實沒有存活獲益」，但也不能當成有</b>。目前正確的說法是：<b>尚未證實</b>。</div>
+  </div>
+
+  <div class="sec">
+    <div class="sh"><span class="n">6</span>Doublet 還是 Triplet：臨床選擇邏輯<span class="en">doublet vs triplet</span></div>
+    <div class="lead">今晚討論的核心不是「ARANOTE 有沒有效」（已經清楚），而是「<b>哪些病人 doublet 就夠、哪些仍應追求 triplet</b>」。</div>
+    <div class="grid2">
+      <div class="card"><h4>偏向 Doublet（ADT ＋ ARPI）</h4>
+        <ul>
+          <li>低腫瘤負荷、異時性轉移。</li>
+          <li>高齡、體能狀態較差、共病多、多重用藥。</li>
+          <li>化療毒性顧慮大（骨髓功能、周邊神經病變風險、感染風險）。</li>
+          <li>病人明確拒絕化療。</li>
+          <li><b>ARANOTE 讓「ADT ＋ darolutamide」正式成為此類病人的選項之一。</b></li>
+        </ul>
+      </div>
+      <div class="card"><h4>偏向 Triplet（ADT ＋ docetaxel ＋ ARPI）</h4>
+        <ul>
+          <li>初診斷即轉移（de novo）、高腫瘤負荷。</li>
+          <li>疾病侵襲性高、有症狀、內臟轉移。</li>
+          <li>體能狀態佳、器官功能符合化療條件（見 §8 併用條件）。</li>
+          <li><b>ARASENS 已證實 triplet 的存活獲益（OS HR 0.68）。</b></li>
+        </ul>
+      </div>
+    </div>
+    <div class="call cf"><span class="l">證據限制（不可簡化為演算法）：</span>ARASENS 與 PEACE-1 證明的是「<b>triplet 優於含 ADT ＋ docetaxel 的對照策略</b>」，對照組並非 ADT ＋ ARPI doublet。<b>目前缺乏充分的隨機試驗直接證明「所有適合化療的病人，triplet 均優於 doublet」</b>。因此不可教成「高負荷就 triplet、低負荷就 doublet」的二分法；選擇須整合 de novo／異時性、腫瘤負荷、症狀、體能、共病與病人偏好。</div>
+    <div class="call key"><span class="l">個管師的角色：</span>doublet 與 triplet 的決策牽涉<b>化療可行性評估</b>。個管師應在 MDT 前先備齊：ECOG 分數、血球（ANC、血小板）、肝功能（GPT、bilirubin）、腎功能（eGFR）、共病與用藥清單、跌倒與周邊神經病變病史。這些同時也是健保併用 docetaxel 的必要條件。</div>
+  </div>
+
+  <div class="sec" style="page-break-before: always;">
+    <div class="sh"><span class="n">7</span>健保給付：四種 ARPI 條文對照<span class="en">NHI comparison</span></div>
+    <div class="lead">四種 ARPI 各有獨立條文，但<b>高風險 mCSPC 的定義已於 113/8/1 起統一</b>（三取二、骨病灶 3 個以上且至少一處非脊柱非骨盆腔）。差異主要在給付情境、療程上限與附加條件。</div>
+
+    <table>
+      <tr><th>藥品</th><th>條文</th><th>mCSPC</th><th>nmCRPC</th><th>mCRPC</th><th>特殊規定</th></tr>
+      <tr>
+        <td><b>darolutamide</b><br><span class="sm">諾博戈 Nubeqa</span></td>
+        <td><b>9.94</b></td>
+        <td class="ok">✔ 高風險<br><b>單一療法或併用 docetaxel</b><br>上限 36 個月（115/4/1）<br><span class="sm">113/5/1 起原僅限併用 docetaxel、上限 24 個月</span></td>
+        <td class="ok">✔ 高風險<br>（110/11/1）</td>
+        <td class="no">✘</td>
+        <td>併用 docetaxel 時 docetaxel 限 6 療程</td>
+      </tr>
+      <tr>
+        <td>abiraterone<br><span class="sm">Zytiga 等</span></td>
+        <td>9.49</td>
+        <td class="ok">✔ <b>新診斷</b>高風險<br>ECOG ≦ 1<br>上限 36 個月<br><span class="sm">部分品項上限 24 個月</span></td>
+        <td class="no">✘</td>
+        <td class="ok">✔ 兩種情境：<br>① 化療前，無症狀或輕度症狀<br>② docetaxel ≧2 療程失敗後</td>
+        <td><b>須併用 prednisone／prednisolone</b>；化療前用過者，化療失敗後不得再申請</td>
+      </tr>
+      <tr>
+        <td>enzalutamide<br><span class="sm">Xtandi</span></td>
+        <td>9.54</td>
+        <td class="ok">✔ 高風險<br>與 ADT 併用<br>上限 36 個月（114/10/1）</td>
+        <td class="ok">✔ 高風險<br>（112/9/1）</td>
+        <td class="ok">✔ 兩種情境：<br>① 化療前，無症狀或輕度症狀<br>② docetaxel ≧2 療程失敗後</td>
+        <td>化療前用過者，化療失敗後不得再申請</td>
+      </tr>
+      <tr>
+        <td>apalutamide<br><span class="sm">Erleada</span></td>
+        <td>9.90</td>
+        <td class="ok">✔ 高風險<br>與 ADT 併用<br>上限 36 個月<br><span class="sm">（110/3/1、111/3/1、113/8/1）</span></td>
+        <td class="ok">✔ 高風險<br>（110/3/1、110/11/1）</td>
+        <td class="no">✘</td>
+        <td>癲癇發作者應永久停藥</td>
+      </tr>
+    </table>
+
+    <div class="call key"><span class="l">終生一種 ARPI（全文最重要的一條）：</span>不論病人處於轉移或非轉移狀態，新型荷爾蒙藥品（<b>abiraterone、apalutamide、darolutamide、enzalutamide</b>）<b>及 olaparib 與 abiraterone 併用</b>之組合，<b>終生僅給付一種治療</b>；無效後不再給付其他新型荷爾蒙藥品，<b>且不得互換</b>——除非出現嚴重不耐受反應導致必須永久停止治療。（112/9/1、114/6/1，四條文均載明）</div>
+    <div class="call key"><span class="l">健保層面的併用限制：</span>四條文均載明「<b>本品與 radium-223 dichloride 不得合併使用</b>」（108/3/1）。安排核醫治療前務必確認目前口服藥物，並依現行條文確認是否可合併申請。</div>
+    <div class="call cf"><span class="l">不可解讀為臨床禁忌：</span>上述是<b>台灣健保給付排他條款，不是醫學上的禁忌</b>。EORTC 1333／PEACE-3 第三期試驗於骨轉移 mCRPC 比較 enzalutamide ± radium-223，最終整體存活分析（中位追蹤 58 個月）顯示<b>併用組中位 OS 38.0 vs 32.6 個月，HR 0.76，p = 0.0096</b>，rPFS 亦獲改善，結論支持「enzalutamide ＋ radium-223 ＋ 保骼藥物」為骨轉移 mCRPC 的第一線選項之一。<b>給付限制與臨床證據須分開陳述</b>；不同 ARPI 與 radium-223 的組合，其證據與適應症應各自判讀。</div>
+    <div class="call pt"><span class="l">臨床意涵：</span>在 mHSPC 選擇哪一種 ARPI，等同替病人做了<b>一輩子只有一次</b>的選擇。個管師應在起始用藥衛教時即說明此規則，並記錄於個案檔案；不能等到進入 mCRPC 才發現同類藥已無給付空間。</div>
+  </div>
+
+  <div class="sec">
+    <div class="sh"><span class="n">8</span>darolutamide（條文 9.94）詳解<span class="en">9.94 in detail</span></div>
+
+    <div class="status yes"><span class="mk">✔</span><b>健保給付：有</b>　條文 9.94（110/11/1、112/9/1、113/5/1、113/8/1、115/4/1）　│　高風險 nmCRPC；高風險 mCSPC（<b>單一療法或與 docetaxel 併用，總療程上限 36 個月</b>）　│　兩情境<b>均須事前審查核准後使用，每 3 個月再申請</b></div>
+
+    <div class="grid2">
+      <div class="card"><h4>情境 A：高風險 mCSPC</h4>
+        <ul>
+          <li>高風險：三項至少符合兩項（Gleason ≧ 8／骨掃 ≧ 3 病灶且至少一處非脊柱非骨盆腔／內臟轉移）。</li>
+          <li>總療程上限 36 個月。</li>
+          <li><b>併用 docetaxel 時</b>，docetaxel 限 6 個療程，且須全部符合：<br>ECOG ≦ 1；ANC ≧ 1500/mm³；血小板 ≧ 100,000/mm³；GPT ≦ 2 倍正常上限；total bilirubin ≦ 正常上限；eGFR ≧ 30 mL/min/1.73m²。</li>
+        </ul>
+      </div>
+      <div class="card"><h4>情境 B：高風險 nmCRPC</h4>
+        <ul>
+          <li>ECOG ≦ 1。</li>
+          <li><b>PSA doubling time ≦ 10 個月</b>（計算規則見 §10）。</li>
+          <li>初次申請需檢附：病理報告、ADT 使用紀錄、系列 PSA 與睪固酮數據、<b>3 個月內影像報告證明無遠端轉移</b>。</li>
+          <li>再申請：有 PSA 惡化者須附影像報告，證實轉移即停藥；無 PSA 惡化者每 6 個月附影像報告，證實轉移即停藥。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="call key"><span class="l">兩條停藥規則（適用 mCSPC 情境，每 3 個月再申請時檢核）：</span>
+      ①　再申請時 <b>PSA 較治療前下降未超過 50%</b> → <b>需停藥</b>。<br>
+      ②　PSA 降至最低值（nadir）後回升 <b>≧ 50% 且 PSA ≧ 2 ng/mL</b> → <b>需停藥；但影像學證據尚無疾病進展者，可以繼續使用</b>。<br>
+      第 ② 條的但書非常重要——<b>單看 PSA 上升就停藥是錯的</b>，必須先確認影像。
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sh"><span class="n">9</span>藥證（TFDA）與健保給付的落差<span class="en">TFDA vs NHI</span></div>
+    <div class="grid2">
+      <div class="card"><h4>TFDA 藥證</h4>
+        <ul>
+          <li>諾博戈膜衣錠 300 毫克（NUBEQA F.C. Tablets 300 mg，darolutamide），<b>衛部藥輸字第 027936 號</b>，台灣拜耳。</li>
+          <li>核准適應症：非轉移性去勢抗性攝護腺癌（nmCRPC）；與 docetaxel 併用治療轉移性去勢敏感性攝護腺癌。</li>
+          <li><b>僅限男性使用</b>；女性禁用。</li>
+          <li>用法：600 mg（300 mg × 2 錠）每日兩次，<b>與食物併服、整顆吞服</b>。</li>
+        </ul>
+      </div>
+      <div class="card"><h4>健保給付較藥證窄的四處</h4>
+        <ul>
+          <li>限「<b>高風險</b>」mCSPC（三取二），藥證未限風險分層。</li>
+          <li>有<b>療程上限</b>（36 個月）與 PSA 停藥條款，藥證無此限制。</li>
+          <li>須<b>事前審查</b>並每 3 個月再申請。</li>
+          <li>受「<b>終生一種 ARPI</b>」排他規則約束，藥證不涉及此限制。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="call pt"><span class="l">健保條文核對狀態：</span><b>已核對現行 9.94 全文</b>（110/11/1、112/9/1、113/5/1、113/8/1、<b>115/4/1</b>）。確認第 1 項為「<b>作為單一療法或與 docetaxel 併用</b>於治療高風險 mCSPC，<b>總療程以 36 個月為上限</b>」（113/5/1、114/6/1、115/4/1）；高風險三取二與 PSA 停藥條款如本文 §8 所載。113/8/1 已將骨病灶條件由「4 個以上、非中軸骨及骨盆腔」修訂為「3 個以上、非脊柱及非骨盆腔」。
+    <div class="call cf" style="margin:6px 0 0"><span class="l">待確認（唯一未解項目）：</span>美國 FDA 已於 2025/6/3 依 ARANOTE 核准 darolutamide 用於 mCSPC 且不強制併用 docetaxel；但<b>現行中文仿單所載 TFDA 適應症仍為「nmCRPC」與「與 docetaxel 併用之 mCSPC」兩項，未含單一療法</b>。<b>此處出現健保給付範圍寬於藥證的少見情形</b>，請向藥劑部確認最新仿單版本；若藥證確未擴增，單一療法之處方依據與病歷記載方式須先取得院內共識。</div>
+  </div>
+
+  <div class="sec">
+    <div class="sh"><span class="n">10</span>PSA 判讀規則：事審與追蹤的技術核心<span class="en">PSA rules</span></div>
+    <div class="lead">健保條文對 PSA 的規範非常具體。個管師必須能<b>自行判讀，而不是等醫師口述</b>。</div>
+
+    <div class="grid2">
+      <div class="card"><h4>PSA doubling time（nmCRPC 申請必備）</h4>
+        <div class="sm" style="margin-bottom:3px">須 ≦ 10 個月，且<b>依線性回歸模型計算</b>，參數取得需符合：</div>
+        <ol>
+          <li>至少 <b>3 個連續 PSA 測量值</b>，且每個測量值皆 ≧ 0.2 ng/mL（其中最高值必須 &gt; 1.0 ng/mL）。</li>
+          <li>應包含<b>先前 ADT 治療期間</b>的測量值，且至少一個測量值為<b>最近 3 個月內</b>所測。</li>
+          <li>第一個與最後一個 PSA 測量值<b>間隔需 ≧ 8 週但 ≦ 12 個月</b>。</li>
+        </ol>
+        <div class="call cf" style="margin-bottom:0"><span class="l">常見退件原因：</span>只送兩筆 PSA、最高值未超過 1.0、或最後一筆已超過 3 個月。<b>排程抽血時就要把這三個條件算進去。</b></div>
+      </div>
+      <div class="card"><h4>PSA progression（惡化）的定義</h4>
+        <ul>
+          <li>PSA 下降達最低值（nadir）後，出現 PSA 較 nadir 上升 <b>≧ 25%</b>，且 <b>PSA ≧ 2 ng/mL</b>；</li>
+          <li>並於<b>至少 3 週後再次抽血確認</b>確有上升趨勢。</li>
+        </ul>
+        <h4 style="margin-top:6px">與「停藥門檻」不同，別搞混</h4>
+        <table>
+          <tr><th>用途</th><th>門檻</th></tr>
+          <tr><td>PSA progression 定義</td><td>較 nadir ↑ <b>≧ 25%</b> 且 ≧ 2 ng/mL，3 週後複驗</td></tr>
+          <tr><td>mCSPC 停藥條款</td><td>較 nadir ↑ <b>≧ 50%</b> 且 ≧ 2 ng/mL（影像無進展可續用）</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="call pt"><span class="l">個管師必記三個數字：</span>治療前<b>基準 PSA</b>（判斷是否下降 &gt; 50%）、治療中的 <b>PSA nadir</b>（判斷回升幅度）、最近一次<b>睪固酮</b>（判斷是否真的進入去勢抗性）。這三個值應固定登錄於個案追蹤表，不要每次重查病歷。</div>
+  </div>
+
+  <div class="sec">
+    <div class="sh"><span class="n">11</span>副作用與監測<span class="en">toxicity monitoring</span></div>
+
+    <div class="card"><h4>所有 ADT 病人共通（不論搭配哪種 ARPI）</h4>
+      <div class="grid3">
+        <div><ul>
+          <li>熱潮紅、盜汗</li>
+          <li>性慾降低、勃起功能障礙</li>
+          <li>情緒低落、認知變化</li>
+        </ul></div>
+        <div><ul>
+          <li><b>骨質流失</b>、骨折風險上升</li>
+          <li>肌少症、體能下降</li>
+          <li>男性女乳症</li>
+        </ul></div>
+        <div><ul>
+          <li>體重上升、體脂增加</li>
+          <li><b>血糖、血脂異常</b></li>
+          <li>心血管事件風險上升</li>
+        </ul></div>
+      </div>
+      <div class="sm" style="margin-top:4px">→ 追蹤表應納入：骨密度、空腹血糖／HbA1c、血脂、血壓，並提供運動與鈣／維生素 D 衛教。</div>
+    </div>
+
+    <table>
+      <tr><th>藥物</th><th>重點副作用</th><th>監測與衛教</th></tr>
+      <tr><td><b>darolutamide</b></td><td>疲倦（試驗中發生率低於安慰劑組）、皮疹、四肢疼痛</td><td><b>藥物交互作用需逐項核對</b>（涉及 P-gp 與 CYP3A4，如部分 statin、抗凝血劑）；提醒<b>與食物併服</b></td></tr>
+      <tr><td>enzalutamide</td><td>疲倦、<b>跌倒</b>、高血壓、少見癲癇</td><td>跌倒風險評估；有癲癇病史須告知醫師</td></tr>
+      <tr><td>apalutamide</td><td><b>皮疹</b>、甲狀腺功能低下、跌倒</td><td>皮疹早期通報；定期甲狀腺功能</td></tr>
+      <tr><td>abiraterone</td><td><b>低血鉀、高血壓、水腫、肝功能異常</b></td><td><b>務必確認有併開 prednisone／prednisolone</b>；定期血鉀、血壓、肝功能；空腹服用（與食物併服會顯著提高血中濃度）</td></tr>
+      <tr><td>docetaxel</td><td>骨髓抑制與<b>發燒性嗜中性球低下</b>、<b>周邊神經病變</b>、指甲變化、水腫、掉髮</td><td>發燒 ≧ 38°C 立即就醫（衛教為<b>急症</b>）；每次治療前查血球；神經症狀分級記錄</td></tr>
+    </table>
+
+    <div class="call key"><span class="l">個管師通報分流：</span>
+      <b>立即就醫／通報主治：</b>發燒 ≧ 38°C（化療期間）、新發下肢無力或大小便功能改變（疑<b>脊髓壓迫</b>）、癲癇發作、嚴重皮疹合併黏膜侵犯。<br>
+      <b>下次門診處理：</b>輕度疲倦、熱潮紅、輕度水腫、指甲變化、體重緩慢上升。
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sh"><span class="n">12</span>骨骼健康：兩種完全不同的用藥情境<span class="en">bone health</span></div>
+    <div class="lead">這是個管師最常混淆的地方——<b>「ADT 造成的骨質疏鬆」與「骨轉移的骨骼相關事件預防」用的是同一類藥，但劑量與頻次完全不同</b>。</div>
+    <div class="grid2">
+      <div class="card"><h4>情境一：ADT 引起的骨質流失</h4>
+        <ul>
+          <li>目的：預防<b>骨質疏鬆與脆性骨折</b>。</li>
+          <li>對象：接受長期 ADT 者，依骨密度與骨折風險評估。</li>
+          <li>用藥為<b>骨質疏鬆治療劑量</b>（頻次較低）。</li>
+          <li>搭配：鈣、維生素 D、負重運動、戒菸節酒。</li>
+        </ul>
+      </div>
+      <div class="card"><h4>情境二：已有骨轉移，預防骨骼相關事件</h4>
+        <ul>
+          <li>目的：預防<b>病理性骨折、脊髓壓迫、需放療或手術之骨事件</b>。</li>
+          <li>對象：確診骨轉移之 <b>CRPC</b> 病人——預防骨骼相關事件的證據主要建立在此族群。</li>
+          <li>用藥為<b>腫瘤劑量</b>（劑量較高、頻次較密）。</li>
+          <li>需注意低血鈣與腎功能。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="call cf"><span class="l">最容易搞錯的一點：</span><b>mHSPC 有骨轉移，不等於自動需要腫瘤劑量的保骼藥物</b>。反過來說，<b>所有接受長期 ADT／ARPI 的病人，無論有無骨轉移，都應在起始治療時進行骨質疏鬆與骨折風險評估（含骨密度）</b>。這兩件事的對象、目的與劑量都不同，個管師應分開建檔。</div>
+    <div class="call key"><span class="l">下顎骨壞死（ONJ）預防：</span>兩種情境的骨標靶藥物皆有 ONJ 風險。<b>開始用藥前應完成牙科評估與必要的侵入性牙科處置</b>；用藥期間避免拔牙等侵入性治療，並衛教口腔衛生與定期牙科追蹤。PEACE-3 試驗自 2018 年起強制使用保骼藥物，雖顯著降低骨折，但全試驗共出現 <b>17 例 ONJ：enzalutamide 組 3 例（1.3%，皆 grade ≤ 2）、enzalutamide ＋ radium-223 組 14 例（6.4%，其中 5 例為 grade ≥ 3）</b>，全部發生於治療期間——<b>骨保護與 ONJ 是需要同時管理的一組權衡，不是單向的加藥</b>。這項前置作業經常被遺漏，屬於個管師應主動排程的項目。</div>
+  </div>
+
+  <div class="sec" style="page-break-before: always;">
+    <div class="sh"><span class="n">13</span>mCRPC：治療排序的思考架構<span class="en">sequencing</span></div>
+    <div class="lead">進入 mCRPC 後<b>沒有單一標準順序</b>。因為 ARPI 已在 mHSPC 階段前移使用，「第一線 mCRPC」這個詞的意義已大幅下降。真正要問的是：<b>這位病人已經用掉了哪些治療機轉？</b></div>
+
+    <div class="grid2">
+      <div class="card"><h4>換線前先問五件事</h4>
+        <ol>
+          <li><b>先前暴露</b>：用過哪些機轉（不是用過幾線）。</li>
+          <li><b>反應持續時間</b>：上一個藥撐 3 個月與撐 3 年，生物學意義完全不同。</li>
+          <li><b>疾病進展速度</b>：僅 PSA 上升／影像快速進展／內臟危象。</li>
+          <li><b>疾病表現型</b>：骨為主／內臟轉移／PSMA 高表現／侵襲性變異型。</li>
+          <li><b>生物標記</b>：BRCA1／BRCA2、ATM、PALB2 等 HRR 基因；MSI-H／dMMR。</li>
+        </ol>
+      </div>
+      <div class="card"><h4>六大治療機轉（選機轉，不是排藥名）</h4>
+        <ul>
+          <li><b>AR 路徑</b>：abiraterone、enzalutamide 等。<span class="sm">醫學層面：前線已暴露 ARPI 者須考量交叉抗藥性，並非絕對不能再使用 AR 導向治療。健保層面：另有「終生一種」排他給付規則，實際換藥須另行核對條文。</span></li>
+          <li><b>紫杉醇類化療</b>：docetaxel、cabazitaxel。</li>
+          <li><b>DNA 修復標靶</b>：PARP 抑制劑（olaparib 等），依 BRCA／HRR 狀態。</li>
+          <li><b>PSMA 標靶放射配體治療</b>：¹⁷⁷Lu-PSMA。</li>
+          <li><b>骨標靶放射性藥物</b>：radium-223（骨為主、無內臟轉移者）。</li>
+          <li><b>放射治療</b>：緩解性放療、寡進展病灶局部治療（見 §15）。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="call pt"><span class="l">重點一（CARD 試驗）：</span>已使用過 docetaxel ＋ 一種 ARPI，且該 ARPI 在 <b>12 個月內</b>即惡化者，<b>改用 cabazitaxel 優於換另一種 ARPI</b>。ARPI 之間存在交叉抗藥性（AR 擴增、AR 突變、AR 剪接變異體、腫瘤內雄性素合成、細胞譜系可塑性），橫向換藥療效通常明顯下降。</div>
+    <div class="call pt"><span class="l">重點二（台灣實務）：</span>「終生一種 ARPI」的健保規則，實際上已使 ARPI 換 ARPI 不成為給付選項。<b>個管師應提前準備的是基因檢測與 PSMA 影像的排程</b>，而非等到進入 mCRPC 才啟動——檢測報告等待期常是延誤換線的主因。</div>
+
+    <div class="card"><h4>olaparib（PARP 抑制劑）於攝護腺癌的健保給付</h4>
+      <ul>
+        <li><b>單用：</b>去勢療法無效之轉移性攝護腺癌（mCRPC），用於具 <b>germline 或 somatic BRCA1／2 致病性或疑似致病性突變</b>，<b>且先前接受過新型荷爾蒙藥物治療後惡化</b>之成人病人。（112/11/1、113/6/1）</li>
+        <li><b>與 abiraterone 併用：</b>olaparib ＋ abiraterone ＋ prednisone／prednisolone，用於具 germline 或 somatic BRCA1／2 突變之成人病人，須符合 olaparib 給付規定。（9.49 第 4 項，114/6/1）</li>
+        <li><b>此併用組合計入「終生一種新型荷爾蒙藥品」的限制</b>（114/6/1 明訂）。</li>
+      </ul>
+      <div class="call cf" style="margin-bottom:0"><span class="l">給付提醒：</span>cabazitaxel、radium-223、¹⁷⁷Lu-PSMA 各有獨立條文與事前審查條件，部分品項可能需自費，且條文異動頻繁。<b>個案排定前應逐案向藥劑部確認當時給付狀態</b>；本文不逐一列出以免沿用過期條文。</div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sh"><span class="n">14</span>生物標記與基因檢測<span class="en">biomarkers</span></div>
+    <div class="grid2">
+      <div class="card"><h4>germline 與 somatic 的差別</h4>
+        <table>
+          <tr><th>　</th><th>germline（胚源）</th><th>somatic（體細胞）</th></tr>
+          <tr><td>檢體</td><td>血液／唾液</td><td>腫瘤組織或 ctDNA</td></tr>
+          <tr><td>意義</td><td>與生俱來，<b>可遺傳給子女</b></td><td>由腫瘤組織或 ctDNA 偵測，<b>無法單憑此判定是否為胚源</b></td></tr>
+          <tr><td>後續</td><td>陽性者<b>應轉介遺傳諮詢</b>，並討論家屬篩檢</td><td>提供治療用生物標記；若驗出 BRCA1／2 等致病性變異，<b>可能來自胚源，仍需確認性 germline 檢測與遺傳諮詢</b></td></tr>
+        </table>
+        <div class="sm" style="margin-top:3px">健保 olaparib 條文<b>兩者皆接受</b>（germline or somatic BRCA1／2）。</div>
+      </div>
+      <div class="card"><h4>個管師的檢測排程要點</h4>
+        <ul>
+          <li>轉移性攝護腺癌應<b>及早同時評估 germline 與 somatic 檢測</b>：前者涉及家族遺傳風險，後者同時提供治療用生物標記。項目至少包含 <b>BRCA1／BRCA2 與其他 HRR 基因</b>，以及 <b>MMR／MSI</b>；實際 panel 依檢驗平台與指引而定。</li>
+          <li><b>時機：不要等到 mCRPC 才送。</b>報告等待期加上事前審查時間，容易延誤換線。</li>
+          <li>組織檢體年代久遠或量不足時，可能需重新切片或改用 ctDNA，應提早確認病理室是否有足夠蠟塊。</li>
+          <li>germline 陽性、或 <b>tumor-only 檢測驗出疑似胚源之致病性變異</b>時，須說明對<b>子女與手足</b>的意義並安排遺傳諮詢，不由個管師逕自解釋風險數值。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sh"><span class="n">15</span>放射治療在轉移性攝護腺癌的角色<span class="en">radiotherapy</span></div>
+    <div class="lead">全身治療愈來愈強，<b>並不代表放射治療可以省略</b>。放療在轉移性階段有三個獨立的角色，病人常會問到。</div>
+    <div class="grid3">
+      <div class="card"><h4>① 原發病灶放療</h4>
+        <ul>
+          <li>對象：<b>初次表現即為轉移（de novo M1）且屬 CHAARTED 低腫瘤負荷</b>者。</li>
+          <li>STAMPEDE 攝護腺放療組於<b>低轉移負荷族群顯示存活獲益</b>，屬第一級證據。</li>
+          <li><b>目前沒有證據支持因使用強效 ARPI 而常規省略已具適應症的原發病灶放療。</b></li>
+        </ul>
+      </div>
+      <div class="card"><h4>② 寡轉移／寡進展局部治療</h4>
+        <ul>
+          <li>對象：少數病灶進展、其餘控制良好者。</li>
+          <li>以 SBRT 清除抗藥病灶，目標是<b>延長現行全身治療的可用時間</b>。</li>
+          <li>目前證據以延後惡化為主，<b>存活獲益尚未確立</b>。</li>
+          <li><b>不可與上述①的第一級存活證據視為同一證據層級。</b></li>
+        </ul>
+      </div>
+      <div class="card"><h4>③ 緩解性放療</h4>
+        <ul>
+          <li>骨轉移疼痛控制，常見短療程即有效。</li>
+          <li><b>脊髓壓迫屬腫瘤急症</b>，需緊急評估與治療。</li>
+          <li>病理性骨折高風險部位可預防性照射。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="call key"><span class="l">脊髓壓迫警訊（個管師衛教必講）：</span>新出現的<b>背痛合併下肢無力、麻木、走路不穩，或大小便失禁／解不出來</b>，須<b>立即就醫，不可等下次門診</b>。延誤數小時即可能造成不可逆的神經損傷。使用 GnRH 促效劑起始期（見 §1 flare）的高負荷病人尤須提醒。</div>
+  </div>
+
+  <div class="sec">
+    <div class="sh"><span class="n">16</span>衛教用語對照與常見問答<span class="en">patient communication</span></div>
+    <table>
+      <tr><th>避免這樣說</th><th>建議這樣說</th></tr>
+      <tr><td>「這個藥可以讓你活更久。」</td><td>「這個藥在試驗中<b>明顯延後了病情惡化</b>，也延後了轉為抗藥性的時間。存活方面的資料還在追蹤。」</td></tr>
+      <tr><td>「變成抗藥性就不用打針了。」</td><td>「就算進入抗藥階段，<b>去勢針還是要繼續打</b>，後面的藥都是加在它上面才有效。」</td></tr>
+      <tr><td>「這個藥沒效再換另一個同類的就好。」</td><td>「健保規定這四種同類藥<b>終生只給付一種、不能互換</b>，所以現在選哪一種要一起討論清楚。」</td></tr>
+      <tr><td>「PSA 上升就是惡化，要換藥了。」</td><td>「PSA 上升要<b>合併影像檢查</b>一起判斷。有時候 PSA 上升但影像沒有惡化，藥還可以繼續用。」</td></tr>
+      <tr><td>「這個藥比較安全、副作用比較少。」</td><td>「這個藥在試驗中<b>疲倦、跌倒等中樞相關的不適比較少</b>，不過沒有直接跟其他同類藥做過頭對頭比較。」</td></tr>
+      <tr><td>「檢驗有基因突變，你的小孩也會得癌症。」</td><td>「這種檢查分兩類，若是<b>與生俱來的類型</b>，家人才需要進一步評估。我會幫您安排<b>遺傳諮詢</b>詳細說明。」</td></tr>
+    </table>
+    <div class="card" style="margin-top:6px"><h4>個管師常見提問</h4>
+      <ul>
+        <li><b>Q：病人 PSA 沒有降到 0，是不是藥無效？</b>　A：不是。健保的判定門檻是「較治療前下降超過 50%」，而非降到 0。ARANOTE 中降至 &lt; 0.2 ng/mL 者約 63%，代表多數人有深度反應但非全部。</li>
+        <li><b>Q：三合一比雙合一好，是不是都該打化療？</b>　A：不是。ARASENS 的族群是<b>適合化療</b>的病人。體能狀態、共病或器官功能不適合化療者，<b>通常優先考慮 ADT ＋ ARPI doublet</b>；極度衰弱或無法耐受治療強化者，仍須個別評估（見 §6）。</li>
+        <li><b>Q：療程滿 36 個月之後怎麼辦？</b>　A：健保 mCSPC 情境有療程上限，屆期後的處置屬醫療決策，須由主治醫師評估疾病狀態與後續選項。個管師應在<b>接近上限前提前提醒</b>，不要等到申請被駁回。</li>
+        <li><b>Q：病人自己說「我要用最新最好的藥」怎麼回應？</b>　A：先釐清這是不是本人可用的給付情境（風險分層、疾病階段、是否曾用過 ARPI），再說明四種藥並無頭對頭比較資料，選擇取決於共病、副作用型態與後續治療規劃。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sec" style="page-break-before: always;">
+    <div class="sh"><span class="n">附A</span>darolutamide 事前審查檢核表（9.94）<span class="en">checklist</span></div>
+    <div class="grid2">
+      <div class="card"><h4>高風險 mCSPC：資格條件</h4>
+        <ul class="chk">
+          <li>已確診轉移性去勢敏感性攝護腺癌（mCSPC）</li>
+          <li><b>高風險三項中至少符合兩項：</b></li>
+          <li>　Gleason score ≧ 8（附病理報告）</li>
+          <li>　骨掃描 ≧ 3 病灶，且至少一處<b>非脊柱、非骨盆腔</b>（報告須明確載明病灶數與部位）</li>
+          <li>　出現內臟轉移（附影像報告）</li>
+          <li>病人<b>終生尚未使用過任何一種 ARPI</b>（abiraterone／apalutamide／darolutamide／enzalutamide）</li>
+          <li>未合併使用 radium-223</li>
+          <li><b>若採三合一，另須全部符合：</b></li>
+          <li>　ECOG ≦ 1</li>
+          <li>　ANC ≧ 1500/mm³　　☐　血小板 ≧ 100,000/mm³</li>
+          <li>　GPT ≦ 2×ULN　　☐　total bilirubin ≦ ULN</li>
+          <li>　eGFR ≧ 30 mL/min/1.73m²</li>
+        </ul>
+      </div>
+      <div class="card"><h4>高風險 nmCRPC：資格條件</h4>
+        <ul class="chk">
+          <li>睪固酮已達去勢水準（&lt; 50 ng/dL）</li>
+          <li>ECOG ≦ 1</li>
+          <li>3 個月內影像報告<b>證明無遠端轉移</b></li>
+          <li><b>PSA doubling time ≦ 10 個月</b>，且計算資料符合：</li>
+          <li>　至少 3 個連續 PSA 值，皆 ≧ 0.2 ng/mL</li>
+          <li>　其中最高 PSA 值 &gt; 1.0 ng/mL</li>
+          <li>　含 ADT 治療期間之測量值</li>
+          <li>　至少一值為最近 3 個月內所測</li>
+          <li>　首末兩值間隔 ≧ 8 週且 ≦ 12 個月</li>
+          <li>檢附：病理報告、ADT 使用紀錄、系列 PSA 與睪固酮數據</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="sh"><span class="n">附B</span>個案追蹤時序表（可單頁列印）<span class="en">tracking sheet</span></div>
+    <div class="grid2">
+      <div class="card"><h4>基準值（治療開始前務必登錄）</h4>
+        <ul class="chk">
+          <li>基準 PSA：＿＿＿＿ ng/mL（日期＿＿＿＿）</li>
+          <li>基準睪固酮：＿＿＿＿ ng/dL（日期＿＿＿＿）</li>
+          <li>ADT 種類＿＿＿＿　起始日：＿＿＿＿</li>
+          <li>基準影像（骨掃描／CT）日期：＿＿＿＿</li>
+          <li>骨密度：＿＿＿＿（日期＿＿＿＿）</li>
+          <li>牙科評估完成日：＿＿＿＿</li>
+          <li>ECOG：＿＿　共病與用藥清單已建檔</li>
+          <li>基因檢測（germline／somatic）送檢日：＿＿＿＿</li>
+        </ul>
+      </div>
+      <div class="card"><h4>每 3 個月再申請前檢核</h4>
+        <ul class="chk">
+          <li>本次 PSA：＿＿＿＿（日期＿＿＿＿）</li>
+          <li>較基準下降幅度是否 &gt; 50%：＿＿＿＿</li>
+          <li>PSA nadir：＿＿＿＿（日期＿＿＿＿）</li>
+          <li>較 nadir 回升幅度：＿＿＿＿%　PSA 是否 ≧ 2：＿＿</li>
+          <li>若達停藥門檻，是否已取得影像判讀：＿＿＿＿</li>
+          <li>睪固酮是否維持去勢水準：＿＿＿＿</li>
+          <li>療程累計月數（上限 36）：＿＿＿＿</li>
+          <li>docetaxel 已完成療程數（上限 6）：＿＿＿＿</li>
+          <li>再申請送件日：＿＿＿＿　核准日：＿＿＿＿</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card"><h4>出處</h4>
+      <ul class="sm" style="font-size:7.8pt">
+        <li><b>§5 ARANOTE：</b>Darolutamide in Combination With Androgen-Deprivation Therapy in Patients With Metastatic Hormone-Sensitive Prostate Cancer From the Phase III ARANOTE Trial, <i>J Clin Oncol</i>.</li>
+        <li><b>§4、§5 ARASENS：</b>Darolutamide and Survival in Metastatic, Hormone-Sensitive Prostate Cancer, <i>N Engl J Med</i> 2022.</li>
+        <li><b>§13 CARD：</b>cabazitaxel vs 換用另一種 ARPI 於 docetaxel 與 ARPI 治療後惡化之 mCRPC。</li>
+        <li><b>§7、§12 PEACE-3：</b>Final overall survival results from EORTC 1333/PEACE-3 trial of enzalutamide plus radium-223 in metastatic castration-resistant prostate cancer, <i>Ann Oncol</i> 2026;37:736–742；ASCO GU 2026 Abstract 15。主要分析：<i>Ann Oncol</i> 2025;36:1058–1067。</li>
+        <li><b>§2、§7、§8、§10 健保條文：</b>全民健康保險藥物給付項目及支付標準 第 9 節抗癌瘤藥物 —— 9.94 Darolutamide（110/11/1、112/9/1、113/5/1、113/8/1、115/4/1，現行全文已核對）；9.49 Abiraterone（至 114/6/1）；9.54 Enzalutamide（至 114/10/1）；9.90 Apalutamide（110/3/1、110/11/1、111/3/1、112/9/1、113/8/1、114/6/1）；9.3 Docetaxel（113/5/1 新增與 darolutamide 併用於高風險 mCSPC）；olaparib 攝護腺癌條款（112/11/1、113/6/1、114/6/1）。</li>
+        <li><b>§9 藥證：</b>諾博戈膜衣錠 300 毫克，衛部藥輸字第 027936 號（中文仿單所載適應症：nmCRPC；與 docetaxel 併用之 mCSPC）；美國 FDA 2025/6/3 依 ARANOTE 核准 mCSPC 適應症。</li>
+      </ul>
+    </div>
+  </div>
+
+
+<footer class="ccm-foot">
+  <div class="cwrap">
+    <div class="cnote">
+      <strong>彰濱秀傳癌症中心 · 個管師訓練系統</strong>　教學用途，臨床判讀與送審請以主治醫師、病理報告及健保署現行公告條文為準。<br>
+      攝護腺癌完整照護見 <a href="../C6_prostate-cancer/" style="color:inherit">C6 攝護腺癌照護指引</a>；其他癌別分期版本對照見 <a href="../C0_general/#分期系統版本對照ajcc-已改逐部位滾動更新" style="color:inherit">C0 → 分期系統版本對照表</a>。
+    </div>
+    <div style="display:flex;align-items:center;gap:12px">
+      <a class="ccm-back" href="../C6_prostate-cancer/">← 回 C6 攝護腺癌</a>
+      <a class="ccm-sela" href="https://github.com/Sela1227" target="_blank" rel="noopener" title="本系統由 SELA 維護">
+        <img src="../assets/sela-logo/sela.svg" alt="SELA"/>by SELA
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* CCM Manual 版號同步（SPEC §10.6：UI 版號 = zip 檔名版號；規則 1 同步位置之一） */
+var CCM_VERSION = "V4.18.0";
+document.getElementById("ccmVer").textContent = CCM_VERSION;
+document.getElementById("ccmVer").title = "個管師訓練系統 " + CCM_VERSION;
+</script>
+</body>
+</html>
