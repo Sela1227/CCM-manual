@@ -19,12 +19,12 @@
 ## 我現在要做什麼？
 
 <div class="home-tasks" markdown>
-<a class="home-task" href="hub_daily/#新病人收案">📋 收案</a>
-<a class="home-task" href="hub_daily/#電話追蹤">📞 追蹤</a>
-<a class="home-task" href="hub_daily/#mdt-準備">👥 MDT</a>
-<a class="home-task" href="H3_cancer-drugs/">💊 查藥</a>
-<a class="home-task" href="hub_cancer/">🎗 查癌別</a>
-<a class="home-task" href="hub_daily/#緊急處理">🚨 緊急處理</a>
+<a class="home-task" href="hub_daily/#新病人收案"><svg class="ccm-icon" viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7zm3-4H7v-2h10zm0-4H7V7h10z"/></svg>收案</a>
+<a class="home-task" href="hub_daily/#電話追蹤"><svg class="ccm-icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02z"/></svg>追蹤</a>
+<a class="home-task" href="hub_daily/#mdt-準備"><svg class="ccm-icon" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5C15 14.17 10.33 13 8 13zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>MDT</a>
+<a class="home-task" href="H3_cancer-drugs/"><svg class="ccm-icon" viewBox="0 0 24 24"><path d="M6 3h12v2H6zm11 3H7c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-2 8h-3v3h-2v-3H7v-2h3V9h2v3h3z"/></svg>查藥</a>
+<a class="home-task" href="hub_cancer/"><svg class="ccm-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg>查癌別</a>
+<a class="home-task" href="hub_daily/#緊急處理"><svg class="ccm-icon" viewBox="0 0 24 24"><path d="M1 21h22L12 2zm12-3h-2v-2h2zm0-4h-2v-4h2z"/></svg>緊急處理</a>
 </div>
 
 ## 搜尋個管師手冊
@@ -36,85 +36,13 @@
 
 ---
 
-## 完整資源庫
+## 更多資源
 
-<div class="home-grid compact" markdown>
+[🎗 癌別照護](hub_cancer/) ｜ [🔍 臨床速查](hub_lookup/) ｜ [⚙️ 系統操作](hub_admin/) ｜ [📄 表單與範本](D_forms/) ｜ [📊 品質與管理](G_quality-index/)
 
-<div class="home-card" markdown>
-<a href="A_work-guide/">
-<svg class="ccm-icon" viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7zm3-4H7v-2h10zm0-4H7V7h10z"/></svg>
-工作指導手冊</a>
-<p>新人必讀。日常工作流程、分工配置、收案追蹤說明。</p>
-</div>
-
-<div class="home-card" markdown>
-<a href="A_training-plan/">
-<svg class="ccm-icon" viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3 1 9l11 6 9-4.91V17h2V9z"/></svg>
-培訓計畫書</a>
-<p>四階段培訓安排、帶人者指引、各週學習主題。</p>
-</div>
-
-<div class="home-card" markdown>
-<a href="B1_HIS-manual/">
-<svg class="ccm-icon" viewBox="0 0 24 24"><path d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2zM4 6h16v10H4z"/></svg>
-HIS 系統操作手冊</a>
-<p>12 個 HIS 子系統（門診、住院、PACS、檢驗等）及通用工具說明。</p>
-</div>
-
-<div class="home-card" markdown>
-<a href="H1_ccm-tracker-guide/">
-<svg class="ccm-icon" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 11h-3v3h-4v-3H7v-4h3V7h4v3h3z"/></svg>
-個管追蹤系統</a>
-<p>病人管理、MDT 會議、品質指標、工作中心操作說明。</p>
-</div>
-
-<div class="home-card" markdown>
-<a href="H2_mdt-guide/">
-<svg class="ccm-icon" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-MDT 會議管理系統</a>
-<p>建立會議、填個案資料、產出投影片與通知。</p>
-</div>
-
-<div class="home-card" markdown>
-<a href="G_quality-index/">
-<svg class="ccm-icon" viewBox="0 0 24 24"><path d="M3 13h2v-2H3zm0 4h2v-2H3zm0-8h2V7H3zm4 4h14v-2H7zm0 4h14v-2H7zM7 7v2h14V7z"/></svg>
-品質指標速查</a>
-<p>失聯率、留治率、完治率定義，國健署 13 癌 59 項指標。</p>
-</div>
-
-<div class="home-card" markdown>
-<a href="C0_general/">
-<svg class="ccm-icon" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14zM7.5 12c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5zm6 0c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5z"/></svg>
-各癌別照護指引</a>
-<p>從通論到 12 個癌別專屬照護指引，含分期、治療、品質指標、衛教資源。</p>
-</div>
-
-<div class="home-card" markdown>
-<a href="H3_cancer-drugs/">
-<svg class="ccm-icon" viewBox="0 0 24 24"><path d="M4.22 11.29 11.29 4.22a5 5 0 0 1 7.07 7.07l-7.07 7.07a5 5 0 0 1-7.07-7.07zm1.41 1.42a3 3 0 0 0 0 4.24 3 3 0 0 0 4.24 0l3.54-3.53-4.24-4.25z"/></svg>
-抗癌藥物速查</a>
-<p>健保給付 145 種抗癌藥物，依癌別篩選，含給付條件速查。</p>
-</div>
-
-</div>
-
----
-
-## 本指導書架構
-
-| 章節 | 內容 |
-|------|------|
-| **A. 新人通則** | 工作職責、日常流程、四階段培訓計畫 |
-| **軟體與工具** | 醫院 HIS 子系統（B1）、LINE/Email/雲端等通用工具（B2）、癌症中心專用軟體（H1 個管追蹤、H2 MDT、H3 抗癌藥物速查、H4 病歷互審）|
-| **C. 各癌別照護指引** | 肺癌、乳癌、血液腫瘤、婦科癌、頭頸癌等 |
-| **D. 表單與範本** | 評估量表、衛教索引、電話追蹤腳本、書信範本 |
-| **E. 專題與進階** | 困難個案、安寧銜接、品質改善 |
-| **F. 臨床知識庫** | 檢驗判讀、分子病理、影像、治療概念、追蹤速查 |
-| **G. 品質指標** | 國健署強制申報指標、個管三大追蹤指標 |
-
----
+完整檔案目錄請開左側選單的「**完整資料庫**」。
 
 !!! tip "手機使用提示"
-    左上角開啟章節選單。右上角搜尋圖示可搜尋全站內容。
+    底部導覽列：**學習**（培訓路徑）、**工作**（日常任務）、**癌別**（照護指引）、**搜尋**。完整目錄在左上角選單的「完整資料庫」。
 
 *本指導書持續更新中。如有內容疑問，請洽癌症中心個管師團隊。*

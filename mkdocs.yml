@@ -49,55 +49,55 @@ theme:
 #   3. 出問題就 git revert，不要試著用 CSS 蓋
 nav:
   - 首頁: index.md
-  - 快速入口:
-    - 🎓 學習中心: hub_learning.md
-    - 🛠 日常工作: hub_daily.md
-    - 🎗 癌別照護: hub_cancer.md
-    - 🔍 臨床速查: hub_lookup.md
-    - ⚙️ 系統與管理: hub_admin.md
-  - A 新人通則:
-    - A1 工作指導手冊: A_work-guide.md
-    - A2 培訓計畫書（制度文件）: A_training-plan.md
-    - A3 醫師團隊名冊: A3_team.md
-  - 軟體與工具:
-    - B1 HIS 系統操作手冊: B1_HIS-manual.md
-    - B2 其他工具使用說明: B2_other-tools.md
-    - H1 個管追蹤系統（癌症中心專用）: H1_ccm-tracker-guide.md
-    - H2 MDT 會議管理系統（癌症中心專用）: H2_mdt-guide.md
-    - H3 抗癌藥物速查（癌症中心專用）: H3_cancer-drugs.md
-    - H4 病歷互審系統（癌症中心專用）: H4_peer-review-guide.md
-  - C 各癌別照護指引:
-    - C0 癌症照護通論: C0_general.md
-    - C1 肺癌照護指引: C1_lung-cancer.md
-    - C2 乳癌照護指引: C2_breast-cancer.md
-    - C3 大腸直腸癌照護指引: C3_colorectal-cancer.md
-    - C4 肝細胞癌（HCC）照護指引: C4_liver-cancer.md
-    - C5 頭頸癌照護指引: C5_head-neck-cancer.md
-    - C6 攝護腺癌照護指引: C6_prostate-cancer.md
-    - C7 食道癌照護指引: C7_esophageal-cancer.md
-    - C8 胃癌照護指引: C8_gastric-cancer.md
-    - C9 肝膽胰癌照護指引: C9_biliary-pancreatic-cancer.md
-    - C10 泌尿癌照護指引: C10_urological-cancer.md
-    - C11 婦癌照護指引: C11_gynecologic-cancer.md
-    - C12 血液及淋巴癌照護指引: C12_hematologic-cancer.md
-    - C13 其他癌照護指引: C13_other-cancers.md
-  - D 表單與範本:
-    - D. 概覽: D_forms.md
-    - D1 評估量表彙整: D1_assessment-tools.md
-    - D2 衛教單張索引: D2_education.md
-    - D3 電話追蹤腳本: D3_phone-scripts.md
-    - D4 書信與轉介範本: D4_letters.md
-  - E 專題與進階: E_advanced.md
-  - F 臨床知識庫:
-    - F. 概覽: F_clinical-kb.md
-    - F1 檢驗判讀: F1_lab.md
-    - F2 分子與病理檢測: F2_pathology.md
-    - F3 影像判讀: F3_imaging.md
-    - F4 癌症治療: F4_treatment.md
-    - F5 個管師追蹤速查: F5_followup.md
-  - G 品質指標:
-    - G 品質指標速查（定義）: G_quality-index.md
-    - G2 114 年度本院實際成績: G2_114-quality-report.md
+  - 學習中心: hub_learning.md
+  - 日常工作: hub_daily.md
+  - 癌別照護: hub_cancer.md
+  - 臨床速查: hub_lookup.md
+  - 系統與管理: hub_admin.md
+  - 完整資料庫:
+    - A 新人通則:
+      - A1 工作指導手冊: A_work-guide.md
+      - A2 培訓計畫書（制度文件）: A_training-plan.md
+      - A3 醫師團隊名冊: A3_team.md
+    - 軟體與工具:
+      - B1 HIS 系統操作手冊: B1_HIS-manual.md
+      - B2 其他工具使用說明: B2_other-tools.md
+      - H1 個管追蹤系統（癌症中心專用）: H1_ccm-tracker-guide.md
+      - H2 MDT 會議管理系統（癌症中心專用）: H2_mdt-guide.md
+      - H3 抗癌藥物速查（癌症中心專用）: H3_cancer-drugs.md
+      - H4 病歷互審系統（癌症中心專用）: H4_peer-review-guide.md
+    - C 各癌別照護指引:
+      - C0 癌症照護通論: C0_general.md
+      - C1 肺癌照護指引: C1_lung-cancer.md
+      - C2 乳癌照護指引: C2_breast-cancer.md
+      - C3 大腸直腸癌照護指引: C3_colorectal-cancer.md
+      - C4 肝細胞癌（HCC）照護指引: C4_liver-cancer.md
+      - C5 頭頸癌照護指引: C5_head-neck-cancer.md
+      - C6 攝護腺癌照護指引: C6_prostate-cancer.md
+      - C7 食道癌照護指引: C7_esophageal-cancer.md
+      - C8 胃癌照護指引: C8_gastric-cancer.md
+      - C9 肝膽胰癌照護指引: C9_biliary-pancreatic-cancer.md
+      - C10 泌尿癌照護指引: C10_urological-cancer.md
+      - C11 婦癌照護指引: C11_gynecologic-cancer.md
+      - C12 血液及淋巴癌照護指引: C12_hematologic-cancer.md
+      - C13 其他癌照護指引: C13_other-cancers.md
+    - D 表單與範本:
+      - D. 概覽: D_forms.md
+      - D1 評估量表彙整: D1_assessment-tools.md
+      - D2 衛教單張索引: D2_education.md
+      - D3 電話追蹤腳本: D3_phone-scripts.md
+      - D4 書信與轉介範本: D4_letters.md
+    - E 專題與進階: E_advanced.md
+    - F 臨床知識庫:
+      - F. 概覽: F_clinical-kb.md
+      - F1 檢驗判讀: F1_lab.md
+      - F2 分子與病理檢測: F2_pathology.md
+      - F3 影像判讀: F3_imaging.md
+      - F4 癌症治療: F4_treatment.md
+      - F5 個管師追蹤速查: F5_followup.md
+    - G 品質指標:
+      - G 品質指標速查（定義）: G_quality-index.md
+      - G2 114 年度本院實際成績: G2_114-quality-report.md
 
 # 外掛
 plugins:

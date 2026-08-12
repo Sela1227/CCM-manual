@@ -1,7 +1,7 @@
 /* ======================================================
    彰濱秀傳癌症中心 - 個管師訓練系統
-   stylesheet 版本：V4.19.0（隨主版本同步）
-   最後 CSS 結構變更：V4.19.0（四元件 admonition + H3 降噪 + hub/首頁四區）
+   stylesheet 版本：V4.20.0（隨主版本同步）
+   最後 CSS 結構變更：V4.20.0（癌別快捷列 .ccm-quicknav + MDT 卡片 .mdt-grid）
    架構說明：主色 + h1/h2/h3 樣式 + 表格 + SVG 圖示 + 首頁
             hero/grid + 藥物表 + 版本徽章（header inline + footer
             浮動）+ SELA 歸屬印記 + footer + 內文 padding
@@ -494,3 +494,22 @@
 /* hub 頁任務鏈 */
 .hub-chain { font-size:.85rem; color:var(--md-default-fg-color--light); margin:2px 0 12px; }
 .hub-chain a { font-weight:600; }
+
+
+/* ====================================================================
+   V4.20.0　癌別頁固定快捷列 + MDT 卡片（UI 再審 P1）
+   ==================================================================== */
+.md-typeset .ccm-quicknav {
+  margin: 10px 0 18px; padding: 9px 14px;
+  border: 1px solid var(--md-default-fg-color--lightest); border-radius: 10px;
+  background: var(--md-code-bg-color); font-size: .82rem; line-height: 2;
+}
+.md-typeset .ccm-quicknav a { font-weight: 600; white-space: nowrap; }
+.md-typeset .mdt-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 16px 0; }
+@media (min-width: 700px) { .md-typeset .mdt-grid { grid-template-columns: 1fr 1fr; } }
+.md-typeset .mdt-card {
+  border: 1.5px solid var(--md-default-fg-color--lightest); border-radius: 12px;
+  padding: 12px 16px 10px; background: var(--md-default-bg-color);
+}
+.md-typeset .mdt-card h3 { margin: 0 0 6px; font-size: .95rem; }
+.md-typeset .mdt-card small { display: block; margin-top: 6px; color: var(--md-default-fg-color--light); }

@@ -4,56 +4,56 @@
     "version": "V4.19.0"
   },
   "C10_urological-cancer.md": {
-    "hash": "2fea9a40ef9fd7fb",
-    "version": "V4.17.0"
+    "hash": "af37f4cbb267790e",
+    "version": "V4.20.0"
   },
   "C11_gynecologic-cancer.md": {
-    "hash": "f6d677c5f037c32b",
-    "version": "V4.13.0"
+    "hash": "09a6ec11352dda9c",
+    "version": "V4.20.0"
   },
   "C12_hematologic-cancer.md": {
-    "hash": "2fdb959dcf890ebd",
-    "version": "V4.13.0"
+    "hash": "60f2e69ad3645917",
+    "version": "V4.20.0"
   },
   "C13_other-cancers.md": {
-    "hash": "cb353458e0a33efd",
-    "version": "V3.4.19"
+    "hash": "96cb9b2ff4064826",
+    "version": "V4.20.0"
   },
   "C1_lung-cancer.md": {
-    "hash": "e1f2089bdad4518c",
-    "version": "V4.13.0"
+    "hash": "a01025a38901b643",
+    "version": "V4.20.0"
   },
   "C2_breast-cancer.md": {
-    "hash": "4b8924faa60857c0",
-    "version": "V4.13.0"
+    "hash": "65caf02d88a34470",
+    "version": "V4.20.0"
   },
   "C3_colorectal-cancer.md": {
-    "hash": "8683f304bf283cad",
-    "version": "V4.13.0"
+    "hash": "b9364050b04055c6",
+    "version": "V4.20.0"
   },
   "C4_liver-cancer.md": {
-    "hash": "9764b3e71f1172cc",
-    "version": "V4.13.0"
+    "hash": "48c303431547485f",
+    "version": "V4.20.0"
   },
   "C5_head-neck-cancer.md": {
-    "hash": "b9984759684ea0a9",
-    "version": "V4.13.0"
+    "hash": "83b5402fd7c2791d",
+    "version": "V4.20.0"
   },
   "C6_prostate-cancer.md": {
-    "hash": "4799c60dc1833fe4",
-    "version": "V4.18.0"
+    "hash": "bdd712ffbf1558e2",
+    "version": "V4.20.0"
   },
   "C7_esophageal-cancer.md": {
-    "hash": "044e582f5bd2a38d",
-    "version": "V4.15.0"
+    "hash": "3e04edbf9615a99f",
+    "version": "V4.20.0"
   },
   "C8_gastric-cancer.md": {
-    "hash": "6f6f830f27aa6b50",
-    "version": "V4.16.0"
+    "hash": "81830f8a9cb8cf20",
+    "version": "V4.20.0"
   },
   "C9_biliary-pancreatic-cancer.md": {
-    "hash": "63194bc9d318115b",
-    "version": "V4.13.0"
+    "hash": "5651e8200f6e44b9",
+    "version": "V4.20.0"
   },
   "D2_education.md": {
     "hash": "d0843e6e244688e8",
@@ -64,8 +64,8 @@
     "version": "V4.19.0"
   },
   "hub_cancer.md": {
-    "hash": "a9e97b9ef6aa578a",
-    "version": "V4.19.0"
+    "hash": "4dc01676376b5880",
+    "version": "V4.20.0"
   },
   "hub_daily.md": {
     "hash": "c1cbe378a71cd448",

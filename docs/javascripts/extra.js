@@ -1,5 +1,5 @@
 /* ======================================================
-   彰濱秀傳癌症中心 - 個管師訓練系統 V4.19.0
+   彰濱秀傳癌症中心 - 個管師訓練系統 V4.20.0
    - 版本號 footer + header 雙處顯示（SPEC §10.6 UI 版號鐵律）
    - 手機底部導覽列（V3.4.4 從 4 個改 6 個進階員工常用入口，SVG 圖示）
    - getSiteRoot() 從 window.location.pathname 推算（規則 5）
@@ -8,7 +8,7 @@
 (function () {
   "use strict";
 
-  var CCM_VERSION = "V4.19.0";
+  var CCM_VERSION = "V4.20.0";
 
   // ---- 推算 site root（不依賴 base.href）----
   function getSiteRoot() {
@@ -73,7 +73,7 @@
     document.body.appendChild(credit);
   }
 
-  // ---- 搜尋觸發（V4.19.0：首頁搜尋框 + 底部「搜尋」鈕共用）----
+  // ---- 搜尋觸發（V4.20.0：首頁搜尋框 + 底部「搜尋」鈕共用）----
   window.ccmOpenSearch = function () {
     var cb = document.getElementById("__search");      // Material 手機搜尋 overlay 開關
     if (cb) cb.checked = true;
@@ -81,38 +81,49 @@
     if (inp) setTimeout(function () { inp.focus(); }, 60);
   };
 
+var NAV_ITEMS = [
+      { href: root,                    label: "首頁", icon: ICONS.home,    match: /^\/[^\/]*\/?$|\/index\.html?$/ },
+      { path: "hub_learning/",  label: "學習", icon: ICONS.kb,      match: /\/hub_learning\/|\/A_work-guide\/|\/A_training-plan\// },
+      { path: "hub_daily/",     label: "工作", icon: ICONS.tracker, match: /\/hub_daily\/|\/hub_admin\/|\/H[124]_|\/D[1-4]_|\/G2?_/ },
+      { path: "hub_cancer/",    label: "癌別", icon: ICONS.mdt,     match: /\/hub_cancer\/|\/C\d+_|\/lung-nodal-map\/|\/head-neck-levels\/|\/prostate-mhspc-mcrpc\// },
+      { path: "#ccm-search",    label: "搜尋", icon: ICONS.search,  match: /$^/, onclick: true }
+    ];
+
+  function setMobileNavActive() {
+    var nav = document.getElementById("ccm-mobile-nav");
+    if (!nav) return;
+    var current = window.location.pathname;
+    nav.querySelectorAll("a").forEach(function (a, idx) {
+      var item = NAV_ITEMS[idx];
+      if (item && item.match.test(current)) a.classList.add("active");
+      else a.classList.remove("active");
+    });
+  }
+
   // ---- 手機底部導覽列 ----
   function injectMobileNav() {
     if (document.getElementById("ccm-mobile-nav")) return;
 
     var root = getSiteRoot();
-    var current = window.location.pathname;
 
-    // V4.19.0（UI 審稿 P0）：6 個「進階員工工作列」→ 5 個一級分類（底部列=一級分類、側欄=完整目錄、首頁=情境快捷）
-    // 舊的 個管/MDT/藥/品質/臨床 都可從「工作」hub 或首頁任務鈕到達
-    var items = [
-      { href: root,                    label: "首頁", icon: ICONS.home,    match: /^\/[^\/]*\/?$|\/index\.html?$/ },
-      { href: root + "hub_learning/",  label: "學習", icon: ICONS.kb,      match: /\/hub_learning\/|\/A_work-guide\/|\/A_training-plan\// },
-      { href: root + "hub_daily/",     label: "工作", icon: ICONS.tracker, match: /\/hub_daily\/|\/hub_admin\/|\/H[124]_|\/D[1-4]_|\/G2?_/ },
-      { href: root + "hub_cancer/",    label: "癌別", icon: ICONS.mdt,     match: /\/hub_cancer\/|\/C\d+_|\/lung-nodal-map\/|\/head-neck-levels\/|\/prostate-mhspc-mcrpc\// },
-      { href: "#ccm-search",           label: "搜尋", icon: ICONS.search,  match: /$^/, onclick: true }
-    ];
+  // V4.20.0（UI 再審 P2）：items 提到模組層，active 判斷抽成單一函式——初始與 instant navigation 共用同一套規則
+  
 
     var nav = document.createElement("nav");
     nav.id = "ccm-mobile-nav";
 
-    items.forEach(function (item) {
+    NAV_ITEMS.forEach(function (item) {
       var a = document.createElement("a");
-      a.href = item.href;
+      a.href = item.path.charAt(0) === "#" ? item.path : root + item.path;
       if (item.onclick) {
         a.addEventListener("click", function (e) { e.preventDefault(); window.ccmOpenSearch(); });
       }
-      if (item.match.test(current)) a.className = "active";
       a.innerHTML = item.icon + '<span>' + item.label + '</span>';
       nav.appendChild(a);
     });
 
     document.body.appendChild(nav);
+    setMobileNavActive();
   }
 
   function init() {
@@ -140,19 +151,7 @@
         injectMobileNav();
         return;
       }
-      var current = window.location.pathname;
-      var links = nav.querySelectorAll("a");
-      links.forEach(function (a) {
-        var href = a.getAttribute("href");
-        var slug = (href.match(/\/([^\/]+)\/?$/) || [])[1] || "";
-        if (slug && current.indexOf("/" + slug + "/") >= 0) {
-          a.classList.add("active");
-        } else if (!slug && current.match(/\/[^\/]*\/?$/)) {
-          a.classList.add("active");
-        } else {
-          a.classList.remove("active");
-        }
-      });
+      setMobileNavActive();
     });
   }
 })();
