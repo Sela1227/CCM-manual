@@ -6,7 +6,7 @@
 
 ## 新人學習路徑
 
-<div class="home-stages" markdown>
+<div class="home-stages">
 <a class="home-stage" href="../A_work-guide/#報到前兩週放射腫瘤科跟診">報到<small>前兩週跟診</small></a>
 <a class="home-stage" href="../A_work-guide/#第一階段打基礎第-1-3-個月">第 1–3 月<small>打基礎</small></a>
 <a class="home-stage" href="../A_work-guide/#第二階段學專科第-4-6-個月">第 4–6 月<small>學專科</small></a>
@@ -48,5 +48,5 @@
 
 | 項目 | 內容 |
 |------|------|
-| **最後更新** | **V4.21.0**（2026 年 10 月）|
+| **最後更新** | **V4.21.1**（2026 年 10 月）|
 | 性質 | 導覽 hub——只放路標與連結鏈，不承載內容 |

@@ -1,7 +1,7 @@
 /* ======================================================
    彰濱秀傳癌症中心 - 個管師訓練系統
-   stylesheet 版本：V4.21.0（隨主版本同步）
-   最後 CSS 結構變更：V4.20.0（癌別快捷列 .ccm-quicknav + MDT 卡片 .mdt-grid）
+   stylesheet 版本：V4.21.1（隨主版本同步）
+   最後 CSS 結構變更：V4.21.1（.home-stages/.home-tasks 的 > p 設 display:contents 防呆）
    架構說明：主色 + h1/h2/h3 樣式 + 表格 + SVG 圖示 + 首頁
             hero/grid + 藥物表 + 版本徽章（header inline + footer
             浮動）+ SELA 歸屬印記 + footer + 內文 padding
@@ -464,6 +464,8 @@
 .home-stage:hover { border-color: var(--md-primary-fg-color); transform:translateY(-2px); }
 .home-stage small { display:block; font-weight:400; color:var(--md-default-fg-color--light); font-size:.7rem; margin-top:2px; }
 .home-stage .arrow { display:none; }
+/* 防呆：容器若被 markdown 包進 <p>，讓 <p> 不成為唯一 flex/grid 子項（V4.21.1，首頁階段條錯亂） */
+.home-stages > p, .home-tasks > p { display: contents; }
 @media (min-width:760px){
   .home-stages { flex-wrap:nowrap; align-items:stretch; }
 }

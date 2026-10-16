@@ -6,7 +6,7 @@
 
 ## 你現在在哪個階段？
 
-<div class="home-stages" markdown>
+<div class="home-stages">
 <a class="home-stage" href="A_work-guide/#報到前兩週放射腫瘤科跟診">報到<small>前兩週跟診</small></a>
 <a class="home-stage" href="A_work-guide/#第一階段打基礎第-1-3-個月">第 1–3 月<small>打基礎</small></a>
 <a class="home-stage" href="A_work-guide/#第二階段學專科第-4-6-個月">第 4–6 月<small>學專科</small></a>
@@ -18,7 +18,7 @@
 
 ## 我現在要做什麼？
 
-<div class="home-tasks" markdown>
+<div class="home-tasks">
 <a class="home-task" href="hub_daily/#新病人收案"><svg class="ccm-icon" viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7zm3-4H7v-2h10zm0-4H7V7h10z"/></svg>收案</a>
 <a class="home-task" href="hub_daily/#電話追蹤"><svg class="ccm-icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02z"/></svg>追蹤</a>
 <a class="home-task" href="hub_daily/#mdt-準備"><svg class="ccm-icon" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5C15 14.17 10.33 13 8 13zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>MDT</a>

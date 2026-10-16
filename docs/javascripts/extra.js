@@ -1,5 +1,5 @@
 /* ======================================================
-   彰濱秀傳癌症中心 - 個管師訓練系統 V4.21.0
+   彰濱秀傳癌症中心 - 個管師訓練系統 V4.21.1
    - 版本號 footer + header 雙處顯示（SPEC §10.6 UI 版號鐵律）
    - 手機底部導覽列（V3.4.4 從 4 個改 6 個進階員工常用入口，SVG 圖示）
    - getSiteRoot() 從 window.location.pathname 推算（規則 5）
@@ -8,7 +8,7 @@
 (function () {
   "use strict";
 
-  var CCM_VERSION = "V4.21.0";
+  var CCM_VERSION = "V4.21.1";
 
   // ---- 推算 site root（不依賴 base.href）----
   function getSiteRoot() {
@@ -73,7 +73,7 @@
     document.body.appendChild(credit);
   }
 
-  // ---- 搜尋觸發（V4.21.0：首頁搜尋框 + 底部「搜尋」鈕共用）----
+  // ---- 搜尋觸發（UI/IA 改版加入：首頁搜尋框 + 底部「搜尋」鈕共用）----
   window.ccmOpenSearch = function () {
     var cb = document.getElementById("__search");      // Material 手機搜尋 overlay 開關
     if (cb) cb.checked = true;
@@ -82,7 +82,7 @@
   };
 
 var NAV_ITEMS = [
-      { path: "",               label: "首頁", icon: ICONS.home,    isHome: true },  // 首頁用 root 等值比較，不用 regex 猜層數（V4.21.0：舊 regex 會匹配所有單層路徑）
+      { path: "",               label: "首頁", icon: ICONS.home,    isHome: true },  // 首頁用 root 等值比較，不用 regex 猜層數（舊 regex 會匹配所有單層路徑，坑 #78）
       { path: "hub_learning/",  label: "學習", icon: ICONS.kb,      match: /\/hub_learning\/|\/A_work-guide\/|\/A_training-plan\// },
       { path: "hub_daily/",     label: "工作", icon: ICONS.tracker, match: /\/hub_daily\/|\/hub_admin\/|\/H[1-4]_|\/D[1-4]_|\/G2?_/ },
       { path: "hub_cancer/",    label: "癌別", icon: ICONS.mdt,     match: /\/hub_cancer\/|\/C\d+_|\/lung-nodal-map\/|\/head-neck-levels\/|\/prostate-mhspc-mcrpc\// },
@@ -112,7 +112,7 @@ var NAV_ITEMS = [
 
     var root = getSiteRoot();
 
-  // V4.21.0（UI 再審 P2）：items 提到模組層，active 判斷抽成單一函式——初始與 instant navigation 共用同一套規則
+  // UI 再審 P2：items 提到模組層，active 判斷抽成單一函式——初始與 instant navigation 共用同一套規則
   
 
     var nav = document.createElement("nav");
