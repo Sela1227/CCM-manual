@@ -1,4 +1,4 @@
-# 🎓 學習中心
+# 學習中心
 
 **你現在在哪個階段？點進去，看這個階段要學什麼、跟誰學、什麼時候算學會。**
 
@@ -38,9 +38,9 @@
 
 ## 深度教材（獨立教學頁）
 
-- [🫁 肺癌淋巴分區圖譜](../lung-nodal-map/)（配 [C1](C1_lung-cancer.md)）
-- [🦴 頸部淋巴 Level 圖譜](../head-neck-levels/)（配 [C5](C5_head-neck-cancer.md)）
-- [🎗 轉移性攝護腺癌 mHSPC／mCRPC 完整教育訓練](../prostate-mhspc-mcrpc/)（配 [C6](C6_prostate-cancer.md)）
+- [肺癌淋巴分區圖譜](../lung-nodal-map/)（配 [C1](C1_lung-cancer.md)）
+- [頸部淋巴 Level 圖譜](../head-neck-levels/)（配 [C5](C5_head-neck-cancer.md)）
+- [轉移性攝護腺癌 mHSPC／mCRPC 完整教育訓練](../prostate-mhspc-mcrpc/)（配 [C6](C6_prostate-cancer.md)）
 
 ---
 
@@ -48,5 +48,5 @@
 
 | 項目 | 內容 |
 |------|------|
-| **最後更新** | **V4.21.1**（2026 年 10 月）|
+| **最後更新** | **V4.21.2**（2026 年 10 月）|
 | 性質 | 導覽 hub——只放路標與連結鏈，不承載內容 |

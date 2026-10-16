@@ -1,7 +1,7 @@
 /* ======================================================
    彰濱秀傳癌症中心 - 個管師訓練系統
-   stylesheet 版本：V4.21.1（隨主版本同步）
-   最後 CSS 結構變更：V4.21.1（.home-stages/.home-tasks 的 > p 設 display:contents 防呆）
+   stylesheet 版本：V4.21.3（隨主版本同步）
+   最後 CSS 結構變更：V4.21.3（癌別快捷列 .qn-icon / .qn-escalate SVG 圖示樣式）
    架構說明：主色 + h1/h2/h3 樣式 + 表格 + SVG 圖示 + 首頁
             hero/grid + 藥物表 + 版本徽章（header inline + footer
             浮動）+ SELA 歸屬印記 + footer + 內文 padding
@@ -507,6 +507,9 @@
   background: var(--md-code-bg-color); font-size: .82rem; line-height: 2;
 }
 .md-typeset .ccm-quicknav a { font-weight: 600; white-space: nowrap; }
+.md-typeset .ccm-quicknav .qn-icon { color: var(--md-primary-fg-color); margin-right: 2px; }
+.md-typeset .ccm-quicknav a.qn-escalate { color: #c62828; }
+.md-typeset .ccm-quicknav a.qn-escalate:hover { color: #8e0000; }
 .md-typeset .mdt-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 16px 0; }
 @media (min-width: 700px) { .md-typeset .mdt-grid { grid-template-columns: 1fr 1fr; } }
 .md-typeset .mdt-card {
