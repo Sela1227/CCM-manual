@@ -51,6 +51,8 @@
 | **個管師 B** | [肝癌](C4_liver-cancer.md)、[肝膽胰癌](C9_biliary-pancreatic-cancer.md)、[攝護腺癌](C6_prostate-cancer.md)、[泌尿癌](C10_urological-cancer.md)、[頭頸癌](C5_head-neck-cancer.md) |
 | **個管師 C** | [乳癌](C2_breast-cancer.md)、[肺癌](C1_lung-cancer.md)、[食道癌](C7_esophageal-cancer.md)、[其他癌](C13_other-cancers.md) |
 
+> 📝 **品管師（文書型個管師，2026 年 11 月起）**：不接觸病人與醫師，第一階段承接**個管師 B** 負責癌別的文書工作（收案登錄、追蹤名單、MDT 文書、指標統計、認證資料）。職責邊界與培訓見 [A2 第五章](A_training-plan.md#第五章品管師文書型個管師培訓)。
+
 > 💡 上表編號是 **C 系列檔編號**（文件分檔用）；下表編號是 **MDT 會議編號**（會議運作用）——兩套編號各有意義、不互相對應。
 
 #### 多專科團隊列表
