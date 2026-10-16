@@ -19,38 +19,6 @@
   --r:4px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-
-/* ===== CCM Manual 整合層（版號 + 返回 + SELA 印記）===== */
-.ccm-ver-inline{
-  display:inline-block;margin-left:8px;padding:1px 7px;
-  font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.02em;
-  vertical-align:middle;border:1px solid var(--line);border-radius:8px;
-  background:var(--surface-2);color:var(--ink-2);user-select:none;white-space:nowrap;
-}
-.ccm-back{
-  display:inline-flex;align-items:center;gap:5px;
-  font-family:var(--mono);font-size:12px;color:var(--ink-2);text-decoration:none;
-  padding:4px 10px;border:1px solid var(--line);border-radius:var(--r,8px);
-  background:var(--surface);transition:all .15s;
-}
-.ccm-back:hover{border-color:var(--ink-2);color:var(--ink);}
-.ccm-foot{
-  border-top:1px solid var(--line);background:var(--surface);
-  padding:22px 0 26px;margin-top:8px;
-}
-.ccm-foot .wrap{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;}
-.ccm-foot .note{font-size:12px;color:var(--muted);line-height:1.7;max-width:640px;}
-.ccm-sela{
-  display:inline-flex;align-items:center;gap:5px;
-  font-family:var(--mono);font-size:11px;color:var(--muted);text-decoration:none;
-  opacity:.75;transition:opacity .15s;
-}
-.ccm-sela:hover{opacity:1;}
-.ccm-sela img{width:15px;height:15px;display:block;}
-@media(max-width:600px){
-  .ccm-ver-inline{font-size:10px;padding:0 5px;margin-left:5px;}
-  .ccm-foot .wrap{gap:10px;}
-}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
@@ -204,8 +172,7 @@ footer p{font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1
 
 <header class="masthead">
   <div class="wrap">
-    <div style="margin-bottom:14px"><a class="ccm-back" href="../C5_head-neck-cancer/">← 回 C5 頭頸癌照護指引</a></div>
-    <div class="eyebrow">Surgical Neck Levels I–VII · AJCC 8th ed.<span class="ccm-ver-inline" id="ccmVer">V0.0.0</span></div>
+    <div class="eyebrow">Surgical Neck Levels I–VII · AJCC 8th ed.</div>
     <h1>頸部淋巴 Level<br>外科 I–VII 與 N 分期</h1>
     <p class="lede">頸部不是分「站」，是依固定的<strong>解剖界標</strong>分區。部分界標可由體表定位（舌骨、環狀軟骨、胸鎖乳突肌），較深的界標（顱底、副神經、莖突舌骨肌、頸動脈）則要靠手術所見或 CT／MRI 辨認。<br>
     而個管實務最容易錯的不是解剖，是<strong>常見黏膜頭頸癌的 N 分期有三套彼此不同的系統</strong>——用錯一套，期別就整個跑掉。</p>
@@ -214,7 +181,6 @@ footer p{font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1
       <span>依據：AJCC 8th · 2013 Neck Level Consensus</span>
       <span>N 分期：鼻咽採 <strong>Version 9</strong>（2025/1/1 生效）；p16 陽性口咽採 <strong>Version 9</strong>（2026/1/1 生效）；口腔／喉／下咽仍為 <strong>第 8 版</strong>——讀報告請先確認版本</span>
       <span>右頸側面觀，投影示意</span>
-      <span>其他癌別分期版本對照見 <a href="../C0_general/#分期系統版本對照ajcc-已改逐部位滾動更新" style="color:inherit">C0 → 分期系統版本對照表</a></span>
     </div>
   </div>
 </header>
@@ -816,28 +782,6 @@ QUIZ.forEach((it,i)=>{
 });
 
 renderN(); paint();
-</script>
-
-<footer class="ccm-foot">
-  <div class="wrap">
-    <div class="note">
-      <strong>彰濱秀傳癌症中心 · 個管師訓練系統</strong>　教學用途，臨床判讀請以主治醫師與病理報告為準。<br>
-      分區依據 2013 Neck Level Consensus；N 分期版本依部位不同（鼻咽／p16+ 口咽為 Version 9，口腔・喉・下咽為第 8 版）。右頸側面觀，投影示意。
-    </div>
-    <div style="display:flex;align-items:center;gap:12px">
-      <a class="ccm-back" href="../C5_head-neck-cancer/">← 回 C5 頭頸癌</a>
-      <a class="ccm-sela" href="https://github.com/Sela1227" target="_blank" rel="noopener" title="本系統由 SELA 維護">
-        <img src="../assets/sela-logo/sela.svg" alt="SELA"/>by SELA
-      </a>
-    </div>
-  </div>
-</footer>
-
-<script>
-/* CCM Manual 版號同步（SPEC §10.6：UI 版號 = zip 檔名版號；規則 1 同步位置之一） */
-var CCM_VERSION = "V4.22.0";
-document.getElementById("ccmVer").textContent = CCM_VERSION;
-document.getElementById("ccmVer").title = "個管師訓練系統 " + CCM_VERSION;
 </script>
 </body>
 </html>

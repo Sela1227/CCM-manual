@@ -1,3 +1,7 @@
+---
+category: cancer
+---
+
 # 癌別照護
 
 **依本院 MDT 團隊分**（團隊時間與成員見 [A3 醫師團隊名冊](A3_team.md)）。每份癌別教材共通骨架：**概述 → 診斷分期 → 治療 → 個管追蹤 → FAQ**；新改版檔另含**健保給付專章**與**🚩 紅旗段**（各檔頂部快捷列會忠實反映該檔實際有的章節）。
@@ -12,7 +16,7 @@
 <div class="mdt-card" markdown>
 ### 胸腔癌
 [肺癌](C1_lung-cancer.md)
-<small>進階：[肺癌淋巴分區圖譜](../lung-nodal-map/)</small>
+<small>進階：[肺癌淋巴分區圖譜](lung-nodal-map/index.html)</small>
 </div>
 
 <div class="mdt-card" markdown>
@@ -28,13 +32,13 @@
 <div class="mdt-card" markdown>
 ### 泌尿道癌
 [攝護腺癌](C6_prostate-cancer.md) ｜ [泌尿癌（腎＋膀胱）](C10_urological-cancer.md)
-<small>進階：[mHSPC／mCRPC 教育訓練](../prostate-mhspc-mcrpc/)</small>
+<small>進階：[mHSPC／mCRPC 教育訓練](prostate-mhspc-mcrpc/index.html)</small>
 </div>
 
 <div class="mdt-card" markdown>
 ### 頭頸癌
 [頭頸癌](C5_head-neck-cancer.md)
-<small>進階：[頸部淋巴 Level 圖譜](../head-neck-levels/)</small>
+<small>進階：[頸部淋巴 Level 圖譜](head-neck-levels/index.html)</small>
 </div>
 
 <div class="mdt-card" markdown>
@@ -62,5 +66,4 @@
 
 | 項目 | 內容 |
 |------|------|
-| **最後更新** | **V4.21.2**（2026 年 10 月）|
 | 性質 | 導覽 hub——只放路標與連結鏈，不承載內容 |

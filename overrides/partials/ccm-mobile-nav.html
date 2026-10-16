@@ -1,0 +1,9 @@
+{#- 手機底部導覽（< 768px 顯示）。亮哪顆鈕由 CSS 依 data-cat／data-home 決定，不用 JS。
+    臨床速查、系統與管理沒有專屬鈕，這兩類頁面不亮任何鈕（麵包屑會標出所在分類）。 -#}
+<nav id="ccm-mobile-nav" data-cat="{{ page.meta.category if page and page.meta and page.meta.category else '' }}" data-home="{{ 'y' if page and page.is_homepage else 'n' }}">
+  <a href="{{ nav.homepage.url | url }}" data-k="home">{{ config.extra.icon_svg.home }}<span>首頁</span></a>
+  <a href="{{ "hub_learning/" | url }}" data-k="learn">{{ config.extra.icon_svg.book }}<span>學習</span></a>
+  <a href="{{ "hub_daily/" | url }}" data-k="daily">{{ config.extra.icon_svg.work }}<span>工作</span></a>
+  <a href="{{ "hub_cancer/" | url }}" data-k="cancer">{{ config.extra.icon_svg.group }}<span>癌別</span></a>
+  <a href="#" data-k="search" onclick="ccmOpenSearch();return false">{{ config.extra.icon_svg.search }}<span>搜尋</span></a>
+</nav>

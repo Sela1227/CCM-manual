@@ -80,24 +80,12 @@
   .status.no  { background: #fef2f2; border: 1px solid #fca5a5; color: #991b1b; }
   .status .mk { font-size: 9.5pt; font-weight: 900; margin-right: 4px; }
 
-/* ===== CCM Manual 整合層（返回 + 版號 + SELA 印記）===== */
-.ccm-ver-inline{display:inline-block;margin-left:8px;padding:1px 7px;font-size:11px;font-weight:600;vertical-align:middle;border:1px solid #d7dee6;border-radius:8px;background:#f4f7fa;color:#5a6472;white-space:nowrap;font-family:ui-monospace,Menlo,Consolas,monospace;}
-.ccm-back{display:inline-flex;align-items:center;gap:5px;font-size:12px;color:#5a6472;text-decoration:none;padding:4px 10px;border:1px solid #d7dee6;border-radius:8px;background:#fff;transition:all .15s;}
-.ccm-back:hover{border-color:#5a6472;color:#1f2933;}
-.ccm-foot{border-top:1px solid #e4e9ef;background:#fafbfc;padding:22px 20px 26px;margin-top:28px;}
-.ccm-foot .cwrap{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;max-width:1000px;margin:0 auto;}
-.ccm-foot .cnote{font-size:12px;color:#9aa5b1;line-height:1.7;max-width:660px;}
-.ccm-sela{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:#9aa5b1;text-decoration:none;opacity:.8;transition:opacity .15s;}
-.ccm-sela:hover{opacity:1;}
-.ccm-sela img{width:15px;height:15px;display:block;}
-@media print{.ccm-back,.ccm-foot{display:none!important;}}
 
 </style>
 </head>
 <body>
 
   <div class="hero">
-      <div style="margin-bottom:14px"><a class="ccm-back" href="../C6_prostate-cancer/">← 回 C6 攝護腺癌照護指引</a><span class="ccm-ver-inline" id="ccmVer">V0.0.0</span></div>
       <div class="org">彰濱秀傳癌症中心　│　個管師教育訓練資料</div>
     <h1>轉移性攝護腺癌：mHSPC 與 mCRPC 完整教育訓練</h1>
     <div class="sub">疾病分期與風險分層 ・ ADT 與四種新型荷爾蒙藥物 ・ ARANOTE／ARASENS 判讀 ・ 健保四藥條文對照與排他規則 ・ PSA 判讀與事前審查 ・ 副作用監測 ・ mCRPC 治療排序 ・ 放射治療角色</div>
@@ -636,27 +624,5 @@
     </div>
   </div>
 
-
-<footer class="ccm-foot">
-  <div class="cwrap">
-    <div class="cnote">
-      <strong>彰濱秀傳癌症中心 · 個管師訓練系統</strong>　教學用途，臨床判讀與送審請以主治醫師、病理報告及健保署現行公告條文為準。<br>
-      攝護腺癌完整照護見 <a href="../C6_prostate-cancer/" style="color:inherit">C6 攝護腺癌照護指引</a>；其他癌別分期版本對照見 <a href="../C0_general/#分期系統版本對照ajcc-已改逐部位滾動更新" style="color:inherit">C0 → 分期系統版本對照表</a>。
-    </div>
-    <div style="display:flex;align-items:center;gap:12px">
-      <a class="ccm-back" href="../C6_prostate-cancer/">← 回 C6 攝護腺癌</a>
-      <a class="ccm-sela" href="https://github.com/Sela1227" target="_blank" rel="noopener" title="本系統由 SELA 維護">
-        <img src="../assets/sela-logo/sela.svg" alt="SELA"/>by SELA
-      </a>
-    </div>
-  </div>
-</footer>
-
-<script>
-/* CCM Manual 版號同步（SPEC §10.6：UI 版號 = zip 檔名版號；規則 1 同步位置之一） */
-var CCM_VERSION = "V4.22.0";
-document.getElementById("ccmVer").textContent = CCM_VERSION;
-document.getElementById("ccmVer").title = "個管師訓練系統 " + CCM_VERSION;
-</script>
 </body>
 </html>

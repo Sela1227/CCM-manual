@@ -1,7 +1,7 @@
 /* ======================================================
    彰濱秀傳癌症中心 - 個管師訓練系統
-   stylesheet 版本：V4.22.0（隨主版本同步）
-   最後 CSS 結構變更：V4.22.0（日常工作任務卡 .daily-tasks / .home-task--alert、麵包屑 .ccm-crumb）
+   版號：見根目錄 VERSION（hooks.py 在 build 時加 ?v= cache-busting，本檔不再寫當前版號）
+   最後 CSS 結構變更：V5.5.0（色彩 token 集中於檔頭，淺色／深色兩組）
    架構說明：主色 + h1/h2/h3 樣式 + 表格 + SVG 圖示 + 首頁
             hero/grid + 藥物表 + 版本徽章（header inline + footer
             浮動）+ SELA 歸屬印記 + footer + 內文 padding
@@ -12,11 +12,43 @@
    主色 #25506b（深藍灰）— 直接覆蓋 CSS 變數
    ====================================================== */
 :root,
-[data-md-color-scheme="default"] {
+[data-md-color-primary] {
+  /* 寫 [data-md-color-primary] 才蓋得過 Material 掛在 body 上的 indigo（深色模式也適用）*/
   --md-primary-fg-color:        #25506b;
   --md-primary-fg-color--light:  #3a6e8c;
   --md-primary-fg-color--dark:   #173a52;
   --md-accent-fg-color:          #25506b;
+}
+
+/* ======================================================
+   色彩 token（V5.5.0，內審 R11）：本檔其餘地方只用這些變數，不再寫死色碼。
+   --ccm-ink：品牌色用在「文字／邊線」的地方（深色模式要換亮的，背景用的主色不換）
+   *-rgb：給 rgba(var(--…-rgb), 透明度) 用
+   ====================================================== */
+:root,
+[data-md-color-scheme="default"] {
+  --ccm-ink:            #25506b;
+  --ccm-ink-soft:       #3a6e8c;
+  --ccm-surface-muted:  #eef2f5;   /* 表格表頭 */
+  --ccm-surface-soft:   #f4f7fa;   /* 審閱資訊列 */
+  --ccm-info:   #1e6091;  --ccm-info-rgb:   30, 96, 145;
+  --ccm-ok:     #2d7d46;  --ccm-ok-rgb:     45, 125, 70;
+  --ccm-warn:   #8e6a00;  --ccm-warn-rgb:   142, 106, 0;
+  --ccm-danger: #c62828;  --ccm-danger-rgb: 198, 40, 40;
+  --ccm-danger-strong: #8e0000;
+}
+[data-md-color-scheme="slate"] {
+  --ccm-ink:            #8ec3e6;
+  --ccm-ink-soft:       #6aa6cf;
+  --ccm-surface-muted:  #26313d;
+  --ccm-surface-soft:   #222b36;
+  --ccm-info:   #6fb0e0;  --ccm-info-rgb:   111, 176, 224;
+  --ccm-ok:     #62c084;  --ccm-ok-rgb:     98, 192, 132;
+  --ccm-warn:   #e0b84c;  --ccm-warn-rgb:   224, 184, 76;
+  --ccm-danger: #f07070;  --ccm-danger-rgb: 240, 112, 112;
+  --ccm-danger-strong: #ffa0a0;
+  --md-typeset-a-color: #8ec3e6;
+  --md-accent-fg-color: #b9dcf2;
 }
 
 /* ======================================================
@@ -30,13 +62,13 @@
 /* h1/h2/h3 用主色點綴 */
 .md-typeset h1 {
   font-weight: 700;
-  border-bottom: 3px solid var(--md-primary-fg-color);
+  border-bottom: 3px solid var(--ccm-ink);
   padding-bottom: 0.4em;
   margin-bottom: 0.9em;
 }
 .md-typeset h2 {
   font-weight: 600;
-  border-left: 4px solid var(--md-primary-fg-color);
+  border-left: 4px solid var(--ccm-ink);
   padding-left: 0.6em;
   margin-top: 1.7em;
 }
@@ -54,10 +86,10 @@
   -webkit-overflow-scrolling: touch;
 }
 .md-typeset table:not([class]) th {
-  background-color: #eef2f5;
-  color: var(--md-primary-fg-color);
+  background-color: var(--ccm-surface-muted);
+  color: var(--ccm-ink);
   font-weight: 700;
-  border-bottom: 2px solid var(--md-primary-fg-color);
+  border-bottom: 2px solid var(--ccm-ink);
 }
 
 @media screen and (max-width: 600px) {
@@ -76,8 +108,8 @@
   height: 28px;
   display: inline-block;
   vertical-align: middle;
-  fill: var(--md-primary-fg-color);
-  stroke: var(--md-primary-fg-color);
+  fill: var(--ccm-ink);
+  stroke: var(--ccm-ink);
   stroke-width: 0;
 }
 .ccm-icon-inline {
@@ -133,7 +165,7 @@
 
 .home-card:hover {
   box-shadow: 0 4px 14px rgba(0,0,0,0.1);
-  border-color: var(--md-primary-fg-color);
+  border-color: var(--ccm-ink);
   transform: translateY(-2px);
 }
 
@@ -144,7 +176,7 @@
   align-items: center;
   gap: 0.5em;
   margin-bottom: 0.4em;
-  color: var(--md-primary-fg-color);
+  color: var(--ccm-ink);
 }
 
 .home-card p {
@@ -183,7 +215,7 @@
    由 extra.js 動態插入到 .md-header__title 內
    ====================================================== */
 /* header 版號（SPEC §10.6：UI 版號 = zip 檔名版號；footer + header 雙包保險）
-   由 extra.js 動態插入到 .md-header__title 內、站名右側 */
+   由模板 overrides/partials/header.html 輸出在站名右側 */
 .ccm-ver-inline {
   display: inline-block;
   margin-left: 8px;
@@ -349,7 +381,7 @@
 
 /* ======================================================
    手機底部導覽列（< 768px 才顯示）
-   emoji 改 SVG，由 extra.js 動態注入
+   SVG 圖示，由模板 overrides/partials/ccm-mobile-nav.html 產生
    ====================================================== */
 #ccm-mobile-nav {
   display: none;
@@ -381,7 +413,11 @@
     gap: 2px;
   }
   #ccm-mobile-nav a:last-child { border-right: none; }
-  #ccm-mobile-nav a.active {
+  /* 亮哪顆鈕由模板的 data-cat / data-home 決定（V5.0.0，不再用 JS 加 .active） */
+  #ccm-mobile-nav[data-home="y"] a[data-k="home"],
+  #ccm-mobile-nav[data-cat="learn"] a[data-k="learn"],
+  #ccm-mobile-nav[data-cat="daily"] a[data-k="daily"],
+  #ccm-mobile-nav[data-cat="cancer"] a[data-k="cancer"] {
     color: #fff;
     background: rgba(0, 0, 0, 0.15);
     font-weight: 700;
@@ -404,47 +440,47 @@
    本版起新內容使用；舊檔於各自下次修訂時逐版遷移（不一次批次轉）
    ==================================================================== */
 .md-typeset .admonition.must-know, .md-typeset details.must-know {
-  border-color: #1e6091;
+  border-color: var(--ccm-info);
 }
 .md-typeset .must-know > .admonition-title, .md-typeset .must-know > summary {
-  background-color: rgba(30, 96, 145, .1);
+  background-color: rgba(var(--ccm-info-rgb), .1);
 }
 .md-typeset .must-know > .admonition-title::before, .md-typeset .must-know > summary::before {
-  background-color: #1e6091;
+  background-color: var(--ccm-info);
   -webkit-mask-image: var(--md-admonition-icon--abstract);
           mask-image: var(--md-admonition-icon--abstract);
 }
 .md-typeset .admonition.action, .md-typeset details.action {
-  border-color: #2d7d46;
+  border-color: var(--ccm-ok);
 }
 .md-typeset .action > .admonition-title, .md-typeset .action > summary {
-  background-color: rgba(45, 125, 70, .1);
+  background-color: rgba(var(--ccm-ok-rgb), .1);
 }
 .md-typeset .action > .admonition-title::before, .md-typeset .action > summary::before {
-  background-color: #2d7d46;
+  background-color: var(--ccm-ok);
   -webkit-mask-image: var(--md-admonition-icon--success);
           mask-image: var(--md-admonition-icon--success);
 }
 .md-typeset .admonition.escalate, .md-typeset details.escalate {
-  border-color: #c62828;
-  box-shadow: 0 0 0 1px rgba(198, 40, 40, .15);
+  border-color: var(--ccm-danger);
+  box-shadow: 0 0 0 1px rgba(var(--ccm-danger-rgb), .15);
 }
 .md-typeset .escalate > .admonition-title, .md-typeset .escalate > summary {
-  background-color: rgba(198, 40, 40, .12);
+  background-color: rgba(var(--ccm-danger-rgb), .12);
 }
 .md-typeset .escalate > .admonition-title::before, .md-typeset .escalate > summary::before {
-  background-color: #c62828;
+  background-color: var(--ccm-danger);
   -webkit-mask-image: var(--md-admonition-icon--danger);
           mask-image: var(--md-admonition-icon--danger);
 }
 .md-typeset .admonition.self-check, .md-typeset details.self-check {
-  border-color: #8e6a00;
+  border-color: var(--ccm-warn);
 }
 .md-typeset .self-check > .admonition-title, .md-typeset .self-check > summary {
-  background-color: rgba(142, 106, 0, .1);
+  background-color: rgba(var(--ccm-warn-rgb), .1);
 }
 .md-typeset .self-check > .admonition-title::before, .md-typeset .self-check > summary::before {
-  background-color: #8e6a00;
+  background-color: var(--ccm-warn);
   -webkit-mask-image: var(--md-admonition-icon--question);
           mask-image: var(--md-admonition-icon--question);
 }
@@ -461,7 +497,7 @@
   font-weight:600; font-size:.82rem; line-height:1.4; transition:all .15s;
   background:var(--md-default-bg-color);
 }
-.home-stage:hover { border-color: var(--md-primary-fg-color); transform:translateY(-2px); }
+.home-stage:hover { border-color: var(--ccm-ink); transform:translateY(-2px); }
 .home-stage small { display:block; font-weight:400; color:var(--md-default-fg-color--light); font-size:.7rem; margin-top:2px; }
 .home-stage .arrow { display:none; }
 /* 防呆：容器若被 markdown 包進 <p>，讓 <p> 不成為唯一 flex/grid 子項（V4.21.1，首頁階段條錯亂） */
@@ -479,7 +515,7 @@
   text-decoration:none !important; color:var(--md-default-fg-color) !important;
   font-weight:700; font-size:.85rem; transition:all .15s; background:var(--md-default-bg-color);
 }
-.home-task:hover { border-color: var(--md-primary-fg-color); background: var(--md-primary-fg-color--transparent, rgba(30,96,145,.06)); }
+.home-task:hover { border-color: var(--ccm-ink); background: rgba(var(--ccm-info-rgb), .06); }
 /* 第三區：首頁搜尋 */
 .home-search-btn {
   display:flex; align-items:center; gap:10px; width:100%;
@@ -488,7 +524,7 @@
   background:var(--md-default-bg-color); cursor:pointer;
   color:var(--md-default-fg-color--light); font-size:.9rem; text-align:left;
 }
-.home-search-btn:hover { border-color: var(--md-primary-fg-color); }
+.home-search-btn:hover { border-color: var(--ccm-ink); }
 .home-search-btn svg { width:20px; height:20px; fill:currentColor; flex:none; }
 /* 資源庫（第四區）縮小舊卡片 */
 .home-grid.compact .home-card { padding:10px 12px; }
@@ -507,9 +543,9 @@
   background: var(--md-code-bg-color); font-size: .82rem; line-height: 2;
 }
 .md-typeset .ccm-quicknav a { font-weight: 600; white-space: nowrap; }
-.md-typeset .ccm-quicknav .qn-icon { color: var(--md-primary-fg-color); margin-right: 2px; }
-.md-typeset .ccm-quicknav a.qn-escalate { color: #c62828; }
-.md-typeset .ccm-quicknav a.qn-escalate:hover { color: #8e0000; }
+.md-typeset .ccm-quicknav .qn-icon { color: var(--ccm-ink); margin-right: 2px; }
+.md-typeset .ccm-quicknav a.qn-escalate { color: var(--ccm-danger); }
+.md-typeset .ccm-quicknav a.qn-escalate:hover { color: var(--ccm-danger-strong); }
 /* 觸控目標 ≥ 44px（外部審核 P1）：手機上快捷列每個連結撐高，避免誤觸相鄰項 */
 @media (max-width: 759px) {
   .md-typeset .ccm-quicknav a { display: inline-flex; align-items: center; min-height: 44px; }
@@ -517,12 +553,12 @@
 
 /* 日常工作任務卡（hub_daily 第一層）：純文字任務卡，緊急處理用紅色區分 */
 .home-tasks.daily-tasks { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
-.home-task.home-task--alert { border-color: #c62828; color: #c62828; font-weight: 700; }
-.home-task.home-task--alert:hover { background: rgba(198,40,40,.06); border-color: #8e0000; color: #8e0000; }
+.home-task.home-task--alert { border-color: var(--ccm-danger); color: var(--ccm-danger); font-weight: 700; }
+.home-task.home-task--alert:hover { background: rgba(var(--ccm-danger-rgb), .06); border-color: var(--ccm-danger-strong); color: var(--ccm-danger-strong); }
 
 /* 麵包屑（extra.js injectBreadcrumb，與底部導覽共用 PAGE_CAT 分類） */
 .md-typeset .ccm-crumb, .ccm-crumb { font-size: .72rem; color: var(--md-default-fg-color--light); margin: 0 0 .4rem; display: flex; gap: .4rem; align-items: center; flex-wrap: wrap; }
-.ccm-crumb a { color: var(--md-primary-fg-color); text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; padding: 0 .25rem; }
+.ccm-crumb a { color: var(--ccm-ink); text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; padding: 0 .25rem; }
 .ccm-crumb a:hover { text-decoration: underline; }
 .md-typeset .mdt-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 16px 0; }
 @media (min-width: 700px) { .md-typeset .mdt-grid { grid-template-columns: 1fr 1fr; } }
@@ -532,3 +568,14 @@
 }
 .md-typeset .mdt-card h3 { margin: 0 0 6px; font-size: .95rem; }
 .md-typeset .mdt-card small { display: block; margin-top: 6px; color: var(--md-default-fg-color--light); }
+
+/* ===== 文件審閱資訊（V5.4.0）：front matter 的審閱狀態／來源層級／下次檢視期限，模板產生，接在「最後更新」日期後面 ===== */
+.ccm-review{
+  display:flex;flex-wrap:wrap;gap:.3rem 1.2rem;
+  margin:.4rem 0 1.2rem;padding:.55rem .8rem;
+  border-left:3px solid var(--ccm-ink-soft);
+  background:var(--ccm-surface-soft);border-radius:4px;
+  font-size:.68rem;color:var(--md-default-fg-color--light);
+}
+.ccm-review b{font-weight:600;color:var(--ccm-ink);margin-right:.35rem}
+.md-source-file__fact .git-revision-date-localized-plugin-date::before{content:"最後更新：";}

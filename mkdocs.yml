@@ -5,6 +5,7 @@ site_url: https://Sela1227.github.io/CCM-manual/
 # 預設 Material 主題，最小化 features 設定
 theme:
   name: material
+  custom_dir: overrides          # 模板覆寫：版號、麵包屑、底部導覽、SELA 印記
   language: zh-TW
   # Logo（左上角 header）+ favicon（瀏覽器分頁）
   logo: assets/logo-header.png
@@ -54,19 +55,23 @@ nav:
   - 癌別照護: hub_cancer.md
   - 臨床速查: hub_lookup.md
   - 系統與管理: hub_admin.md
+  # 完整資料庫：依頁面 front matter 的 category 分 5 組（V5.1.0，內審 D-2）。
+  # 組名必須與 hooks.py 的 CATS label 一致；hook 會檢查每頁所在組 = 它的 category。
   - 完整資料庫:
-    - A 新人通則:
+    - 學習中心:
       - A1 工作指導手冊: A_work-guide.md
       - A2 培訓計畫書（制度文件）: A_training-plan.md
-      - A3 醫師團隊名冊: A3_team.md
-    - 軟體與工具:
-      - B1 HIS 系統操作手冊: B1_HIS-manual.md
-      - B2 其他工具使用說明: B2_other-tools.md
-      - H1 個管追蹤系統（癌症中心專用）: H1_ccm-tracker-guide.md
-      - H2 MDT 會議管理系統（癌症中心專用）: H2_mdt-guide.md
-      - H3 抗癌藥物速查（癌症中心專用）: H3_cancer-drugs.md
-      - H4 病歷互審系統（癌症中心專用）: H4_peer-review-guide.md
-    - C 各癌別照護指引:
+      - 互動教材:
+        - T1 肺癌淋巴分區圖譜: T1_lung-nodal-map.md
+        - T2 頸部淋巴 Level 圖譜: T2_head-neck-levels.md
+        - T3 轉移性攝護腺癌 mHSPC／mCRPC: T3_prostate-mhspc-mcrpc.md
+    - 日常工作:
+      - D 表單與範本（概覽）: D_forms.md
+      - D2 衛教單張索引: D2_education.md
+      - D3 電話追蹤腳本: D3_phone-scripts.md
+      - D4 書信與轉介範本: D4_letters.md
+      - E 專題與進階: E_advanced.md
+    - 癌別照護:
       - C0 癌症照護通論: C0_general.md
       - C1 肺癌照護指引: C1_lung-cancer.md
       - C2 乳癌照護指引: C2_breast-cancer.md
@@ -81,21 +86,22 @@ nav:
       - C11 婦癌照護指引: C11_gynecologic-cancer.md
       - C12 血液及淋巴癌照護指引: C12_hematologic-cancer.md
       - C13 其他癌照護指引: C13_other-cancers.md
-    - D 表單與範本:
-      - D. 概覽: D_forms.md
+    - 臨床速查:
       - D1 評估量表彙整: D1_assessment-tools.md
-      - D2 衛教單張索引: D2_education.md
-      - D3 電話追蹤腳本: D3_phone-scripts.md
-      - D4 書信與轉介範本: D4_letters.md
-    - E 專題與進階: E_advanced.md
-    - F 臨床知識庫:
-      - F. 概覽: F_clinical-kb.md
+      - F 臨床知識庫（概覽）: F_clinical-kb.md
       - F1 檢驗判讀: F1_lab.md
       - F2 分子與病理檢測: F2_pathology.md
       - F3 影像判讀: F3_imaging.md
       - F4 癌症治療: F4_treatment.md
       - F5 個管師追蹤速查: F5_followup.md
-    - G 品質指標:
+      - H3 抗癌藥物速查（癌症中心專用）: H3_cancer-drugs.md
+    - 系統與管理:
+      - A3 醫師團隊名冊: A3_team.md
+      - B1 HIS 系統操作手冊: B1_HIS-manual.md
+      - B2 其他工具使用說明: B2_other-tools.md
+      - H1 個管追蹤系統（癌症中心專用）: H1_ccm-tracker-guide.md
+      - H2 MDT 會議管理系統（癌症中心專用）: H2_mdt-guide.md
+      - H4 病歷互審系統（癌症中心專用）: H4_peer-review-guide.md
       - G 品質指標速查（定義）: G_quality-index.md
       - G2 114 年度本院實際成績: G2_114-quality-report.md
 
@@ -104,14 +110,32 @@ plugins:
   - search:
       # 中文標點當分隔符；jieba 套件存在時，Material 內建 search 會自動啟用中文分詞
       separator: '[\s\-\u3001\u3002\uff0c\uff01\uff1f\uff1a\u300a\u300b\u3010\u3011\uff08\uff09\u300c\u300d]'
+  # 「最後更新」＝該檔最後一次 git commit 的日期（V5.4.0，內審 D-3），顯示在每頁底部。
+  # 需要 git 歷史（CI 用 fetch-depth: 0）。沒有 .git 的目錄要預覽時：CCM_GIT_DATES=false mkdocs build --strict
+  - git-revision-date-localized:
+      enabled: !ENV [CCM_GIT_DATES, true]
+      type: date
+      locale: zh_TW
+      timezone: Asia/Taipei
+      fallback_to_build_date: true
+      exclude:
+        - index.md
 
 # 自訂 CSS / JS
+# build hooks：版號（讀 VERSION）、分類、規範檢查、守門工具——違規即 WARNING，--strict 擋下
+hooks:
+  - hooks.py
+watch:
+  - teaching_src     # mkdocs serve 時教材原始檔改了也會重建
+  - snippets
+  - icons
+
 extra_css:
-  # ?v= 隨版本 sed 更新（規則 1）——否則瀏覽器快取舊 CSS/JS，站上版號顯示舊版（坑 #78）
-  - stylesheets/extra.css?v=4.22.0
+  # 不寫 ?v=：hooks.py 依 VERSION 自動加上 cache-busting（坑 #78）
+  - stylesheets/extra.css
 
 extra_javascript:
-  - javascripts/extra.js?v=4.22.0
+  - javascripts/extra.js
 
 # Markdown 擴充
 # 連結驗證（V4.8.0 加：死 anchor 預設只報 INFO，會被 grep 濾掉 → 升級成 WARNING 讓 --strict 擋下來）
@@ -119,7 +143,7 @@ validation:
   links:
     anchors: warn              # 連到不存在的 anchor → WARNING → --strict 直接 fail
     absolute_links: warn
-    unrecognized_links: info   # ../lung-nodal-map/ 這類教材連結是故意的，維持 info
+    unrecognized_links: warn         # V5.3.0：所有連結都要能被驗證（教材改連 <slug>/index.html）
 
 markdown_extensions:
   # 基礎
@@ -146,6 +170,10 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.smartsymbols
+  # 共用片段（V5.5.0，內審 R9）：snippets/ 底下的檔案用 --8<-- "檔名.md" 引入；找不到檔案 build 直接失敗
+  - pymdownx.snippets:
+      base_path: [snippets]
+      check_paths: true
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true

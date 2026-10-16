@@ -1,0 +1,35 @@
+{
+  "_說明": "獨立教材登記表（V5.3.0 起）。teaching_src/<slug>.html 是上游原始檔，不手改；整合層由 hooks.py 在 build 時注入。inject=false 的檔案原樣發布並比對 sha256。",
+  "lung-nodal-map": {
+    "title": "肺癌淋巴分區圖譜",
+    "inject": true,
+    "fonts": "ibm-plex",
+    "back": "C1_lung-cancer.md",
+    "back_label": "C1 肺癌照護指引",
+    "page_title": "肺癌淋巴分區圖譜 — 個管師教學 | 彰濱秀傳癌症中心",
+    "foot_note": "分區依據 IASLC 淋巴結圖譜；分期依據 AJCC Cancer Staging System: Lung, Version 9（2025/1/1 生效）。圖為示意，非等比解剖圖。"
+  },
+  "head-neck-levels": {
+    "title": "頸部淋巴 Level 圖譜",
+    "inject": true,
+    "fonts": "ibm-plex",
+    "back": "C5_head-neck-cancer.md",
+    "back_label": "C5 頭頸癌照護指引",
+    "page_title": "頸部淋巴 Level 圖譜 — 個管師教學 | 彰濱秀傳癌症中心",
+    "foot_note": "分區依據 2013 Neck Level Consensus；N 分期版本依部位不同（鼻咽／p16+ 口咽為 Version 9，口腔・喉・下咽為第 8 版）。右頸側面觀，投影示意。"
+  },
+  "prostate-mhspc-mcrpc": {
+    "title": "攝護腺癌 mHSPC／mCRPC 教育訓練",
+    "inject": true,
+    "back": "C6_prostate-cancer.md",
+    "back_label": "C6 攝護腺癌照護指引",
+    "foot_note": "臨床判讀與送審請以主治醫師、病理報告及健保署現行公告條文為準。"
+  },
+  "drug-lookup": {
+    "title": "健保癌症藥物速查",
+    "inject": false,
+    "upstream": "Cancer Drug（另一個 SELA 專案）",
+    "upstream_version": "v4.0",
+    "sha256": "d5892ee0cc1fb31791ebeedb32661ebcf2647d14871f9324def70414637f01a5"
+  }
+}

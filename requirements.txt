@@ -1,4 +1,10 @@
-mkdocs>=1.6
-mkdocs-material>=9.5
-pymdown-extensions>=10.0
-jieba>=0.42
+# 精確鎖版（V5.0.0）：升級時主動改，不讓 CI 自己升。
+# Material 已進入維護模式；mkdocs 2.x 是重寫版本、相容性未確認——升級前先在本機 build 驗證。
+# 升 mkdocs-material 前要先 diff overrides/partials/header.html 與新版原檔。
+mkdocs==1.6.1
+mkdocs-material==9.7.7
+pymdown-extensions==12.3
+jieba==0.42.1
+mkdocs-git-revision-date-localized-plugin==1.5.4
+GitPython==3.2.1
+babel==2.18.0

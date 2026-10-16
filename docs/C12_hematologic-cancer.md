@@ -1,20 +1,29 @@
+---
+category: cancer
+template_kind: cancer
+guideline: "NCCN Hematologic Cancers 2025、台灣血液病學會、台灣骨髓移植醫學會"
+guideline_level: 4
+review_status: pending
+review_due: 2027-10-01
+---
+
 # C12. 血液及淋巴癌照護指引
 
 **彰濱秀傳癌症中心｜個管師指導書系列**
 
 <div class="ccm-quicknav" markdown>
-<svg class="ccm-icon-inline qn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 10.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2zM12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm2.19 12.19L6 18l3.81-8.19L18 6z"/></svg> [概述](#一疾病概述) ｜ [診斷分期](#二診斷與分期) ｜ [治療](#三治療指引) ｜ [個管追蹤](#六個管照護重點) ｜ [FAQ](#七常見問題與處理)
+:ccm-compass.qn-icon: [概述](#overview) ｜ [診斷分期](#staging) ｜ [治療](#treatment) ｜ [個管追蹤](#care) ｜ [FAQ](#faq)
 </div>
 
 > 📌 本文件為血液及淋巴癌專科訓練教材，供負責的個管師（A）參考。內容架構與 C1 肺癌、C2 乳癌一致。
 
 > ⚠️ **準則引用**：NCCN Hematologic Cancers（B-cell / T-cell Lymphoma、AML、ALL、CML、MM）2025、台灣血液病學會、台灣骨髓移植醫學會建議。**待醫師團隊確認版本與本院實作差異**。
 >
-> 📊 **來源層級：④ 未查證**——本檔的 NCCN 版本號尚未查證（NCCN 一年改 2–8 次、需帳號）。全站盤點與說明見 [C0 → 治療準則版本對照表](C0_general.md#治療準則版本對照nccnbclcasco)。
+--8<-- "source-level-4.md"
 
 ---
 
-## 一、疾病概述
+## 一、疾病概述 { #overview }
 
 ### 流行病學
 
@@ -76,7 +85,7 @@
 
 ---
 
-## 二、診斷與分期
+## 二、診斷與分期 { #staging }
 
 ### 診斷流程
 
@@ -141,7 +150,7 @@
 
 ---
 
-## 三、治療指引
+## 三、治療指引 { #treatment }
 
 > ⚠️ **依據準則**：NCCN Hematologic Cancers（B-cell / T-cell Lymphoma、AML、ALL、CML、MM）2025、台灣血液病學會、台灣骨髓移植醫學會建議。**待醫師團隊確認版本與本院實作差異**。
 
@@ -197,7 +206,7 @@
 
 ---
 
-## 四、本癌別特殊注意事項
+## 四、本癌別特殊注意事項 { #notes }
 
 | 重點 | 說明 |
 |------|------|
@@ -213,9 +222,9 @@
 
 ---
 
-## 五、個管師日常追蹤重點
+## 五、個管師日常追蹤重點 { #followup }
 
-本癌別個管師日常工作的追蹤重點如下（**非國健署核心指標**——核心指標見下方 cross-ref）：
+--8<-- "followup-intro.md"
 
 - **收案完成率**：新診斷血液淋巴癌 7 天內收案、確認 DLBCL / 其他亞型
 - **電話追蹤**：化療期間每月、CAR-T / 移植前後密集追蹤、FN 高風險期密切監測
@@ -225,7 +234,7 @@
 
 > 📊 **本院本年實際成績**請見 [G2 → 對應段](G2_114-quality-report.md#八血液淋巴癌)。
 
-## 六、個管照護重點
+## 六、個管照護重點 { #care }
 
 ### 收案時
 
@@ -264,7 +273,7 @@
 
 ---
 
-## 七、常見問題與處理
+## 七、常見問題與處理 { #faq }
 
 ### Q: 病人問「我為什麼會得血癌？是不是被別人傳染的？」
 
@@ -288,7 +297,7 @@ A: MM 骨痛來自**骨溶解性病變**（osteolytic lesions），即使治療�
 
 ---
 
-## 八、衛教資源
+## 八、衛教資源 { #edu }
 
 ### 院內衛教單張
 
@@ -308,6 +317,5 @@ A: MM 骨痛來自**骨溶解性病變**（osteolytic lesions），即使治療�
 
 | 項目 | 內容 |
 |------|------|
-| **最後更新** | **V4.21.3**（2026 年 10 月）|
 | 建立日期 | 2026 年 5 月 |
 | 狀態 | ⚠️ 待醫師團隊確認與修訂（NCCN Hematologic Cancers（B-cell / T-cell Lymphoma、AML、ALL、CML、MM）2025、台灣血液病學會、台灣骨髓移植醫學會建議。）|

@@ -29,38 +29,6 @@
   --r:4px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-
-/* ===== CCM Manual 整合層（版號 + 返回 + SELA 印記）===== */
-.ccm-ver-inline{
-  display:inline-block;margin-left:8px;padding:1px 7px;
-  font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.02em;
-  vertical-align:middle;border:1px solid var(--line);border-radius:8px;
-  background:var(--surface-2);color:var(--ink-2);user-select:none;white-space:nowrap;
-}
-.ccm-back{
-  display:inline-flex;align-items:center;gap:5px;
-  font-family:var(--mono);font-size:12px;color:var(--ink-2);text-decoration:none;
-  padding:4px 10px;border:1px solid var(--line);border-radius:var(--r,8px);
-  background:var(--surface);transition:all .15s;
-}
-.ccm-back:hover{border-color:var(--ink-2);color:var(--ink);}
-.ccm-foot{
-  border-top:1px solid var(--line);background:var(--surface);
-  padding:22px 0 26px;margin-top:8px;
-}
-.ccm-foot .wrap{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;}
-.ccm-foot .note{font-size:12px;color:var(--muted);line-height:1.7;max-width:640px;}
-.ccm-sela{
-  display:inline-flex;align-items:center;gap:5px;
-  font-family:var(--mono);font-size:11px;color:var(--muted);text-decoration:none;
-  opacity:.75;transition:opacity .15s;
-}
-.ccm-sela:hover{opacity:1;}
-.ccm-sela img{width:15px;height:15px;display:block;}
-@media(max-width:600px){
-  .ccm-ver-inline{font-size:10px;padding:0 5px;margin-left:5px;}
-  .ccm-foot .wrap{gap:10px;}
-}
 html{scroll-behavior:smooth}
 body{
   background:var(--bg);
@@ -301,8 +269,7 @@ footer p{font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1
 
 <header class="masthead">
   <div class="wrap">
-    <div style="margin-bottom:14px"><a class="ccm-back" href="../C1_lung-cancer/">← 回 C1 肺癌照護指引</a></div>
-    <div class="eyebrow">IASLC Nodal Map · AJCC 9th ed.<span class="ccm-ver-inline" id="ccmVer">V0.0.0</span></div>
+    <div class="eyebrow">IASLC Nodal Map · AJCC 9th ed.</div>
     <h1>肺部淋巴分區<br>看懂 1 到 14 站</h1>
     <p class="lede">病理報告上的「4R」「7」「10L」不是編號而已——<strong>站別的位置與側別決定了 N1、N2 還是 N3</strong>，而 N 分期是治療討論的重要輸入之一。<br>但要留意：<strong>N 分期本身不決定術式或照射範圍</strong>，實際治療仍須依 T、生物標記、體能狀態、影像與 MDT 判斷個別決定。</p>
     <div class="meta">
@@ -310,7 +277,6 @@ footer p{font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1
       <span>依據：IASLC 淋巴結圖譜 · AJCC Cancer Staging System: Lung, Version 9</span>
       <span>AJCC 已由「版次（Edition）」改為逐疾病更新的「版本（Version）」；肺癌 Version 9 自 2025/1/1 生效。其他癌別是否已有 Version 9 需個別確認</span>
       <span>圖為示意，非等比解剖圖</span>
-      <span>其他癌別分期版本對照見 <a href="../C0_general/#分期系統版本對照ajcc-已改逐部位滾動更新" style="color:inherit">C0 → 分期系統版本對照表</a></span>
     </div>
   </div>
 </header>
@@ -889,28 +855,6 @@ QUIZ.forEach((item,i)=>{
 });
 
 paint();
-</script>
-
-<footer class="ccm-foot">
-  <div class="wrap">
-    <div class="note">
-      <strong>彰濱秀傳癌症中心 · 個管師訓練系統</strong>　教學用途，臨床判讀請以主治醫師與病理報告為準。<br>
-      分區依據 IASLC 淋巴結圖譜；分期依據 AJCC Cancer Staging System: Lung, Version 9（2025/1/1 生效）。圖為示意，非等比解剖圖。
-    </div>
-    <div style="display:flex;align-items:center;gap:12px">
-      <a class="ccm-back" href="../C1_lung-cancer/">← 回 C1 肺癌</a>
-      <a class="ccm-sela" href="https://github.com/Sela1227" target="_blank" rel="noopener" title="本系統由 SELA 維護">
-        <img src="../assets/sela-logo/sela.svg" alt="SELA"/>by SELA
-      </a>
-    </div>
-  </div>
-</footer>
-
-<script>
-/* CCM Manual 版號同步（SPEC §10.6：UI 版號 = zip 檔名版號；規則 1 同步位置之一） */
-var CCM_VERSION = "V4.22.0";
-document.getElementById("ccmVer").textContent = CCM_VERSION;
-document.getElementById("ccmVer").title = "個管師訓練系統 " + CCM_VERSION;
 </script>
 </body>
 </html>

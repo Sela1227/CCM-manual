@@ -19,10 +19,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0      # 完整歷史（之後的 git 日期需要）
 
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.12"
           cache: pip
 
       - name: Install dependencies
@@ -30,7 +32,7 @@ jobs:
           pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Build site
+      - name: Build site（唯一閘門：hooks.py 執行所有規範檢查）
         run: mkdocs build --strict
 
       - name: Upload artifact

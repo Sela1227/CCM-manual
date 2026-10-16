@@ -1,0 +1,27 @@
+{#- CCM 模板覆寫：麵包屑、底部導覽、footer 版號徽章、SELA 印記。
+    全部在 build 時產生，不靠瀏覽器端 JS 注入（V5.0.0 起取代 extra.js 的 DOM 注入）。
+    分類來源：page.meta.category（hooks.py 填入）；分類定義：config.extra.cats（hooks.py）。 -#}
+{% extends "base.html" %}
+
+{% block content %}
+  {%- set cat_key = page.meta.category if page and page.meta else none -%}
+  {%- set cat = config.extra.cats[cat_key] if cat_key in config.extra.cats else none -%}
+  {%- if cat and not page.file.src_uri.startswith("hub_") %}
+  <nav class="ccm-crumb" aria-label="所在位置">
+    <a href="{{ nav.homepage.url | url }}">首頁</a><span aria-hidden="true">›</span><a href="{{ cat.hub | url }}">{{ cat.label }}</a>
+  </nav>
+  {%- endif %}
+  {{ super() }}
+  {%- if page and page.meta and page.meta.ccm_review %}
+  <aside class="ccm-review" aria-label="文件審閱資訊">
+    {%- for k, v in page.meta.ccm_review %}<span><b>{{ k }}</b>{{ v }}</span>{% endfor -%}
+  </aside>
+  {%- endif %}
+{% endblock %}
+
+{% block footer %}
+  {{ super() }}
+  {% include "partials/ccm-mobile-nav.html" %}
+  <div class="ccm-ver-footer">{{ config.extra.version }}</div>
+  <a class="ccm-sela-credit" href="https://github.com/Sela1227" target="_blank" rel="noopener" title="本系統由 SELA 維護"><img src="{{ "assets/sela-logo/sela.svg" | url }}" alt="SELA">by SELA</a>
+{% endblock %}

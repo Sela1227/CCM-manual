@@ -8,11 +8,11 @@
   </p>
 </div>
 
-**當前版本：V4.22.0**
+**當前版本：見根目錄 `VERSION`**（V5.0.0 起唯一版號來源）
 
 部署網址：https://Sela1227.github.io/CCM-manual/
 
-**對齊規範**：[SELA Starter Kit V1.25.0](https://github.com/Sela1227)（首次對齊於 V4 系列起點、之後隨 Kit 跳版逐次跟進；衝突仲裁見 [CLAUDE.md](CLAUDE.md) 開頭區塊；handoff 見 [SELA-handoff.md](SELA-handoff.md)）
+**對齊規範**：[SELA Starter Kit V1.26.0](https://github.com/Sela1227)（首次對齊於 V4 系列起點、之後隨 Kit 跳版逐次跟進；衝突仲裁見 [CLAUDE.md](CLAUDE.md) 開頭區塊；handoff 見 [SELA-handoff.md](SELA-handoff.md)）
 
 ---
 
@@ -54,7 +54,7 @@ Sela 用自製 Git Pusher V1.5.5 匯入 `CCM Manual V?.?.?.zip` → 自動 commi
 
 - **獨立文件原則**：每篇獨立、反覆討論精修，不做大型合併（V2.0.3 沿用；檔數會隨版本成長，不寫死數量）
 - **Nav 巢狀有條件允許**：V3.4.0 開始試巢狀 A 組水溫，其他平鋪。詳見 CLAUDE.md 規則 3
-- **回歸 Material 預設 wide-mode**：viewport 真相揭露後（CLAUDE.md 坑 #22），不再寫任何 sidebar override CSS
+- **回歸 Material 預設 wide-mode**：viewport 真相揭露後（`docs-dev/pitfalls.md` 坑 #22），不再寫任何 sidebar override CSS
 - **中文搜尋**：jieba 分詞
 - **手機底部導覽列**：5 個一級分類——**首頁 / 學習 / 工作 / 癌別 / 搜尋**
 
@@ -62,4 +62,4 @@ Sela 用自製 Git Pusher V1.5.5 匯入 `CCM Manual V?.?.?.zip` → 自動 commi
 
 ## 維護指南
 
-開發守則、踩過的坑、版本歷程、下版候選工作 → 全部在 `CLAUDE.md`。**改任何東西之前先看 CLAUDE.md 的 11 條永久規則和升版自我確認清單**。
+開發守則與升版清單 → `CLAUDE.md`（約 140 行）。規則全文、踩過的坑、版本歷程、下版候選工作 → `docs-dev/`。**改任何東西之前先看 CLAUDE.md**。

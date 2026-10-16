@@ -1,3 +1,7 @@
+---
+category: lookup
+---
+
 # F2. 分子與病理檢測
 
 **彰濱秀傳癌症中心｜個管師指導書系列**
@@ -179,7 +183,7 @@ IHC（免疫組織化學染色）是在病理切片上用抗體偵測特定蛋�
 
 肺癌病理報告的淋巴結寫法（`4R`、`7`、`10L`、`pN2a`、`ENE(+)`…）不是流水編號——站號決定 N 分期、N 分期決定治療路徑。
 
-> **互動圖譜 + 站別速查 + N 分期判定 + 個管實務對照** 請見 [肺部淋巴分區互動圖譜](../lung-nodal-map/){target=_blank}（IASLC 淋巴結圖譜 · **AJCC Version 9**，2025/1/1 生效）。
+> **互動圖譜 + 站別速查 + N 分期判定 + 個管實務對照** 請見 [肺部淋巴分區互動圖譜](lung-nodal-map/index.html){target=_blank}（IASLC 淋巴結圖譜 · **AJCC Version 9**，2025/1/1 生效）。
 >
 > 癌別脈絡（分期表、治療對應）見 [C1 肺癌照護指引](C1_lung-cancer.md#tnm-分期ajcc-version-9)。
 >
@@ -191,7 +195,7 @@ IHC（免疫組織化學染色）是在病理切片上用抗體偵測特定蛋�
 
 頸部淋巴不是分「站」是分「Level」——依**固定的解剖界標**（舌骨、環狀軟骨、胸鎖乳突肌、副神經…）切成 I–VII 區。病理報告寫 `Level IIa`、`Level IIb`、`ENE(+)` 都是這套。
 
-> **互動圖譜 + Level 速查 + 三套 N 分期對照 + 個管實務對照** 請見 [頸部淋巴 Level 互動圖譜](../head-neck-levels/){target=_blank}（2013 Neck Level Consensus）。
+> **互動圖譜 + Level 速查 + 三套 N 分期對照 + 個管實務對照** 請見 [頸部淋巴 Level 互動圖譜](head-neck-levels/index.html){target=_blank}（2013 Neck Level Consensus）。
 >
 > 癌別脈絡（各部位版本、治療對應）見 [C5 頭頸癌照護指引](C5_head-neck-cancer.md#tnm-分期各部位版本不同先確認部位)。
 >
