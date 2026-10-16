@@ -1,7 +1,7 @@
 /* ======================================================
    彰濱秀傳癌症中心 - 個管師訓練系統
-   stylesheet 版本：V4.21.3（隨主版本同步）
-   最後 CSS 結構變更：V4.21.3（癌別快捷列 .qn-icon / .qn-escalate SVG 圖示樣式）
+   stylesheet 版本：V4.22.0（隨主版本同步）
+   最後 CSS 結構變更：V4.22.0（日常工作任務卡 .daily-tasks / .home-task--alert、麵包屑 .ccm-crumb）
    架構說明：主色 + h1/h2/h3 樣式 + 表格 + SVG 圖示 + 首頁
             hero/grid + 藥物表 + 版本徽章（header inline + footer
             浮動）+ SELA 歸屬印記 + footer + 內文 padding
@@ -510,6 +510,20 @@
 .md-typeset .ccm-quicknav .qn-icon { color: var(--md-primary-fg-color); margin-right: 2px; }
 .md-typeset .ccm-quicknav a.qn-escalate { color: #c62828; }
 .md-typeset .ccm-quicknav a.qn-escalate:hover { color: #8e0000; }
+/* 觸控目標 ≥ 44px（外部審核 P1）：手機上快捷列每個連結撐高，避免誤觸相鄰項 */
+@media (max-width: 759px) {
+  .md-typeset .ccm-quicknav a { display: inline-flex; align-items: center; min-height: 44px; }
+}
+
+/* 日常工作任務卡（hub_daily 第一層）：純文字任務卡，緊急處理用紅色區分 */
+.home-tasks.daily-tasks { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+.home-task.home-task--alert { border-color: #c62828; color: #c62828; font-weight: 700; }
+.home-task.home-task--alert:hover { background: rgba(198,40,40,.06); border-color: #8e0000; color: #8e0000; }
+
+/* 麵包屑（extra.js injectBreadcrumb，與底部導覽共用 PAGE_CAT 分類） */
+.md-typeset .ccm-crumb, .ccm-crumb { font-size: .72rem; color: var(--md-default-fg-color--light); margin: 0 0 .4rem; display: flex; gap: .4rem; align-items: center; flex-wrap: wrap; }
+.ccm-crumb a { color: var(--md-primary-fg-color); text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; padding: 0 .25rem; }
+.ccm-crumb a:hover { text-decoration: underline; }
 .md-typeset .mdt-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 16px 0; }
 @media (min-width: 700px) { .md-typeset .mdt-grid { grid-template-columns: 1fr 1fr; } }
 .md-typeset .mdt-card {

@@ -1,14 +1,15 @@
 /* ======================================================
-   彰濱秀傳癌症中心 - 個管師訓練系統 V4.21.3
+   彰濱秀傳癌症中心 - 個管師訓練系統 V4.22.0
    - 版本號 footer + header 雙處顯示（SPEC §10.6 UI 版號鐵律）
-   - 手機底部導覽列（V3.4.4 從 4 個改 6 個進階員工常用入口，SVG 圖示）
+   - 手機底部導覽列（首頁／學習／工作／癌別／搜尋，SVG 圖示）
+   - 單一導航分類對照表 PAGE_CAT + 麵包屑（底部導覽與麵包屑共用）
    - getSiteRoot() 從 window.location.pathname 推算（規則 5）
    ====================================================== */
 
 (function () {
   "use strict";
 
-  var CCM_VERSION = "V4.21.3";
+  var CCM_VERSION = "V4.22.0";
 
   // ---- 推算 site root（不依賴 base.href）----
   function getSiteRoot() {
@@ -81,25 +82,79 @@
     if (inp) setTimeout(function () { inp.focus(); }, 60);
   };
 
-var NAV_ITEMS = [
-      { path: "",               label: "首頁", icon: ICONS.home,    isHome: true },  // 首頁用 root 等值比較，不用 regex 猜層數（舊 regex 會匹配所有單層路徑，坑 #78）
-      { path: "hub_learning/",  label: "學習", icon: ICONS.kb,      match: /\/hub_learning\/|\/A_work-guide\/|\/A_training-plan\// },
-      { path: "hub_daily/",     label: "工作", icon: ICONS.tracker, match: /\/hub_daily\/|\/hub_admin\/|\/H[1-4]_|\/D[1-4]_|\/G2?_/ },
-      { path: "hub_cancer/",    label: "癌別", icon: ICONS.mdt,     match: /\/hub_cancer\/|\/C\d+_|\/lung-nodal-map\/|\/head-neck-levels\/|\/prostate-mhspc-mcrpc\// },
-      { path: "#ccm-search",    label: "搜尋", icon: ICONS.search,  match: /$^/, onclick: true }
-    ];
+  // ---- 單一導航分類對照表（外部審核 P1：側欄、底部導覽、麵包屑共用同一套分類）----
+  // 鍵＝頁面 slug（docs/ 下的檔名去 .md）。歸屬以這張表為準，不靠 URL regex 猜。
+  // 新增 docs/*.md 時必須在這裡登記——tools/check_js_runtime.py 會檢查全部 md 都有分類。
+  var CATS = {
+    learn:  { label: "學習中心",   hub: "hub_learning/" },
+    daily:  { label: "日常工作",   hub: "hub_daily/" },
+    cancer: { label: "癌別照護",   hub: "hub_cancer/" },
+    lookup: { label: "臨床速查",   hub: "hub_lookup/" },
+    admin:  { label: "系統與管理", hub: "hub_admin/" }
+  };
+  var PAGE_CAT = {
+    "hub_learning": "learn", "A_work-guide": "learn", "A_training-plan": "learn",
+    "hub_daily": "daily", "D_forms": "daily", "D2_education": "daily",
+    "D3_phone-scripts": "daily", "D4_letters": "daily", "E_advanced": "daily",
+    "hub_cancer": "cancer", "C0_general": "cancer", "C1_lung-cancer": "cancer",
+    "C2_breast-cancer": "cancer", "C3_colorectal-cancer": "cancer", "C4_liver-cancer": "cancer",
+    "C5_head-neck-cancer": "cancer", "C6_prostate-cancer": "cancer", "C7_esophageal-cancer": "cancer",
+    "C8_gastric-cancer": "cancer", "C9_biliary-pancreatic-cancer": "cancer",
+    "C10_urological-cancer": "cancer", "C11_gynecologic-cancer": "cancer",
+    "C12_hematologic-cancer": "cancer", "C13_other-cancers": "cancer",
+    "hub_lookup": "lookup", "D1_assessment-tools": "lookup", "F_clinical-kb": "lookup",
+    "F1_lab": "lookup", "F2_pathology": "lookup", "F3_imaging": "lookup",
+    "F4_treatment": "lookup", "F5_followup": "lookup", "H3_cancer-drugs": "lookup",
+    "hub_admin": "admin", "A3_team": "admin", "B1_HIS-manual": "admin", "B2_other-tools": "admin",
+    "H1_ccm-tracker-guide": "admin", "H2_mdt-guide": "admin", "H4_peer-review-guide": "admin",
+    "G_quality-index": "admin", "G2_114-quality-report": "admin"
+  };
+
+  // 目前頁面 slug（/repo/C6_prostate-cancer/ → "C6_prostate-cancer"；首頁 → ""）
+  function currentSlug() {
+    var rest = window.location.pathname.slice(getSiteRoot().length);
+    rest = rest.replace(/index\.html$/, "").replace(/\/$/, "");
+    return rest.split("/")[0] || "";
+  }
+
+  // 底部導覽：臨床速查、系統與管理沒有專屬鈕，這兩類頁面不亮任何鈕（麵包屑會標出所在分類）
+  var NAV_ITEMS = [
+    { path: "",              label: "首頁", icon: ICONS.home,    isHome: true },
+    { path: "hub_learning/", label: "學習", icon: ICONS.kb,      cat: "learn" },
+    { path: "hub_daily/",    label: "工作", icon: ICONS.tracker, cat: "daily" },
+    { path: "hub_cancer/",   label: "癌別", icon: ICONS.mdt,     cat: "cancer" },
+    { path: "#ccm-search",   label: "搜尋", icon: ICONS.search,  onclick: true }
+  ];
+
+  // ---- 麵包屑：深層頁頂端顯示「首頁 › 所在分類」，可點回上層 ----
+  function injectBreadcrumb() {
+    document.querySelectorAll(".ccm-crumb").forEach(function (n) { n.remove(); });
+    var slug = currentSlug();
+    if (!slug || slug.indexOf("hub_") === 0) return;      // 首頁與 hub 本身不需要
+    var cat = CATS[PAGE_CAT[slug]];
+    var host = document.querySelector(".md-content__inner");
+    if (!cat || !host) return;
+    var root = getSiteRoot();
+    var nav = document.createElement("nav");
+    nav.className = "ccm-crumb";
+    nav.setAttribute("aria-label", "所在位置");
+    nav.innerHTML = '<a href="' + root + '">首頁</a><span aria-hidden="true">›</span>' +
+                    '<a href="' + root + cat.hub + '">' + cat.label + '</a>';
+    host.insertBefore(nav, host.firstChild);
+  }
 
   function setMobileNavActive() {
     var nav = document.getElementById("ccm-mobile-nav");
     if (!nav) return;
     var root = getSiteRoot();
     var current = window.location.pathname;
+    var slug = currentSlug();
     nav.querySelectorAll("a").forEach(function (a, idx) {
       var item = NAV_ITEMS[idx];
       var on = false;
       if (item) {
         if (item.isHome) on = (current === root || current === root + "index.html");
-        else if (item.match) on = item.match.test(current);
+        else if (item.cat) on = (PAGE_CAT[slug] === item.cat);
       }
       if (on) a.classList.add("active");
       else a.classList.remove("active");
@@ -111,9 +166,6 @@ var NAV_ITEMS = [
     if (document.getElementById("ccm-mobile-nav")) return;
 
     var root = getSiteRoot();
-
-  // UI 再審 P2：items 提到模組層，active 判斷抽成單一函式——初始與 instant navigation 共用同一套規則
-  
 
     var nav = document.createElement("nav");
     nav.id = "ccm-mobile-nav";
@@ -137,6 +189,7 @@ var NAV_ITEMS = [
     injectHeaderVersion();
     injectSelaCredit();
     injectMobileNav();
+    injectBreadcrumb();
   }
 
   if (document.readyState === "loading") {
@@ -151,6 +204,7 @@ var NAV_ITEMS = [
       injectVersionBadge();
       injectHeaderVersion();
       injectSelaCredit();
+      injectBreadcrumb();
 
       var nav = document.getElementById("ccm-mobile-nav");
       if (!nav) {

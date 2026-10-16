@@ -1,45 +1,118 @@
 # 日常工作
 
-**你現在要做什麼？** 每個任務都把「腳本 → 工具 → 判讀 → 紅旗」串在一起，不用記「這在 D 還是 F」。
+**你現在要做什麼？** 點任務 → 照步驟做 → 需要細節再展開「相關資源」。
 
-## 新病人收案
-
-<p class="hub-chain">[新案評估 Checklist](A_work-guide.md#新案評估-checklist) → [常用評估量表](D1_assessment-tools.md) → 該癌別的收案 Checklist（見 [癌別照護](hub_cancer.md)）→ [個管追蹤系統登錄](H1_ccm-tracker-guide.md)</p>
-
-## 電話追蹤
-
-<p class="hub-chain">[電話追蹤怎麼打](A_work-guide.md#電話追蹤怎麼打) → [D3 電話腳本](D3_phone-scripts.md) → [F5 追蹤問題速查（依治療階段）](F5_followup.md) → [D1 CTCAE／ECOG](D1_assessment-tools.md) → 該癌別「日常追蹤重點」與「🚩 紅旗」</p>
-
-## MDT 準備
-
-<p class="hub-chain">[MDT 是什麼、怎麼開](A_work-guide.md#多專科團隊會議mdt) → [H2 MDT 會議管理系統](H2_mdt-guide.md) → [A3 醫師團隊名冊](A3_team.md)（各團隊時間地點）</p>
-
-## 病人衛教
-
-<p class="hub-chain">[D2 衛教單張索引](D2_education.md) → 該癌別「常見問題與處理」話術 → [D4 書信與轉介範本](D4_letters.md)</p>
-
-## 轉介
-
-<p class="hub-chain">[什麼時候要轉介](A_work-guide.md#什麼時候要轉介) → [D4 轉介範本](D4_letters.md)</p>
-
-## 失聯處理
-
-<p class="hub-chain">[常規工作完整清單 → 失聯](A_work-guide.md#常規工作完整清單) → [D3 腳本](D3_phone-scripts.md) → [D4 書信](D4_letters.md)</p>
-
-## 品質指標追蹤
-
-<p class="hub-chain">[品質指標概念](A_work-guide.md#第四部分品質指標概念) → [G 指標定義速查](G_quality-index.md) → [G2 本院本年實際成績](G2_114-quality-report.md) → [H4 病歷互審](H4_peer-review-guide.md)</p>
+<div class="home-tasks daily-tasks">
+<a class="home-task home-task--alert" href="#緊急處理">緊急處理</a>
+<a class="home-task" href="#新病人收案">新病人收案</a>
+<a class="home-task" href="#電話追蹤">電話追蹤</a>
+<a class="home-task" href="#mdt-準備">MDT 準備</a>
+<a class="home-task" href="#病人衛教">病人衛教</a>
+<a class="home-task" href="#轉介">轉介</a>
+<a class="home-task" href="#失聯處理">失聯處理</a>
+<a class="home-task" href="#品質指標追蹤">品質指標追蹤</a>
+<a class="home-task" href="#困難個案">困難個案</a>
+</div>
 
 ## 緊急處理
 
-!!! escalate "立即升級——先看這裡"
-    - [緊急狀況處理口袋卡（A2 附件 D5）](A_training-plan.md#附件-d5緊急狀況處理口袋卡報到第一天發放)
-    - 各癌別 **🚩 紅旗表**：[肺癌](C1_lung-cancer.md)｜[乳癌](C2_breast-cancer.md)｜[大腸直腸](C3_colorectal-cancer.md)｜[肝癌](C4_liver-cancer.md)｜[頭頸](C5_head-neck-cancer.md)｜[攝護腺](C6_prostate-cancer.md)｜[食道](C7_esophageal-cancer.md)｜[胃](C8_gastric-cancer.md)｜[泌尿](C10_urological-cancer.md)
-    - 共通急症：**脊髓壓迫、發熱性嗜中性球低下（FN）、腫瘤出血**——懷疑就升級，不要等下次門診
+!!! escalate "病人說不舒服——先判斷要不要立刻送醫"
+    **請病人立即去急診**：發燒 > 38°C（化療中／手術後）、新發生或突然加重的呼吸困難、不明大量出血（咳血／吐血／大量血便）。
+
+    **意識改變**（突然混亂、暈厥、說話不清）：請家屬撥 **119**。
+
+    通知醫師後聯絡不上 → 資深個管師 → 主管 → 急診護理站（轉知主治醫師）。
+
+    共通急症：**脊髓壓迫、發熱性嗜中性球低下（FN）、腫瘤出血**——懷疑就升級，不要等下次門診。
+
+??? note "相關資源：當天回診的狀況與各癌別紅旗表"
+    - 完整判斷表（含「當天回診或通知醫師」的嘔吐、腹瀉、傷口、免疫治療中新的喘）：[緊急狀況處理口袋卡（A2 附件 D5）](A_training-plan.md#附件-d5緊急狀況處理口袋卡報到第一天發放)——**本段的權威源，改口袋卡要連動改這裡**
+    - 各癌別 **紅旗表**：[肺癌](C1_lung-cancer.md)｜[乳癌](C2_breast-cancer.md)｜[大腸直腸](C3_colorectal-cancer.md)｜[肝癌](C4_liver-cancer.md)｜[頭頸](C5_head-neck-cancer.md)｜[攝護腺](C6_prostate-cancer.md)｜[食道](C7_esophageal-cancer.md)｜[胃](C8_gastric-cancer.md)｜[泌尿](C10_urological-cancer.md)
+    - 病人來電說不舒服的處理話術：[A1 常見問題 Q&A](A_work-guide.md#常見問題-qa)
+
+## 新病人收案
+
+1. **確認基本資料**：聯絡方式、緊急聯絡人、主要照顧者是誰
+2. 確認診斷、分期、預計治療計畫，以及有沒有其他疾病
+3. 做評估：ECOG、症狀、營養（PG-SGA）、心理困擾（DT），問經濟、交通、照顧人力等特殊需求
+4. 達門檻就[轉介](#轉介)
+5. 衛教：說明個管師角色與聯絡方式、接下來的流程，給衛教資料；登錄個管追蹤系統
+
+??? note "相關資源"
+    [新案評估 Checklist](A_work-guide.md#新案評估-checklist)（本流程的權威源）→ [常用評估量表](D1_assessment-tools.md) → 該癌別的收案 Checklist（見[癌別照護](hub_cancer.md)）→ [個管追蹤系統登錄](H1_ccm-tracker-guide.md)
+
+## 電話追蹤
+
+1. **打電話前先看病歷**，了解病人最近的狀況
+2. 開場：自我介紹是癌症中心的個管師，說明來電是關心近況
+3. 問五個重點：身體有沒有不舒服、吃得好不好與體重、睡眠和心情、藥有沒有按時吃、下次回診時間
+4. 有不舒服 → 先對照[緊急處理](#緊急處理)；不緊急就給處理建議，或幫他提前約門診
+5. 結尾留下聯絡方式，把通話結果記錄到個管追蹤系統
+
+??? note "相關資源"
+    [電話追蹤怎麼打](A_work-guide.md#電話追蹤怎麼打) → [D3 電話腳本](D3_phone-scripts.md) → [F5 追蹤問題速查（依治療階段）](F5_followup.md) → [D1 CTCAE／ECOG](D1_assessment-tools.md) → 該癌別「日常追蹤重點」與「紅旗」
+
+## MDT 準備
+
+1. **跟主治醫師確認這次要討論哪些個案**
+2. 準備每個個案的摘要：基本資料與病史、影像報告、病理報告、分期、目前治療狀況
+3. 會前測試投影設備，備好簽到表與會議記錄表單
+4. 會中報告個案摘要，記錄討論內容、決議與出席人員
+5. 會後完成會議紀錄、把結果更新到個案資料，追蹤決議有沒有執行
+
+??? note "相關資源"
+    [MDT 是什麼、怎麼開](A_work-guide.md#多專科團隊會議mdt)（本流程的權威源）→ [H2 MDT 會議管理系統](H2_mdt-guide.md) → [A3 醫師團隊名冊](A3_team.md)（各團隊時間地點）
+
+## 病人衛教
+
+1. **到 D2 找該癌別、該治療階段的衛教單張**
+2. 用該癌別「常見問題與處理」的話術說明
+3. 衛教病人或家屬時，順便推廣五癌篩檢
+4. 需要正式書信時，用 D4 範本
+
+??? note "相關資源"
+    [D2 衛教單張索引](D2_education.md) → [五癌篩檢推廣](D2_education.md#五癌篩檢推廣年度推廣文宣) → 該癌別「常見問題與處理」 → [D4 書信與轉介範本](D4_letters.md)
+
+## 轉介
+
+1. **對照轉介門檻**：營養不好（PG-SGA ≥ 4）→ 營養師；心理困擾（DT ≥ 4）→ 心理師；經濟或社會支持不足 → 社工師；末期、症狀難控制 → 安寧團隊；功能障礙、淋巴水腫 → 復健科
+2. 開對應的單：營養諮詢單、會診單或轉介單
+3. 需要書面轉介時用 D4 範本
+4. 不確定要不要轉？寧可多轉一個，也不要漏掉需要幫助的人
+
+??? note "相關資源"
+    [什麼時候要轉介](A_work-guide.md#什麼時候要轉介)（門檻的權威源）→ [D4 轉介範本](D4_letters.md)
+
+## 失聯處理
+
+1. **電話聯絡多次未接**（各癌別多為連續 2 次無回應）
+2. 傳簡訊留言
+3. 聯絡緊急聯絡人
+4. 寄掛號信
+5. 仍聯絡不上 → 標記失聯並記錄，依該癌別規定上報主管
+
+??? note "相關資源"
+    [失聯個案處理原則](C0_general.md#失聯個案處理原則)（本流程的權威源；失聯率定義為失聯 ≥ 12 個月）→ [D3 腳本](D3_phone-scripts.md) → [D4 書信](D4_letters.md) → 各癌別「個管師日常追蹤重點」的失聯注意事項
+
+## 品質指標追蹤
+
+1. **看 G2 本院本年成績，找出未達閾值的指標**
+2. 到 G 查該指標的定義（分子、分母）
+3. 想原因：個案量太多、流程問題、系統不好用，還是自己還不熟
+4. 跟主管和團隊討論，一起想改善方法
+
+??? note "相關資源"
+    [品質指標概念](A_work-guide.md#第四部分品質指標概念) → [G 指標定義速查](G_quality-index.md) → [G2 本院本年實際成績](G2_114-quality-report.md) → [H4 病歷互審](H4_peer-review-guide.md)
 
 ## 困難個案
 
-<p class="hub-chain">[常見問題 Q&A](A_work-guide.md#常見問題-qa) → [E 專題與進階](E_advanced.md) → 升級給資深／主任（[A2 帶人指引](A_training-plan.md#22-帶人指引資深個管師版)）</p>
+1. **先分別聽病人和家屬的想法**，了解背後的擔心
+2. 不替病人做治療決定；病人猶豫時，建議把問題寫下來，或安排再跟醫師談一次
+3. 需要時轉介社工師或心理師
+4. 處理不了就升級給資深個管師或主任
+
+??? note "相關資源"
+    [常見問題 Q&A](A_work-guide.md#常見問題-qa) → [E 專題與進階](E_advanced.md) → [A2 帶人指引](A_training-plan.md#22-帶人指引資深個管師版)
 
 ---
 
@@ -47,5 +120,5 @@
 
 | 項目 | 內容 |
 |------|------|
-| **最後更新** | **V4.21.2**（2026 年 10 月）|
-| 性質 | 導覽 hub——只放路標與連結鏈，不承載內容 |
+| **最後更新** | **V4.22.0**（2026 年 10 月）|
+| 性質 | 任務導覽——每項 3–5 步摘要＋權威源連結；細節與更新以「相關資源」裡標明的權威源為準 |
